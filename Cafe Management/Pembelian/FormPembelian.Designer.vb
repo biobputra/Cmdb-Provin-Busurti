@@ -231,7 +231,7 @@ Partial Class FormPembelian
         Me.txtSupplier.Location = New System.Drawing.Point(123, 49)
         Me.txtSupplier.Name = "txtSupplier"
         Me.txtSupplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtSupplier.Size = New System.Drawing.Size(165, 20)
+        Me.txtSupplier.Size = New System.Drawing.Size(243, 20)
         Me.txtSupplier.TabIndex = 6
         '
         'dgvHeader

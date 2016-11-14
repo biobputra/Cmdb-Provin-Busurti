@@ -33,8 +33,6 @@ Partial Class FormRetur
         Me.Label3 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
         Me.TanggalDTP = New System.Windows.Forms.DateTimePicker()
-        Me.label2 = New System.Windows.Forms.Label()
-        Me.DropDownSupp = New DevExpress.XtraEditors.DropDownButton()
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -45,6 +43,8 @@ Partial Class FormRetur
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvView = New DevExpress.XtraGrid.GridControl()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -62,6 +62,7 @@ Partial Class FormRetur
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -156,10 +157,10 @@ Partial Class FormRetur
         Me.InputLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.InputLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.InputLayout.Controls.Add(Me.Label3, 0, 2)
-        Me.InputLayout.Controls.Add(Me.label1, 0, 0)
-        Me.InputLayout.Controls.Add(Me.TanggalDTP, 1, 0)
-        Me.InputLayout.Controls.Add(Me.label2, 0, 1)
-        Me.InputLayout.Controls.Add(Me.DropDownSupp, 1, 1)
+        Me.InputLayout.Controls.Add(Me.label1, 0, 1)
+        Me.InputLayout.Controls.Add(Me.TanggalDTP, 1, 1)
+        Me.InputLayout.Controls.Add(Me.Label2, 0, 0)
+        Me.InputLayout.Controls.Add(Me.TextEdit1, 1, 0)
         Me.InputLayout.Dock = System.Windows.Forms.DockStyle.Top
         Me.InputLayout.Location = New System.Drawing.Point(0, 0)
         Me.InputLayout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -181,7 +182,7 @@ Partial Class FormRetur
         '
         'label1
         '
-        Me.label1.Location = New System.Drawing.Point(3, 0)
+        Me.label1.Location = New System.Drawing.Point(3, 26)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(100, 23)
         Me.label1.TabIndex = 0
@@ -190,26 +191,10 @@ Partial Class FormRetur
         'TanggalDTP
         '
         Me.TanggalDTP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TanggalDTP.Location = New System.Drawing.Point(123, 3)
+        Me.TanggalDTP.Location = New System.Drawing.Point(123, 29)
         Me.TanggalDTP.Name = "TanggalDTP"
         Me.TanggalDTP.Size = New System.Drawing.Size(165, 21)
         Me.TanggalDTP.TabIndex = 1
-        '
-        'label2
-        '
-        Me.label2.Location = New System.Drawing.Point(3, 26)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(100, 25)
-        Me.label2.TabIndex = 2
-        Me.label2.Text = "Penerimaan"
-        '
-        'DropDownSupp
-        '
-        Me.DropDownSupp.Location = New System.Drawing.Point(123, 29)
-        Me.DropDownSupp.Name = "DropDownSupp"
-        Me.DropDownSupp.Size = New System.Drawing.Size(217, 23)
-        Me.DropDownSupp.TabIndex = 0
-        Me.DropDownSupp.Text = "DropDownButton1"
         '
         'dgvHeader
         '
@@ -310,6 +295,21 @@ Partial Class FormRetur
         Me.GridView3.GridControl = Me.dgvView
         Me.GridView3.Name = "GridView3"
         '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "No.Retur"
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.Location = New System.Drawing.Point(123, 3)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(165, 20)
+        Me.TextEdit1.TabIndex = 5
+        '
         'FormRetur
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -339,6 +339,7 @@ Partial Class FormRetur
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -358,8 +359,6 @@ Partial Class FormRetur
     Private WithEvents Label3 As Label
     Private WithEvents label1 As Label
     Private WithEvents TanggalDTP As DateTimePicker
-    Private WithEvents label2 As Label
-    Friend WithEvents DropDownSupp As DevExpress.XtraEditors.DropDownButton
     Friend WithEvents txtCatatan As TextBox
     Friend WithEvents dgvHeader As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
@@ -370,4 +369,6 @@ Partial Class FormRetur
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents dgvView As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Private WithEvents Label2 As Label
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
 End Class
