@@ -90,7 +90,10 @@
     <Compile Include="Classes\PenerimaanH.vb" />
     <Compile Include="Classes\PenjualanD.vb" />
     <Compile Include="Classes\PenjualanH.vb" />
+    <Compile Include="Classes\ReturD.vb" />
     <Compile Include="Classes\ReturH.vb" />
+    <Compile Include="Classes\TerimaTagihanD.vb" />
+    <Compile Include="Classes\TerimaTagihanH.vb" />
     <Compile Include="Dataset\DataSetBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -72,10 +72,10 @@
         IDPenjualanH = MyIDPenjualanH : IDPenjualanD = MyIDPenjualanD : IDBarang = MyIDBarang : Jumlah = MyJumlah : HargaJual = MyHargaJual : DiscountPenjualan = MyDiscountPenjualan
     End Sub
 
-    Shared Function GetPejualanDByIDPenjualanH(ByVal MyPenjualanH As Long) As List(Of PenjualanD)
+    Shared Function GetPejualanDByIDPenjualanH(ByVal MyIDPenjualanH As Long) As List(Of PenjualanD)
         Dim MyListPenjualanD As New List(Of PenjualanD)
 
-        Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC pjl_GetPejualanDByIDPenjualanH " & MyPenjualanH)
+        Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC pjl_GetPejualanDByIDPenjualanH " & MyIDPenjualanH)
             If MyDataTable IsNot Nothing AndAlso MyDataTable.Rows.Count > 0 Then
                 For Each MyRow As DataRow In MyDataTable.Rows
 
