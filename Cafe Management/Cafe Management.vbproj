@@ -323,7 +323,9 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Inventory\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Simpan.jpg" />
   </ItemGroup>

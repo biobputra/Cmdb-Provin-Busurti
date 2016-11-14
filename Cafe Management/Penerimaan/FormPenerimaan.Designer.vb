@@ -28,21 +28,21 @@ Partial Class FormPenerimaan
         Me.LaporanBtn = New System.Windows.Forms.ToolStripButton()
         Me.PencarianBtn = New System.Windows.Forms.ToolStripButton()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.txtCatatan = New System.Windows.Forms.TextBox()
         Me.InputLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
         Me.TanggalDTP = New System.Windows.Forms.DateTimePicker()
         Me.label2 = New System.Windows.Forms.Label()
         Me.DropDownSupp = New DevExpress.XtraEditors.DropDownButton()
-        Me.txtCatatan = New System.Windows.Forms.TextBox()
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.dgvEdit = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TotalLbl = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.dgvEdit = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.dgvView = New DevExpress.XtraGrid.GridControl()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.ToolStrip1.SuspendLayout()
@@ -51,15 +51,15 @@ Partial Class FormPenerimaan
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.InputLayout.SuspendLayout()
+        CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
-        CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -140,6 +140,16 @@ Partial Class FormPenerimaan
         Me.SplitContainer1.SplitterDistance = 347
         Me.SplitContainer1.TabIndex = 3
         '
+        'txtCatatan
+        '
+        Me.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCatatan.Location = New System.Drawing.Point(0, 77)
+        Me.txtCatatan.Multiline = True
+        Me.txtCatatan.Name = "txtCatatan"
+        Me.txtCatatan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtCatatan.Size = New System.Drawing.Size(347, 101)
+        Me.txtCatatan.TabIndex = 4
+        '
         'InputLayout
         '
         Me.InputLayout.ColumnCount = 2
@@ -201,15 +211,20 @@ Partial Class FormPenerimaan
         Me.DropDownSupp.TabIndex = 0
         Me.DropDownSupp.Text = "DropDownButton1"
         '
-        'txtCatatan
+        'dgvHeader
         '
-        Me.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCatatan.Location = New System.Drawing.Point(0, 77)
-        Me.txtCatatan.Multiline = True
-        Me.txtCatatan.Name = "txtCatatan"
-        Me.txtCatatan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtCatatan.Size = New System.Drawing.Size(347, 101)
-        Me.txtCatatan.TabIndex = 4
+        Me.dgvHeader.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvHeader.Location = New System.Drawing.Point(0, 0)
+        Me.dgvHeader.MainView = Me.GridView1
+        Me.dgvHeader.Name = "dgvHeader"
+        Me.dgvHeader.Size = New System.Drawing.Size(690, 178)
+        Me.dgvHeader.TabIndex = 2
+        Me.dgvHeader.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.dgvHeader
+        Me.GridView1.Name = "GridView1"
         '
         'SplitContainer2
         '
@@ -229,20 +244,20 @@ Partial Class FormPenerimaan
         Me.SplitContainer2.SplitterDistance = 465
         Me.SplitContainer2.TabIndex = 4
         '
-        'dgvHeader
+        'dgvEdit
         '
-        Me.dgvHeader.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvHeader.Location = New System.Drawing.Point(0, 0)
-        Me.dgvHeader.MainView = Me.GridView1
-        Me.dgvHeader.Name = "dgvHeader"
-        Me.dgvHeader.Size = New System.Drawing.Size(690, 178)
-        Me.dgvHeader.TabIndex = 2
-        Me.dgvHeader.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.dgvEdit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvEdit.Location = New System.Drawing.Point(0, 35)
+        Me.dgvEdit.MainView = Me.GridView2
+        Me.dgvEdit.Name = "dgvEdit"
+        Me.dgvEdit.Size = New System.Drawing.Size(465, 227)
+        Me.dgvEdit.TabIndex = 3
+        Me.dgvEdit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
-        'GridView1
+        'GridView2
         '
-        Me.GridView1.GridControl = Me.dgvHeader
-        Me.GridView1.Name = "GridView1"
+        Me.GridView2.GridControl = Me.dgvEdit
+        Me.GridView2.Name = "GridView2"
         '
         'TableLayoutPanel1
         '
@@ -280,21 +295,6 @@ Partial Class FormPenerimaan
         Me.Label4.Text = "Total :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dgvEdit
-        '
-        Me.dgvEdit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvEdit.Location = New System.Drawing.Point(0, 35)
-        Me.dgvEdit.MainView = Me.GridView2
-        Me.dgvEdit.Name = "dgvEdit"
-        Me.dgvEdit.Size = New System.Drawing.Size(465, 227)
-        Me.dgvEdit.TabIndex = 3
-        Me.dgvEdit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.dgvEdit
-        Me.GridView2.Name = "GridView2"
-        '
         'dgvView
         '
         Me.dgvView.Dock = System.Windows.Forms.DockStyle.Fill
@@ -328,15 +328,15 @@ Partial Class FormPenerimaan
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.InputLayout.ResumeLayout(False)
+        CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
-        CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
