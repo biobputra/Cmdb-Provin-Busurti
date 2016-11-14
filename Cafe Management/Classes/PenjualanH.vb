@@ -89,7 +89,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(ByVal MyIDPenjualanH As Long, ByVal MyTanggalPenjualan As Date, ByVal MyCatatan As String, ByVal MyStatus As Int32, ByVal MyCreatedBy As String, ByVal MyCreatedDate As DateTime, ByVal MyModifiedBy As String, ByVal MyModifiedDate As DateTime)
+    Public Sub New(ByVal MyIDPenjualanH As Long, ByVal MyTanggalPenjualan As Date, ByVal MyCatatan As String, ByVal MyStatus As Int32, ByVal MyCreatedBy As Integer, ByVal MyCreatedDate As DateTime, ByVal MyModifiedBy As Integer, ByVal MyModifiedDate As DateTime)
         IDPenjualanH = MyIDPenjualanH : TanggalPenjualan = MyTanggalPenjualan : Catatan = MyCatatan : Status = MyStatus : CreatedBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate
     End Sub
 
@@ -132,7 +132,7 @@
                         If Not IsDBNull(.Item("CreatdBy")) Then MyPenjualanH.CreatedBy = Convert.ToInt32(.Item("CreatdBy"))
                         If Not IsDBNull(.Item("CreatedDate")) Then MyPenjualanH.CreatedDate = Convert.ToDateTime(.Item("CreatedDate"))
                         If Not IsDBNull(.Item("ModifiedBy")) Then MyPenjualanH.ModifiedBy = Convert.ToInt32(.Item("ModifiedBy"))
-                        If Not IsDBNull(.Item("ModifiedDate")) Then MyPenjualanH.ModifiedDate = Convert.ToDateTime(.Item("ModifiedDate")))
+                        If Not IsDBNull(.Item("ModifiedDate")) Then MyPenjualanH.ModifiedDate = Convert.ToDateTime(.Item("ModifiedDate"))
                         MyListPenjualanH.Add(MyPenjualanH)
                     End With
                 Next

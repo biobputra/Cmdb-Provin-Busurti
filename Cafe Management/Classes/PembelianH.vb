@@ -100,8 +100,8 @@
 
     End Sub
 
-    Sub New(ByVal MyIDPembelianH As Long, ByVal MyTanggalPembelian As Date, ByVal MyIDSupplier As Integer, ByVal MyCatatan As String, ByVal MyCreatedBy As Long, ByVal MyCreatedDate As Date, ByVal MyModifiedBy As Long, ByVal MyModifiedDate As Date)
-        IDPembelianH = MyIDPembelianH : TanggalPembelian = MyTanggalPembelian : IDSupplier = MyIDSupplier : Catatan = MyCatatan : CreatdBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate
+    Sub New(ByVal MyIDPembelianH As Long, ByVal MyTanggalPembelian As Date, ByVal MyIDSupplier As Integer, ByVal MyCatatan As String, ByVal MyCreatedBy As Integer, ByVal MyCreatedDate As Date, ByVal MyModifiedBy As Integer, ByVal MyModifiedDate As Date)
+        IDPembelianH = MyIDPembelianH : TanggalPembelian = MyTanggalPembelian : IDSupplier = MyIDSupplier : Catatan = MyCatatan : CreatedBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate
     End Sub
 
     Shared Function GetPembelianHByIDPembelianH(ByVal MyIDPembelianH As String) As PembelianH
