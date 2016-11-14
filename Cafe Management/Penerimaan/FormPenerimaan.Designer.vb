@@ -34,7 +34,9 @@ Partial Class FormPenerimaan
         Me.label1 = New System.Windows.Forms.Label()
         Me.TanggalDTP = New System.Windows.Forms.DateTimePicker()
         Me.label2 = New System.Windows.Forms.Label()
-        Me.DropDownSupp = New DevExpress.XtraEditors.DropDownButton()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtNoPenerimaan = New DevExpress.XtraEditors.TextEdit()
+        Me.txtNoPO = New DevExpress.XtraEditors.LookUpEdit()
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -51,6 +53,8 @@ Partial Class FormPenerimaan
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.InputLayout.SuspendLayout()
+        CType(Me.txtNoPenerimaan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNoPO.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,11 +147,11 @@ Partial Class FormPenerimaan
         'txtCatatan
         '
         Me.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCatatan.Location = New System.Drawing.Point(0, 77)
+        Me.txtCatatan.Location = New System.Drawing.Point(0, 102)
         Me.txtCatatan.Multiline = True
         Me.txtCatatan.Name = "txtCatatan"
         Me.txtCatatan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtCatatan.Size = New System.Drawing.Size(347, 101)
+        Me.txtCatatan.Size = New System.Drawing.Size(347, 76)
         Me.txtCatatan.TabIndex = 4
         '
         'InputLayout
@@ -155,33 +159,36 @@ Partial Class FormPenerimaan
         Me.InputLayout.ColumnCount = 2
         Me.InputLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.InputLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.InputLayout.Controls.Add(Me.Label3, 0, 2)
-        Me.InputLayout.Controls.Add(Me.label1, 0, 0)
-        Me.InputLayout.Controls.Add(Me.TanggalDTP, 1, 0)
-        Me.InputLayout.Controls.Add(Me.label2, 0, 1)
-        Me.InputLayout.Controls.Add(Me.DropDownSupp, 1, 1)
+        Me.InputLayout.Controls.Add(Me.Label3, 0, 3)
+        Me.InputLayout.Controls.Add(Me.label1, 0, 1)
+        Me.InputLayout.Controls.Add(Me.TanggalDTP, 1, 1)
+        Me.InputLayout.Controls.Add(Me.label2, 0, 2)
+        Me.InputLayout.Controls.Add(Me.Label5, 0, 0)
+        Me.InputLayout.Controls.Add(Me.txtNoPenerimaan, 1, 0)
+        Me.InputLayout.Controls.Add(Me.txtNoPO, 1, 2)
         Me.InputLayout.Dock = System.Windows.Forms.DockStyle.Top
         Me.InputLayout.Location = New System.Drawing.Point(0, 0)
         Me.InputLayout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.InputLayout.Name = "InputLayout"
-        Me.InputLayout.RowCount = 3
-        Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.InputLayout.RowCount = 4
+        Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
+        Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
-        Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
-        Me.InputLayout.Size = New System.Drawing.Size(347, 77)
+        Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
+        Me.InputLayout.Size = New System.Drawing.Size(347, 102)
         Me.InputLayout.TabIndex = 3
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(3, 55)
+        Me.Label3.Location = New System.Drawing.Point(3, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 22)
+        Me.Label3.Size = New System.Drawing.Size(100, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Catatan"
         '
         'label1
         '
-        Me.label1.Location = New System.Drawing.Point(3, 0)
+        Me.label1.Location = New System.Drawing.Point(3, 23)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(100, 23)
         Me.label1.TabIndex = 0
@@ -190,26 +197,41 @@ Partial Class FormPenerimaan
         'TanggalDTP
         '
         Me.TanggalDTP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TanggalDTP.Location = New System.Drawing.Point(123, 3)
+        Me.TanggalDTP.Location = New System.Drawing.Point(123, 26)
         Me.TanggalDTP.Name = "TanggalDTP"
         Me.TanggalDTP.Size = New System.Drawing.Size(165, 21)
         Me.TanggalDTP.TabIndex = 1
         '
         'label2
         '
-        Me.label2.Location = New System.Drawing.Point(3, 26)
+        Me.label2.Location = New System.Drawing.Point(3, 53)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(100, 25)
         Me.label2.TabIndex = 2
         Me.label2.Text = "No.Purchase Order"
         '
-        'DropDownSupp
+        'Label5
         '
-        Me.DropDownSupp.Location = New System.Drawing.Point(123, 29)
-        Me.DropDownSupp.Name = "DropDownSupp"
-        Me.DropDownSupp.Size = New System.Drawing.Size(217, 23)
-        Me.DropDownSupp.TabIndex = 0
-        Me.DropDownSupp.Text = "DropDownButton1"
+        Me.Label5.Location = New System.Drawing.Point(3, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(100, 23)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "No.Penerimaan"
+        '
+        'txtNoPenerimaan
+        '
+        Me.txtNoPenerimaan.Location = New System.Drawing.Point(123, 3)
+        Me.txtNoPenerimaan.Name = "txtNoPenerimaan"
+        Me.txtNoPenerimaan.Size = New System.Drawing.Size(165, 20)
+        Me.txtNoPenerimaan.TabIndex = 5
+        '
+        'txtNoPO
+        '
+        Me.txtNoPO.Location = New System.Drawing.Point(123, 56)
+        Me.txtNoPO.Name = "txtNoPO"
+        Me.txtNoPO.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtNoPO.Size = New System.Drawing.Size(221, 20)
+        Me.txtNoPO.TabIndex = 6
         '
         'dgvHeader
         '
@@ -328,6 +350,8 @@ Partial Class FormPenerimaan
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.InputLayout.ResumeLayout(False)
+        CType(Me.txtNoPenerimaan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNoPO.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
@@ -358,7 +382,6 @@ Partial Class FormPenerimaan
     Private WithEvents label1 As Label
     Private WithEvents TanggalDTP As DateTimePicker
     Private WithEvents label2 As Label
-    Friend WithEvents DropDownSupp As DevExpress.XtraEditors.DropDownButton
     Friend WithEvents txtCatatan As TextBox
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents dgvHeader As DevExpress.XtraGrid.GridControl
@@ -370,4 +393,7 @@ Partial Class FormPenerimaan
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents dgvView As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Private WithEvents Label5 As Label
+    Friend WithEvents txtNoPenerimaan As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtNoPO As DevExpress.XtraEditors.LookUpEdit
 End Class

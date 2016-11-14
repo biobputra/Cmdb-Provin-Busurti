@@ -35,8 +35,8 @@ Partial Class FormPembelian
         Me.label1 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.txtPembelian = New DevExpress.XtraEditors.TextEdit()
+        Me.txtSupplier = New DevExpress.XtraEditors.LookUpEdit()
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -53,8 +53,8 @@ Partial Class FormPembelian
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.InputLayout.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPembelian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,8 +165,8 @@ Partial Class FormPembelian
         Me.InputLayout.Controls.Add(Me.label1, 0, 0)
         Me.InputLayout.Controls.Add(Me.label2, 0, 1)
         Me.InputLayout.Controls.Add(Me.Label3, 0, 2)
-        Me.InputLayout.Controls.Add(Me.TextEdit1, 1, 0)
-        Me.InputLayout.Controls.Add(Me.LookUpEdit1, 1, 2)
+        Me.InputLayout.Controls.Add(Me.txtPembelian, 1, 0)
+        Me.InputLayout.Controls.Add(Me.txtSupplier, 1, 2)
         Me.InputLayout.Dock = System.Windows.Forms.DockStyle.Top
         Me.InputLayout.Location = New System.Drawing.Point(0, 0)
         Me.InputLayout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -201,7 +201,7 @@ Partial Class FormPembelian
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(100, 23)
         Me.label1.TabIndex = 0
-        Me.label1.Text = "No.Penerimaan"
+        Me.label1.Text = "No.Pembelian"
         '
         'label2
         '
@@ -219,20 +219,20 @@ Partial Class FormPembelian
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Supplier"
         '
-        'TextEdit1
+        'txtPembelian
         '
-        Me.TextEdit1.Location = New System.Drawing.Point(123, 3)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(165, 20)
-        Me.TextEdit1.TabIndex = 5
+        Me.txtPembelian.Location = New System.Drawing.Point(123, 3)
+        Me.txtPembelian.Name = "txtPembelian"
+        Me.txtPembelian.Size = New System.Drawing.Size(165, 20)
+        Me.txtPembelian.TabIndex = 5
         '
-        'LookUpEdit1
+        'txtSupplier
         '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(123, 49)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Size = New System.Drawing.Size(165, 20)
-        Me.LookUpEdit1.TabIndex = 6
+        Me.txtSupplier.Location = New System.Drawing.Point(123, 49)
+        Me.txtSupplier.Name = "txtSupplier"
+        Me.txtSupplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtSupplier.Size = New System.Drawing.Size(165, 20)
+        Me.txtSupplier.TabIndex = 6
         '
         'dgvHeader
         '
@@ -351,8 +351,8 @@ Partial Class FormPembelian
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.InputLayout.ResumeLayout(False)
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPembelian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSupplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
@@ -395,6 +395,6 @@ Partial Class FormPembelian
     Friend WithEvents dgvView As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
     Private WithEvents Label5 As Label
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents txtPembelian As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtSupplier As DevExpress.XtraEditors.LookUpEdit
 End Class
