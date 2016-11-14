@@ -30,14 +30,18 @@
         Me.PosMenuDaftarMeja = New DevExpress.XtraBars.BarButtonItem()
         Me.InventoryMenuSatuan = New DevExpress.XtraBars.BarButtonItem()
         Me.InventoryMenuJenisBarang = New DevExpress.XtraBars.BarButtonItem()
+        Me.InventoryMenuBarang = New DevExpress.XtraBars.BarButtonItem()
         Me.PosMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.InventoryMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.InventoryMenuBarang = New DevExpress.XtraBars.BarButtonItem()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
+        Me.PurchasingMenu = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.PurchasingMenuPurchasing = New DevExpress.XtraBars.BarButtonItem()
+        Me.PosMenuPenjualan = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,11 +49,11 @@
         'ribbonControl1
         '
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.PosMenuJenisMeja, Me.PosMenuDaftarMeja, Me.InventoryMenuSatuan, Me.InventoryMenuJenisBarang, Me.InventoryMenuBarang})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.PosMenuJenisMeja, Me.PosMenuDaftarMeja, Me.InventoryMenuSatuan, Me.InventoryMenuJenisBarang, Me.InventoryMenuBarang, Me.PurchasingMenuPurchasing, Me.PosMenuPenjualan})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.MaxItemId = 6
+        Me.ribbonControl1.MaxItemId = 8
         Me.ribbonControl1.Name = "ribbonControl1"
-        Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.PosMenuHeader, Me.InventoryMenuHeader})
+        Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.PosMenuHeader, Me.InventoryMenuHeader, Me.PurchasingMenu})
         Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
         Me.ribbonControl1.Size = New System.Drawing.Size(758, 143)
         '
@@ -77,6 +81,12 @@
         Me.InventoryMenuJenisBarang.Id = 4
         Me.InventoryMenuJenisBarang.Name = "InventoryMenuJenisBarang"
         '
+        'InventoryMenuBarang
+        '
+        Me.InventoryMenuBarang.Caption = "Barang"
+        Me.InventoryMenuBarang.Id = 5
+        Me.InventoryMenuBarang.Name = "InventoryMenuBarang"
+        '
         'PosMenuHeader
         '
         Me.PosMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup2})
@@ -85,6 +95,7 @@
         '
         'ribbonPageGroup1
         '
+        Me.ribbonPageGroup1.ItemLinks.Add(Me.PosMenuPenjualan)
         Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
         Me.ribbonPageGroup1.Text = "ribbonPageGroup1"
         '
@@ -108,21 +119,39 @@
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
-        'XtraTabbedMdiManager1
-        '
-        Me.XtraTabbedMdiManager1.MdiParent = Me
-        '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.InventoryMenuBarang)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Barang"
         '
-        'InventoryMenuBarang
+        'XtraTabbedMdiManager1
         '
-        Me.InventoryMenuBarang.Caption = "Barang"
-        Me.InventoryMenuBarang.Id = 5
-        Me.InventoryMenuBarang.Name = "InventoryMenuBarang"
+        Me.XtraTabbedMdiManager1.MdiParent = Me
+        '
+        'PurchasingMenu
+        '
+        Me.PurchasingMenu.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup5})
+        Me.PurchasingMenu.Name = "PurchasingMenu"
+        Me.PurchasingMenu.Text = "Purchasing"
+        '
+        'RibbonPageGroup5
+        '
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.PurchasingMenuPurchasing)
+        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
+        Me.RibbonPageGroup5.Text = "RibbonPageGroup5"
+        '
+        'PurchasingMenuPurchasing
+        '
+        Me.PurchasingMenuPurchasing.Caption = "Purchasing"
+        Me.PurchasingMenuPurchasing.Id = 6
+        Me.PurchasingMenuPurchasing.Name = "PurchasingMenuPurchasing"
+        '
+        'PosMenuPenjualan
+        '
+        Me.PosMenuPenjualan.Caption = "Penjualan"
+        Me.PosMenuPenjualan.Id = 7
+        Me.PosMenuPenjualan.Name = "PosMenuPenjualan"
         '
         'MainForm
         '
@@ -158,4 +187,8 @@
     Friend WithEvents InventoryMenuJenisBarang As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents InventoryMenuBarang As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents PurchasingMenuPurchasing As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents PurchasingMenu As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents PosMenuPenjualan As DevExpress.XtraBars.BarButtonItem
 End Class

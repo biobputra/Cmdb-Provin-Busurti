@@ -54,5 +54,23 @@ Partial Public Class MainForm
             FormBarang.ShowDialog()
         End If
     End Sub
+
+    Private Sub PurchasingMenuPurchasing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PurchasingMenuPurchasing.ItemClick
+        If Me.MdiChildren.Contains(FormPembelian) Then
+            FormPembelian.Focus()
+        Else
+            FormPembelian.MdiParent = Me
+            FormPembelian.Show()
+        End If
+    End Sub
+
+    Private Sub PosMenuPenjualan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PosMenuPenjualan.ItemClick
+        If Me.MdiChildren.Contains(FormPOS) Then
+            FormPOS.Focus()
+        Else
+            FormPOS.MdiParent = Me
+            FormPOS.Show()
+        End If
+    End Sub
 End Class
 

@@ -116,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetStorage.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetStorage.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +286,17 @@
     </None>
     <None Include="Dataset\DataSetSatuan.xss">
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetStorage.xsc">
+      <DependentUpon>DataSetStorage.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetStorage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetStorage.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetStorage.xss">
+      <DependentUpon>DataSetStorage.xsd</DependentUpon>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
