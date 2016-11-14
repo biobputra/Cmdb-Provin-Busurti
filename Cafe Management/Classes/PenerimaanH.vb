@@ -22,6 +22,26 @@
         End Set
     End Property
 
+    Private xSumberPenerimaan As Int32
+    Public Property SumberPenerimaan() As Int32
+        Get
+            Return xSumberPenerimaan
+        End Get
+        Set(value As Int32)
+            xSumberPenerimaan = value
+        End Set
+    End Property
+
+    Private xNoPenerimaan As String
+    Public Property NoPenerimaan() As String
+        Get
+            Return xNoPenerimaan
+        End Get
+        Set(value As String)
+            xNoPenerimaan = value
+        End Set
+    End Property
+
     Private xCatatan As String
     Public Property Catatan() As String
         Get

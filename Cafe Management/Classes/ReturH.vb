@@ -22,6 +22,16 @@
         End Set
     End Property
 
+    Private xNoRetur As String
+    Public Property NoRetur() As String
+        Get
+            Return xNoRetur
+        End Get
+        Set(value As String)
+            xNoRetur = value
+        End Set
+    End Property
+
     Private xCatatan As String
     Public Property Catatan() As String
         Get

@@ -22,6 +22,16 @@
         End Set
     End Property
 
+    Private xNoPenjualan As String
+    Public Property NoPenjualan() As String
+        Get
+            Return xNoPenjualan
+        End Get
+        Set(value As String)
+            xNoPenjualan = value
+        End Set
+    End Property
+
     Private xCatatan As String
     Public Property Catatan() As String
         Get

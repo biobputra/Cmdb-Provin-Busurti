@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\BarangKeluarD.vb" />
+    <Compile Include="Classes\BarangKeluarH.vb" />
     <Compile Include="Classes\ClassDelete.vb" />
     <Compile Include="Classes\JurnalD.vb" />
     <Compile Include="Classes\JurnalH.vb" />
