@@ -208,6 +208,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Pembelian\FormPembelian.resx">
+      <DependentUpon>FormPembelian.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Penjualan\FormPOS.resx">
       <DependentUpon>FormPOS.vb</DependentUpon>
     </EmbeddedResource>
