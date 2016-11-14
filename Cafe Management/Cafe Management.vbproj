@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B624527A-3C4D-47B0-8016-9108A521635F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cafe_Management</RootNamespace>
+    <AssemblyName>Cafe Management</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <StartupObject>Cafe_Management.Program</StartupObject>
+    <FileAlignment>512</FileAlignment>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>WindowsForms</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Cafe_Management.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Printing.v16.1.Core" />
+    <Reference Include="DevExpress.Utils.v16.1" />
+    <Reference Include="DevExpress.XtraBars.v16.1" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\ClassDelete.vb" />
+    <Compile Include="Classes\JurnalD.vb" />
+    <Compile Include="Classes\JurnalH.vb" />
+    <Compile Include="Classes\MasterShiftD.vb" />
+    <Compile Include="Classes\MasterShiftH.vb" />
+    <Compile Include="Classes\PembelianD.vb" />
+    <Compile Include="Classes\PembelianH.vb" />
+    <Compile Include="Dataset\DataSetBarang.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBarang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetDaftarMeja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetJenisBarang.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetJenisMeja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetSatuan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSatuan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormBarang.Designer.vb">
+      <DependentUpon>FormBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormDaftarMeja.Designer.vb">
+      <DependentUpon>FormDaftarMeja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormDaftarMeja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisBarang.Designer.vb">
+      <DependentUpon>FormJenisBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisMeja.Designer.vb">
+      <DependentUpon>FormJenisMeja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisMeja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormSatuan.Designer.vb">
+      <DependentUpon>FormSatuan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormSatuan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Classes\Pengguna.vb" />
+    <Compile Include="Pembelian\FormPembelian.Designer.vb">
+      <DependentUpon>FormPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pembelian\FormPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penjualan\FormPOS.Designer.vb">
+      <DependentUpon>FormPOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penjualan\FormPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Support Forms\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Support Forms\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportObject\DataAccess.vb" />
+    <Compile Include="SupportObject\GlobalModule.vb" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormBarang.resx">
+      <DependentUpon>FormBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormDaftarMeja.resx">
+      <DependentUpon>FormDaftarMeja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormJenisBarang.resx">
+      <DependentUpon>FormJenisBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormJenisMeja.resx">
+      <DependentUpon>FormJenisMeja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormSatuan.resx">
+      <DependentUpon>FormSatuan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Penjualan\FormPOS.resx">
+      <DependentUpon>FormPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Support Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Dataset\DataSetBarang.xsc">
+      <DependentUpon>DataSetBarang.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetBarang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBarang.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetBarang.xss">
+      <DependentUpon>DataSetBarang.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetDaftarMeja.xsc">
+      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetDaftarMeja.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDaftarMeja.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dataset\DataSetDaftarMeja.xss">
+      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisBarang.xsc">
+      <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisBarang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJenisBarang.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetJenisBarang.xss">
+      <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisMeja.xsc">
+      <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisMeja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJenisMeja.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetJenisMeja.xss">
+      <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetSatuan.xsc">
+      <DependentUpon>DataSetSatuan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetSatuan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSatuan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetSatuan.xss">
+      <DependentUpon>DataSetSatuan.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Retur\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simpan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BindingNavigatorDeleteItem.Image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
