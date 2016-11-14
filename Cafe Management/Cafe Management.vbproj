@@ -170,6 +170,12 @@
     <Compile Include="Penjualan\FormPOS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Retur\FormRetur.Designer.vb">
+      <DependentUpon>FormRetur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Retur\FormRetur.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Support Forms\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Penjualan\FormPOS.resx">
       <DependentUpon>FormPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retur\FormRetur.resx">
+      <DependentUpon>FormRetur.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Support Forms\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -289,9 +298,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Retur\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Simpan.jpg" />
   </ItemGroup>
