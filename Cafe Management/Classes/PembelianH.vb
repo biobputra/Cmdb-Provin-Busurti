@@ -52,13 +52,13 @@
         End Set
     End Property
 
-    Private xCreatdBy As Integer
-    Public Property CreatdBy() As Integer
+    Private xCreatedBy As Integer
+    Public Property CreatedBy() As Integer
         Get
-            Return xCreatdBy
+            Return xCreatedBy
         End Get
         Set(ByVal value As Integer)
-            xCreatdBy = value
+            xCreatedBy = value
         End Set
     End Property
 
@@ -117,9 +117,9 @@
                         If Not IsDBNull(.Item("IDSupplier")) Then MyPembelianH.IDSupplier = Convert.ToInt32(.Item("IDSupplier"))
                         If Not IsDBNull(.Item("Status")) Then MyPembelianH.Status = Convert.ToInt32(.Item("Status"))
                         If Not IsDBNull(.Item("Catatan")) Then MyPembelianH.Catatan = .Item("Catatan").ToString
-                        If Not IsDBNull(.Item("CreatdBy")) Then MyPembelianH.CreatdBy = Convert.ToInt64(.Item("CreatdBy"))
+                        If Not IsDBNull(.Item("CreatedBy")) Then MyPembelianH.CreatedBy = Convert.ToInt32(.Item("CreatedBy"))
                         If Not IsDBNull(.Item("CreatedDate")) Then MyPembelianH.CreatedDate = Convert.ToDateTime(.Item("CreatedDate"))
-                        If Not IsDBNull(.Item("ModifiedBy")) Then MyPembelianH.ModifiedBy = Convert.ToInt64(.Item("ModifiedBy"))
+                        If Not IsDBNull(.Item("ModifiedBy")) Then MyPembelianH.ModifiedBy = Convert.ToInt32(.Item("ModifiedBy"))
                         If Not IsDBNull(.Item("ModifiedDate")) Then MyPembelianH.ModifiedDate = Convert.ToDateTime(.Item("ModifiedDate"))
                     End With
                 Next

@@ -23,11 +23,13 @@
     End Property
 
     Private xIDBarang As Integer
-    Public Property IDBarang() As Integer
+    Public Property IDBarang() As Integer
+
         Get
             Return xIDBarang
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Integer
+)
             xIDBarang = value
         End Set
     End Property
@@ -76,7 +78,7 @@
     Shared Function GetPembelianDByIDPembelianH(MyIDPembelianH As Long) As List(Of PembelianD)
         Dim MyListPembelianD As New List(Of PembelianD)
 
-        Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC Pbl_GetPembelianDByIDPembelianH" & MyIDPembelianH)
+        Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC Pbl_GetPembelianDByIDPembelianH " & MyIDPembelianH)
             If MyDataTable IsNot Nothing AndAlso MyDataTable.Rows.Count > 0 Then
                 For Each MyRow As DataRow In MyDataTable.Rows
 
