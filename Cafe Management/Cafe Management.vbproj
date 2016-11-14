@@ -169,6 +169,12 @@
     <Compile Include="Pembelian\FormPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Penerimaan\FormPenerimaan.Designer.vb">
+      <DependentUpon>FormPenerimaan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penerimaan\FormPenerimaan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Penjualan\FormPOS.Designer.vb">
       <DependentUpon>FormPOS.vb</DependentUpon>
     </Compile>
@@ -221,6 +227,9 @@
     </Compile>
     <EmbeddedResource Include="Pembelian\FormPembelian.resx">
       <DependentUpon>FormPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penerimaan\FormPenerimaan.resx">
+      <DependentUpon>FormPenerimaan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Penjualan\FormPOS.resx">
       <DependentUpon>FormPOS.vb</DependentUpon>
