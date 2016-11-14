@@ -86,6 +86,11 @@
     <Compile Include="Classes\MasterShiftH.vb" />
     <Compile Include="Classes\PembelianD.vb" />
     <Compile Include="Classes\PembelianH.vb" />
+    <Compile Include="Classes\PenerimaanD.vb" />
+    <Compile Include="Classes\PenerimaanH.vb" />
+    <Compile Include="Classes\PenjualanD.vb" />
+    <Compile Include="Classes\PenjualanH.vb" />
+    <Compile Include="Classes\ReturH.vb" />
     <Compile Include="Dataset\DataSetBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

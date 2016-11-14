@@ -52,13 +52,13 @@
         End Set
     End Property
 
-    Private xCreatdBy As Integer
-    Public Property CreatdBy() As Integer
+    Private xCreatedBy As Integer
+    Public Property CreatedBy() As Integer
         Get
-            Return xCreatdBy
+            Return xCreatedBy
         End Get
         Set(ByVal value As Integer)
-            xCreatdBy = value
+            xCreatedBy = value
         End Set
     End Property
 
@@ -100,8 +100,8 @@
 
     End Sub
 
-    Sub New(ByVal MyIDPembelianH As Long, ByVal MyTanggalPembelian As Date, ByVal MyIDSupplier As Integer, ByVal MyCatatan As String, ByVal MyCreatedBy As Long, ByVal MyCreatedDate As Date, ByVal MyModifiedBy As Long, ByVal MyModifiedDate As Date)
-        IDPembelianH = MyIDPembelianH : TanggalPembelian = MyTanggalPembelian : IDSupplier = MyIDSupplier : Catatan = MyCatatan : CreatdBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate
+    Sub New(ByVal MyIDPembelianH As Long, ByVal MyTanggalPembelian As Date, ByVal MyIDSupplier As Integer, ByVal MyCatatan As String, ByVal MyCreatedBy As Integer, ByVal MyCreatedDate As Date, ByVal MyModifiedBy As Integer, ByVal MyModifiedDate As Date)
+        IDPembelianH = MyIDPembelianH : TanggalPembelian = MyTanggalPembelian : IDSupplier = MyIDSupplier : Catatan = MyCatatan : CreatedBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate
     End Sub
 
     Shared Function GetPembelianHByIDPembelianH(ByVal MyIDPembelianH As String) As PembelianH
@@ -117,9 +117,9 @@
                         If Not IsDBNull(.Item("IDSupplier")) Then MyPembelianH.IDSupplier = Convert.ToInt32(.Item("IDSupplier"))
                         If Not IsDBNull(.Item("Status")) Then MyPembelianH.Status = Convert.ToInt32(.Item("Status"))
                         If Not IsDBNull(.Item("Catatan")) Then MyPembelianH.Catatan = .Item("Catatan").ToString
-                        If Not IsDBNull(.Item("CreatdBy")) Then MyPembelianH.CreatdBy = Convert.ToInt64(.Item("CreatdBy"))
+                        If Not IsDBNull(.Item("CreatedBy")) Then MyPembelianH.CreatedBy = Convert.ToInt32(.Item("CreatedBy"))
                         If Not IsDBNull(.Item("CreatedDate")) Then MyPembelianH.CreatedDate = Convert.ToDateTime(.Item("CreatedDate"))
-                        If Not IsDBNull(.Item("ModifiedBy")) Then MyPembelianH.ModifiedBy = Convert.ToInt64(.Item("ModifiedBy"))
+                        If Not IsDBNull(.Item("ModifiedBy")) Then MyPembelianH.ModifiedBy = Convert.ToInt32(.Item("ModifiedBy"))
                         If Not IsDBNull(.Item("ModifiedDate")) Then MyPembelianH.ModifiedDate = Convert.ToDateTime(.Item("ModifiedDate"))
                     End With
                 Next
