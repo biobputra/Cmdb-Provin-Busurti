@@ -121,6 +121,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetStorage.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.Designer.vb">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </Compile>
     <Compile Include="SupportObject\DataAccess.vb" />
     <Compile Include="SupportObject\GlobalModule.vb" />
+    <EmbeddedResource Include="Inventory\Barang Keluar\FormBarangKeluar.resx">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,9 +332,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Inventory\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Simpan.jpg" />
   </ItemGroup>
