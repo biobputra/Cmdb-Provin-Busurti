@@ -130,6 +130,12 @@
     <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inventory\StokOpname\FormStokOpname.Designer.vb">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StokOpname\FormStokOpname.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     <Compile Include="SupportObject\GlobalModule.vb" />
     <EmbeddedResource Include="Inventory\Barang Keluar\FormBarangKeluar.resx">
       <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\StokOpname\FormStokOpname.resx">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
