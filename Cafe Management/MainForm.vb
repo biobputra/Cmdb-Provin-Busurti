@@ -72,5 +72,9 @@ Partial Public Class MainForm
             FormPOS.Show()
         End If
     End Sub
+
+  Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem10.ItemClick
+
+  End Sub
 End Class
 
