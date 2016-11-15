@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormRetur
+Partial Class FormStokOpname
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -28,21 +28,15 @@ Partial Class FormRetur
         Me.LaporanBtn = New System.Windows.Forms.ToolStripButton()
         Me.PencarianBtn = New System.Windows.Forms.ToolStripButton()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.txtCatatan = New System.Windows.Forms.TextBox()
         Me.InputLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
         Me.TanggalDTP = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNoRtr = New DevExpress.XtraEditors.TextEdit()
+        Me.txtNoBrk = New DevExpress.XtraEditors.TextEdit()
+        Me.txtCatatan = New System.Windows.Forms.TextBox()
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.dgvEdit = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TotalLbl = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvView = New DevExpress.XtraGrid.GridControl()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.ToolStrip1.SuspendLayout()
@@ -51,16 +45,9 @@ Partial Class FormRetur
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.InputLayout.SuspendLayout()
-        CType(Me.txtNoRtr.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNoBrk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer2.Panel1.SuspendLayout()
-        Me.SplitContainer2.Panel2.SuspendLayout()
-        Me.SplitContainer2.SuspendLayout()
-        CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -70,8 +57,8 @@ Partial Class FormRetur
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TambahBtn, Me.EditBtn, Me.HapusBtn, Me.SimpanBtn, Me.BatalBtn, Me.LaporanBtn, Me.PencarianBtn})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(910, 25)
-        Me.ToolStrip1.TabIndex = 1
+        Me.ToolStrip1.Size = New System.Drawing.Size(1244, 25)
+        Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'TambahBtn
@@ -137,19 +124,9 @@ Partial Class FormRetur
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.dgvHeader)
-        Me.SplitContainer1.Size = New System.Drawing.Size(910, 160)
-        Me.SplitContainer1.SplitterDistance = 343
-        Me.SplitContainer1.TabIndex = 2
-        '
-        'txtCatatan
-        '
-        Me.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCatatan.Location = New System.Drawing.Point(0, 77)
-        Me.txtCatatan.Multiline = True
-        Me.txtCatatan.Name = "txtCatatan"
-        Me.txtCatatan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtCatatan.Size = New System.Drawing.Size(343, 83)
-        Me.txtCatatan.TabIndex = 3
+        Me.SplitContainer1.Size = New System.Drawing.Size(1244, 176)
+        Me.SplitContainer1.SplitterDistance = 414
+        Me.SplitContainer1.TabIndex = 4
         '
         'InputLayout
         '
@@ -160,7 +137,7 @@ Partial Class FormRetur
         Me.InputLayout.Controls.Add(Me.label1, 0, 1)
         Me.InputLayout.Controls.Add(Me.TanggalDTP, 1, 1)
         Me.InputLayout.Controls.Add(Me.Label2, 0, 0)
-        Me.InputLayout.Controls.Add(Me.txtNoRtr, 1, 0)
+        Me.InputLayout.Controls.Add(Me.txtNoBrk, 1, 0)
         Me.InputLayout.Dock = System.Windows.Forms.DockStyle.Top
         Me.InputLayout.Location = New System.Drawing.Point(0, 0)
         Me.InputLayout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -169,8 +146,8 @@ Partial Class FormRetur
         Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
         Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
         Me.InputLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
-        Me.InputLayout.Size = New System.Drawing.Size(343, 77)
-        Me.InputLayout.TabIndex = 2
+        Me.InputLayout.Size = New System.Drawing.Size(414, 77)
+        Me.InputLayout.TabIndex = 4
         '
         'Label3
         '
@@ -202,14 +179,24 @@ Partial Class FormRetur
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "No.Retur"
+        Me.Label2.Text = "No.Stok Opname"
         '
-        'txtNoRtr
+        'txtNoBrk
         '
-        Me.txtNoRtr.Location = New System.Drawing.Point(123, 3)
-        Me.txtNoRtr.Name = "txtNoRtr"
-        Me.txtNoRtr.Size = New System.Drawing.Size(165, 20)
-        Me.txtNoRtr.TabIndex = 5
+        Me.txtNoBrk.Location = New System.Drawing.Point(123, 3)
+        Me.txtNoBrk.Name = "txtNoBrk"
+        Me.txtNoBrk.Size = New System.Drawing.Size(165, 20)
+        Me.txtNoBrk.TabIndex = 5
+        '
+        'txtCatatan
+        '
+        Me.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCatatan.Location = New System.Drawing.Point(0, 77)
+        Me.txtCatatan.Multiline = True
+        Me.txtCatatan.Name = "txtCatatan"
+        Me.txtCatatan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtCatatan.Size = New System.Drawing.Size(414, 99)
+        Me.txtCatatan.TabIndex = 5
         '
         'dgvHeader
         '
@@ -217,8 +204,8 @@ Partial Class FormRetur
         Me.dgvHeader.Location = New System.Drawing.Point(0, 0)
         Me.dgvHeader.MainView = Me.GridView1
         Me.dgvHeader.Name = "dgvHeader"
-        Me.dgvHeader.Size = New System.Drawing.Size(563, 160)
-        Me.dgvHeader.TabIndex = 1
+        Me.dgvHeader.Size = New System.Drawing.Size(826, 176)
+        Me.dgvHeader.TabIndex = 3
         Me.dgvHeader.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
@@ -226,83 +213,14 @@ Partial Class FormRetur
         Me.GridView1.GridControl = Me.dgvHeader
         Me.GridView1.Name = "GridView1"
         '
-        'SplitContainer2
-        '
-        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer2.Location = New System.Drawing.Point(0, 185)
-        Me.SplitContainer2.Name = "SplitContainer2"
-        '
-        'SplitContainer2.Panel1
-        '
-        Me.SplitContainer2.Panel1.Controls.Add(Me.dgvEdit)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        '
-        'SplitContainer2.Panel2
-        '
-        Me.SplitContainer2.Panel2.Controls.Add(Me.dgvView)
-        Me.SplitContainer2.Size = New System.Drawing.Size(910, 268)
-        Me.SplitContainer2.SplitterDistance = 429
-        Me.SplitContainer2.TabIndex = 3
-        '
-        'dgvEdit
-        '
-        Me.dgvEdit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvEdit.Location = New System.Drawing.Point(0, 35)
-        Me.dgvEdit.MainView = Me.GridView2
-        Me.dgvEdit.Name = "dgvEdit"
-        Me.dgvEdit.Size = New System.Drawing.Size(429, 233)
-        Me.dgvEdit.TabIndex = 2
-        Me.dgvEdit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.dgvEdit
-        Me.GridView2.Name = "GridView2"
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TotalLbl, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(429, 35)
-        Me.TableLayoutPanel1.TabIndex = 1
-        '
-        'TotalLbl
-        '
-        Me.TotalLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TotalLbl.Location = New System.Drawing.Point(267, 0)
-        Me.TotalLbl.Name = "TotalLbl"
-        Me.TotalLbl.Size = New System.Drawing.Size(159, 35)
-        Me.TotalLbl.TabIndex = 2
-        Me.TotalLbl.Text = "Rp 0"
-        Me.TotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Location = New System.Drawing.Point(167, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 35)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Total :"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'dgvView
         '
         Me.dgvView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvView.Location = New System.Drawing.Point(0, 0)
+        Me.dgvView.Location = New System.Drawing.Point(0, 201)
         Me.dgvView.MainView = Me.GridView3
         Me.dgvView.Name = "dgvView"
-        Me.dgvView.Size = New System.Drawing.Size(477, 268)
-        Me.dgvView.TabIndex = 1
+        Me.dgvView.Size = New System.Drawing.Size(1244, 250)
+        Me.dgvView.TabIndex = 5
         Me.dgvView.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
         'GridView3
@@ -310,16 +228,16 @@ Partial Class FormRetur
         Me.GridView3.GridControl = Me.dgvView
         Me.GridView3.Name = "GridView3"
         '
-        'FormRetur
+        'FormStokOpname
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(910, 453)
-        Me.Controls.Add(Me.SplitContainer2)
+        Me.ClientSize = New System.Drawing.Size(1244, 451)
+        Me.Controls.Add(Me.dgvView)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Name = "FormRetur"
-        Me.Text = "Retur Pembelian"
+        Me.Name = "FormStokOpname"
+        Me.Text = "Stok Opname"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -328,16 +246,9 @@ Partial Class FormRetur
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.InputLayout.ResumeLayout(False)
-        CType(Me.txtNoRtr.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNoBrk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer2.Panel1.ResumeLayout(False)
-        Me.SplitContainer2.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer2.ResumeLayout(False)
-        CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -354,21 +265,15 @@ Partial Class FormRetur
     Friend WithEvents LaporanBtn As ToolStripButton
     Friend WithEvents PencarianBtn As ToolStripButton
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents SplitContainer2 As SplitContainer
     Private WithEvents InputLayout As TableLayoutPanel
     Private WithEvents Label3 As Label
     Private WithEvents label1 As Label
     Private WithEvents TanggalDTP As DateTimePicker
+    Private WithEvents Label2 As Label
+    Friend WithEvents txtNoBrk As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtCatatan As TextBox
     Friend WithEvents dgvHeader As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Private WithEvents TotalLbl As Label
-    Private WithEvents Label4 As Label
-    Friend WithEvents dgvEdit As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents dgvView As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
-    Private WithEvents Label2 As Label
-    Friend WithEvents txtNoRtr As DevExpress.XtraEditors.TextEdit
 End Class

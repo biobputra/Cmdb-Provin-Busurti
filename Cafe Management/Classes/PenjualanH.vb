@@ -22,6 +22,16 @@
         End Set
     End Property
 
+    Private xNoPenjualan As String
+    Public Property NoPenjualan() As String
+        Get
+            Return xNoPenjualan
+        End Get
+        Set(value As String)
+            xNoPenjualan = value
+        End Set
+    End Property
+
     Private xCatatan As String
     Public Property Catatan() As String
         Get
@@ -105,7 +115,7 @@
                         If Not IsDBNull(.Item("TanggalPenjualan")) Then MyPenjualanH.TanggalPenjualan = Convert.ToDateTime(.Item("TanggalPenjualan"))
                         If Not IsDBNull(.Item("Catatan")) Then MyPenjualanH.Catatan = .Item("Catatan").ToString
                         If Not IsDBNull(.Item("Status")) Then MyPenjualanH.Status = Convert.ToInt32(.Item("Status"))
-                        If Not IsDBNull(.Item("CreatdBy")) Then MyPenjualanH.CreatedBy = Convert.ToInt32(.Item("CreatdBy"))
+                        If Not IsDBNull(.Item("CreatedBy")) Then MyPenjualanH.CreatedBy = Convert.ToInt32(.Item("CreatedBy"))
                         If Not IsDBNull(.Item("CreatedDate")) Then MyPenjualanH.CreatedDate = Convert.ToDateTime(.Item("CreatedDate"))
                         If Not IsDBNull(.Item("ModifiedBy")) Then MyPenjualanH.ModifiedBy = Convert.ToInt32(.Item("ModifiedBy"))
                         If Not IsDBNull(.Item("ModifiedDate")) Then MyPenjualanH.ModifiedDate = Convert.ToDateTime(.Item("ModifiedDate"))

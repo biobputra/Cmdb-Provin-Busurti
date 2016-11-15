@@ -32,6 +32,16 @@
         End Set
     End Property
 
+    Private xNoPembelian As String
+    Public Property NoPembelian() As String
+        Get
+            Return xNoPembelian
+        End Get
+        Set(value As String)
+            xNoPembelian = value
+        End Set
+    End Property
+
     Private xStatus As Integer
     Public Property Status() As Integer
         Get

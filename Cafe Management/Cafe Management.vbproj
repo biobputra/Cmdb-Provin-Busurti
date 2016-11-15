@@ -46,6 +46,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.1" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Images.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
     <Reference Include="DevExpress.Utils.v16.1" />
     <Reference Include="DevExpress.XtraBars.v16.1" />
@@ -79,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\BarangKeluarD.vb" />
+    <Compile Include="Classes\BarangKeluarH.vb" />
     <Compile Include="Classes\ClassDelete.vb" />
     <Compile Include="Classes\JurnalD.vb" />
     <Compile Include="Classes\JurnalH.vb" />
@@ -90,7 +93,10 @@
     <Compile Include="Classes\PenerimaanH.vb" />
     <Compile Include="Classes\PenjualanD.vb" />
     <Compile Include="Classes\PenjualanH.vb" />
+    <Compile Include="Classes\ReturD.vb" />
     <Compile Include="Classes\ReturH.vb" />
+    <Compile Include="Classes\TerimaTagihanD.vb" />
+    <Compile Include="Classes\TerimaTagihanH.vb" />
     <Compile Include="Dataset\DataSetBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,6 +136,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTitle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.Designer.vb">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\StokOpname\FormStokOpname.Designer.vb">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StokOpname\FormStokOpname.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
@@ -197,6 +215,12 @@
     <Compile Include="Pembelian\FormPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Penerimaan\FormPenerimaan.Designer.vb">
+      <DependentUpon>FormPenerimaan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penerimaan\FormPenerimaan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Penjualan\FormPOS.Designer.vb">
       <DependentUpon>FormPOS.vb</DependentUpon>
     </Compile>
@@ -217,6 +241,12 @@
     </Compile>
     <Compile Include="SupportObject\DataAccess.vb" />
     <Compile Include="SupportObject\GlobalModule.vb" />
+    <EmbeddedResource Include="Inventory\Barang Keluar\FormBarangKeluar.resx">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\StokOpname\FormStokOpname.resx">
+      <DependentUpon>FormStokOpname.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +288,9 @@
     </Compile>
     <EmbeddedResource Include="Pembelian\FormPembelian.resx">
       <DependentUpon>FormPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penerimaan\FormPenerimaan.resx">
+      <DependentUpon>FormPenerimaan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Penjualan\FormPOS.resx">
       <DependentUpon>FormPOS.vb</DependentUpon>
@@ -373,7 +406,9 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\BOSale_32x32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Simpan.jpg" />
   </ItemGroup>
