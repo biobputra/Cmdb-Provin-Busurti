@@ -26,96 +26,97 @@
     Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container()
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-    Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-    Me.PosMenuJenisMeja = New DevExpress.XtraBars.BarButtonItem()
-    Me.PosMenuDaftarMeja = New DevExpress.XtraBars.BarButtonItem()
-    Me.InventoryMenuSatuan = New DevExpress.XtraBars.BarButtonItem()
-    Me.InventoryMenuJenisBarang = New DevExpress.XtraBars.BarButtonItem()
-    Me.InventoryMenuBarang = New DevExpress.XtraBars.BarButtonItem()
+    Me.MainRibbon = New DevExpress.XtraBars.Ribbon.RibbonControl()
+    Me.TransaksiJenisMejaBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiDaftarMejaBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventorySatuanBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryJenisBarangBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryDaftarBarangBtn = New DevExpress.XtraBars.BarButtonItem()
     Me.PurchasingMenuPurchasing = New DevExpress.XtraBars.BarButtonItem()
-    Me.PosMenuPenjualan = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem12 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem14 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem17 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem18 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem19 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem21 = New DevExpress.XtraBars.BarButtonItem()
-    Me.BarButtonItem22 = New DevExpress.XtraBars.BarButtonItem()
-    Me.PosMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
-    Me.ribbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-    Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.TransaksiPOSBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiDaftarProdukBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiBukaTututpKasirBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiLaporanPenjualanBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryStatusStokBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryStokOpnameBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryBarangkeluarBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.PembelianPembelianBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.PembelianSupplierBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.PembelianTerimaBarangBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiDataMemberBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiDepositMemberBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.PembelianBarangSupplierBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.PembeliannReturBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.AccountingTerimaTagihanBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganTransaksiKasBankBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganGroupAkunBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganCOABtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganJurnalBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganBukaTutupPeriode = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganLaporanNeracaBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganLaporanRugiLabaBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.KeuanganLaporanLedgerBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.TransaksiMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
+    Me.TransaksiPenjualanGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.TransaksiMemberGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
     Me.InventoryMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
-    Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-    Me.PurchasingMenu = New DevExpress.XtraBars.Ribbon.RibbonPage()
-    Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-    Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-    Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-    Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.InventoryInventoryGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.PembelianMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
+    Me.PembelianPembelianGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.AccountingMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
+    Me.KeuanganFinanceGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+    Me.KeuanganAccountingGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
     Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
-    CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+    Me.InventoryDaftarStorageBtn = New DevExpress.XtraBars.BarButtonItem()
+    CType(Me.MainRibbon, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
     '
-    'ribbonControl1
+    'MainRibbon
     '
-    Me.ribbonControl1.ExpandCollapseItem.Id = 0
-    Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.PosMenuJenisMeja, Me.PosMenuDaftarMeja, Me.InventoryMenuSatuan, Me.InventoryMenuJenisBarang, Me.InventoryMenuBarang, Me.PurchasingMenuPurchasing, Me.PosMenuPenjualan, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22})
-    Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-    Me.ribbonControl1.MaxItemId = 25
-    Me.ribbonControl1.Name = "ribbonControl1"
-    Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.PosMenuHeader, Me.InventoryMenuHeader, Me.PurchasingMenu, Me.RibbonPage1})
-    Me.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
-    Me.ribbonControl1.Size = New System.Drawing.Size(1038, 162)
+    Me.MainRibbon.ExpandCollapseItem.Id = 0
+    Me.MainRibbon.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.MainRibbon.ExpandCollapseItem, Me.TransaksiJenisMejaBtn, Me.TransaksiDaftarMejaBtn, Me.InventorySatuanBtn, Me.InventoryJenisBarangBtn, Me.InventoryDaftarBarangBtn, Me.PurchasingMenuPurchasing, Me.TransaksiPOSBtn, Me.TransaksiDaftarProdukBtn, Me.TransaksiBukaTututpKasirBtn, Me.TransaksiLaporanPenjualanBtn, Me.InventoryStatusStokBtn, Me.InventoryStokOpnameBtn, Me.InventoryBarangkeluarBtn, Me.PembelianPembelianBtn, Me.PembelianSupplierBtn, Me.PembelianTerimaBarangBtn, Me.TransaksiDataMemberBtn, Me.TransaksiDepositMemberBtn, Me.PembelianBarangSupplierBtn, Me.PembeliannReturBtn, Me.AccountingTerimaTagihanBtn, Me.KeuanganTransaksiKasBankBtn, Me.KeuanganGroupAkunBtn, Me.KeuanganCOABtn, Me.KeuanganJurnalBtn, Me.KeuanganBukaTutupPeriode, Me.KeuanganLaporanNeracaBtn, Me.KeuanganLaporanRugiLabaBtn, Me.KeuanganLaporanLedgerBtn, Me.InventoryDaftarStorageBtn})
+    Me.MainRibbon.Location = New System.Drawing.Point(0, 0)
+    Me.MainRibbon.MaxItemId = 26
+    Me.MainRibbon.Name = "MainRibbon"
+    Me.MainRibbon.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.TransaksiMenuHeader, Me.InventoryMenuHeader, Me.PembelianMenuHeader, Me.AccountingMenuHeader})
+    Me.MainRibbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
+    Me.MainRibbon.Size = New System.Drawing.Size(1038, 162)
     '
-    'PosMenuJenisMeja
+    'TransaksiJenisMejaBtn
     '
-    Me.PosMenuJenisMeja.Caption = "Jenis Meja"
-    Me.PosMenuJenisMeja.Glyph = CType(resources.GetObject("PosMenuJenisMeja.Glyph"), System.Drawing.Image)
-    Me.PosMenuJenisMeja.Id = 1
-    Me.PosMenuJenisMeja.Name = "PosMenuJenisMeja"
+    Me.TransaksiJenisMejaBtn.Caption = "Jenis Meja"
+    Me.TransaksiJenisMejaBtn.Glyph = CType(resources.GetObject("TransaksiJenisMejaBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiJenisMejaBtn.Id = 1
+    Me.TransaksiJenisMejaBtn.Name = "TransaksiJenisMejaBtn"
     '
-    'PosMenuDaftarMeja
+    'TransaksiDaftarMejaBtn
     '
-    Me.PosMenuDaftarMeja.Caption = "Daftar Meja"
-    Me.PosMenuDaftarMeja.Glyph = CType(resources.GetObject("PosMenuDaftarMeja.Glyph"), System.Drawing.Image)
-    Me.PosMenuDaftarMeja.Id = 2
-    Me.PosMenuDaftarMeja.Name = "PosMenuDaftarMeja"
+    Me.TransaksiDaftarMejaBtn.Caption = "Daftar Meja"
+    Me.TransaksiDaftarMejaBtn.Glyph = CType(resources.GetObject("TransaksiDaftarMejaBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiDaftarMejaBtn.Id = 2
+    Me.TransaksiDaftarMejaBtn.Name = "TransaksiDaftarMejaBtn"
     '
-    'InventoryMenuSatuan
+    'InventorySatuanBtn
     '
-    Me.InventoryMenuSatuan.Caption = "Satuan"
-    Me.InventoryMenuSatuan.Glyph = CType(resources.GetObject("InventoryMenuSatuan.Glyph"), System.Drawing.Image)
-    Me.InventoryMenuSatuan.Id = 3
-    Me.InventoryMenuSatuan.Name = "InventoryMenuSatuan"
+    Me.InventorySatuanBtn.Caption = "Satuan"
+    Me.InventorySatuanBtn.Glyph = CType(resources.GetObject("InventorySatuanBtn.Glyph"), System.Drawing.Image)
+    Me.InventorySatuanBtn.Id = 3
+    Me.InventorySatuanBtn.Name = "InventorySatuanBtn"
     '
-    'InventoryMenuJenisBarang
+    'InventoryJenisBarangBtn
     '
-    Me.InventoryMenuJenisBarang.Caption = "Jenis Barang"
-    Me.InventoryMenuJenisBarang.Glyph = CType(resources.GetObject("InventoryMenuJenisBarang.Glyph"), System.Drawing.Image)
-    Me.InventoryMenuJenisBarang.Id = 4
-    Me.InventoryMenuJenisBarang.Name = "InventoryMenuJenisBarang"
+    Me.InventoryJenisBarangBtn.Caption = "Jenis Barang"
+    Me.InventoryJenisBarangBtn.Glyph = CType(resources.GetObject("InventoryJenisBarangBtn.Glyph"), System.Drawing.Image)
+    Me.InventoryJenisBarangBtn.Id = 4
+    Me.InventoryJenisBarangBtn.Name = "InventoryJenisBarangBtn"
     '
-    'InventoryMenuBarang
+    'InventoryDaftarBarangBtn
     '
-    Me.InventoryMenuBarang.Caption = "Daftar Barang"
-    Me.InventoryMenuBarang.Glyph = CType(resources.GetObject("InventoryMenuBarang.Glyph"), System.Drawing.Image)
-    Me.InventoryMenuBarang.Id = 5
-    Me.InventoryMenuBarang.Name = "InventoryMenuBarang"
+    Me.InventoryDaftarBarangBtn.Caption = "Daftar Barang"
+    Me.InventoryDaftarBarangBtn.Glyph = CType(resources.GetObject("InventoryDaftarBarangBtn.Glyph"), System.Drawing.Image)
+    Me.InventoryDaftarBarangBtn.Id = 5
+    Me.InventoryDaftarBarangBtn.Name = "InventoryDaftarBarangBtn"
     '
     'PurchasingMenuPurchasing
     '
@@ -123,274 +124,281 @@
     Me.PurchasingMenuPurchasing.Id = 6
     Me.PurchasingMenuPurchasing.Name = "PurchasingMenuPurchasing"
     '
-    'PosMenuPenjualan
+    'TransaksiPOSBtn
     '
-    Me.PosMenuPenjualan.Caption = "Penjualan"
-    Me.PosMenuPenjualan.Glyph = CType(resources.GetObject("PosMenuPenjualan.Glyph"), System.Drawing.Image)
-    Me.PosMenuPenjualan.Id = 7
-    Me.PosMenuPenjualan.Name = "PosMenuPenjualan"
-    Me.PosMenuPenjualan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.TransaksiPOSBtn.Caption = "Point Of Sales"
+    Me.TransaksiPOSBtn.Glyph = CType(resources.GetObject("TransaksiPOSBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiPOSBtn.Id = 7
+    Me.TransaksiPOSBtn.Name = "TransaksiPOSBtn"
+    Me.TransaksiPOSBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem1
+    'TransaksiDaftarProdukBtn
     '
-    Me.BarButtonItem1.Caption = "Daftar Produk"
-    Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem1.Id = 8
-    Me.BarButtonItem1.Name = "BarButtonItem1"
+    Me.TransaksiDaftarProdukBtn.Caption = "Daftar Produk && Layanan"
+    Me.TransaksiDaftarProdukBtn.Glyph = CType(resources.GetObject("TransaksiDaftarProdukBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiDaftarProdukBtn.Id = 8
+    Me.TransaksiDaftarProdukBtn.Name = "TransaksiDaftarProdukBtn"
     '
-    'BarButtonItem2
+    'TransaksiBukaTututpKasirBtn
     '
-    Me.BarButtonItem2.Caption = "Buka Tututp Kasir"
-    Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem2.Id = 9
-    Me.BarButtonItem2.Name = "BarButtonItem2"
-    Me.BarButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.TransaksiBukaTututpKasirBtn.Caption = "Buka Tututp Kasir"
+    Me.TransaksiBukaTututpKasirBtn.Glyph = CType(resources.GetObject("TransaksiBukaTututpKasirBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiBukaTututpKasirBtn.Id = 9
+    Me.TransaksiBukaTututpKasirBtn.Name = "TransaksiBukaTututpKasirBtn"
+    Me.TransaksiBukaTututpKasirBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem3
+    'TransaksiLaporanPenjualanBtn
     '
-    Me.BarButtonItem3.Caption = "Laporan Penjualan"
-    Me.BarButtonItem3.Glyph = CType(resources.GetObject("BarButtonItem3.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem3.Id = 11
-    Me.BarButtonItem3.Name = "BarButtonItem3"
-    Me.BarButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.TransaksiLaporanPenjualanBtn.Caption = "Laporan Penjualan"
+    Me.TransaksiLaporanPenjualanBtn.Glyph = CType(resources.GetObject("TransaksiLaporanPenjualanBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiLaporanPenjualanBtn.Id = 11
+    Me.TransaksiLaporanPenjualanBtn.Name = "TransaksiLaporanPenjualanBtn"
+    Me.TransaksiLaporanPenjualanBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem4
+    'InventoryStatusStokBtn
     '
-    Me.BarButtonItem4.Caption = "Status Stok"
-    Me.BarButtonItem4.Glyph = CType(resources.GetObject("BarButtonItem4.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem4.Id = 2
-    Me.BarButtonItem4.Name = "BarButtonItem4"
-    Me.BarButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.InventoryStatusStokBtn.Caption = "Status Stok"
+    Me.InventoryStatusStokBtn.Glyph = CType(resources.GetObject("InventoryStatusStokBtn.Glyph"), System.Drawing.Image)
+    Me.InventoryStatusStokBtn.Id = 2
+    Me.InventoryStatusStokBtn.Name = "InventoryStatusStokBtn"
+    Me.InventoryStatusStokBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem5
+    'InventoryStokOpnameBtn
     '
-    Me.BarButtonItem5.Caption = "Stok Opname"
-    Me.BarButtonItem5.Glyph = CType(resources.GetObject("BarButtonItem5.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem5.Id = 3
-    Me.BarButtonItem5.Name = "BarButtonItem5"
-    Me.BarButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.InventoryStokOpnameBtn.Caption = "Stok Opname"
+    Me.InventoryStokOpnameBtn.Glyph = CType(resources.GetObject("InventoryStokOpnameBtn.Glyph"), System.Drawing.Image)
+    Me.InventoryStokOpnameBtn.Id = 3
+    Me.InventoryStokOpnameBtn.Name = "InventoryStokOpnameBtn"
+    Me.InventoryStokOpnameBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem6
+    'InventoryBarangkeluarBtn
     '
-    Me.BarButtonItem6.Caption = "Barang Keluar"
-    Me.BarButtonItem6.Glyph = CType(resources.GetObject("BarButtonItem6.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem6.Id = 4
-    Me.BarButtonItem6.Name = "BarButtonItem6"
-    Me.BarButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.InventoryBarangkeluarBtn.Caption = "Barang Keluar"
+    Me.InventoryBarangkeluarBtn.Glyph = CType(resources.GetObject("InventoryBarangkeluarBtn.Glyph"), System.Drawing.Image)
+    Me.InventoryBarangkeluarBtn.Id = 4
+    Me.InventoryBarangkeluarBtn.Name = "InventoryBarangkeluarBtn"
+    Me.InventoryBarangkeluarBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem7
+    'PembelianPembelianBtn
     '
-    Me.BarButtonItem7.Caption = "Pembelian"
-    Me.BarButtonItem7.Glyph = CType(resources.GetObject("BarButtonItem7.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem7.Id = 5
-    Me.BarButtonItem7.Name = "BarButtonItem7"
-    Me.BarButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.PembelianPembelianBtn.Caption = "Pembelian"
+    Me.PembelianPembelianBtn.Glyph = CType(resources.GetObject("PembelianPembelianBtn.Glyph"), System.Drawing.Image)
+    Me.PembelianPembelianBtn.Id = 5
+    Me.PembelianPembelianBtn.Name = "PembelianPembelianBtn"
+    Me.PembelianPembelianBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem8
+    'PembelianSupplierBtn
     '
-    Me.BarButtonItem8.Caption = "Supplier"
-    Me.BarButtonItem8.Glyph = CType(resources.GetObject("BarButtonItem8.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem8.Id = 6
-    Me.BarButtonItem8.Name = "BarButtonItem8"
+    Me.PembelianSupplierBtn.Caption = "Supplier"
+    Me.PembelianSupplierBtn.Glyph = CType(resources.GetObject("PembelianSupplierBtn.Glyph"), System.Drawing.Image)
+    Me.PembelianSupplierBtn.Id = 6
+    Me.PembelianSupplierBtn.Name = "PembelianSupplierBtn"
     '
-    'BarButtonItem9
+    'PembelianTerimaBarangBtn
     '
-    Me.BarButtonItem9.Caption = "Terima Barang"
-    Me.BarButtonItem9.Glyph = CType(resources.GetObject("BarButtonItem9.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem9.Id = 7
-    Me.BarButtonItem9.Name = "BarButtonItem9"
-    Me.BarButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.PembelianTerimaBarangBtn.Caption = "Terima Barang"
+    Me.PembelianTerimaBarangBtn.Glyph = CType(resources.GetObject("PembelianTerimaBarangBtn.Glyph"), System.Drawing.Image)
+    Me.PembelianTerimaBarangBtn.Id = 7
+    Me.PembelianTerimaBarangBtn.Name = "PembelianTerimaBarangBtn"
+    Me.PembelianTerimaBarangBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem10
+    'TransaksiDataMemberBtn
     '
-    Me.BarButtonItem10.Caption = "Data Member"
-    Me.BarButtonItem10.Glyph = CType(resources.GetObject("BarButtonItem10.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem10.Id = 9
-    Me.BarButtonItem10.Name = "BarButtonItem10"
-    Me.BarButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.TransaksiDataMemberBtn.Caption = "Data Member"
+    Me.TransaksiDataMemberBtn.Glyph = CType(resources.GetObject("TransaksiDataMemberBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiDataMemberBtn.Id = 9
+    Me.TransaksiDataMemberBtn.Name = "TransaksiDataMemberBtn"
+    Me.TransaksiDataMemberBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem11
+    'TransaksiDepositMemberBtn
     '
-    Me.BarButtonItem11.Caption = "Deposit Member"
-    Me.BarButtonItem11.Glyph = CType(resources.GetObject("BarButtonItem11.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem11.Id = 10
-    Me.BarButtonItem11.Name = "BarButtonItem11"
-    Me.BarButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.TransaksiDepositMemberBtn.Caption = "Deposit Member"
+    Me.TransaksiDepositMemberBtn.Glyph = CType(resources.GetObject("TransaksiDepositMemberBtn.Glyph"), System.Drawing.Image)
+    Me.TransaksiDepositMemberBtn.Id = 10
+    Me.TransaksiDepositMemberBtn.Name = "TransaksiDepositMemberBtn"
+    Me.TransaksiDepositMemberBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem12
+    'PembelianBarangSupplierBtn
     '
-    Me.BarButtonItem12.Caption = "Barang Supplier"
-    Me.BarButtonItem12.Glyph = CType(resources.GetObject("BarButtonItem12.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem12.Id = 11
-    Me.BarButtonItem12.Name = "BarButtonItem12"
+    Me.PembelianBarangSupplierBtn.Caption = "Barang Supplier"
+    Me.PembelianBarangSupplierBtn.Glyph = CType(resources.GetObject("PembelianBarangSupplierBtn.Glyph"), System.Drawing.Image)
+    Me.PembelianBarangSupplierBtn.Id = 11
+    Me.PembelianBarangSupplierBtn.Name = "PembelianBarangSupplierBtn"
     '
-    'BarButtonItem13
+    'PembeliannReturBtn
     '
-    Me.BarButtonItem13.Caption = "Retur"
-    Me.BarButtonItem13.Glyph = CType(resources.GetObject("BarButtonItem13.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem13.Id = 14
-    Me.BarButtonItem13.Name = "BarButtonItem13"
-    Me.BarButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.PembeliannReturBtn.Caption = "Retur"
+    Me.PembeliannReturBtn.Glyph = CType(resources.GetObject("PembeliannReturBtn.Glyph"), System.Drawing.Image)
+    Me.PembeliannReturBtn.Id = 14
+    Me.PembeliannReturBtn.Name = "PembeliannReturBtn"
+    Me.PembeliannReturBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem14
+    'AccountingTerimaTagihanBtn
     '
-    Me.BarButtonItem14.Caption = "Terima Tagihan"
-    Me.BarButtonItem14.Glyph = CType(resources.GetObject("BarButtonItem14.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem14.Id = 15
-    Me.BarButtonItem14.Name = "BarButtonItem14"
-    Me.BarButtonItem14.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.AccountingTerimaTagihanBtn.Caption = "Terima Tagihan"
+    Me.AccountingTerimaTagihanBtn.Glyph = CType(resources.GetObject("AccountingTerimaTagihanBtn.Glyph"), System.Drawing.Image)
+    Me.AccountingTerimaTagihanBtn.Id = 15
+    Me.AccountingTerimaTagihanBtn.Name = "AccountingTerimaTagihanBtn"
+    Me.AccountingTerimaTagihanBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem15
+    'KeuanganTransaksiKasBankBtn
     '
-    Me.BarButtonItem15.Caption = "Transaksi Kas / Bank"
-    Me.BarButtonItem15.Glyph = CType(resources.GetObject("BarButtonItem15.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem15.Id = 16
-    Me.BarButtonItem15.Name = "BarButtonItem15"
-    Me.BarButtonItem15.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganTransaksiKasBankBtn.Caption = "Transaksi Kas / Bank"
+    Me.KeuanganTransaksiKasBankBtn.Glyph = CType(resources.GetObject("KeuanganTransaksiKasBankBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganTransaksiKasBankBtn.Id = 16
+    Me.KeuanganTransaksiKasBankBtn.Name = "KeuanganTransaksiKasBankBtn"
+    Me.KeuanganTransaksiKasBankBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem16
+    'KeuanganGroupAkunBtn
     '
-    Me.BarButtonItem16.Caption = "Group Akun"
-    Me.BarButtonItem16.Glyph = CType(resources.GetObject("BarButtonItem16.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem16.Id = 18
-    Me.BarButtonItem16.Name = "BarButtonItem16"
+    Me.KeuanganGroupAkunBtn.Caption = "Group Akun"
+    Me.KeuanganGroupAkunBtn.Glyph = CType(resources.GetObject("KeuanganGroupAkunBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganGroupAkunBtn.Id = 18
+    Me.KeuanganGroupAkunBtn.Name = "KeuanganGroupAkunBtn"
     '
-    'BarButtonItem17
+    'KeuanganCOABtn
     '
-    Me.BarButtonItem17.Caption = "COA"
-    Me.BarButtonItem17.Glyph = CType(resources.GetObject("BarButtonItem17.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem17.Id = 19
-    Me.BarButtonItem17.Name = "BarButtonItem17"
+    Me.KeuanganCOABtn.Caption = "COA"
+    Me.KeuanganCOABtn.Glyph = CType(resources.GetObject("KeuanganCOABtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganCOABtn.Id = 19
+    Me.KeuanganCOABtn.Name = "KeuanganCOABtn"
     '
-    'BarButtonItem18
+    'KeuanganJurnalBtn
     '
-    Me.BarButtonItem18.Caption = "Jurnal"
-    Me.BarButtonItem18.Glyph = CType(resources.GetObject("BarButtonItem18.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem18.Id = 20
-    Me.BarButtonItem18.Name = "BarButtonItem18"
-    Me.BarButtonItem18.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganJurnalBtn.Caption = "Jurnal"
+    Me.KeuanganJurnalBtn.Glyph = CType(resources.GetObject("KeuanganJurnalBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganJurnalBtn.Id = 20
+    Me.KeuanganJurnalBtn.Name = "KeuanganJurnalBtn"
+    Me.KeuanganJurnalBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem19
+    'KeuanganBukaTutupPeriode
     '
-    Me.BarButtonItem19.Caption = "Buka / Tutup Periode"
-    Me.BarButtonItem19.Glyph = CType(resources.GetObject("BarButtonItem19.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem19.Id = 21
-    Me.BarButtonItem19.Name = "BarButtonItem19"
-    Me.BarButtonItem19.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganBukaTutupPeriode.Caption = "Buka / Tutup Periode"
+    Me.KeuanganBukaTutupPeriode.Glyph = CType(resources.GetObject("KeuanganBukaTutupPeriode.Glyph"), System.Drawing.Image)
+    Me.KeuanganBukaTutupPeriode.Id = 21
+    Me.KeuanganBukaTutupPeriode.Name = "KeuanganBukaTutupPeriode"
+    Me.KeuanganBukaTutupPeriode.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem20
+    'KeuanganLaporanNeracaBtn
     '
-    Me.BarButtonItem20.Caption = "Neraca"
-    Me.BarButtonItem20.Glyph = CType(resources.GetObject("BarButtonItem20.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem20.Id = 22
-    Me.BarButtonItem20.Name = "BarButtonItem20"
-    Me.BarButtonItem20.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganLaporanNeracaBtn.Caption = "Neraca"
+    Me.KeuanganLaporanNeracaBtn.Glyph = CType(resources.GetObject("KeuanganLaporanNeracaBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganLaporanNeracaBtn.Id = 22
+    Me.KeuanganLaporanNeracaBtn.Name = "KeuanganLaporanNeracaBtn"
+    Me.KeuanganLaporanNeracaBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem21
+    'KeuanganLaporanRugiLabaBtn
     '
-    Me.BarButtonItem21.Caption = "Rugi Laba"
-    Me.BarButtonItem21.Glyph = CType(resources.GetObject("BarButtonItem21.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem21.Id = 23
-    Me.BarButtonItem21.Name = "BarButtonItem21"
-    Me.BarButtonItem21.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganLaporanRugiLabaBtn.Caption = "Rugi Laba"
+    Me.KeuanganLaporanRugiLabaBtn.Glyph = CType(resources.GetObject("KeuanganLaporanRugiLabaBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganLaporanRugiLabaBtn.Id = 23
+    Me.KeuanganLaporanRugiLabaBtn.Name = "KeuanganLaporanRugiLabaBtn"
+    Me.KeuanganLaporanRugiLabaBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'BarButtonItem22
+    'KeuanganLaporanLedgerBtn
     '
-    Me.BarButtonItem22.Caption = "General Ledger"
-    Me.BarButtonItem22.Glyph = CType(resources.GetObject("BarButtonItem22.Glyph"), System.Drawing.Image)
-    Me.BarButtonItem22.Id = 24
-    Me.BarButtonItem22.Name = "BarButtonItem22"
-    Me.BarButtonItem22.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
+    Me.KeuanganLaporanLedgerBtn.Caption = "General Ledger"
+    Me.KeuanganLaporanLedgerBtn.Glyph = CType(resources.GetObject("KeuanganLaporanLedgerBtn.Glyph"), System.Drawing.Image)
+    Me.KeuanganLaporanLedgerBtn.Id = 24
+    Me.KeuanganLaporanLedgerBtn.Name = "KeuanganLaporanLedgerBtn"
+    Me.KeuanganLaporanLedgerBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
-    'PosMenuHeader
+    'TransaksiMenuHeader
     '
-    Me.PosMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.ribbonPageGroup1, Me.RibbonPageGroup3})
-    Me.PosMenuHeader.Image = CType(resources.GetObject("PosMenuHeader.Image"), System.Drawing.Image)
-    Me.PosMenuHeader.Name = "PosMenuHeader"
-    Me.PosMenuHeader.Text = "Transaksi"
+    Me.TransaksiMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.TransaksiPenjualanGroup, Me.TransaksiMemberGroup})
+    Me.TransaksiMenuHeader.Image = CType(resources.GetObject("TransaksiMenuHeader.Image"), System.Drawing.Image)
+    Me.TransaksiMenuHeader.Name = "TransaksiMenuHeader"
+    Me.TransaksiMenuHeader.Text = "Transaksi"
     '
-    'ribbonPageGroup1
+    'TransaksiPenjualanGroup
     '
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.PosMenuPenjualan)
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem2)
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.PosMenuJenisMeja)
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.PosMenuDaftarMeja)
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-    Me.ribbonPageGroup1.ItemLinks.Add(Me.BarButtonItem3)
-    Me.ribbonPageGroup1.Name = "ribbonPageGroup1"
-    Me.ribbonPageGroup1.Text = "Penjualan"
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiPOSBtn)
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiBukaTututpKasirBtn)
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiJenisMejaBtn)
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiDaftarMejaBtn)
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiDaftarProdukBtn)
+    Me.TransaksiPenjualanGroup.ItemLinks.Add(Me.TransaksiLaporanPenjualanBtn)
+    Me.TransaksiPenjualanGroup.Name = "TransaksiPenjualanGroup"
+    Me.TransaksiPenjualanGroup.Text = "Penjualan"
     '
-    'RibbonPageGroup3
+    'TransaksiMemberGroup
     '
-    Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem10)
-    Me.RibbonPageGroup3.ItemLinks.Add(Me.BarButtonItem11)
-    Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-    Me.RibbonPageGroup3.Text = "Member"
+    Me.TransaksiMemberGroup.ItemLinks.Add(Me.TransaksiDataMemberBtn)
+    Me.TransaksiMemberGroup.ItemLinks.Add(Me.TransaksiDepositMemberBtn)
+    Me.TransaksiMemberGroup.Name = "TransaksiMemberGroup"
+    Me.TransaksiMemberGroup.Text = "Member"
     '
     'InventoryMenuHeader
     '
-    Me.InventoryMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4})
+    Me.InventoryMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.InventoryInventoryGroup})
     Me.InventoryMenuHeader.Image = CType(resources.GetObject("InventoryMenuHeader.Image"), System.Drawing.Image)
     Me.InventoryMenuHeader.Name = "InventoryMenuHeader"
     Me.InventoryMenuHeader.Text = "Inventory"
     '
-    'RibbonPageGroup4
+    'InventoryInventoryGroup
     '
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem4)
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.InventoryMenuBarang)
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.InventoryMenuSatuan)
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.InventoryMenuJenisBarang)
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem5)
-    Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem6)
-    Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-    Me.RibbonPageGroup4.Text = "Inventory"
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryStatusStokBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryDaftarBarangBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventorySatuanBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryJenisBarangBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryStokOpnameBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryBarangkeluarBtn)
+    Me.InventoryInventoryGroup.ItemLinks.Add(Me.InventoryDaftarStorageBtn)
+    Me.InventoryInventoryGroup.Name = "InventoryInventoryGroup"
+    Me.InventoryInventoryGroup.Text = "Inventory"
     '
-    'PurchasingMenu
+    'PembelianMenuHeader
     '
-    Me.PurchasingMenu.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2})
-    Me.PurchasingMenu.Image = CType(resources.GetObject("PurchasingMenu.Image"), System.Drawing.Image)
-    Me.PurchasingMenu.Name = "PurchasingMenu"
-    Me.PurchasingMenu.Text = "Pembelian"
+    Me.PembelianMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.PembelianPembelianGroup})
+    Me.PembelianMenuHeader.Image = CType(resources.GetObject("PembelianMenuHeader.Image"), System.Drawing.Image)
+    Me.PembelianMenuHeader.Name = "PembelianMenuHeader"
+    Me.PembelianMenuHeader.Text = "Pembelian"
     '
-    'RibbonPageGroup2
+    'PembelianPembelianGroup
     '
-    Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem7)
-    Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem9)
-    Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem8)
-    Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem12)
-    Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem13)
-    Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-    Me.RibbonPageGroup2.Text = "Pembelian"
+    Me.PembelianPembelianGroup.ItemLinks.Add(Me.PembelianPembelianBtn)
+    Me.PembelianPembelianGroup.ItemLinks.Add(Me.PembelianTerimaBarangBtn)
+    Me.PembelianPembelianGroup.ItemLinks.Add(Me.PembelianSupplierBtn)
+    Me.PembelianPembelianGroup.ItemLinks.Add(Me.PembelianBarangSupplierBtn)
+    Me.PembelianPembelianGroup.ItemLinks.Add(Me.PembeliannReturBtn)
+    Me.PembelianPembelianGroup.Name = "PembelianPembelianGroup"
+    Me.PembelianPembelianGroup.Text = "Pembelian"
     '
-    'RibbonPage1
+    'AccountingMenuHeader
     '
-    Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup5, Me.RibbonPageGroup6})
-    Me.RibbonPage1.Image = CType(resources.GetObject("RibbonPage1.Image"), System.Drawing.Image)
-    Me.RibbonPage1.Name = "RibbonPage1"
-    Me.RibbonPage1.Text = "Keuangan & Akunting"
+    Me.AccountingMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.KeuanganFinanceGroup, Me.KeuanganAccountingGroup})
+    Me.AccountingMenuHeader.Image = CType(resources.GetObject("AccountingMenuHeader.Image"), System.Drawing.Image)
+    Me.AccountingMenuHeader.Name = "AccountingMenuHeader"
+    Me.AccountingMenuHeader.Text = "Keuangan & Akunting"
     '
-    'RibbonPageGroup5
+    'KeuanganFinanceGroup
     '
-    Me.RibbonPageGroup5.ItemLinks.Add(Me.BarButtonItem14)
-    Me.RibbonPageGroup5.ItemLinks.Add(Me.BarButtonItem15)
-    Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
-    Me.RibbonPageGroup5.Text = "Finance"
+    Me.KeuanganFinanceGroup.ItemLinks.Add(Me.AccountingTerimaTagihanBtn)
+    Me.KeuanganFinanceGroup.ItemLinks.Add(Me.KeuanganTransaksiKasBankBtn)
+    Me.KeuanganFinanceGroup.Name = "KeuanganFinanceGroup"
+    Me.KeuanganFinanceGroup.Text = "Finance"
     '
-    'RibbonPageGroup6
+    'KeuanganAccountingGroup
     '
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem16)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem17)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem19)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem18)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem20)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem21)
-    Me.RibbonPageGroup6.ItemLinks.Add(Me.BarButtonItem22)
-    Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
-    Me.RibbonPageGroup6.Text = "Akunting"
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganGroupAkunBtn)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganCOABtn)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganBukaTutupPeriode)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganJurnalBtn)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganLaporanNeracaBtn)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganLaporanRugiLabaBtn)
+    Me.KeuanganAccountingGroup.ItemLinks.Add(Me.KeuanganLaporanLedgerBtn)
+    Me.KeuanganAccountingGroup.Name = "KeuanganAccountingGroup"
+    Me.KeuanganAccountingGroup.Text = "Akunting"
     '
     'XtraTabbedMdiManager1
     '
     Me.XtraTabbedMdiManager1.MdiParent = Me
+    '
+    'InventoryDaftarStorageBtn
+    '
+    Me.InventoryDaftarStorageBtn.Caption = "Daftar Storage"
+    Me.InventoryDaftarStorageBtn.Id = 25
+    Me.InventoryDaftarStorageBtn.Name = "InventoryDaftarStorageBtn"
     '
     'MainForm
     '
@@ -398,13 +406,13 @@
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(1038, 360)
-    Me.Controls.Add(Me.ribbonControl1)
+    Me.Controls.Add(Me.MainRibbon)
     Me.IsMdiContainer = True
     Me.Name = "MainForm"
-    Me.Ribbon = Me.ribbonControl1
+    Me.Ribbon = Me.MainRibbon
     Me.Text = "Cafe Management"
     Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-    CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+    CType(Me.MainRibbon, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
     Me.ResumeLayout(False)
     Me.PerformLayout()
@@ -413,45 +421,46 @@
 
 #End Region
 
-    Private WithEvents ribbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
-    Private PosMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
-    Private ribbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents PosMenuJenisMeja As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
-    Friend WithEvents PosMenuDaftarMeja As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents InventoryMenuSatuan As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents InventoryMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
-  Friend WithEvents InventoryMenuJenisBarang As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents InventoryMenuBarang As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents PurchasingMenuPurchasing As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents PurchasingMenu As DevExpress.XtraBars.Ribbon.RibbonPage
-  Friend WithEvents PosMenuPenjualan As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem5 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem10 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem11 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-  Friend WithEvents BarButtonItem12 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem13 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem14 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem15 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-  Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-  Friend WithEvents BarButtonItem16 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem17 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem18 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents RibbonPageGroup6 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-  Friend WithEvents BarButtonItem19 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem21 As DevExpress.XtraBars.BarButtonItem
-  Friend WithEvents BarButtonItem22 As DevExpress.XtraBars.BarButtonItem
+  Private WithEvents MainRibbon As DevExpress.XtraBars.Ribbon.RibbonControl
+  Private TransaksiMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
+  Private TransaksiPenjualanGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents PembelianPembelianGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents TransaksiJenisMejaBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
+  Friend WithEvents TransaksiDaftarMejaBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventorySatuanBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
+  Friend WithEvents InventoryJenisBarangBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryDaftarBarangBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryInventoryGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents PurchasingMenuPurchasing As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents PembelianMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
+  Friend WithEvents TransaksiPOSBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiDaftarProdukBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiBukaTututpKasirBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiLaporanPenjualanBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryStatusStokBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryStokOpnameBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryBarangkeluarBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents PembelianPembelianBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents PembelianSupplierBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents PembelianTerimaBarangBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiDataMemberBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiDepositMemberBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents TransaksiMemberGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents PembelianBarangSupplierBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents PembeliannReturBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents AccountingTerimaTagihanBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganTransaksiKasBankBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents AccountingMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
+  Friend WithEvents KeuanganFinanceGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents KeuanganGroupAkunBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganCOABtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganJurnalBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganAccountingGroup As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+  Friend WithEvents KeuanganBukaTutupPeriode As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganLaporanNeracaBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganLaporanRugiLabaBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents KeuanganLaporanLedgerBtn As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents InventoryDaftarStorageBtn As DevExpress.XtraBars.BarButtonItem
 End Class
