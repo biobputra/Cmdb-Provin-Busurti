@@ -121,6 +121,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetStorage.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetSuppier.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSuppier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetTitle.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTitle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +165,24 @@
       <DependentUpon>FormSatuan.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormSatuan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormStorage.Designer.vb">
+      <DependentUpon>FormStorage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormStorage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormSupplier.Designer.vb">
+      <DependentUpon>FormSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormTitle.Designer.vb">
+      <DependentUpon>FormTitle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormTitle.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Application.Designer.vb">
@@ -206,6 +234,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSatuan.resx">
       <DependentUpon>FormSatuan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormStorage.resx">
+      <DependentUpon>FormStorage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormSupplier.resx">
+      <DependentUpon>FormSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormTitle.resx">
+      <DependentUpon>FormTitle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -297,6 +334,28 @@
     </None>
     <None Include="Dataset\DataSetStorage.xss">
       <DependentUpon>DataSetStorage.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetSuppier.xsc">
+      <DependentUpon>DataSetSuppier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetSuppier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSuppier.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetSuppier.xss">
+      <DependentUpon>DataSetSuppier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTitle.xsc">
+      <DependentUpon>DataSetTitle.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTitle.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTitle.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetTitle.xss">
+      <DependentUpon>DataSetTitle.xsd</DependentUpon>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

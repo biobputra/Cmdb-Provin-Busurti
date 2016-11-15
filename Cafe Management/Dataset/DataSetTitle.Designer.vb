@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSetStorage"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSetTitle"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DataSetStorage
+Partial Public Class DataSetTitle
     Inherits Global.System.Data.DataSet
     
-    Private tableStorage As StorageDataTable
+    Private tableTitle As TitleDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSetStorage
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Storage")) Is Nothing) Then
-                MyBase.Tables.Add(New StorageDataTable(ds.Tables("Storage")))
+            If (Not (ds.Tables("Title")) Is Nothing) Then
+                MyBase.Tables.Add(New TitleDataTable(ds.Tables("Title")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSetStorage
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Storage() As StorageDataTable
+    Public ReadOnly Property Title() As TitleDataTable
         Get
-            Return Me.tableStorage
+            Return Me.tableTitle
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class DataSetStorage
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DataSetStorage = CType(MyBase.Clone,DataSetStorage)
+        Dim cln As DataSetTitle = CType(MyBase.Clone,DataSetTitle)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class DataSetStorage
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Storage")) Is Nothing) Then
-                MyBase.Tables.Add(New StorageDataTable(ds.Tables("Storage")))
+            If (Not (ds.Tables("Title")) Is Nothing) Then
+                MyBase.Tables.Add(New TitleDataTable(ds.Tables("Title")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSetStorage
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableStorage = CType(MyBase.Tables("Storage"),StorageDataTable)
+        Me.tableTitle = CType(MyBase.Tables("Title"),TitleDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableStorage) Is Nothing) Then
-                Me.tableStorage.InitVars
+            If (Not (Me.tableTitle) Is Nothing) Then
+                Me.tableTitle.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class DataSetStorage
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DataSetStorage"
+        Me.DataSetName = "DataSetTitle"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DataSetStorage.xsd"
+        Me.Namespace = "http://tempuri.org/DataSetTitle.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableStorage = New StorageDataTable()
-        MyBase.Tables.Add(Me.tableStorage)
+        Me.tableTitle = New TitleDataTable()
+        MyBase.Tables.Add(Me.tableTitle)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeStorage() As Boolean
+    Private Function ShouldSerializeTitle() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class DataSetStorage
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DataSetStorage = New DataSetStorage()
+        Dim ds As DataSetTitle = New DataSetTitle()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,21 +273,19 @@ Partial Public Class DataSetStorage
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub StorageRowChangeEventHandler(ByVal sender As Object, ByVal e As StorageRowChangeEvent)
+    Public Delegate Sub TitleRowChangeEventHandler(ByVal sender As Object, ByVal e As TitleRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class StorageDataTable
-        Inherits Global.System.Data.TypedTableBase(Of StorageRow)
+    Partial Public Class TitleDataTable
+        Inherits Global.System.Data.TypedTableBase(Of TitleRow)
         
-        Private columnIDStorage As Global.System.Data.DataColumn
+        Private columnIDTitle As Global.System.Data.DataColumn
         
-        Private columnStorage As Global.System.Data.DataColumn
-        
-        Private columnKeterangan As Global.System.Data.DataColumn
+        Private columnTitle As Global.System.Data.DataColumn
         
         Private columnCreatedDate As Global.System.Data.DataColumn
         
@@ -295,15 +293,13 @@ Partial Public Class DataSetStorage
         
         Private columnModifiedDate As Global.System.Data.DataColumn
         
-        Private columnCreatedBy As Global.System.Data.DataColumn
-        
         Private columnisActive As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Storage"
+            Me.TableName = "Title"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -336,25 +332,17 @@ Partial Public Class DataSetStorage
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDStorageColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDTitleColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDStorage
+                Return Me.columnIDTitle
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property StorageColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TitleColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStorage
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property KeteranganColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnKeterangan
+                Return Me.columnTitle
             End Get
         End Property
         
@@ -384,14 +372,6 @@ Partial Public Class DataSetStorage
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property CreatedByColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCreatedBy
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property isActiveColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnisActive
@@ -409,44 +389,44 @@ Partial Public Class DataSetStorage
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As StorageRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As TitleRow
             Get
-                Return CType(Me.Rows(index),StorageRow)
+                Return CType(Me.Rows(index),TitleRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event StorageRowChanging As StorageRowChangeEventHandler
+        Public Event TitleRowChanging As TitleRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event StorageRowChanged As StorageRowChangeEventHandler
+        Public Event TitleRowChanged As TitleRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event StorageRowDeleting As StorageRowChangeEventHandler
+        Public Event TitleRowDeleting As TitleRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event StorageRowDeleted As StorageRowChangeEventHandler
+        Public Event TitleRowDeleted As TitleRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddStorageRow(ByVal row As StorageRow)
+        Public Overloads Sub AddTitleRow(ByVal row As TitleRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddStorageRow(ByVal IDStorage As Integer, ByVal Storage As String, ByVal Keterangan As String, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal CreatedBy As Integer, ByVal isActive As Boolean) As StorageRow
-            Dim rowStorageRow As StorageRow = CType(Me.NewRow,StorageRow)
-            Dim columnValuesArray() As Object = New Object() {IDStorage, Storage, Keterangan, CreatedDate, ModifiedBy, ModifiedDate, CreatedBy, isActive}
-            rowStorageRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowStorageRow)
-            Return rowStorageRow
+        Public Overloads Function AddTitleRow(ByVal IDTitle As Integer, ByVal Title As String, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal isActive As Boolean) As TitleRow
+            Dim rowTitleRow As TitleRow = CType(Me.NewRow,TitleRow)
+            Dim columnValuesArray() As Object = New Object() {IDTitle, Title, CreatedDate, ModifiedBy, ModifiedDate, isActive}
+            rowTitleRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowTitleRow)
+            Return rowTitleRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As StorageDataTable = CType(MyBase.Clone,StorageDataTable)
+            Dim cln As TitleDataTable = CType(MyBase.Clone,TitleDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -454,69 +434,62 @@ Partial Public Class DataSetStorage
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New StorageDataTable()
+            Return New TitleDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDStorage = MyBase.Columns("IDStorage")
-            Me.columnStorage = MyBase.Columns("Storage")
-            Me.columnKeterangan = MyBase.Columns("Keterangan")
+            Me.columnIDTitle = MyBase.Columns("IDTitle")
+            Me.columnTitle = MyBase.Columns("Title")
             Me.columnCreatedDate = MyBase.Columns("CreatedDate")
             Me.columnModifiedBy = MyBase.Columns("ModifiedBy")
             Me.columnModifiedDate = MyBase.Columns("ModifiedDate")
-            Me.columnCreatedBy = MyBase.Columns("CreatedBy")
             Me.columnisActive = MyBase.Columns("isActive")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDStorage = New Global.System.Data.DataColumn("IDStorage", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDStorage)
-            Me.columnStorage = New Global.System.Data.DataColumn("Storage", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStorage)
-            Me.columnKeterangan = New Global.System.Data.DataColumn("Keterangan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnKeterangan)
+            Me.columnIDTitle = New Global.System.Data.DataColumn("IDTitle", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDTitle)
+            Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTitle)
             Me.columnCreatedDate = New Global.System.Data.DataColumn("CreatedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCreatedDate)
             Me.columnModifiedBy = New Global.System.Data.DataColumn("ModifiedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnModifiedBy)
             Me.columnModifiedDate = New Global.System.Data.DataColumn("ModifiedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnModifiedDate)
-            Me.columnCreatedBy = New Global.System.Data.DataColumn("CreatedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCreatedBy)
             Me.columnisActive = New Global.System.Data.DataColumn("isActive", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnisActive)
-            Me.columnStorage.MaxLength = 30
-            Me.columnKeterangan.MaxLength = 50
+            Me.columnTitle.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewStorageRow() As StorageRow
-            Return CType(Me.NewRow,StorageRow)
+        Public Function NewTitleRow() As TitleRow
+            Return CType(Me.NewRow,TitleRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New StorageRow(builder)
+            Return New TitleRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(StorageRow)
+            Return GetType(TitleRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.StorageRowChangedEvent) Is Nothing) Then
-                RaiseEvent StorageRowChanged(Me, New StorageRowChangeEvent(CType(e.Row,StorageRow), e.Action))
+            If (Not (Me.TitleRowChangedEvent) Is Nothing) Then
+                RaiseEvent TitleRowChanged(Me, New TitleRowChangeEvent(CType(e.Row,TitleRow), e.Action))
             End If
         End Sub
         
@@ -524,8 +497,8 @@ Partial Public Class DataSetStorage
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.StorageRowChangingEvent) Is Nothing) Then
-                RaiseEvent StorageRowChanging(Me, New StorageRowChangeEvent(CType(e.Row,StorageRow), e.Action))
+            If (Not (Me.TitleRowChangingEvent) Is Nothing) Then
+                RaiseEvent TitleRowChanging(Me, New TitleRowChangeEvent(CType(e.Row,TitleRow), e.Action))
             End If
         End Sub
         
@@ -533,8 +506,8 @@ Partial Public Class DataSetStorage
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.StorageRowDeletedEvent) Is Nothing) Then
-                RaiseEvent StorageRowDeleted(Me, New StorageRowChangeEvent(CType(e.Row,StorageRow), e.Action))
+            If (Not (Me.TitleRowDeletedEvent) Is Nothing) Then
+                RaiseEvent TitleRowDeleted(Me, New TitleRowChangeEvent(CType(e.Row,TitleRow), e.Action))
             End If
         End Sub
         
@@ -542,14 +515,14 @@ Partial Public Class DataSetStorage
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.StorageRowDeletingEvent) Is Nothing) Then
-                RaiseEvent StorageRowDeleting(Me, New StorageRowChangeEvent(CType(e.Row,StorageRow), e.Action))
+            If (Not (Me.TitleRowDeletingEvent) Is Nothing) Then
+                RaiseEvent TitleRowDeleting(Me, New TitleRowChangeEvent(CType(e.Row,TitleRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveStorageRow(ByVal row As StorageRow)
+        Public Sub RemoveTitleRow(ByVal row As TitleRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -558,7 +531,7 @@ Partial Public Class DataSetStorage
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetStorage = New DataSetStorage()
+            Dim ds As DataSetTitle = New DataSetTitle()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -576,7 +549,7 @@ Partial Public Class DataSetStorage
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "StorageDataTable"
+            attribute2.FixedValue = "TitleDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -623,60 +596,45 @@ Partial Public Class DataSetStorage
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class StorageRow
+    Partial Public Class TitleRow
         Inherits Global.System.Data.DataRow
         
-        Private tableStorage As StorageDataTable
+        Private tableTitle As TitleDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableStorage = CType(Me.Table,StorageDataTable)
+            Me.tableTitle = CType(Me.Table,TitleDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDStorage() As Integer
+        Public Property IDTitle() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.IDStorageColumn),Integer)
+                    Return CType(Me(Me.tableTitle.IDTitleColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDStorage' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDTitle' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.IDStorageColumn) = value
+                Me(Me.tableTitle.IDTitleColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Storage() As String
+        Public Property Title() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.StorageColumn),String)
+                    Return CType(Me(Me.tableTitle.TitleColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Storage' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.StorageColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Keterangan() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableStorage.KeteranganColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Keterangan' in table 'Storage' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStorage.KeteranganColumn) = value
+                Me(Me.tableTitle.TitleColumn) = value
             End Set
         End Property
         
@@ -685,13 +643,13 @@ Partial Public Class DataSetStorage
         Public Property CreatedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.CreatedDateColumn),Date)
+                    Return CType(Me(Me.tableTitle.CreatedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.CreatedDateColumn) = value
+                Me(Me.tableTitle.CreatedDateColumn) = value
             End Set
         End Property
         
@@ -700,13 +658,13 @@ Partial Public Class DataSetStorage
         Public Property ModifiedBy() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.ModifiedByColumn),Integer)
+                    Return CType(Me(Me.tableTitle.ModifiedByColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.ModifiedByColumn) = value
+                Me(Me.tableTitle.ModifiedByColumn) = value
             End Set
         End Property
         
@@ -715,28 +673,13 @@ Partial Public Class DataSetStorage
         Public Property ModifiedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.ModifiedDateColumn),Date)
+                    Return CType(Me(Me.tableTitle.ModifiedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.ModifiedDateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property CreatedBy() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableStorage.CreatedByColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'Storage' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableStorage.CreatedByColumn) = value
+                Me(Me.tableTitle.ModifiedDateColumn) = value
             End Set
         End Property
         
@@ -745,110 +688,86 @@ Partial Public Class DataSetStorage
         Public Property isActive() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tableStorage.isActiveColumn),Boolean)
+                    Return CType(Me(Me.tableTitle.isActiveColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'Storage' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'Title' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableStorage.isActiveColumn) = value
+                Me(Me.tableTitle.isActiveColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDStorageNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.IDStorageColumn)
+        Public Function IsIDTitleNull() As Boolean
+            Return Me.IsNull(Me.tableTitle.IDTitleColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDStorageNull()
-            Me(Me.tableStorage.IDStorageColumn) = Global.System.Convert.DBNull
+        Public Sub SetIDTitleNull()
+            Me(Me.tableTitle.IDTitleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsStorageNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.StorageColumn)
+        Public Function IsTitleNull() As Boolean
+            Return Me.IsNull(Me.tableTitle.TitleColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetStorageNull()
-            Me(Me.tableStorage.StorageColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsKeteranganNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.KeteranganColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetKeteranganNull()
-            Me(Me.tableStorage.KeteranganColumn) = Global.System.Convert.DBNull
+        Public Sub SetTitleNull()
+            Me(Me.tableTitle.TitleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCreatedDateNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.CreatedDateColumn)
+            Return Me.IsNull(Me.tableTitle.CreatedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCreatedDateNull()
-            Me(Me.tableStorage.CreatedDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTitle.CreatedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedByNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.ModifiedByColumn)
+            Return Me.IsNull(Me.tableTitle.ModifiedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedByNull()
-            Me(Me.tableStorage.ModifiedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTitle.ModifiedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedDateNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.ModifiedDateColumn)
+            Return Me.IsNull(Me.tableTitle.ModifiedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedDateNull()
-            Me(Me.tableStorage.ModifiedDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCreatedByNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.CreatedByColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCreatedByNull()
-            Me(Me.tableStorage.CreatedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTitle.ModifiedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsisActiveNull() As Boolean
-            Return Me.IsNull(Me.tableStorage.isActiveColumn)
+            Return Me.IsNull(Me.tableTitle.isActiveColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetisActiveNull()
-            Me(Me.tableStorage.isActiveColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTitle.isActiveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -856,16 +775,16 @@ Partial Public Class DataSetStorage
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class StorageRowChangeEvent
+    Public Class TitleRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As StorageRow
+        Private eventRow As TitleRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As StorageRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As TitleRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -873,7 +792,7 @@ Partial Public Class DataSetStorage
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As StorageRow
+        Public ReadOnly Property Row() As TitleRow
             Get
                 Return Me.eventRow
             End Get
@@ -889,7 +808,7 @@ Partial Public Class DataSetStorage
     End Class
 End Class
 
-Namespace DataSetStorageTableAdapters
+Namespace DataSetTitleTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -900,7 +819,7 @@ Namespace DataSetStorageTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class StorageTableAdapter
+    Partial Public Class TitleTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1017,56 +936,46 @@ Namespace DataSetStorageTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Storage"
-            tableMapping.ColumnMappings.Add("IDStorage", "IDStorage")
-            tableMapping.ColumnMappings.Add("Storage", "Storage")
-            tableMapping.ColumnMappings.Add("Keterangan", "Keterangan")
+            tableMapping.DataSetTable = "Title"
+            tableMapping.ColumnMappings.Add("IDTitle", "IDTitle")
+            tableMapping.ColumnMappings.Add("Title", "Title")
             tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate")
             tableMapping.ColumnMappings.Add("ModifiedBy", "ModifiedBy")
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate")
-            tableMapping.ColumnMappings.Add("CreatedBy", "CreatedBy")
             tableMapping.ColumnMappings.Add("isActive", "isActive")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "dbo.Str_Insert"
+            Me._adapter.InsertCommand.CommandText = "dbo.Title_Insert"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDStorage", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDStorage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Storage", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Storage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDTitle", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDTitle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "dbo.Str_Update"
+            Me._adapter.UpdateCommand.CommandText = "dbo.Title_Update"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDStorage", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDStorage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Storage", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Storage", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDStorage", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDStorage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Storage", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Storage", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Keterangan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "isActive", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDTitle", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDTitle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDTitle", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDTitle", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1082,17 +991,17 @@ Namespace DataSetStorageTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.Str_Select"
+            Me._commandCollection(0).CommandText = "dbo.Title_Select"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetStorage.StorageDataTable, ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTitle.TitleDataTable, ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (isActive.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
@@ -1110,14 +1019,14 @@ Namespace DataSetStorageTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal isActive As Global.System.Nullable(Of Boolean)) As DataSetStorage.StorageDataTable
+        Public Overloads Overridable Function GetData(ByVal isActive As Global.System.Nullable(Of Boolean)) As DataSetTitle.TitleDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (isActive.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Dim dataTable As DataSetStorage.StorageDataTable = New DataSetStorage.StorageDataTable()
+            Dim dataTable As DataSetTitle.TitleDataTable = New DataSetTitle.TitleDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1125,15 +1034,15 @@ Namespace DataSetStorageTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetStorage.StorageDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTitle.TitleDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetStorage) As Integer
-            Return Me.Adapter.Update(dataSet, "Storage")
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTitle) As Integer
+            Return Me.Adapter.Update(dataSet, "Title")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1154,46 +1063,36 @@ Namespace DataSetStorageTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDStorage As Global.System.Nullable(Of Integer), ByVal Storage As String, ByVal Keterangan As String, ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDStorage.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDStorage.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal IDTitle As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+            If (IDTitle.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDTitle.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (Storage Is Nothing) Then
+            If (Title Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Storage,String)
-            End If
-            If (Keterangan Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Keterangan,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Title,String)
             End If
             If (CreatedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CreatedDate.Value,Date)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(CreatedDate.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(ModifiedBy.Value,Integer)
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(ModifiedDate.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ModifiedDate.Value,Date)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (CreatedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(CreatedBy.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (isActive.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(isActive.Value,Boolean)
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1214,102 +1113,74 @@ Namespace DataSetStorageTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal IDStorage As Global.System.Nullable(Of Integer),  _
-                    ByVal Storage As String,  _
-                    ByVal Keterangan As String,  _
-                    ByVal CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal isActive As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_IDStorage As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Storage As String,  _
-                    ByVal Original_Keterangan As String,  _
-                    ByVal Original_CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDStorage.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDStorage.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal IDTitle As Global.System.Nullable(Of Integer), ByVal Title As String, ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean), ByVal Original_IDTitle As Global.System.Nullable(Of Integer), ByVal Original_Title As String, ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+            If (IDTitle.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDTitle.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (Storage Is Nothing) Then
+            If (Title Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Storage,String)
-            End If
-            If (Keterangan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Keterangan,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Title,String)
             End If
             If (CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CreatedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CreatedDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(ModifiedBy.Value,Integer)
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(ModifiedDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ModifiedDate.Value,Date)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CreatedBy.Value,Integer)
+            If (Original_IDTitle.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_IDTitle.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (isActive.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(isActive.Value,Boolean)
-            Else
+            If (Original_Title Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDStorage.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_IDStorage.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Storage Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Storage,String)
-            End If
-            If (Original_Keterangan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Keterangan,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Title,String)
             End If
             If (Original_CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_CreatedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_CreatedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_ModifiedBy.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ModifiedBy.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ModifiedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_ModifiedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_CreatedBy.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_isActive.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_isActive.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_isActive.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1340,7 +1211,7 @@ Namespace DataSetStorageTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _storageTableAdapter As StorageTableAdapter
+        Private _titleTableAdapter As TitleTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1362,12 +1233,12 @@ Namespace DataSetStorageTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property StorageTableAdapter() As StorageTableAdapter
+        Public Property TitleTableAdapter() As TitleTableAdapter
             Get
-                Return Me._storageTableAdapter
+                Return Me._titleTableAdapter
             End Get
             Set
-                Me._storageTableAdapter = value
+                Me._titleTableAdapter = value
             End Set
         End Property
         
@@ -1390,9 +1261,9 @@ Namespace DataSetStorageTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._storageTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._storageTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._storageTableAdapter.Connection
+                If ((Not (Me._titleTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._titleTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._titleTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1407,7 +1278,7 @@ Namespace DataSetStorageTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._storageTableAdapter) Is Nothing) Then
+                If (Not (Me._titleTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1419,14 +1290,14 @@ Namespace DataSetStorageTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetStorage, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetTitle, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._storageTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Storage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._titleTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Title.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._storageTableAdapter.Update(updatedRows))
+                    result = (result + Me._titleTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1438,13 +1309,13 @@ Namespace DataSetStorageTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As DataSetStorage, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DataSetTitle, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._storageTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Storage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._titleTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Title.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._storageTableAdapter.Update(addedRows))
+                    result = (result + Me._titleTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1456,13 +1327,13 @@ Namespace DataSetStorageTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As DataSetStorage, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DataSetTitle, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._storageTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Storage.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._titleTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Title.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._storageTableAdapter.Update(deletedRows))
+                    result = (result + Me._titleTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1500,15 +1371,15 @@ Namespace DataSetStorageTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As DataSetStorage) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DataSetTitle) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._storageTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._storageTableAdapter.Connection) = false)) Then
+            If ((Not (Me._titleTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._titleTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1544,13 +1415,13 @@ Namespace DataSetStorageTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._storageTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._storageTableAdapter, Me._storageTableAdapter.Connection)
-                    Me._storageTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._storageTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._storageTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._storageTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._storageTableAdapter.Adapter)
+                If (Not (Me._titleTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._titleTableAdapter, Me._titleTableAdapter.Connection)
+                    Me._titleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._titleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._titleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._titleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._titleTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1613,9 +1484,9 @@ Namespace DataSetStorageTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._storageTableAdapter) Is Nothing) Then
-                    Me._storageTableAdapter.Connection = CType(revertConnections(Me._storageTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._storageTableAdapter.Transaction = Nothing
+                If (Not (Me._titleTableAdapter) Is Nothing) Then
+                    Me._titleTableAdapter.Connection = CType(revertConnections(Me._titleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._titleTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

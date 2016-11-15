@@ -72,5 +72,32 @@ Partial Public Class MainForm
             FormPOS.Show()
         End If
     End Sub
+
+    Private Sub InventoryMenuStorage_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles InventoryMenuStorage.ItemClick
+        If Me.MdiChildren.Contains(FormStorage) Then
+            FormStorage.Focus()
+        Else
+            'FormStorage.MdiParent = Me
+            FormStorage.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub PurchasingMenuSupplier_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PurchasingMenuSupplier.ItemClick
+        If Me.MdiChildren.Contains(FormSupplier) Then
+            FormSupplier.Focus()
+        Else
+            FormSupplier.MdiParent = Me
+            FormSupplier.Show()
+        End If
+    End Sub
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        If Me.MdiChildren.Contains(FormTitle) Then
+            FormTitle.Focus()
+        Else
+            'FormTitle.MdiParent = Me
+            FormTitle.ShowDialog()
+        End If
+    End Sub
 End Class
 

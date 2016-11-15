@@ -87,11 +87,11 @@
   <xs:element name="DataSetStorage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetStorage" msprop:Generator_UserDSName="DataSetStorage">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Storage" msprop:Generator_TableClassName="StorageDataTable" msprop:Generator_TableVarName="tableStorage" msprop:Generator_TablePropName="Storage" msprop:Generator_RowDeletingName="StorageRowDeleting" msprop:Generator_RowChangingName="StorageRowChanging" msprop:Generator_RowEvHandlerName="StorageRowChangeEventHandler" msprop:Generator_RowDeletedName="StorageRowDeleted" msprop:Generator_UserTableName="Storage" msprop:Generator_RowChangedName="StorageRowChanged" msprop:Generator_RowEvArgName="StorageRowChangeEvent" msprop:Generator_RowClassName="StorageRow">
+        <xs:element name="Storage" msprop:Generator_TableClassName="StorageDataTable" msprop:Generator_TableVarName="tableStorage" msprop:Generator_RowChangedName="StorageRowChanged" msprop:Generator_TablePropName="Storage" msprop:Generator_RowDeletingName="StorageRowDeleting" msprop:Generator_RowChangingName="StorageRowChanging" msprop:Generator_RowEvHandlerName="StorageRowChangeEventHandler" msprop:Generator_RowDeletedName="StorageRowDeleted" msprop:Generator_RowClassName="StorageRow" msprop:Generator_UserTableName="Storage" msprop:Generator_RowEvArgName="StorageRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IDStorage" msprop:Generator_ColumnVarNameInTable="columnIDStorage" msprop:Generator_ColumnPropNameInRow="IDStorage" msprop:Generator_ColumnPropNameInTable="IDStorageColumn" msprop:Generator_UserColumnName="IDStorage" type="xs:int" />
-              <xs:element name="Storage" msprop:Generator_ColumnVarNameInTable="columnStorage" msprop:Generator_ColumnPropNameInRow="Storage" msprop:Generator_ColumnPropNameInTable="StorageColumn" msprop:Generator_UserColumnName="Storage">
+              <xs:element name="IDStorage" msprop:Generator_ColumnVarNameInTable="columnIDStorage" msprop:Generator_ColumnPropNameInRow="IDStorage" msprop:Generator_ColumnPropNameInTable="IDStorageColumn" msprop:Generator_UserColumnName="IDStorage" type="xs:int" minOccurs="0" />
+              <xs:element name="Storage" msprop:Generator_ColumnVarNameInTable="columnStorage" msprop:Generator_ColumnPropNameInRow="Storage" msprop:Generator_ColumnPropNameInTable="StorageColumn" msprop:Generator_UserColumnName="Storage" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -115,9 +115,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Storage" />
-      <xs:field xpath="mstns:IDStorage" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

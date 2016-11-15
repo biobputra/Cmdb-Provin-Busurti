@@ -38,11 +38,11 @@ Partial Class FormRetur
         Me.dgvHeader = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.dgvEdit = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TotalLbl = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.dgvEdit = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.dgvView = New DevExpress.XtraGrid.GridControl()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.ToolStrip1.SuspendLayout()
@@ -57,9 +57,9 @@ Partial Class FormRetur
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -244,6 +244,21 @@ Partial Class FormRetur
         Me.SplitContainer2.SplitterDistance = 429
         Me.SplitContainer2.TabIndex = 3
         '
+        'dgvEdit
+        '
+        Me.dgvEdit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvEdit.Location = New System.Drawing.Point(0, 35)
+        Me.dgvEdit.MainView = Me.GridView2
+        Me.dgvEdit.Name = "dgvEdit"
+        Me.dgvEdit.Size = New System.Drawing.Size(429, 233)
+        Me.dgvEdit.TabIndex = 2
+        Me.dgvEdit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.dgvEdit
+        Me.GridView2.Name = "GridView2"
+        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 3
@@ -279,21 +294,6 @@ Partial Class FormRetur
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Total :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'dgvEdit
-        '
-        Me.dgvEdit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvEdit.Location = New System.Drawing.Point(0, 35)
-        Me.dgvEdit.MainView = Me.GridView2
-        Me.dgvEdit.Name = "dgvEdit"
-        Me.dgvEdit.Size = New System.Drawing.Size(429, 233)
-        Me.dgvEdit.TabIndex = 2
-        Me.dgvEdit.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.dgvEdit
-        Me.GridView2.Name = "GridView2"
         '
         'dgvView
         '
@@ -334,9 +334,9 @@ Partial Class FormRetur
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
