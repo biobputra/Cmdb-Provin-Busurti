@@ -3,13 +3,13 @@ Imports System.Text
 
 
 Partial Public Class MainForm
-    Shared Sub New()
-        DevExpress.UserSkins.BonusSkins.Register()
-        DevExpress.Skins.SkinManager.EnableFormSkins()
-    End Sub
-    Public Sub New()
-        InitializeComponent()
-    End Sub
+  Shared Sub New()
+    DevExpress.UserSkins.BonusSkins.Register()
+    DevExpress.Skins.SkinManager.EnableFormSkins()
+  End Sub
+  Public Sub New()
+    InitializeComponent()
+  End Sub
   Private Sub PosMenuJenisMeja_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiJenisMejaBtn.ItemClick
     If Me.MdiChildren.Contains(FormJenisMeja) Then
       FormJenisMeja.Focus()
@@ -55,14 +55,14 @@ Partial Public Class MainForm
     End If
   End Sub
 
-    Private Sub PurchasingMenuPurchasing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PurchasingMenuPurchasing.ItemClick
-        If Me.MdiChildren.Contains(FormPembelian) Then
-            FormPembelian.Focus()
-        Else
-            FormPembelian.MdiParent = Me
-            FormPembelian.Show()
-        End If
-    End Sub
+  Private Sub PurchasingMenuPurchasing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PurchasingMenuPurchasing.ItemClick
+    If Me.MdiChildren.Contains(FormPembelian) Then
+      FormPembelian.Focus()
+    Else
+      FormPembelian.MdiParent = Me
+      FormPembelian.Show()
+    End If
+  End Sub
 
   Private Sub PosMenuPenjualan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiPOSBtn.ItemClick
     If Me.MdiChildren.Contains(FormPOS) Then
@@ -73,7 +73,23 @@ Partial Public Class MainForm
     End If
   End Sub
 
-  Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDataMemberBtn.ItemClick
+  Private Sub PembelianSupplierBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PembelianSupplierBtn.ItemClick
+    If Me.MdiChildren.Contains(FormSupplier) Then
+      FormSupplier.Focus()
+    Else
+      FormSupplier.MdiParent = Me
+      FormSupplier.Show()
+    End If
+  End Sub
+  Private Sub KeuanganMenuTermOfPaymentBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles KeuanganMenuTermOfPaymentBtn.ItemClick
+    If Me.MdiChildren.Contains(FormTermOfPayment) Then
+      FormTermOfPayment.Focus()
+    Else
+      'FormTermOfPayment.MdiParent = Me
+      FormTermOfPayment.ShowDialog()
+    End If
+  End Sub
+
 
   End Sub
 

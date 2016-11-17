@@ -19,12 +19,13 @@ Partial Class FormStorage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStorage))
         Me.DataSetStorage = New Cafe_Management.DataSetStorage()
-        Me.StorageBindingSource = New System.Windows.Forms.BindingSource()
+        Me.StorageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StorageTableAdapter = New Cafe_Management.DataSetStorageTableAdapters.StorageTableAdapter()
         Me.TableAdapterManager = New Cafe_Management.DataSetStorageTableAdapters.TableAdapterManager()
-        Me.StorageBindingNavigator = New System.Windows.Forms.BindingNavigator()
+        Me.StorageBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
