@@ -120,6 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetProductSupplier.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetSatuan.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +190,12 @@
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormJenisMeja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormProductSupplier.Designer.vb">
+      <DependentUpon>FormProductSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormProductSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormSatuan.Designer.vb">
@@ -276,6 +287,9 @@
     <EmbeddedResource Include="MasterForm\FormJenisMeja.resx">
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormProductSupplier.resx">
+      <DependentUpon>FormProductSupplier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSatuan.resx">
       <DependentUpon>FormSatuan.vb</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +376,17 @@
     </None>
     <None Include="Dataset\DataSetJenisMeja.xss">
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProductSupplier.xsc">
+      <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProductSupplier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProductSupplier.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetProductSupplier.xss">
+      <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetSatuan.xsc">
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>

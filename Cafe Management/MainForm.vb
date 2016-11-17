@@ -90,6 +90,13 @@ Partial Public Class MainForm
         End If
     End Sub
 
-
+    Private Sub PembelianBarangSupplierBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PembelianBarangSupplierBtn.ItemClick
+        If Me.MdiChildren.Contains(FormProductSupplier) Then
+            FormProductSupplier.Focus()
+        Else
+            'FormProductSupplier.MdiParent = Me
+            FormProductSupplier.ShowDialog()
+        End If
+    End Sub
 End Class
 
