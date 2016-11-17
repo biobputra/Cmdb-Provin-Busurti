@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSetJenisMeja"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSetTermOfPayment"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DataSetJenisMeja
+Partial Public Class DataSetTermOfPayment
     Inherits Global.System.Data.DataSet
     
-    Private tableJnm_Select As Jnm_SelectDataTable
+    Private tableTermOfPayment As TermOfPaymentDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class DataSetJenisMeja
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Jnm_Select")) Is Nothing) Then
-                MyBase.Tables.Add(New Jnm_SelectDataTable(ds.Tables("Jnm_Select")))
+            If (Not (ds.Tables("TermOfPayment")) Is Nothing) Then
+                MyBase.Tables.Add(New TermOfPaymentDataTable(ds.Tables("TermOfPayment")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSetJenisMeja
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Jnm_Select() As Jnm_SelectDataTable
+    Public ReadOnly Property TermOfPayment() As TermOfPaymentDataTable
         Get
-            Return Me.tableJnm_Select
+            Return Me.tableTermOfPayment
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class DataSetJenisMeja
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DataSetJenisMeja = CType(MyBase.Clone,DataSetJenisMeja)
+        Dim cln As DataSetTermOfPayment = CType(MyBase.Clone,DataSetTermOfPayment)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class DataSetJenisMeja
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Jnm_Select")) Is Nothing) Then
-                MyBase.Tables.Add(New Jnm_SelectDataTable(ds.Tables("Jnm_Select")))
+            If (Not (ds.Tables("TermOfPayment")) Is Nothing) Then
+                MyBase.Tables.Add(New TermOfPaymentDataTable(ds.Tables("TermOfPayment")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSetJenisMeja
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableJnm_Select = CType(MyBase.Tables("Jnm_Select"),Jnm_SelectDataTable)
+        Me.tableTermOfPayment = CType(MyBase.Tables("TermOfPayment"),TermOfPaymentDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableJnm_Select) Is Nothing) Then
-                Me.tableJnm_Select.InitVars
+            If (Not (Me.tableTermOfPayment) Is Nothing) Then
+                Me.tableTermOfPayment.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class DataSetJenisMeja
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DataSetJenisMeja"
+        Me.DataSetName = "DataSetTermOfPayment"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DataSetJenisMeja.xsd"
+        Me.Namespace = "http://tempuri.org/DataSetTermOfPayment.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableJnm_Select = New Jnm_SelectDataTable()
-        MyBase.Tables.Add(Me.tableJnm_Select)
+        Me.tableTermOfPayment = New TermOfPaymentDataTable()
+        MyBase.Tables.Add(Me.tableTermOfPayment)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeJnm_Select() As Boolean
+    Private Function ShouldSerializeTermOfPayment() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class DataSetJenisMeja
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DataSetJenisMeja = New DataSetJenisMeja()
+        Dim ds As DataSetTermOfPayment = New DataSetTermOfPayment()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,19 +273,19 @@ Partial Public Class DataSetJenisMeja
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub Jnm_SelectRowChangeEventHandler(ByVal sender As Object, ByVal e As Jnm_SelectRowChangeEvent)
+    Public Delegate Sub TermOfPaymentRowChangeEventHandler(ByVal sender As Object, ByVal e As TermOfPaymentRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Jnm_SelectDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Jnm_SelectRow)
+    Partial Public Class TermOfPaymentDataTable
+        Inherits Global.System.Data.TypedTableBase(Of TermOfPaymentRow)
         
-        Private columnIDJenisMeJa As Global.System.Data.DataColumn
+        Private columnIDTermOfPayment As Global.System.Data.DataColumn
         
-        Private columnJenisMeja As Global.System.Data.DataColumn
+        Private columnTermOfPayment As Global.System.Data.DataColumn
         
         Private columnKeterangan As Global.System.Data.DataColumn
         
@@ -299,13 +299,11 @@ Partial Public Class DataSetJenisMeja
         
         Private columnisActive As Global.System.Data.DataColumn
         
-        Private columngambar As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Jnm_Select"
+            Me.TableName = "TermOfPayment"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -338,17 +336,17 @@ Partial Public Class DataSetJenisMeja
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDJenisMeJaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDTermOfPaymentColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDJenisMeJa
+                Return Me.columnIDTermOfPayment
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property JenisMejaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TermOfPaymentColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnJenisMeja
+                Return Me.columnTermOfPayment
             End Get
         End Property
         
@@ -401,14 +399,6 @@ Partial Public Class DataSetJenisMeja
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property gambarColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columngambar
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -419,44 +409,50 @@ Partial Public Class DataSetJenisMeja
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Jnm_SelectRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As TermOfPaymentRow
             Get
-                Return CType(Me.Rows(index),Jnm_SelectRow)
+                Return CType(Me.Rows(index),TermOfPaymentRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event Jnm_SelectRowChanging As Jnm_SelectRowChangeEventHandler
+        Public Event TermOfPaymentRowChanging As TermOfPaymentRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event Jnm_SelectRowChanged As Jnm_SelectRowChangeEventHandler
+        Public Event TermOfPaymentRowChanged As TermOfPaymentRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event Jnm_SelectRowDeleting As Jnm_SelectRowChangeEventHandler
+        Public Event TermOfPaymentRowDeleting As TermOfPaymentRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event Jnm_SelectRowDeleted As Jnm_SelectRowChangeEventHandler
+        Public Event TermOfPaymentRowDeleted As TermOfPaymentRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddJnm_SelectRow(ByVal row As Jnm_SelectRow)
+        Public Overloads Sub AddTermOfPaymentRow(ByVal row As TermOfPaymentRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddJnm_SelectRow(ByVal IDJenisMeJa As Integer, ByVal JenisMeja As String, ByVal Keterangan As String, ByVal CreatedBy As Integer, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal isActive As Boolean, ByVal gambar() As Byte) As Jnm_SelectRow
-            Dim rowJnm_SelectRow As Jnm_SelectRow = CType(Me.NewRow,Jnm_SelectRow)
-            Dim columnValuesArray() As Object = New Object() {IDJenisMeJa, JenisMeja, Keterangan, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, gambar}
-            rowJnm_SelectRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowJnm_SelectRow)
-            Return rowJnm_SelectRow
+        Public Overloads Function AddTermOfPaymentRow(ByVal IDTermOfPayment As Integer, ByVal TermOfPayment As String, ByVal Keterangan As String, ByVal CreatedBy As Integer, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal isActive As Boolean) As TermOfPaymentRow
+            Dim rowTermOfPaymentRow As TermOfPaymentRow = CType(Me.NewRow,TermOfPaymentRow)
+            Dim columnValuesArray() As Object = New Object() {IDTermOfPayment, TermOfPayment, Keterangan, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive}
+            rowTermOfPaymentRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowTermOfPaymentRow)
+            Return rowTermOfPaymentRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByIDTermOfPayment(ByVal IDTermOfPayment As Integer) As TermOfPaymentRow
+            Return CType(Me.Rows.Find(New Object() {IDTermOfPayment}),TermOfPaymentRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Jnm_SelectDataTable = CType(MyBase.Clone,Jnm_SelectDataTable)
+            Dim cln As TermOfPaymentDataTable = CType(MyBase.Clone,TermOfPaymentDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -464,30 +460,29 @@ Partial Public Class DataSetJenisMeja
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Jnm_SelectDataTable()
+            Return New TermOfPaymentDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDJenisMeJa = MyBase.Columns("IDJenisMeJa")
-            Me.columnJenisMeja = MyBase.Columns("JenisMeja")
+            Me.columnIDTermOfPayment = MyBase.Columns("IDTermOfPayment")
+            Me.columnTermOfPayment = MyBase.Columns("TermOfPayment")
             Me.columnKeterangan = MyBase.Columns("Keterangan")
             Me.columnCreatedBy = MyBase.Columns("CreatedBy")
             Me.columnCreatedDate = MyBase.Columns("CreatedDate")
             Me.columnModifiedBy = MyBase.Columns("ModifiedBy")
             Me.columnModifiedDate = MyBase.Columns("ModifiedDate")
             Me.columnisActive = MyBase.Columns("isActive")
-            Me.columngambar = MyBase.Columns("gambar")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDJenisMeJa = New Global.System.Data.DataColumn("IDJenisMeJa", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDJenisMeJa)
-            Me.columnJenisMeja = New Global.System.Data.DataColumn("JenisMeja", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnJenisMeja)
+            Me.columnIDTermOfPayment = New Global.System.Data.DataColumn("IDTermOfPayment", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDTermOfPayment)
+            Me.columnTermOfPayment = New Global.System.Data.DataColumn("TermOfPayment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTermOfPayment)
             Me.columnKeterangan = New Global.System.Data.DataColumn("Keterangan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnKeterangan)
             Me.columnCreatedBy = New Global.System.Data.DataColumn("CreatedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -500,36 +495,37 @@ Partial Public Class DataSetJenisMeja
             MyBase.Columns.Add(Me.columnModifiedDate)
             Me.columnisActive = New Global.System.Data.DataColumn("isActive", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnisActive)
-            Me.columngambar = New Global.System.Data.DataColumn("gambar", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columngambar)
-            Me.columnJenisMeja.MaxLength = 20
-            Me.columnKeterangan.MaxLength = 50
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDTermOfPayment}, true))
+            Me.columnIDTermOfPayment.AllowDBNull = false
+            Me.columnIDTermOfPayment.Unique = true
+            Me.columnTermOfPayment.MaxLength = 20
+            Me.columnKeterangan.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewJnm_SelectRow() As Jnm_SelectRow
-            Return CType(Me.NewRow,Jnm_SelectRow)
+        Public Function NewTermOfPaymentRow() As TermOfPaymentRow
+            Return CType(Me.NewRow,TermOfPaymentRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Jnm_SelectRow(builder)
+            Return New TermOfPaymentRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Jnm_SelectRow)
+            Return GetType(TermOfPaymentRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Jnm_SelectRowChangedEvent) Is Nothing) Then
-                RaiseEvent Jnm_SelectRowChanged(Me, New Jnm_SelectRowChangeEvent(CType(e.Row,Jnm_SelectRow), e.Action))
+            If (Not (Me.TermOfPaymentRowChangedEvent) Is Nothing) Then
+                RaiseEvent TermOfPaymentRowChanged(Me, New TermOfPaymentRowChangeEvent(CType(e.Row,TermOfPaymentRow), e.Action))
             End If
         End Sub
         
@@ -537,8 +533,8 @@ Partial Public Class DataSetJenisMeja
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Jnm_SelectRowChangingEvent) Is Nothing) Then
-                RaiseEvent Jnm_SelectRowChanging(Me, New Jnm_SelectRowChangeEvent(CType(e.Row,Jnm_SelectRow), e.Action))
+            If (Not (Me.TermOfPaymentRowChangingEvent) Is Nothing) Then
+                RaiseEvent TermOfPaymentRowChanging(Me, New TermOfPaymentRowChangeEvent(CType(e.Row,TermOfPaymentRow), e.Action))
             End If
         End Sub
         
@@ -546,8 +542,8 @@ Partial Public Class DataSetJenisMeja
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Jnm_SelectRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Jnm_SelectRowDeleted(Me, New Jnm_SelectRowChangeEvent(CType(e.Row,Jnm_SelectRow), e.Action))
+            If (Not (Me.TermOfPaymentRowDeletedEvent) Is Nothing) Then
+                RaiseEvent TermOfPaymentRowDeleted(Me, New TermOfPaymentRowChangeEvent(CType(e.Row,TermOfPaymentRow), e.Action))
             End If
         End Sub
         
@@ -555,14 +551,14 @@ Partial Public Class DataSetJenisMeja
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Jnm_SelectRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Jnm_SelectRowDeleting(Me, New Jnm_SelectRowChangeEvent(CType(e.Row,Jnm_SelectRow), e.Action))
+            If (Not (Me.TermOfPaymentRowDeletingEvent) Is Nothing) Then
+                RaiseEvent TermOfPaymentRowDeleting(Me, New TermOfPaymentRowChangeEvent(CType(e.Row,TermOfPaymentRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveJnm_SelectRow(ByVal row As Jnm_SelectRow)
+        Public Sub RemoveTermOfPaymentRow(ByVal row As TermOfPaymentRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -571,7 +567,7 @@ Partial Public Class DataSetJenisMeja
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetJenisMeja = New DataSetJenisMeja()
+            Dim ds As DataSetTermOfPayment = New DataSetTermOfPayment()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -589,7 +585,7 @@ Partial Public Class DataSetJenisMeja
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Jnm_SelectDataTable"
+            attribute2.FixedValue = "TermOfPaymentDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -636,45 +632,41 @@ Partial Public Class DataSetJenisMeja
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Jnm_SelectRow
+    Partial Public Class TermOfPaymentRow
         Inherits Global.System.Data.DataRow
         
-        Private tableJnm_Select As Jnm_SelectDataTable
+        Private tableTermOfPayment As TermOfPaymentDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableJnm_Select = CType(Me.Table,Jnm_SelectDataTable)
+            Me.tableTermOfPayment = CType(Me.Table,TermOfPaymentDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDJenisMeJa() As Integer
+        Public Property IDTermOfPayment() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableJnm_Select.IDJenisMeJaColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDJenisMeJa' in table 'Jnm_Select' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableTermOfPayment.IDTermOfPaymentColumn),Integer)
             End Get
             Set
-                Me(Me.tableJnm_Select.IDJenisMeJaColumn) = value
+                Me(Me.tableTermOfPayment.IDTermOfPaymentColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property JenisMeja() As String
+        Public Property TermOfPayment() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.JenisMejaColumn),String)
+                    Return CType(Me(Me.tableTermOfPayment.TermOfPaymentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'JenisMeja' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TermOfPayment' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.JenisMejaColumn) = value
+                Me(Me.tableTermOfPayment.TermOfPaymentColumn) = value
             End Set
         End Property
         
@@ -683,13 +675,13 @@ Partial Public Class DataSetJenisMeja
         Public Property Keterangan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.KeteranganColumn),String)
+                    Return CType(Me(Me.tableTermOfPayment.KeteranganColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Keterangan' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Keterangan' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.KeteranganColumn) = value
+                Me(Me.tableTermOfPayment.KeteranganColumn) = value
             End Set
         End Property
         
@@ -698,13 +690,13 @@ Partial Public Class DataSetJenisMeja
         Public Property CreatedBy() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.CreatedByColumn),Integer)
+                    Return CType(Me(Me.tableTermOfPayment.CreatedByColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.CreatedByColumn) = value
+                Me(Me.tableTermOfPayment.CreatedByColumn) = value
             End Set
         End Property
         
@@ -713,13 +705,13 @@ Partial Public Class DataSetJenisMeja
         Public Property CreatedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.CreatedDateColumn),Date)
+                    Return CType(Me(Me.tableTermOfPayment.CreatedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.CreatedDateColumn) = value
+                Me(Me.tableTermOfPayment.CreatedDateColumn) = value
             End Set
         End Property
         
@@ -728,13 +720,13 @@ Partial Public Class DataSetJenisMeja
         Public Property ModifiedBy() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.ModifiedByColumn),Integer)
+                    Return CType(Me(Me.tableTermOfPayment.ModifiedByColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.ModifiedByColumn) = value
+                Me(Me.tableTermOfPayment.ModifiedByColumn) = value
             End Set
         End Property
         
@@ -743,13 +735,13 @@ Partial Public Class DataSetJenisMeja
         Public Property ModifiedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.ModifiedDateColumn),Date)
+                    Return CType(Me(Me.tableTermOfPayment.ModifiedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.ModifiedDateColumn) = value
+                Me(Me.tableTermOfPayment.ModifiedDateColumn) = value
             End Set
         End Property
         
@@ -758,137 +750,98 @@ Partial Public Class DataSetJenisMeja
         Public Property isActive() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tableJnm_Select.isActiveColumn),Boolean)
+                    Return CType(Me(Me.tableTermOfPayment.isActiveColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'Jnm_Select' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'TermOfPayment' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableJnm_Select.isActiveColumn) = value
+                Me(Me.tableTermOfPayment.isActiveColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property gambar() As Byte()
-            Get
-                Try 
-                    Return CType(Me(Me.tableJnm_Select.gambarColumn),Byte())
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'gambar' in table 'Jnm_Select' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableJnm_Select.gambarColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDJenisMeJaNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.IDJenisMeJaColumn)
+        Public Function IsTermOfPaymentNull() As Boolean
+            Return Me.IsNull(Me.tableTermOfPayment.TermOfPaymentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDJenisMeJaNull()
-            Me(Me.tableJnm_Select.IDJenisMeJaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsJenisMejaNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.JenisMejaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetJenisMejaNull()
-            Me(Me.tableJnm_Select.JenisMejaColumn) = Global.System.Convert.DBNull
+        Public Sub SetTermOfPaymentNull()
+            Me(Me.tableTermOfPayment.TermOfPaymentColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsKeteranganNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.KeteranganColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.KeteranganColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetKeteranganNull()
-            Me(Me.tableJnm_Select.KeteranganColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.KeteranganColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCreatedByNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.CreatedByColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.CreatedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCreatedByNull()
-            Me(Me.tableJnm_Select.CreatedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.CreatedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCreatedDateNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.CreatedDateColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.CreatedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCreatedDateNull()
-            Me(Me.tableJnm_Select.CreatedDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.CreatedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedByNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.ModifiedByColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.ModifiedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedByNull()
-            Me(Me.tableJnm_Select.ModifiedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.ModifiedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedDateNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.ModifiedDateColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.ModifiedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedDateNull()
-            Me(Me.tableJnm_Select.ModifiedDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.ModifiedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsisActiveNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.isActiveColumn)
+            Return Me.IsNull(Me.tableTermOfPayment.isActiveColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetisActiveNull()
-            Me(Me.tableJnm_Select.isActiveColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsgambarNull() As Boolean
-            Return Me.IsNull(Me.tableJnm_Select.gambarColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetgambarNull()
-            Me(Me.tableJnm_Select.gambarColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTermOfPayment.isActiveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -896,16 +849,16 @@ Partial Public Class DataSetJenisMeja
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class Jnm_SelectRowChangeEvent
+    Public Class TermOfPaymentRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Jnm_SelectRow
+        Private eventRow As TermOfPaymentRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As Jnm_SelectRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As TermOfPaymentRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -913,7 +866,7 @@ Partial Public Class DataSetJenisMeja
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As Jnm_SelectRow
+        Public ReadOnly Property Row() As TermOfPaymentRow
             Get
                 Return Me.eventRow
             End Get
@@ -929,7 +882,7 @@ Partial Public Class DataSetJenisMeja
     End Class
 End Class
 
-Namespace DataSetJenisMejaTableAdapters
+Namespace DataSetTermOfPaymentTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -940,7 +893,7 @@ Namespace DataSetJenisMejaTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Jnm_SelectTableAdapter
+    Partial Public Class TermOfPaymentTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1057,35 +1010,24 @@ Namespace DataSetJenisMejaTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Jnm_Select"
-            tableMapping.ColumnMappings.Add("IDJenisMeJa", "IDJenisMeJa")
-            tableMapping.ColumnMappings.Add("JenisMeja", "JenisMeja")
+            tableMapping.DataSetTable = "TermOfPayment"
+            tableMapping.ColumnMappings.Add("IDTermOfPayment", "IDTermOfPayment")
+            tableMapping.ColumnMappings.Add("TermOfPayment", "TermOfPayment")
             tableMapping.ColumnMappings.Add("Keterangan", "Keterangan")
             tableMapping.ColumnMappings.Add("CreatedBy", "CreatedBy")
             tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate")
             tableMapping.ColumnMappings.Add("ModifiedBy", "ModifiedBy")
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate")
             tableMapping.ColumnMappings.Add("isActive", "isActive")
-            tableMapping.ColumnMappings.Add("gambar", "gambar")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "dbo.Jnm_delete"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdJenisMeja", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDJenisMeJa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsActive", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@modifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@modifiedDate", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "dbo.Jnm_Insert"
+            Me._adapter.InsertCommand.CommandText = "dbo.Top_Insert"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDJenisMeJa", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDJenisMeJa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JenisMeja", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "JenisMeja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gambar", Global.System.Data.SqlDbType.Image, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "gambar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDTermOfPayment", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDTermOfPayment", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TermOfPayment", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "TermOfPayment", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1093,32 +1035,31 @@ Namespace DataSetJenisMejaTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "dbo.Jnm_Update"
+            Me._adapter.UpdateCommand.CommandText = "dbo.Top_Update"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDJenisMeJa", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDJenisMeJa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JenisMeja", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "JenisMeja", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gambar", Global.System.Data.SqlDbType.Image, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "gambar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDTermOfPayment", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDTermOfPayment", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TermOfPayment", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "TermOfPayment", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDJenisMeJa", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDJenisMeJa", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_JenisMeja", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "JenisMeja", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_JenisMeja", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "JenisMeja", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Keterangan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Keterangan", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDTermOfPayment", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDTermOfPayment", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TermOfPayment", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "TermOfPayment", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TermOfPayment", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "TermOfPayment", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Keterangan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Keterangan", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "isActive", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "isActive", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -1135,7 +1076,7 @@ Namespace DataSetJenisMejaTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.Jnm_Select"
+            Me._commandCollection(0).CommandText = "dbo.Top_Select"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1145,7 +1086,7 @@ Namespace DataSetJenisMejaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetJenisMeja.Jnm_SelectDataTable, ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetTermOfPayment.TermOfPaymentDataTable, ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (isActive.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
@@ -1163,14 +1104,14 @@ Namespace DataSetJenisMejaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal isActive As Global.System.Nullable(Of Boolean)) As DataSetJenisMeja.Jnm_SelectDataTable
+        Public Overloads Overridable Function GetData(ByVal isActive As Global.System.Nullable(Of Boolean)) As DataSetTermOfPayment.TermOfPaymentDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (isActive.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Dim dataTable As DataSetJenisMeja.Jnm_SelectDataTable = New DataSetJenisMeja.Jnm_SelectDataTable()
+            Dim dataTable As DataSetTermOfPayment.TermOfPaymentDataTable = New DataSetTermOfPayment.TermOfPaymentDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1178,15 +1119,15 @@ Namespace DataSetJenisMejaTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetJenisMeja.Jnm_SelectDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetTermOfPayment.TermOfPaymentDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetJenisMeja) As Integer
-            Return Me.Adapter.Update(dataSet, "Jnm_Select")
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetTermOfPayment) As Integer
+            Return Me.Adapter.Update(dataSet, "TermOfPayment")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1206,92 +1147,47 @@ Namespace DataSetJenisMejaTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal IdJenisMeja As Global.System.Nullable(Of Integer), ByVal IsActive As Global.System.Nullable(Of Integer), ByVal modifiedBy As Global.System.Nullable(Of Integer), ByVal modifiedDate As Global.System.Nullable(Of Date)) As Integer
-            If (IdJenisMeja.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(IdJenisMeja.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (IsActive.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(IsActive.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (modifiedBy.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(modifiedBy.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (modifiedDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(modifiedDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDJenisMeJa As Global.System.Nullable(Of Integer), ByVal JenisMeja As String, ByVal Keterangan As String, ByVal Gambar() As Byte, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDJenisMeJa.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDJenisMeJa.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal IDTermOfPayment As Global.System.Nullable(Of Integer), ByVal TermOfPayment As String, ByVal Keterangan As String, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+            If (IDTermOfPayment.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDTermOfPayment.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (JenisMeja Is Nothing) Then
+            If (TermOfPayment Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(JenisMeja,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TermOfPayment,String)
             End If
             If (Keterangan Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Keterangan,String)
             End If
-            If (Gambar Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Gambar,Byte())
-            End If
             If (CreatedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(CreatedBy.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CreatedBy.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (CreatedDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(CreatedDate.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (CreatedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(CreatedDate.Value,Date)
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ModifiedBy.Value,Integer)
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ModifiedDate.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(ModifiedDate.Value,Date)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (isActive.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(isActive.Value,Boolean)
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1313,107 +1209,115 @@ Namespace DataSetJenisMejaTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
-                    ByVal IDJenisMeJa As Global.System.Nullable(Of Integer),  _
-                    ByVal JenisMeja As String,  _
+                    ByVal IDTermOfPayment As Global.System.Nullable(Of Integer),  _
+                    ByVal TermOfPayment As String,  _
                     ByVal Keterangan As String,  _
-                    ByVal Gambar() As Byte,  _
                     ByVal CreatedBy As Global.System.Nullable(Of Integer),  _
                     ByVal CreatedDate As Global.System.Nullable(Of Date),  _
                     ByVal ModifiedBy As Global.System.Nullable(Of Integer),  _
                     ByVal ModifiedDate As Global.System.Nullable(Of Date),  _
                     ByVal isActive As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_IDJenisMeJa As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_JenisMeja As String,  _
+                    ByVal Original_IDTermOfPayment As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_TermOfPayment As String,  _
                     ByVal Original_Keterangan As String,  _
                     ByVal Original_CreatedBy As Global.System.Nullable(Of Integer),  _
                     ByVal Original_CreatedDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer),  _
                     ByVal Original_ModifiedDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDJenisMeJa.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDJenisMeJa.Value,Integer)
+            If (IDTermOfPayment.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDTermOfPayment.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (JenisMeja Is Nothing) Then
+            If (TermOfPayment Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(JenisMeja,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TermOfPayment,String)
             End If
             If (Keterangan Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Keterangan,String)
             End If
-            If (Gambar Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Gambar,Byte())
-            End If
             If (CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(CreatedBy.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CreatedBy.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (CreatedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(CreatedDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(CreatedDate.Value,Date)
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ModifiedBy.Value,Integer)
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ModifiedDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(ModifiedDate.Value,Date)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            If (isActive.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(isActive.Value,Boolean)
+            If (Original_IDTermOfPayment.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_IDTermOfPayment.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_IDJenisMeJa.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_IDJenisMeJa.Value,Integer)
+            If (Original_TermOfPayment Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_JenisMeja Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_JenisMeja,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_TermOfPayment,String)
             End If
             If (Original_Keterangan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Keterangan,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Keterangan,String)
             End If
             If (Original_CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_CreatedBy.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_CreatedBy.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Original_CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_CreatedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_CreatedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_ModifiedBy.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_ModifiedBy.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ModifiedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_ModifiedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             End If
             If (Original_isActive.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_isActive.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_isActive.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1428,6 +1332,14 @@ Namespace DataSetJenisMejaTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal TermOfPayment As String, ByVal Keterangan As String, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean), ByVal Original_IDTermOfPayment As Global.System.Nullable(Of Integer), ByVal Original_TermOfPayment As String, ByVal Original_Keterangan As String, ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(Original_IDTermOfPayment, TermOfPayment, Keterangan, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, Original_IDTermOfPayment, Original_TermOfPayment, Original_Keterangan, Original_CreatedBy, Original_CreatedDate, Original_ModifiedBy, Original_ModifiedDate, Original_isActive)
         End Function
     End Class
     
@@ -1444,7 +1356,7 @@ Namespace DataSetJenisMejaTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _jnm_SelectTableAdapter As Jnm_SelectTableAdapter
+        Private _termOfPaymentTableAdapter As TermOfPaymentTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1466,12 +1378,12 @@ Namespace DataSetJenisMejaTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property Jnm_SelectTableAdapter() As Jnm_SelectTableAdapter
+        Public Property TermOfPaymentTableAdapter() As TermOfPaymentTableAdapter
             Get
-                Return Me._jnm_SelectTableAdapter
+                Return Me._termOfPaymentTableAdapter
             End Get
             Set
-                Me._jnm_SelectTableAdapter = value
+                Me._termOfPaymentTableAdapter = value
             End Set
         End Property
         
@@ -1494,9 +1406,9 @@ Namespace DataSetJenisMejaTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._jnm_SelectTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._jnm_SelectTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._jnm_SelectTableAdapter.Connection
+                If ((Not (Me._termOfPaymentTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._termOfPaymentTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._termOfPaymentTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1511,7 +1423,7 @@ Namespace DataSetJenisMejaTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
+                If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1523,14 +1435,14 @@ Namespace DataSetJenisMejaTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetJenisMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetTermOfPayment, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Jnm_Select.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TermOfPayment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._jnm_SelectTableAdapter.Update(updatedRows))
+                    result = (result + Me._termOfPaymentTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1542,13 +1454,13 @@ Namespace DataSetJenisMejaTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As DataSetJenisMeja, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DataSetTermOfPayment, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Jnm_Select.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.TermOfPayment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._jnm_SelectTableAdapter.Update(addedRows))
+                    result = (result + Me._termOfPaymentTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1560,13 +1472,13 @@ Namespace DataSetJenisMejaTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As DataSetJenisMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DataSetTermOfPayment, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Jnm_Select.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TermOfPayment.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._jnm_SelectTableAdapter.Update(deletedRows))
+                    result = (result + Me._termOfPaymentTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1604,15 +1516,15 @@ Namespace DataSetJenisMejaTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As DataSetJenisMeja) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DataSetTermOfPayment) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._jnm_SelectTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._jnm_SelectTableAdapter.Connection) = false)) Then
+            If ((Not (Me._termOfPaymentTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._termOfPaymentTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1648,13 +1560,13 @@ Namespace DataSetJenisMejaTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._jnm_SelectTableAdapter, Me._jnm_SelectTableAdapter.Connection)
-                    Me._jnm_SelectTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._jnm_SelectTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._jnm_SelectTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._jnm_SelectTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._jnm_SelectTableAdapter.Adapter)
+                If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._termOfPaymentTableAdapter, Me._termOfPaymentTableAdapter.Connection)
+                    Me._termOfPaymentTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._termOfPaymentTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._termOfPaymentTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._termOfPaymentTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._termOfPaymentTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1717,9 +1629,9 @@ Namespace DataSetJenisMejaTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._jnm_SelectTableAdapter) Is Nothing) Then
-                    Me._jnm_SelectTableAdapter.Connection = CType(revertConnections(Me._jnm_SelectTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._jnm_SelectTableAdapter.Transaction = Nothing
+                If (Not (Me._termOfPaymentTableAdapter) Is Nothing) Then
+                    Me._termOfPaymentTableAdapter.Connection = CType(revertConnections(Me._termOfPaymentTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._termOfPaymentTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

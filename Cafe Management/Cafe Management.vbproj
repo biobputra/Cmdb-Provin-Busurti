@@ -107,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetDaftarMeja.vb">
+      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetJenisBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +134,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSuppier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetTermOfPayment.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTermOfPayment.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetTitle.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -195,6 +203,12 @@
       <DependentUpon>FormSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormTermOfPayment.Designer.vb">
+      <DependentUpon>FormTermOfPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormTermOfPayment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormTitle.Designer.vb">
@@ -270,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSupplier.resx">
       <DependentUpon>FormSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormTermOfPayment.resx">
+      <DependentUpon>FormTermOfPayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormTitle.resx">
       <DependentUpon>FormTitle.vb</DependentUpon>
@@ -378,6 +395,17 @@
     </None>
     <None Include="Dataset\DataSetSuppier.xss">
       <DependentUpon>DataSetSuppier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTermOfPayment.xsc">
+      <DependentUpon>DataSetTermOfPayment.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetTermOfPayment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTermOfPayment.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetTermOfPayment.xss">
+      <DependentUpon>DataSetTermOfPayment.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetTitle.xsc">
       <DependentUpon>DataSetTitle.xsd</DependentUpon>

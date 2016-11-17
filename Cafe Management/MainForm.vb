@@ -73,8 +73,23 @@ Partial Public Class MainForm
     End If
   End Sub
 
-  Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDataMemberBtn.ItemClick
+    Private Sub PembelianSupplierBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PembelianSupplierBtn.ItemClick
+        If Me.MdiChildren.Contains(FormSupplier) Then
+            FormSupplier.Focus()
+        Else
+            FormSupplier.MdiParent = Me
+            FormSupplier.Show()
+        End If
+    End Sub
+    Private Sub KeuanganMenuTermOfPaymentBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles KeuanganMenuTermOfPaymentBtn.ItemClick
+        If Me.MdiChildren.Contains(FormTermOfPayment) Then
+            FormTermOfPayment.Focus()
+        Else
+            'FormTermOfPayment.MdiParent = Me
+            FormTermOfPayment.ShowDialog()
+        End If
+    End Sub
 
-  End Sub
+
 End Class
 
