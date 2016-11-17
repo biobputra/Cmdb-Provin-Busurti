@@ -19,28 +19,10 @@ Partial Class FormPOS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-    Me.components = New System.ComponentModel.Container()
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPOS))
     Me.MainSplit = New DevExpress.XtraEditors.SplitContainerControl()
     Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
     Me.BillyardTablePage = New DevExpress.XtraTab.XtraTabPage()
-    Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-    Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
-    Me.colIDDaftarMeja = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colIDJenisMeja = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colNomorMeja = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colKeterangan = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colStatus = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colTanggalbook = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colJamMulai = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colJamSelesai = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colCreatedBy = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colCreatedDate = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colModifiedBy = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colModifiedDate = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colisActive = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.colPicImage = New DevExpress.XtraGrid.Columns.GridColumn()
-    Me.RepositoryItemImageEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageEdit()
     Me.TopLayout = New System.Windows.Forms.TableLayoutPanel()
     Me.BillyardCheckInBtn = New DevExpress.XtraEditors.SimpleButton()
     Me.BillyardReserveBtn = New DevExpress.XtraEditors.SimpleButton()
@@ -53,11 +35,8 @@ Partial Class FormPOS
     Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
     Me.BarCheckInBtn = New DevExpress.XtraEditors.SimpleButton()
     Me.BarReserveBtn = New DevExpress.XtraEditors.SimpleButton()
-    Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
-    Me.DataSetDaftarMeja1 = New Cafe_Management.DataSetDaftarMeja()
-    Me.DaftarMejaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-    Me.DaftarMejaTableAdapter = New Cafe_Management.DataSetDaftarMejaTableAdapters.DaftarMejaTableAdapter()
-    Me.TableAdapterManager = New Cafe_Management.DataSetDaftarMejaTableAdapters.TableAdapterManager()
+    Me.BarTabsPage = New DevExpress.XtraTab.XtraTabPage()
+    Me.MenuPage = New DevExpress.XtraTab.XtraTabPage()
     Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
     Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
     Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton()
@@ -75,24 +54,16 @@ Partial Class FormPOS
     Me.SimpleButton10 = New DevExpress.XtraEditors.SimpleButton()
     Me.SimpleButton11 = New DevExpress.XtraEditors.SimpleButton()
     Me.SimpleButton12 = New DevExpress.XtraEditors.SimpleButton()
-    Me.BarTabsPage = New DevExpress.XtraTab.XtraTabPage()
-    Me.MenuPage = New DevExpress.XtraTab.XtraTabPage()
     CType(Me.MainSplit, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.MainSplit.SuspendLayout()
     CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.XtraTabControl1.SuspendLayout()
     Me.BillyardTablePage.SuspendLayout()
-    CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-    CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
-    CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.TopLayout.SuspendLayout()
     Me.RestoTablePage.SuspendLayout()
     Me.TableLayoutPanel1.SuspendLayout()
     Me.BarTablePage.SuspendLayout()
     Me.TableLayoutPanel2.SuspendLayout()
-    CType(Me.GalleryDropDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-    CType(Me.DataSetDaftarMeja1, System.ComponentModel.ISupportInitialize).BeginInit()
-    CType(Me.DaftarMejaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SplitContainerControl1.SuspendLayout()
     Me.TableLayoutPanel3.SuspendLayout()
@@ -131,125 +102,14 @@ Partial Class FormPOS
     '
     'BillyardTablePage
     '
-    Me.BillyardTablePage.Appearance.PageClient.Image = CType(resources.GetObject("BillyardTabPage.Appearance.PageClient.Image"), System.Drawing.Image)
+    Me.BillyardTablePage.Appearance.PageClient.Image = CType(resources.GetObject("BillyardTablePage.Appearance.PageClient.Image"), System.Drawing.Image)
     Me.BillyardTablePage.Appearance.PageClient.Options.UseImage = True
     Me.BillyardTablePage.AutoScroll = True
-    Me.BillyardTablePage.Controls.Add(Me.GridControl1)
     Me.BillyardTablePage.Controls.Add(Me.TopLayout)
     Me.BillyardTablePage.Image = CType(resources.GetObject("BillyardTablePage.Image"), System.Drawing.Image)
     Me.BillyardTablePage.Name = "BillyardTablePage"
     Me.BillyardTablePage.Size = New System.Drawing.Size(774, 436)
     Me.BillyardTablePage.Text = "Meja Billyard"
-    '
-    'GridControl1
-    '
-    Me.GridControl1.DataSource = Me.DaftarMejaBindingSource
-    Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.GridControl1.Location = New System.Drawing.Point(0, 54)
-    Me.GridControl1.MainView = Me.CardView1
-    Me.GridControl1.Name = "GridControl1"
-    Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemImageEdit1})
-    Me.GridControl1.Size = New System.Drawing.Size(774, 382)
-    Me.GridControl1.TabIndex = 10
-    Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.CardView1})
-    '
-    'CardView1
-    '
-    Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIDDaftarMeja, Me.colIDJenisMeja, Me.colNomorMeja, Me.colKeterangan, Me.colStatus, Me.colTanggalbook, Me.colJamMulai, Me.colJamSelesai, Me.colCreatedBy, Me.colCreatedDate, Me.colModifiedBy, Me.colModifiedDate, Me.colisActive, Me.colPicImage})
-    Me.CardView1.FocusedCardTopFieldIndex = 0
-    Me.CardView1.GridControl = Me.GridControl1
-    Me.CardView1.Name = "CardView1"
-    Me.CardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.[Auto]
-    '
-    'colIDDaftarMeja
-    '
-    Me.colIDDaftarMeja.FieldName = "IDDaftarMeja"
-    Me.colIDDaftarMeja.Name = "colIDDaftarMeja"
-    '
-    'colIDJenisMeja
-    '
-    Me.colIDJenisMeja.FieldName = "IDJenisMeja"
-    Me.colIDJenisMeja.Name = "colIDJenisMeja"
-    '
-    'colNomorMeja
-    '
-    Me.colNomorMeja.FieldName = "NomorMeja"
-    Me.colNomorMeja.Name = "colNomorMeja"
-    Me.colNomorMeja.OptionsColumn.ReadOnly = True
-    Me.colNomorMeja.OptionsColumn.ShowCaption = False
-    Me.colNomorMeja.Visible = True
-    Me.colNomorMeja.VisibleIndex = 0
-    '
-    'colKeterangan
-    '
-    Me.colKeterangan.FieldName = "Keterangan"
-    Me.colKeterangan.Name = "colKeterangan"
-    '
-    'colStatus
-    '
-    Me.colStatus.FieldName = "Status"
-    Me.colStatus.Name = "colStatus"
-    Me.colStatus.Visible = True
-    Me.colStatus.VisibleIndex = 1
-    '
-    'colTanggalbook
-    '
-    Me.colTanggalbook.FieldName = "Tanggalbook"
-    Me.colTanggalbook.Name = "colTanggalbook"
-    Me.colTanggalbook.Visible = True
-    Me.colTanggalbook.VisibleIndex = 2
-    '
-    'colJamMulai
-    '
-    Me.colJamMulai.FieldName = "JamMulai"
-    Me.colJamMulai.Name = "colJamMulai"
-    Me.colJamMulai.Visible = True
-    Me.colJamMulai.VisibleIndex = 3
-    '
-    'colJamSelesai
-    '
-    Me.colJamSelesai.FieldName = "JamSelesai"
-    Me.colJamSelesai.Name = "colJamSelesai"
-    Me.colJamSelesai.Visible = True
-    Me.colJamSelesai.VisibleIndex = 4
-    '
-    'colCreatedBy
-    '
-    Me.colCreatedBy.FieldName = "CreatedBy"
-    Me.colCreatedBy.Name = "colCreatedBy"
-    '
-    'colCreatedDate
-    '
-    Me.colCreatedDate.FieldName = "CreatedDate"
-    Me.colCreatedDate.Name = "colCreatedDate"
-    '
-    'colModifiedBy
-    '
-    Me.colModifiedBy.FieldName = "ModifiedBy"
-    Me.colModifiedBy.Name = "colModifiedBy"
-    '
-    'colModifiedDate
-    '
-    Me.colModifiedDate.FieldName = "ModifiedDate"
-    Me.colModifiedDate.Name = "colModifiedDate"
-    '
-    'colisActive
-    '
-    Me.colisActive.FieldName = "isActive"
-    Me.colisActive.Name = "colisActive"
-    '
-    'colPicImage
-    '
-    Me.colPicImage.FieldName = "PicImage"
-    Me.colPicImage.Name = "colPicImage"
-    Me.colPicImage.Visible = True
-    Me.colPicImage.VisibleIndex = 5
-    '
-    'RepositoryItemImageEdit1
-    '
-    Me.RepositoryItemImageEdit1.AutoHeight = False
-    Me.RepositoryItemImageEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-    Me.RepositoryItemImageEdit1.Name = "RepositoryItemImageEdit1"
     '
     'TopLayout
     '
@@ -400,30 +260,19 @@ Partial Class FormPOS
     Me.BarReserveBtn.TabIndex = 3
     Me.BarReserveBtn.Text = "Reserve"
     '
-    'GalleryDropDown1
+    'BarTabsPage
     '
-    Me.GalleryDropDown1.Manager = Nothing
-    Me.GalleryDropDown1.Name = "GalleryDropDown1"
+    Me.BarTabsPage.Image = CType(resources.GetObject("BarTabsPage.Image"), System.Drawing.Image)
+    Me.BarTabsPage.Name = "BarTabsPage"
+    Me.BarTabsPage.Size = New System.Drawing.Size(774, 436)
+    Me.BarTabsPage.Text = "Bar tabs"
     '
-    'DataSetDaftarMeja1
+    'MenuPage
     '
-    Me.DataSetDaftarMeja1.DataSetName = "DataSetDaftarMeja"
-    Me.DataSetDaftarMeja1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-    '
-    'DaftarMejaBindingSource
-    '
-    Me.DaftarMejaBindingSource.DataMember = "DaftarMeja"
-    Me.DaftarMejaBindingSource.DataSource = Me.DataSetDaftarMeja1
-    '
-    'DaftarMejaTableAdapter
-    '
-    Me.DaftarMejaTableAdapter.ClearBeforeFill = True
-    '
-    'TableAdapterManager
-    '
-    Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-    Me.TableAdapterManager.DaftarMejaTableAdapter = Me.DaftarMejaTableAdapter
-    Me.TableAdapterManager.UpdateOrder = Cafe_Management.DataSetDaftarMejaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+    Me.MenuPage.Image = CType(resources.GetObject("MenuPage.Image"), System.Drawing.Image)
+    Me.MenuPage.Name = "MenuPage"
+    Me.MenuPage.Size = New System.Drawing.Size(774, 436)
+    Me.MenuPage.Text = "Menu"
     '
     'SplitContainerControl1
     '
@@ -640,20 +489,6 @@ Partial Class FormPOS
     Me.SimpleButton12.TabIndex = 11
     Me.SimpleButton12.Text = "000"
     '
-    'BarTabsPage
-    '
-    Me.BarTabsPage.Image = CType(resources.GetObject("BarTabsPage.Image"), System.Drawing.Image)
-    Me.BarTabsPage.Name = "BarTabsPage"
-    Me.BarTabsPage.Size = New System.Drawing.Size(774, 436)
-    Me.BarTabsPage.Text = "Bar tabs"
-    '
-    'MenuPage
-    '
-    Me.MenuPage.Image = CType(resources.GetObject("MenuPage.Image"), System.Drawing.Image)
-    Me.MenuPage.Name = "MenuPage"
-    Me.MenuPage.Size = New System.Drawing.Size(774, 436)
-    Me.MenuPage.Text = "Menu"
-    '
     'FormPOS
     '
     Me.Appearance.Options.UseFont = True
@@ -671,17 +506,11 @@ Partial Class FormPOS
     CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
     Me.XtraTabControl1.ResumeLayout(False)
     Me.BillyardTablePage.ResumeLayout(False)
-    CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-    CType(Me.CardView1, System.ComponentModel.ISupportInitialize).EndInit()
-    CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).EndInit()
     Me.TopLayout.ResumeLayout(False)
     Me.RestoTablePage.ResumeLayout(False)
     Me.TableLayoutPanel1.ResumeLayout(False)
     Me.BarTablePage.ResumeLayout(False)
     Me.TableLayoutPanel2.ResumeLayout(False)
-    CType(Me.GalleryDropDown1, System.ComponentModel.ISupportInitialize).EndInit()
-    CType(Me.DataSetDaftarMeja1, System.ComponentModel.ISupportInitialize).EndInit()
-    CType(Me.DaftarMejaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
     Me.SplitContainerControl1.ResumeLayout(False)
     Me.TableLayoutPanel3.ResumeLayout(False)
@@ -690,7 +519,6 @@ Partial Class FormPOS
   End Sub
 
   Friend WithEvents MainSplit As DevExpress.XtraEditors.SplitContainerControl
-  Friend WithEvents GalleryDropDown1 As DevExpress.XtraBars.Ribbon.GalleryDropDown
   Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
   Friend WithEvents BillyardTablePage As DevExpress.XtraTab.XtraTabPage
   Friend WithEvents RestoTablePage As DevExpress.XtraTab.XtraTabPage
@@ -705,27 +533,8 @@ Partial Class FormPOS
   Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
   Friend WithEvents BarCheckInBtn As DevExpress.XtraEditors.SimpleButton
   Friend WithEvents BarReserveBtn As DevExpress.XtraEditors.SimpleButton
-  Friend WithEvents DataSetDaftarMeja1 As Cafe_Management.DataSetDaftarMeja
-  Friend WithEvents DaftarMejaBindingSource As System.Windows.Forms.BindingSource
-  Friend WithEvents DaftarMejaTableAdapter As Cafe_Management.DataSetDaftarMejaTableAdapters.DaftarMejaTableAdapter
-  Friend WithEvents TableAdapterManager As Cafe_Management.DataSetDaftarMejaTableAdapters.TableAdapterManager
-  Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-  Friend WithEvents CardView1 As DevExpress.XtraGrid.Views.Card.CardView
-  Friend WithEvents colIDDaftarMeja As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colIDJenisMeja As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colNomorMeja As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colKeterangan As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colStatus As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colTanggalbook As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colJamMulai As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colJamSelesai As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colCreatedBy As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colCreatedDate As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colModifiedBy As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colModifiedDate As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colisActive As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents colPicImage As DevExpress.XtraGrid.Columns.GridColumn
-  Friend WithEvents RepositoryItemImageEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemImageEdit
+
+
   Friend WithEvents BarTabsPage As DevExpress.XtraTab.XtraTabPage
   Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
   Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel

@@ -20,12 +20,7 @@ Partial Public Class MainForm
   End Sub
 
   Private Sub PosMenuDaftarMeja_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDaftarMejaBtn.ItemClick
-    If Me.MdiChildren.Contains(FormDaftarMeja) Then
-      FormDaftarMeja.Focus()
-    Else
-      'FormDaftarMeja.MdiParent = Me
-      FormDaftarMeja.ShowDialog()
-    End If
+    
   End Sub
 
   Private Sub InventoryMenuSatuan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles InventorySatuanBtn.ItemClick
@@ -88,9 +83,6 @@ Partial Public Class MainForm
       'FormTermOfPayment.MdiParent = Me
       FormTermOfPayment.ShowDialog()
     End If
-  End Sub
-
-
   End Sub
 
   Private Sub KeuanganCOABtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles KeuanganCOABtn.ItemClick

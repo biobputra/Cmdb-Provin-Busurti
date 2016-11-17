@@ -111,14 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBarang.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dataset\DataSetDaftarMeja.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Dataset\DataSetDaftarMeja.vb">
-      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Dataset\DataSetJenisBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,12 +180,6 @@
       <DependentUpon>FormBarang.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormBarang.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MasterForm\FormDaftarMeja.Designer.vb">
-      <DependentUpon>FormDaftarMeja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MasterForm\FormDaftarMeja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormJenisBarang.Designer.vb">
@@ -364,17 +350,6 @@
     </None>
     <None Include="Dataset\DataSetBarang.xss">
       <DependentUpon>DataSetBarang.xsd</DependentUpon>
-    </None>
-    <None Include="Dataset\DataSetDaftarMeja.xsc">
-      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
-    </None>
-    <None Include="Dataset\DataSetDaftarMeja.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDaftarMeja.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Dataset\DataSetDaftarMeja.xss">
-      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetJenisBarang.xsc">
       <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
