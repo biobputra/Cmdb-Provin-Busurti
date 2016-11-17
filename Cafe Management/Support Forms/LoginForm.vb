@@ -16,6 +16,7 @@ Public Class LoginForm
     End Sub
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    'DataAccess.SetConnection(My.Settings.connString)
 
         UserNameTxt.Text = "admin"
         PasswordTxt.Text = "admin"

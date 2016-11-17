@@ -25,8 +25,11 @@ Option Explicit On
 Partial Public Class DataSetDaftarMeja
     Inherits Global.System.Data.DataSet
     
+<<<<<<< HEAD
+=======
     Private tableJenisMeja As JenisMejaDataTable
     
+>>>>>>> origin/Develop
     Private tableDaftarMeja As DaftarMejaDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
@@ -58,9 +61,12 @@ Partial Public Class DataSetDaftarMeja
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
+<<<<<<< HEAD
+=======
             If (Not (ds.Tables("JenisMeja")) Is Nothing) Then
                 MyBase.Tables.Add(New JenisMejaDataTable(ds.Tables("JenisMeja")))
             End If
+>>>>>>> origin/Develop
             If (Not (ds.Tables("DaftarMeja")) Is Nothing) Then
                 MyBase.Tables.Add(New DaftarMejaDataTable(ds.Tables("DaftarMeja")))
             End If
@@ -93,6 +99,8 @@ Partial Public Class DataSetDaftarMeja
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+<<<<<<< HEAD
+=======
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property DaftarMeja() As DaftarMejaDataTable
@@ -103,6 +111,7 @@ Partial Public Class DataSetDaftarMeja
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+>>>>>>> origin/Develop
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -168,9 +177,12 @@ Partial Public Class DataSetDaftarMeja
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
+<<<<<<< HEAD
+=======
             If (Not (ds.Tables("JenisMeja")) Is Nothing) Then
                 MyBase.Tables.Add(New JenisMejaDataTable(ds.Tables("JenisMeja")))
             End If
+>>>>>>> origin/Develop
             If (Not (ds.Tables("DaftarMeja")) Is Nothing) Then
                 MyBase.Tables.Add(New DaftarMejaDataTable(ds.Tables("DaftarMeja")))
             End If
@@ -206,12 +218,15 @@ Partial Public Class DataSetDaftarMeja
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
+<<<<<<< HEAD
+=======
         Me.tableJenisMeja = CType(MyBase.Tables("JenisMeja"),JenisMejaDataTable)
         If (initTable = true) Then
             If (Not (Me.tableJenisMeja) Is Nothing) Then
                 Me.tableJenisMeja.InitVars
             End If
         End If
+>>>>>>> origin/Develop
         Me.tableDaftarMeja = CType(MyBase.Tables("DaftarMeja"),DaftarMejaDataTable)
         If (initTable = true) Then
             If (Not (Me.tableDaftarMeja) Is Nothing) Then
@@ -228,8 +243,11 @@ Partial Public Class DataSetDaftarMeja
         Me.Namespace = "http://tempuri.org/DataSetDaftarMeja.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
+<<<<<<< HEAD
+=======
         Me.tableJenisMeja = New JenisMejaDataTable()
         MyBase.Tables.Add(Me.tableJenisMeja)
+>>>>>>> origin/Develop
         Me.tableDaftarMeja = New DaftarMejaDataTable()
         MyBase.Tables.Add(Me.tableDaftarMeja)
     End Sub
@@ -242,12 +260,15 @@ Partial Public Class DataSetDaftarMeja
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+<<<<<<< HEAD
+=======
     Private Function ShouldSerializeDaftarMeja() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+>>>>>>> origin/Develop
     Private Sub SchemaChanged(ByVal sender As Object, ByVal e As Global.System.ComponentModel.CollectionChangeEventArgs)
         If (e.Action = Global.System.ComponentModel.CollectionChangeAction.Remove) Then
             Me.InitVars
@@ -307,23 +328,37 @@ Partial Public Class DataSetDaftarMeja
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub JenisMejaRowChangeEventHandler(ByVal sender As Object, ByVal e As JenisMejaRowChangeEvent)
     
+<<<<<<< HEAD
+=======
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub DaftarMejaRowChangeEventHandler(ByVal sender As Object, ByVal e As DaftarMejaRowChangeEvent)
     
+>>>>>>> origin/Develop
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+<<<<<<< HEAD
+    Partial Public Class DaftarMejaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DaftarMejaRow)
+        
+        Private columnIDDaftarMeja As Global.System.Data.DataColumn
+        
+        Private columnIDJenisMeja As Global.System.Data.DataColumn
+=======
     Partial Public Class JenisMejaDataTable
         Inherits Global.System.Data.TypedTableBase(Of JenisMejaRow)
         
         Private columnIDJenisMeJa As Global.System.Data.DataColumn
+>>>>>>> origin/Develop
         
         Private columnJenisMeja As Global.System.Data.DataColumn
         
         Private columnKeterangan As Global.System.Data.DataColumn
         
+<<<<<<< HEAD
+=======
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -615,6 +650,7 @@ Partial Public Class DataSetDaftarMeja
         
         Private columnKeterangan As Global.System.Data.DataColumn
         
+>>>>>>> origin/Develop
         Private columnStatus As Global.System.Data.DataColumn
         
         Private columnTanggalbook As Global.System.Data.DataColumn
@@ -633,6 +669,1727 @@ Partial Public Class DataSetDaftarMeja
         
         Private columnisActive As Global.System.Data.DataColumn
         
+<<<<<<< HEAD
+    Private columnPicImage As Global.System.Data.DataColumn
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub New()
+      MyBase.New()
+      Me.TableName = "DaftarMeja"
+      Me.BeginInit()
+      Me.InitClass()
+      Me.EndInit()
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Friend Sub New(ByVal table As Global.System.Data.DataTable)
+      MyBase.New()
+      Me.TableName = table.TableName
+      If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+        Me.CaseSensitive = table.CaseSensitive
+      End If
+      If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+        Me.Locale = table.Locale
+      End If
+      If (table.Namespace <> table.DataSet.Namespace) Then
+        Me.Namespace = table.Namespace
+      End If
+      Me.Prefix = table.Prefix
+      Me.MinimumCapacity = table.MinimumCapacity
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+      MyBase.New(info, context)
+      Me.InitVars()
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property IDDaftarMejaColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnIDDaftarMeja
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property IDJenisMejaColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnIDJenisMeja
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property NomorMejaColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnNomorMeja
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property KeteranganColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnKeterangan
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnStatus
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property TanggalbookColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnTanggalbook
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property JamMulaiColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnJamMulai
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property JamSelesaiColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnJamSelesai
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property CreatedByColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnCreatedBy
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property CreatedDateColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnCreatedDate
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property ModifiedByColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnModifiedBy
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property ModifiedDateColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnModifiedDate
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property isActiveColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnisActive
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property PicImageColumn() As Global.System.Data.DataColumn
+      Get
+        Return Me.columnPicImage
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False)> _
+    Public ReadOnly Property Count() As Integer
+      Get
+        Return Me.Rows.Count
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Default Public ReadOnly Property Item(ByVal index As Integer) As DaftarMejaRow
+      Get
+        Return CType(Me.Rows(index), DaftarMejaRow)
+      End Get
+    End Property
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Event DaftarMejaRowChanging As DaftarMejaRowChangeEventHandler
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Event DaftarMejaRowChanged As DaftarMejaRowChangeEventHandler
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Event DaftarMejaRowDeleting As DaftarMejaRowChangeEventHandler
+
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Event DaftarMejaRowDeleted As DaftarMejaRowChangeEventHandler
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Overloads Sub AddDaftarMejaRow(ByVal row As DaftarMejaRow)
+      Me.Rows.Add(row)
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Overloads Function AddDaftarMejaRow(ByVal IDDaftarMeja As Integer, ByVal IDJenisMeja As Integer, ByVal NomorMeja As Integer, ByVal Keterangan As String, ByVal Status As Short, ByVal Tanggalbook As Date, ByVal JamMulai As System.TimeSpan, ByVal JamSelesai As System.TimeSpan, ByVal CreatedBy As Integer, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal isActive As Boolean, ByVal PicImage() As Byte) As DaftarMejaRow
+      Dim rowDaftarMejaRow As DaftarMejaRow = CType(Me.NewRow, DaftarMejaRow)
+      Dim columnValuesArray() As Object = New Object() {IDDaftarMeja, IDJenisMeja, NomorMeja, Keterangan, Status, Tanggalbook, JamMulai, JamSelesai, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, PicImage}
+      rowDaftarMejaRow.ItemArray = columnValuesArray
+      Me.Rows.Add(rowDaftarMejaRow)
+      Return rowDaftarMejaRow
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function FindByIDDaftarMeja(ByVal IDDaftarMeja As Integer) As DaftarMejaRow
+      Return CType(Me.Rows.Find(New Object() {IDDaftarMeja}), DaftarMejaRow)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Overrides Function Clone() As Global.System.Data.DataTable
+      Dim cln As DaftarMejaDataTable = CType(MyBase.Clone, DaftarMejaDataTable)
+      cln.InitVars()
+      Return cln
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+      Return New DaftarMejaDataTable()
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Friend Sub InitVars()
+      Me.columnIDDaftarMeja = MyBase.Columns("IDDaftarMeja")
+      Me.columnIDJenisMeja = MyBase.Columns("IDJenisMeja")
+      Me.columnNomorMeja = MyBase.Columns("NomorMeja")
+      Me.columnKeterangan = MyBase.Columns("Keterangan")
+      Me.columnStatus = MyBase.Columns("Status")
+      Me.columnTanggalbook = MyBase.Columns("Tanggalbook")
+      Me.columnJamMulai = MyBase.Columns("JamMulai")
+      Me.columnJamSelesai = MyBase.Columns("JamSelesai")
+      Me.columnCreatedBy = MyBase.Columns("CreatedBy")
+      Me.columnCreatedDate = MyBase.Columns("CreatedDate")
+      Me.columnModifiedBy = MyBase.Columns("ModifiedBy")
+      Me.columnModifiedDate = MyBase.Columns("ModifiedDate")
+      Me.columnisActive = MyBase.Columns("isActive")
+      Me.columnPicImage = MyBase.Columns("PicImage")
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Sub InitClass()
+      Me.columnIDDaftarMeja = New Global.System.Data.DataColumn("IDDaftarMeja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnIDDaftarMeja)
+      Me.columnIDJenisMeja = New Global.System.Data.DataColumn("IDJenisMeja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnIDJenisMeja)
+      Me.columnNomorMeja = New Global.System.Data.DataColumn("NomorMeja", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnNomorMeja)
+      Me.columnKeterangan = New Global.System.Data.DataColumn("Keterangan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnKeterangan)
+      Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnStatus)
+      Me.columnTanggalbook = New Global.System.Data.DataColumn("Tanggalbook", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnTanggalbook)
+      Me.columnJamMulai = New Global.System.Data.DataColumn("JamMulai", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnJamMulai)
+      Me.columnJamSelesai = New Global.System.Data.DataColumn("JamSelesai", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnJamSelesai)
+      Me.columnCreatedBy = New Global.System.Data.DataColumn("CreatedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnCreatedBy)
+      Me.columnCreatedDate = New Global.System.Data.DataColumn("CreatedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnCreatedDate)
+      Me.columnModifiedBy = New Global.System.Data.DataColumn("ModifiedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnModifiedBy)
+      Me.columnModifiedDate = New Global.System.Data.DataColumn("ModifiedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnModifiedDate)
+      Me.columnisActive = New Global.System.Data.DataColumn("isActive", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnisActive)
+      Me.columnPicImage = New Global.System.Data.DataColumn("PicImage", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+      MyBase.Columns.Add(Me.columnPicImage)
+      Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDDaftarMeja}, True))
+      Me.columnIDDaftarMeja.AllowDBNull = False
+      Me.columnIDDaftarMeja.Unique = True
+      Me.columnKeterangan.MaxLength = 50
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function NewDaftarMejaRow() As DaftarMejaRow
+      Return CType(Me.NewRow, DaftarMejaRow)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+      Return New DaftarMejaRow(builder)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Function GetRowType() As Global.System.Type
+      Return GetType(DaftarMejaRow)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+      MyBase.OnRowChanged(e)
+      If (Not (Me.DaftarMejaRowChangedEvent) Is Nothing) Then
+        RaiseEvent DaftarMejaRowChanged(Me, New DaftarMejaRowChangeEvent(CType(e.Row, DaftarMejaRow), e.Action))
+      End If
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+      MyBase.OnRowChanging(e)
+      If (Not (Me.DaftarMejaRowChangingEvent) Is Nothing) Then
+        RaiseEvent DaftarMejaRowChanging(Me, New DaftarMejaRowChangeEvent(CType(e.Row, DaftarMejaRow), e.Action))
+      End If
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+      MyBase.OnRowDeleted(e)
+      If (Not (Me.DaftarMejaRowDeletedEvent) Is Nothing) Then
+        RaiseEvent DaftarMejaRowDeleted(Me, New DaftarMejaRowChangeEvent(CType(e.Row, DaftarMejaRow), e.Action))
+      End If
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+      MyBase.OnRowDeleting(e)
+      If (Not (Me.DaftarMejaRowDeletingEvent) Is Nothing) Then
+        RaiseEvent DaftarMejaRowDeleting(Me, New DaftarMejaRowChangeEvent(CType(e.Row, DaftarMejaRow), e.Action))
+      End If
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub RemoveDaftarMejaRow(ByVal row As DaftarMejaRow)
+      Me.Rows.Remove(row)
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+      Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+      Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+      Dim ds As DataSetDaftarMeja = New DataSetDaftarMeja()
+      Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+      any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+      any1.MinOccurs = New Decimal(0)
+      any1.MaxOccurs = Decimal.MaxValue
+      any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+      sequence.Items.Add(any1)
+      Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+      any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+      any2.MinOccurs = New Decimal(1)
+      any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+      sequence.Items.Add(any2)
+      Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+      attribute1.Name = "namespace"
+      attribute1.FixedValue = ds.Namespace
+      type.Attributes.Add(attribute1)
+      Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+      attribute2.Name = "tableTypeName"
+      attribute2.FixedValue = "DaftarMejaDataTable"
+      type.Attributes.Add(attribute2)
+      type.Particle = sequence
+      Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+      If xs.Contains(dsSchema.TargetNamespace) Then
+        Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+        Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+        Try
+          Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+          dsSchema.Write(s1)
+          Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+          Do While schemas.MoveNext
+            schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+            s2.SetLength(0)
+            schema.Write(s2)
+            If (s1.Length = s2.Length) Then
+              s1.Position = 0
+              s2.Position = 0
+
+              Do While ((s1.Position <> s1.Length) _
+                          AndAlso (s1.ReadByte = s2.ReadByte))
+
+
+              Loop
+              If (s1.Position = s1.Length) Then
+                Return type
+              End If
+            End If
+
+          Loop
+        Finally
+          If (Not (s1) Is Nothing) Then
+            s1.Close()
+          End If
+          If (Not (s2) Is Nothing) Then
+            s2.Close()
+          End If
+        End Try
+      End If
+      xs.Add(dsSchema)
+      Return type
+    End Function
+  End Class
+
+  '''<summary>
+  '''Represents strongly named DataRow class.
+  '''</summary>
+  Partial Public Class DaftarMejaRow
+    Inherits Global.System.Data.DataRow
+
+    Private tableDaftarMeja As DaftarMejaDataTable
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+      MyBase.New(rb)
+      Me.tableDaftarMeja = CType(Me.Table, DaftarMejaDataTable)
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property IDDaftarMeja() As Integer
+      Get
+        Return CType(Me(Me.tableDaftarMeja.IDDaftarMejaColumn), Integer)
+      End Get
+      Set(value As Integer)
+        Me(Me.tableDaftarMeja.IDDaftarMejaColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property IDJenisMeja() As Integer
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.IDJenisMejaColumn), Integer)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'IDJenisMeja' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Integer)
+        Me(Me.tableDaftarMeja.IDJenisMejaColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property NomorMeja() As Integer
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.NomorMejaColumn), Integer)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'NomorMeja' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Integer)
+        Me(Me.tableDaftarMeja.NomorMejaColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property Keterangan() As String
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.KeteranganColumn), String)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'Keterangan' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As String)
+        Me(Me.tableDaftarMeja.KeteranganColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property Status() As Short
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.StatusColumn), Short)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Short)
+        Me(Me.tableDaftarMeja.StatusColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property Tanggalbook() As Date
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.TanggalbookColumn), Date)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'Tanggalbook' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Date)
+        Me(Me.tableDaftarMeja.TanggalbookColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property JamMulai() As System.TimeSpan
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.JamMulaiColumn), Global.System.TimeSpan)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'JamMulai' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As System.TimeSpan)
+        Me(Me.tableDaftarMeja.JamMulaiColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property JamSelesai() As System.TimeSpan
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.JamSelesaiColumn), Global.System.TimeSpan)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'JamSelesai' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As System.TimeSpan)
+        Me(Me.tableDaftarMeja.JamSelesaiColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property CreatedBy() As Integer
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.CreatedByColumn), Integer)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Integer)
+        Me(Me.tableDaftarMeja.CreatedByColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property CreatedDate() As Date
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.CreatedDateColumn), Date)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Date)
+        Me(Me.tableDaftarMeja.CreatedDateColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property ModifiedBy() As Integer
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.ModifiedByColumn), Integer)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Integer)
+        Me(Me.tableDaftarMeja.ModifiedByColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property ModifiedDate() As Date
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.ModifiedDateColumn), Date)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Date)
+        Me(Me.tableDaftarMeja.ModifiedDateColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property isActive() As Boolean
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.isActiveColumn), Boolean)
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Boolean)
+        Me(Me.tableDaftarMeja.isActiveColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property PicImage() As Byte()
+      Get
+        Try
+          Return CType(Me(Me.tableDaftarMeja.PicImageColumn), Byte())
+        Catch e As Global.System.InvalidCastException
+          Throw New Global.System.Data.StrongTypingException("The value for column 'PicImage' in table 'DaftarMeja' is DBNull.", e)
+        End Try
+      End Get
+      Set(value As Byte())
+        Me(Me.tableDaftarMeja.PicImageColumn) = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsIDJenisMejaNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.IDJenisMejaColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetIDJenisMejaNull()
+      Me(Me.tableDaftarMeja.IDJenisMejaColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsNomorMejaNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.NomorMejaColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetNomorMejaNull()
+      Me(Me.tableDaftarMeja.NomorMejaColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsKeteranganNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.KeteranganColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetKeteranganNull()
+      Me(Me.tableDaftarMeja.KeteranganColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsStatusNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.StatusColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetStatusNull()
+      Me(Me.tableDaftarMeja.StatusColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsTanggalbookNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.TanggalbookColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetTanggalbookNull()
+      Me(Me.tableDaftarMeja.TanggalbookColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsJamMulaiNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.JamMulaiColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetJamMulaiNull()
+      Me(Me.tableDaftarMeja.JamMulaiColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsJamSelesaiNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.JamSelesaiColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetJamSelesaiNull()
+      Me(Me.tableDaftarMeja.JamSelesaiColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsCreatedByNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.CreatedByColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetCreatedByNull()
+      Me(Me.tableDaftarMeja.CreatedByColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsCreatedDateNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.CreatedDateColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetCreatedDateNull()
+      Me(Me.tableDaftarMeja.CreatedDateColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsModifiedByNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.ModifiedByColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetModifiedByNull()
+      Me(Me.tableDaftarMeja.ModifiedByColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsModifiedDateNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.ModifiedDateColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetModifiedDateNull()
+      Me(Me.tableDaftarMeja.ModifiedDateColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsisActiveNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.isActiveColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetisActiveNull()
+      Me(Me.tableDaftarMeja.isActiveColumn) = Global.System.Convert.DBNull
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Function IsPicImageNull() As Boolean
+      Return Me.IsNull(Me.tableDaftarMeja.PicImageColumn)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub SetPicImageNull()
+      Me(Me.tableDaftarMeja.PicImageColumn) = Global.System.Convert.DBNull
+    End Sub
+  End Class
+
+  '''<summary>
+  '''Row event argument class
+  '''</summary>
+  <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+  Public Class DaftarMejaRowChangeEvent
+    Inherits Global.System.EventArgs
+
+    Private eventRow As DaftarMejaRow
+
+    Private eventAction As Global.System.Data.DataRowAction
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub New(ByVal row As DaftarMejaRow, ByVal action As Global.System.Data.DataRowAction)
+      MyBase.New()
+      Me.eventRow = row
+      Me.eventAction = action
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property Row() As DaftarMejaRow
+      Get
+        Return Me.eventRow
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+      Get
+        Return Me.eventAction
+      End Get
+    End Property
+  End Class
+End Class
+
+Namespace DataSetDaftarMejaTableAdapters
+
+  '''<summary>
+  '''Represents the connection and commands used to retrieve and save data.
+  '''</summary>
+  <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+   Global.System.ComponentModel.ToolboxItem(True), _
+   Global.System.ComponentModel.DataObjectAttribute(True), _
+   Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+      ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+   Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+  Partial Public Class DaftarMejaTableAdapter
+    Inherits Global.System.ComponentModel.Component
+
+    Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+
+    Private _connection As Global.System.Data.SqlClient.SqlConnection
+
+    Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+
+    Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+
+    Private _clearBeforeFill As Boolean
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Sub New()
+      MyBase.New()
+      Me.ClearBeforeFill = True
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+      Get
+        If (Me._adapter Is Nothing) Then
+          Me.InitAdapter()
+        End If
+        Return Me._adapter
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+      Get
+        If (Me._connection Is Nothing) Then
+          Me.InitConnection()
+        End If
+        Return Me._connection
+      End Get
+      Set(value As Global.System.Data.SqlClient.SqlConnection)
+        Me._connection = value
+        If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+          Me.Adapter.InsertCommand.Connection = value
+        End If
+        If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+          Me.Adapter.DeleteCommand.Connection = value
+        End If
+        If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+          Me.Adapter.UpdateCommand.Connection = value
+        End If
+        Dim i As Integer = 0
+        Do While (i < Me.CommandCollection.Length)
+          If (Not (Me.CommandCollection(i)) Is Nothing) Then
+            CType(Me.CommandCollection(i), Global.System.Data.SqlClient.SqlCommand).Connection = value
+          End If
+          i = (i + 1)
+        Loop
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+      Get
+        Return Me._transaction
+      End Get
+      Set(value As Global.System.Data.SqlClient.SqlTransaction)
+        Me._transaction = value
+        Dim i As Integer = 0
+        Do While (i < Me.CommandCollection.Length)
+          Me.CommandCollection(i).Transaction = Me._transaction
+          i = (i + 1)
+        Loop
+        If ((Not (Me.Adapter) Is Nothing) _
+                    AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+          Me.Adapter.DeleteCommand.Transaction = Me._transaction
+        End If
+        If ((Not (Me.Adapter) Is Nothing) _
+                    AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+          Me.Adapter.InsertCommand.Transaction = Me._transaction
+        End If
+        If ((Not (Me.Adapter) Is Nothing) _
+                    AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+          Me.Adapter.UpdateCommand.Transaction = Me._transaction
+        End If
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+      Get
+        If (Me._commandCollection Is Nothing) Then
+          Me.InitCommandCollection()
+        End If
+        Return Me._commandCollection
+      End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property ClearBeforeFill() As Boolean
+      Get
+        Return Me._clearBeforeFill
+      End Get
+      Set(value As Boolean)
+        Me._clearBeforeFill = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Sub InitAdapter()
+      Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+      Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+      tableMapping.SourceTable = "Table"
+      tableMapping.DataSetTable = "DaftarMeja"
+      tableMapping.ColumnMappings.Add("IDDaftarMeja", "IDDaftarMeja")
+      tableMapping.ColumnMappings.Add("IDJenisMeja", "IDJenisMeja")
+      tableMapping.ColumnMappings.Add("NomorMeja", "NomorMeja")
+      tableMapping.ColumnMappings.Add("Keterangan", "Keterangan")
+      tableMapping.ColumnMappings.Add("Status", "Status")
+      tableMapping.ColumnMappings.Add("Tanggalbook", "Tanggalbook")
+      tableMapping.ColumnMappings.Add("JamMulai", "JamMulai")
+      tableMapping.ColumnMappings.Add("JamSelesai", "JamSelesai")
+      tableMapping.ColumnMappings.Add("CreatedBy", "CreatedBy")
+      tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate")
+      tableMapping.ColumnMappings.Add("ModifiedBy", "ModifiedBy")
+      tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate")
+      tableMapping.ColumnMappings.Add("isActive", "isActive")
+      tableMapping.ColumnMappings.Add("PicImage", "PicImage")
+      Me._adapter.TableMappings.Add(tableMapping)
+      Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+      Me._adapter.DeleteCommand.Connection = Me.Connection
+      Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DaftarMeja] WHERE (([IDDaftarMeja] = @Original_IDDaftarMeja) AND ((@" & _
+          "IsNull_IDJenisMeja = 1 AND [IDJenisMeja] IS NULL) OR ([IDJenisMeja] = @Original_" & _
+          "IDJenisMeja)) AND ((@IsNull_NomorMeja = 1 AND [NomorMeja] IS NULL) OR ([NomorMej" & _
+          "a] = @Original_NomorMeja)) AND ((@IsNull_Keterangan = 1 AND [Keterangan] IS NULL" & _
+          ") OR ([Keterangan] = @Original_Keterangan)) AND ((@IsNull_Status = 1 AND [Status" & _
+          "] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Tanggalbook = 1 AND [" & _
+          "Tanggalbook] IS NULL) OR ([Tanggalbook] = @Original_Tanggalbook)) AND ((@IsNull_" & _
+          "JamMulai = 1 AND [JamMulai] IS NULL) OR ([JamMulai] = @Original_JamMulai)) AND (" & _
+          "(@IsNull_JamSelesai = 1 AND [JamSelesai] IS NULL) OR ([JamSelesai] = @Original_J" & _
+          "amSelesai)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy]" & _
+          " = @Original_CreatedBy)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL" & _
+          ") OR ([CreatedDate] = @Original_CreatedDate)) AND ((@IsNull_ModifiedBy = 1 AND [" & _
+          "ModifiedBy] IS NULL) OR ([ModifiedBy] = @Original_ModifiedBy)) AND ((@IsNull_Mod" & _
+          "ifiedDate = 1 AND [ModifiedDate] IS NULL) OR ([ModifiedDate] = @Original_Modifie" & _
+          "dDate)) AND ((@IsNull_isActive = 1 AND [isActive] IS NULL) OR ([isActive] = @Ori" & _
+          "ginal_isActive)))"
+      Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDDaftarMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDDaftarMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Keterangan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Keterangan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Tanggalbook", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tanggalbook", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_JamMulai", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_JamMulai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_JamSelesai", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_JamSelesai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+      Me._adapter.InsertCommand.Connection = Me.Connection
+      Me._adapter.InsertCommand.CommandText = "INSERT INTO [DaftarMeja] ([IDDaftarMeja], [IDJenisMeja], [NomorMeja], [Keterangan" & _
+          "], [Status], [Tanggalbook], [JamMulai], [JamSelesai], [PicImage], [CreatedBy], [" & _
+          "CreatedDate], [ModifiedBy], [ModifiedDate], [isActive]) VALUES (@IDDaftarMeja, @" & _
+          "IDJenisMeja, @NomorMeja, @Keterangan, @Status, @Tanggalbook, @JamMulai, @JamSele" & _
+          "sai, @PicImage, @CreatedBy, @CreatedDate, @ModifiedBy, @ModifiedDate, @isActive)" & _
+          ";" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT IDDaftarMeja, IDJenisMeja, NomorMeja, Keterangan, Status, Tanggalbook," & _
+          " JamMulai, JamSelesai, PicImage, CreatedBy, CreatedDate, ModifiedBy, ModifiedDat" & _
+          "e, isActive FROM DaftarMeja WHERE (IDDaftarMeja = @IDDaftarMeja)"
+      Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDDaftarMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDDaftarMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tanggalbook", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JamMulai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JamSelesai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PicImage", Global.System.Data.SqlDbType.Image, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PicImage", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+      Me._adapter.UpdateCommand.Connection = Me.Connection
+      Me._adapter.UpdateCommand.CommandText = "UPDATE [DaftarMeja] SET [IDDaftarMeja] = @IDDaftarMeja, [IDJenisMeja] = @IDJenisM" & _
+          "eja, [NomorMeja] = @NomorMeja, [Keterangan] = @Keterangan, [Status] = @Status, [" & _
+          "Tanggalbook] = @Tanggalbook, [JamMulai] = @JamMulai, [JamSelesai] = @JamSelesai," & _
+          " [PicImage] = @PicImage, [CreatedBy] = @CreatedBy, [CreatedDate] = @CreatedDate," & _
+          " [ModifiedBy] = @ModifiedBy, [ModifiedDate] = @ModifiedDate, [isActive] = @isAct" & _
+          "ive WHERE (([IDDaftarMeja] = @Original_IDDaftarMeja) AND ((@IsNull_IDJenisMeja =" & _
+          " 1 AND [IDJenisMeja] IS NULL) OR ([IDJenisMeja] = @Original_IDJenisMeja)) AND ((" & _
+          "@IsNull_NomorMeja = 1 AND [NomorMeja] IS NULL) OR ([NomorMeja] = @Original_Nomor" & _
+          "Meja)) AND ((@IsNull_Keterangan = 1 AND [Keterangan] IS NULL) OR ([Keterangan] =" & _
+          " @Original_Keterangan)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Stat" & _
+          "us] = @Original_Status)) AND ((@IsNull_Tanggalbook = 1 AND [Tanggalbook] IS NULL" & _
+          ") OR ([Tanggalbook] = @Original_Tanggalbook)) AND ((@IsNull_JamMulai = 1 AND [Ja" & _
+          "mMulai] IS NULL) OR ([JamMulai] = @Original_JamMulai)) AND ((@IsNull_JamSelesai " & _
+          "= 1 AND [JamSelesai] IS NULL) OR ([JamSelesai] = @Original_JamSelesai)) AND ((@I" & _
+          "sNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_Created" & _
+          "By)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL) OR ([CreatedDate] " & _
+          "= @Original_CreatedDate)) AND ((@IsNull_ModifiedBy = 1 AND [ModifiedBy] IS NULL)" & _
+          " OR ([ModifiedBy] = @Original_ModifiedBy)) AND ((@IsNull_ModifiedDate = 1 AND [M" & _
+          "odifiedDate] IS NULL) OR ([ModifiedDate] = @Original_ModifiedDate)) AND ((@IsNul" & _
+          "l_isActive = 1 AND [isActive] IS NULL) OR ([isActive] = @Original_isActive)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & _
+          "SELECT IDDaftarMeja, IDJenisMeja, NomorMeja, Keterangan, Status, Tanggalbook, Ja" & _
+          "mMulai, JamSelesai, PicImage, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, " & _
+          "isActive FROM DaftarMeja WHERE (IDDaftarMeja = @IDDaftarMeja)"
+      Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDDaftarMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDDaftarMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Keterangan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Tanggalbook", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JamMulai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@JamSelesai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PicImage", Global.System.Data.SqlDbType.Image, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PicImage", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDDaftarMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDDaftarMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDJenisMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDJenisMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NomorMeja", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomorMeja", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Keterangan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Keterangan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Keterangan", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Tanggalbook", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tanggalbook", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tanggalbook", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_JamMulai", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_JamMulai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamMulai", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_JamSelesai", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_JamSelesai", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "JamSelesai", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+      Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Sub InitConnection()
+      Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+      Me._connection.ConnectionString = Global.Cafe_Management.Settings.Default.connString
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Sub InitCommandCollection()
+      Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+      Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+      Me._commandCollection(0).Connection = Me.Connection
+      Me._commandCollection(0).CommandText = "SELECT        DaftarMeja.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            DaftarMeja"
+      Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+      Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+      Me._commandCollection(1).Connection = Me.Connection
+      Me._commandCollection(1).CommandText = "SELECT        DaftarMeja.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            DaftarMeja" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "where IDJenisMeja =1"
+      Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+    End Sub
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+    Public Overridable Overloads Function Fill(ByVal dataTable As DataSetDaftarMeja.DaftarMejaDataTable) As Integer
+      Me.Adapter.SelectCommand = Me.CommandCollection(0)
+      If (Me.ClearBeforeFill = True) Then
+        dataTable.Clear()
+      End If
+      Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+      Return returnValue
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
+    Public Overridable Overloads Function GetData() As DataSetDaftarMeja.DaftarMejaDataTable
+      Me.Adapter.SelectCommand = Me.CommandCollection(0)
+      Dim dataTable As DataSetDaftarMeja.DaftarMejaDataTable = New DataSetDaftarMeja.DaftarMejaDataTable()
+      Me.Adapter.Fill(dataTable)
+      Return dataTable
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, False)> _
+    Public Overridable Overloads Function FillByBillyard(ByVal dataTable As DataSetDaftarMeja.DaftarMejaDataTable) As Integer
+      Me.Adapter.SelectCommand = Me.CommandCollection(1)
+      If (Me.ClearBeforeFill = True) Then
+        dataTable.Clear()
+      End If
+      Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+      Return returnValue
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], False)> _
+    Public Overridable Overloads Function GetDataByBillyard() As DataSetDaftarMeja.DaftarMejaDataTable
+      Me.Adapter.SelectCommand = Me.CommandCollection(1)
+      Dim dataTable As DataSetDaftarMeja.DaftarMejaDataTable = New DataSetDaftarMeja.DaftarMejaDataTable()
+      Me.Adapter.Fill(dataTable)
+      Return dataTable
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Public Overridable Overloads Function Update(ByVal dataTable As DataSetDaftarMeja.DaftarMejaDataTable) As Integer
+      Return Me.Adapter.Update(dataTable)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Public Overridable Overloads Function Update(ByVal dataSet As DataSetDaftarMeja) As Integer
+      Return Me.Adapter.Update(dataSet, "DaftarMeja")
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Public Overridable Overloads Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+      Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Public Overridable Overloads Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+      Return Me.Adapter.Update(dataRows)
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
+    Public Overridable Overloads Function Delete(ByVal Original_IDDaftarMeja As Integer, ByVal Original_IDJenisMeja As Global.System.Nullable(Of Integer), ByVal Original_NomorMeja As Global.System.Nullable(Of Integer), ByVal Original_Keterangan As String, ByVal Original_Status As Global.System.Nullable(Of Short), ByVal Original_Tanggalbook As Global.System.Nullable(Of Date), ByVal Original_JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+      Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IDDaftarMeja, Integer)
+      If (Original_IDJenisMeja.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDJenisMeja.Value, Integer)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+      End If
+      If (Original_NomorMeja.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_NomorMeja.Value, Integer)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+      End If
+      If (Original_Keterangan Is Nothing) Then
+        Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Keterangan, String)
+      End If
+      If (Original_Status.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Status.Value, Short)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+      End If
+      If (Original_Tanggalbook.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Tanggalbook.Value, Date)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+      End If
+      If (Original_JamMulai.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_JamMulai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+      End If
+      If (Original_JamSelesai.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_JamSelesai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+      End If
+      If (Original_CreatedBy.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_CreatedBy.Value, Integer)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+      End If
+      If (Original_CreatedDate.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_CreatedDate.Value, Date)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+      End If
+      If (Original_ModifiedBy.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_ModifiedBy.Value, Integer)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+      End If
+      If (Original_ModifiedDate.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_ModifiedDate.Value, Date)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+      End If
+      If (Original_isActive.HasValue = True) Then
+        Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0, Object)
+        Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_isActive.Value, Boolean)
+      Else
+        Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1, Object)
+        Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+      End If
+      Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+      If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+                  <> Global.System.Data.ConnectionState.Open) Then
+        Me.Adapter.DeleteCommand.Connection.Open()
+      End If
+      Try
+        Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+        Return returnValue
+      Finally
+        If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+          Me.Adapter.DeleteCommand.Connection.Close()
+        End If
+      End Try
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
+    Public Overridable Overloads Function Insert(ByVal IDDaftarMeja As Integer, ByVal IDJenisMeja As Global.System.Nullable(Of Integer), ByVal NomorMeja As Global.System.Nullable(Of Integer), ByVal Keterangan As String, ByVal Status As Global.System.Nullable(Of Short), ByVal Tanggalbook As Global.System.Nullable(Of Date), ByVal JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), ByVal JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), ByVal PicImage() As Byte, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+      Me.Adapter.InsertCommand.Parameters(0).Value = CType(IDDaftarMeja, Integer)
+      If (IDJenisMeja.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDJenisMeja.Value, Integer)
+      Else
+        Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+      End If
+      If (NomorMeja.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(2).Value = CType(NomorMeja.Value, Integer)
+      Else
+        Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+      End If
+      If (Keterangan Is Nothing) Then
+        Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.InsertCommand.Parameters(3).Value = CType(Keterangan, String)
+      End If
+      If (Status.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(4).Value = CType(Status.Value, Short)
+      Else
+        Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+      End If
+      If (Tanggalbook.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(5).Value = CType(Tanggalbook.Value, Date)
+      Else
+        Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+      End If
+      If (JamMulai.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(6).Value = CType(JamMulai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+      End If
+      If (JamSelesai.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(7).Value = CType(JamSelesai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+      End If
+      If (PicImage Is Nothing) Then
+        Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.InsertCommand.Parameters(8).Value = CType(PicImage, Byte())
+      End If
+      If (CreatedBy.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(9).Value = CType(CreatedBy.Value, Integer)
+      Else
+        Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+      End If
+      If (CreatedDate.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(10).Value = CType(CreatedDate.Value, Date)
+      Else
+        Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+      End If
+      If (ModifiedBy.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(11).Value = CType(ModifiedBy.Value, Integer)
+      Else
+        Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+      End If
+      If (ModifiedDate.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(12).Value = CType(ModifiedDate.Value, Date)
+      Else
+        Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+      End If
+      If (isActive.HasValue = True) Then
+        Me.Adapter.InsertCommand.Parameters(13).Value = CType(isActive.Value, Boolean)
+      Else
+        Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+      End If
+      Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+      If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+                  <> Global.System.Data.ConnectionState.Open) Then
+        Me.Adapter.InsertCommand.Connection.Open()
+      End If
+      Try
+        Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+        Return returnValue
+      Finally
+        If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+          Me.Adapter.InsertCommand.Connection.Close()
+        End If
+      End Try
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+    Public Overridable Overloads Function Update( _
+                    ByVal IDDaftarMeja As Integer, _
+                    ByVal IDJenisMeja As Global.System.Nullable(Of Integer), _
+                    ByVal NomorMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Keterangan As String, _
+                    ByVal Status As Global.System.Nullable(Of Short), _
+                    ByVal Tanggalbook As Global.System.Nullable(Of Date), _
+                    ByVal JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal PicImage() As Byte, _
+                    ByVal CreatedBy As Global.System.Nullable(Of Integer), _
+                    ByVal CreatedDate As Global.System.Nullable(Of Date), _
+                    ByVal ModifiedBy As Global.System.Nullable(Of Integer), _
+                    ByVal ModifiedDate As Global.System.Nullable(Of Date), _
+                    ByVal isActive As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_IDDaftarMeja As Integer, _
+                    ByVal Original_IDJenisMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Original_NomorMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Original_Keterangan As String, _
+                    ByVal Original_Status As Global.System.Nullable(Of Short), _
+                    ByVal Original_Tanggalbook As Global.System.Nullable(Of Date), _
+                    ByVal Original_JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), _
+                    ByVal Original_CreatedDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), _
+                    ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+      Me.Adapter.UpdateCommand.Parameters(0).Value = CType(IDDaftarMeja, Integer)
+      If (IDJenisMeja.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDJenisMeja.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+      End If
+      If (NomorMeja.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(2).Value = CType(NomorMeja.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+      End If
+      If (Keterangan Is Nothing) Then
+        Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Keterangan, String)
+      End If
+      If (Status.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Status.Value, Short)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+      End If
+      If (Tanggalbook.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Tanggalbook.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+      End If
+      If (JamMulai.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(6).Value = CType(JamMulai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+      End If
+      If (JamSelesai.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(7).Value = CType(JamSelesai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+      End If
+      If (PicImage Is Nothing) Then
+        Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.UpdateCommand.Parameters(8).Value = CType(PicImage, Byte())
+      End If
+      If (CreatedBy.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(9).Value = CType(CreatedBy.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+      End If
+      If (CreatedDate.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(10).Value = CType(CreatedDate.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+      End If
+      If (ModifiedBy.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(11).Value = CType(ModifiedBy.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+      End If
+      If (ModifiedDate.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(12).Value = CType(ModifiedDate.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+      End If
+      If (isActive.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(13).Value = CType(isActive.Value, Boolean)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+      End If
+      Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_IDDaftarMeja, Integer)
+      If (Original_IDJenisMeja.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_IDJenisMeja.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+      End If
+      If (Original_NomorMeja.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_NomorMeja.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+      End If
+      If (Original_Keterangan Is Nothing) Then
+        Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+      Else
+        Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Keterangan, String)
+      End If
+      If (Original_Status.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Status.Value, Short)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+      End If
+      If (Original_Tanggalbook.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Tanggalbook.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+      End If
+      If (Original_JamMulai.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_JamMulai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+      End If
+      If (Original_JamSelesai.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_JamSelesai.Value, System.TimeSpan)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+      End If
+      If (Original_CreatedBy.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_CreatedBy.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+      End If
+      If (Original_CreatedDate.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_CreatedDate.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+      End If
+      If (Original_ModifiedBy.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_ModifiedBy.Value, Integer)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+      End If
+      If (Original_ModifiedDate.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_ModifiedDate.Value, Date)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+      End If
+      If (Original_isActive.HasValue = True) Then
+        Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0, Object)
+        Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_isActive.Value, Boolean)
+      Else
+        Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1, Object)
+        Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+      End If
+      Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+      If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
+                  <> Global.System.Data.ConnectionState.Open) Then
+        Me.Adapter.UpdateCommand.Connection.Open()
+      End If
+      Try
+        Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+        Return returnValue
+      Finally
+        If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+          Me.Adapter.UpdateCommand.Connection.Close()
+        End If
+      End Try
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+     Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
+    Public Overridable Overloads Function Update( _
+                    ByVal IDJenisMeja As Global.System.Nullable(Of Integer), _
+                    ByVal NomorMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Keterangan As String, _
+                    ByVal Status As Global.System.Nullable(Of Short), _
+                    ByVal Tanggalbook As Global.System.Nullable(Of Date), _
+                    ByVal JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal PicImage() As Byte, _
+                    ByVal CreatedBy As Global.System.Nullable(Of Integer), _
+                    ByVal CreatedDate As Global.System.Nullable(Of Date), _
+                    ByVal ModifiedBy As Global.System.Nullable(Of Integer), _
+                    ByVal ModifiedDate As Global.System.Nullable(Of Date), _
+                    ByVal isActive As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_IDDaftarMeja As Integer, _
+                    ByVal Original_IDJenisMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Original_NomorMeja As Global.System.Nullable(Of Integer), _
+                    ByVal Original_Keterangan As String, _
+                    ByVal Original_Status As Global.System.Nullable(Of Short), _
+                    ByVal Original_Tanggalbook As Global.System.Nullable(Of Date), _
+                    ByVal Original_JamMulai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_JamSelesai As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), _
+                    ByVal Original_CreatedDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), _
+                    ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+      Return Me.Update(Original_IDDaftarMeja, IDJenisMeja, NomorMeja, Keterangan, Status, Tanggalbook, JamMulai, JamSelesai, PicImage, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, Original_IDDaftarMeja, Original_IDJenisMeja, Original_NomorMeja, Original_Keterangan, Original_Status, Original_Tanggalbook, Original_JamMulai, Original_JamSelesai, Original_CreatedBy, Original_CreatedDate, Original_ModifiedBy, Original_ModifiedDate, Original_isActive)
+    End Function
+  End Class
+
+  '''<summary>
+  '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+  '''</summary>
+  <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+   Global.System.ComponentModel.ToolboxItem(True), _
+   Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD" & _
+      "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+   Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")> _
+  Partial Public Class TableAdapterManager
+    Inherits Global.System.ComponentModel.Component
+
+    Private _updateOrder As UpdateOrderOption
+
+    Private _daftarMejaTableAdapter As DaftarMejaTableAdapter
+
+    Private _backupDataSetBeforeUpdate As Boolean
+
+    Private _connection As Global.System.Data.IDbConnection
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property UpdateOrder() As UpdateOrderOption
+      Get
+        Return Me._updateOrder
+      End Get
+      Set(value As UpdateOrderOption)
+        Me._updateOrder = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" & _
+        "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" & _
+        "a", "System.Drawing.Design.UITypeEditor")> _
+    Public Property DaftarMejaTableAdapter() As DaftarMejaTableAdapter
+      Get
+        Return Me._daftarMejaTableAdapter
+      End Get
+      Set(value As DaftarMejaTableAdapter)
+        Me._daftarMejaTableAdapter = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Property BackupDataSetBeforeUpdate() As Boolean
+      Get
+        Return Me._backupDataSetBeforeUpdate
+      End Get
+      Set(value As Boolean)
+        Me._backupDataSetBeforeUpdate = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False)> _
+    Public Property Connection() As Global.System.Data.IDbConnection
+      Get
+        If (Not (Me._connection) Is Nothing) Then
+          Return Me._connection
+        End If
+        If ((Not (Me._daftarMejaTableAdapter) Is Nothing) _
+                    AndAlso (Not (Me._daftarMejaTableAdapter.Connection) Is Nothing)) Then
+          Return Me._daftarMejaTableAdapter.Connection
+        End If
+        Return Nothing
+      End Get
+      Set(value As Global.System.Data.IDbConnection)
+        Me._connection = value
+      End Set
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False)> _
+    Public ReadOnly Property TableAdapterInstanceCount() As Integer
+      Get
+        Dim count As Integer = 0
+        If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+          count = (count + 1)
+        End If
+        Return count
+      End Get
+    End Property
+
+    '''<summary>
+    '''Update rows in top-down order.
+    '''</summary>
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function UpdateUpdatedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+      Dim result As Integer = 0
+      If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+        Dim updatedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+        updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+        If ((Not (updatedRows) Is Nothing) _
+                    AndAlso (0 < updatedRows.Length)) Then
+          result = (result + Me._daftarMejaTableAdapter.Update(updatedRows))
+          allChangedRows.AddRange(updatedRows)
+        End If
+      End If
+      Return result
+    End Function
+
+=======
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2254,437 +4011,332 @@ Namespace DataSetDaftarMejaTableAdapters
         End Function
     End Class
     
+>>>>>>> origin/Develop
     '''<summary>
-    '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+    '''Insert rows in top-down order.
     '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD"& _ 
-        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")>  _
-    Partial Public Class TableAdapterManager
-        Inherits Global.System.ComponentModel.Component
-        
-        Private _updateOrder As UpdateOrderOption
-        
-        Private _daftarMejaTableAdapter As DaftarMejaTableAdapter
-        
-        Private _backupDataSetBeforeUpdate As Boolean
-        
-        Private _connection As Global.System.Data.IDbConnection
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property UpdateOrder() As UpdateOrderOption
-            Get
-                Return Me._updateOrder
-            End Get
-            Set
-                Me._updateOrder = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property DaftarMejaTableAdapter() As DaftarMejaTableAdapter
-            Get
-                Return Me._daftarMejaTableAdapter
-            End Get
-            Set
-                Me._daftarMejaTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property BackupDataSetBeforeUpdate() As Boolean
-            Get
-                Return Me._backupDataSetBeforeUpdate
-            End Get
-            Set
-                Me._backupDataSetBeforeUpdate = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public Property Connection() As Global.System.Data.IDbConnection
-            Get
-                If (Not (Me._connection) Is Nothing) Then
-                    Return Me._connection
-                End If
-                If ((Not (Me._daftarMejaTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._daftarMejaTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._daftarMejaTableAdapter.Connection
-                End If
-                Return Nothing
-            End Get
-            Set
-                Me._connection = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property TableAdapterInstanceCount() As Integer
-            Get
-                Dim count As Integer = 0
-                If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                Return count
-            End Get
-        End Property
-        
-        '''<summary>
-        '''Update rows in top-down order.
-        '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
-            Dim result As Integer = 0
-            If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._daftarMejaTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            Return result
-        End Function
-        
-        '''<summary>
-        '''Insert rows in top-down order.
-        '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
-            Dim result As Integer = 0
-            If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._daftarMejaTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            Return result
-        End Function
-        
-        '''<summary>
-        '''Delete rows in bottom-up order.
-        '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
-            Dim result As Integer = 0
-            If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._daftarMejaTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            Return result
-        End Function
-        
-        '''<summary>
-        '''Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-        '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function GetRealUpdatedRows(ByVal updatedRows() As Global.System.Data.DataRow, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Global.System.Data.DataRow()
-            If ((updatedRows Is Nothing)  _
-                        OrElse (updatedRows.Length < 1)) Then
-                Return updatedRows
-            End If
-            If ((allAddedRows Is Nothing)  _
-                        OrElse (allAddedRows.Count < 1)) Then
-                Return updatedRows
-            End If
-            Dim realUpdatedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function UpdateInsertedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+      Dim result As Integer = 0
+      If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+        Dim addedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+        If ((Not (addedRows) Is Nothing) _
+                    AndAlso (0 < addedRows.Length)) Then
+          result = (result + Me._daftarMejaTableAdapter.Update(addedRows))
+          allAddedRows.AddRange(addedRows)
+        End If
+      End If
+      Return result
+    End Function
+
+    '''<summary>
+    '''Delete rows in bottom-up order.
+    '''</summary>
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function UpdateDeletedRows(ByVal dataSet As DataSetDaftarMeja, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+      Dim result As Integer = 0
+      If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+        Dim deletedRows() As Global.System.Data.DataRow = dataSet.DaftarMeja.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+        If ((Not (deletedRows) Is Nothing) _
+                    AndAlso (0 < deletedRows.Length)) Then
+          result = (result + Me._daftarMejaTableAdapter.Update(deletedRows))
+          allChangedRows.AddRange(deletedRows)
+        End If
+      End If
+      Return result
+    End Function
+
+    '''<summary>
+    '''Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+    '''</summary>
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function GetRealUpdatedRows(ByVal updatedRows() As Global.System.Data.DataRow, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Global.System.Data.DataRow()
+      If ((updatedRows Is Nothing) _
+                  OrElse (updatedRows.Length < 1)) Then
+        Return updatedRows
+      End If
+      If ((allAddedRows Is Nothing) _
+                  OrElse (allAddedRows.Count < 1)) Then
+        Return updatedRows
+      End If
+      Dim realUpdatedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
+      Dim i As Integer = 0
+      Do While (i < updatedRows.Length)
+        Dim row As Global.System.Data.DataRow = updatedRows(i)
+        If (allAddedRows.Contains(row) = False) Then
+          realUpdatedRows.Add(row)
+        End If
+        i = (i + 1)
+      Loop
+      Return realUpdatedRows.ToArray
+    End Function
+
+    '''<summary>
+    '''Update all changes to the dataset.
+    '''</summary>
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Overridable Function UpdateAll(ByVal dataSet As DataSetDaftarMeja) As Integer
+      If (dataSet Is Nothing) Then
+        Throw New Global.System.ArgumentNullException("dataSet")
+      End If
+      If (dataSet.HasChanges = False) Then
+        Return 0
+      End If
+      If ((Not (Me._daftarMejaTableAdapter) Is Nothing) _
+                  AndAlso (Me.MatchTableAdapterConnection(Me._daftarMejaTableAdapter.Connection) = False)) Then
+        Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" & _
+                "tring.")
+      End If
+      Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
+      If (workConnection Is Nothing) Then
+        Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" & _
+                "ger TableAdapter property to a valid TableAdapter instance.")
+      End If
+      Dim workConnOpened As Boolean = False
+      If ((workConnection.State And Global.System.Data.ConnectionState.Broken) _
+                  = Global.System.Data.ConnectionState.Broken) Then
+        workConnection.Close()
+      End If
+      If (workConnection.State = Global.System.Data.ConnectionState.Closed) Then
+        workConnection.Open()
+        workConnOpened = True
+      End If
+      Dim workTransaction As Global.System.Data.IDbTransaction = workConnection.BeginTransaction
+      If (workTransaction Is Nothing) Then
+        Throw New Global.System.ApplicationException("The transaction cannot begin. The current data connection does not support transa" & _
+                "ctions or the current state is not allowing the transaction to begin.")
+      End If
+      Dim allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
+      Dim allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
+      Dim adaptersWithAcceptChangesDuringUpdate As Global.System.Collections.Generic.List(Of Global.System.Data.Common.DataAdapter) = New Global.System.Collections.Generic.List(Of Global.System.Data.Common.DataAdapter)()
+      Dim revertConnections As Global.System.Collections.Generic.Dictionary(Of Object, Global.System.Data.IDbConnection) = New Global.System.Collections.Generic.Dictionary(Of Object, Global.System.Data.IDbConnection)()
+      Dim result As Integer = 0
+      Dim backupDataSet As Global.System.Data.DataSet = Nothing
+      If Me.BackupDataSetBeforeUpdate Then
+        backupDataSet = New Global.System.Data.DataSet()
+        backupDataSet.Merge(dataSet)
+      End If
+      Try
+        '---- Prepare for update -----------
+        '
+        If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+          revertConnections.Add(Me._daftarMejaTableAdapter, Me._daftarMejaTableAdapter.Connection)
+          Me._daftarMejaTableAdapter.Connection = CType(workConnection, Global.System.Data.SqlClient.SqlConnection)
+          Me._daftarMejaTableAdapter.Transaction = CType(workTransaction, Global.System.Data.SqlClient.SqlTransaction)
+          If Me._daftarMejaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+            Me._daftarMejaTableAdapter.Adapter.AcceptChangesDuringUpdate = False
+            adaptersWithAcceptChangesDuringUpdate.Add(Me._daftarMejaTableAdapter.Adapter)
+          End If
+        End If
+        '
+        '---- Perform updates -----------
+        '
+        If (Me.UpdateOrder = UpdateOrderOption.UpdateInsertDelete) Then
+          result = (result + Me.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows))
+          result = (result + Me.UpdateInsertedRows(dataSet, allAddedRows))
+        Else
+          result = (result + Me.UpdateInsertedRows(dataSet, allAddedRows))
+          result = (result + Me.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows))
+        End If
+        result = (result + Me.UpdateDeletedRows(dataSet, allChangedRows))
+        '
+        '---- Commit updates -----------
+        '
+        workTransaction.Commit()
+        If (0 < allAddedRows.Count) Then
+          Dim rows((allAddedRows.Count) - 1) As Global.System.Data.DataRow
+          allAddedRows.CopyTo(rows)
+          Dim i As Integer = 0
+          Do While (i < rows.Length)
+            Dim row As Global.System.Data.DataRow = rows(i)
+            row.AcceptChanges()
+            i = (i + 1)
+          Loop
+        End If
+        If (0 < allChangedRows.Count) Then
+          Dim rows((allChangedRows.Count) - 1) As Global.System.Data.DataRow
+          allChangedRows.CopyTo(rows)
+          Dim i As Integer = 0
+          Do While (i < rows.Length)
+            Dim row As Global.System.Data.DataRow = rows(i)
+            row.AcceptChanges()
+            i = (i + 1)
+          Loop
+        End If
+      Catch ex As Global.System.Exception
+        workTransaction.Rollback()
+        '---- Restore the dataset -----------
+        If Me.BackupDataSetBeforeUpdate Then
+          Global.System.Diagnostics.Debug.Assert((Not (backupDataSet) Is Nothing))
+          dataSet.Clear()
+          dataSet.Merge(backupDataSet)
+        Else
+          If (0 < allAddedRows.Count) Then
+            Dim rows((allAddedRows.Count) - 1) As Global.System.Data.DataRow
+            allAddedRows.CopyTo(rows)
             Dim i As Integer = 0
-            Do While (i < updatedRows.Length)
-                Dim row As Global.System.Data.DataRow = updatedRows(i)
-                If (allAddedRows.Contains(row) = false) Then
-                    realUpdatedRows.Add(row)
-                End If
-                i = (i + 1)
+            Do While (i < rows.Length)
+              Dim row As Global.System.Data.DataRow = rows(i)
+              row.AcceptChanges()
+              row.SetAdded()
+              i = (i + 1)
             Loop
-            Return realUpdatedRows.ToArray
-        End Function
-        
-        '''<summary>
-        '''Update all changes to the dataset.
-        '''</summary>
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As DataSetDaftarMeja) As Integer
-            If (dataSet Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("dataSet")
-            End If
-            If (dataSet.HasChanges = false) Then
-                Return 0
-            End If
-            If ((Not (Me._daftarMejaTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._daftarMejaTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
-            If (workConnection Is Nothing) Then
-                Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
-                        "ger TableAdapter property to a valid TableAdapter instance.")
-            End If
-            Dim workConnOpened As Boolean = false
-            If ((workConnection.State And Global.System.Data.ConnectionState.Broken)  _
-                        = Global.System.Data.ConnectionState.Broken) Then
-                workConnection.Close
-            End If
-            If (workConnection.State = Global.System.Data.ConnectionState.Closed) Then
-                workConnection.Open
-                workConnOpened = true
-            End If
-            Dim workTransaction As Global.System.Data.IDbTransaction = workConnection.BeginTransaction
-            If (workTransaction Is Nothing) Then
-                Throw New Global.System.ApplicationException("The transaction cannot begin. The current data connection does not support transa"& _ 
-                        "ctions or the current state is not allowing the transaction to begin.")
-            End If
-            Dim allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
-            Dim allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow) = New Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)()
-            Dim adaptersWithAcceptChangesDuringUpdate As Global.System.Collections.Generic.List(Of Global.System.Data.Common.DataAdapter) = New Global.System.Collections.Generic.List(Of Global.System.Data.Common.DataAdapter)()
-            Dim revertConnections As Global.System.Collections.Generic.Dictionary(Of Object, Global.System.Data.IDbConnection) = New Global.System.Collections.Generic.Dictionary(Of Object, Global.System.Data.IDbConnection)()
-            Dim result As Integer = 0
-            Dim backupDataSet As Global.System.Data.DataSet = Nothing
-            If Me.BackupDataSetBeforeUpdate Then
-                backupDataSet = New Global.System.Data.DataSet()
-                backupDataSet.Merge(dataSet)
-            End If
-            Try 
-                '---- Prepare for update -----------
-                '
-                If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._daftarMejaTableAdapter, Me._daftarMejaTableAdapter.Connection)
-                    Me._daftarMejaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._daftarMejaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._daftarMejaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._daftarMejaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._daftarMejaTableAdapter.Adapter)
-                    End If
-                End If
-                '
-                '---- Perform updates -----------
-                '
-                If (Me.UpdateOrder = UpdateOrderOption.UpdateInsertDelete) Then
-                    result = (result + Me.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows))
-                    result = (result + Me.UpdateInsertedRows(dataSet, allAddedRows))
-                Else
-                    result = (result + Me.UpdateInsertedRows(dataSet, allAddedRows))
-                    result = (result + Me.UpdateUpdatedRows(dataSet, allChangedRows, allAddedRows))
-                End If
-                result = (result + Me.UpdateDeletedRows(dataSet, allChangedRows))
-                '
-                '---- Commit updates -----------
-                '
-                workTransaction.Commit
-                If (0 < allAddedRows.Count) Then
-                    Dim rows((allAddedRows.Count) - 1) As Global.System.Data.DataRow
-                    allAddedRows.CopyTo(rows)
-                    Dim i As Integer = 0
-                    Do While (i < rows.Length)
-                        Dim row As Global.System.Data.DataRow = rows(i)
-                        row.AcceptChanges
-                        i = (i + 1)
-                    Loop
-                End If
-                If (0 < allChangedRows.Count) Then
-                    Dim rows((allChangedRows.Count) - 1) As Global.System.Data.DataRow
-                    allChangedRows.CopyTo(rows)
-                    Dim i As Integer = 0
-                    Do While (i < rows.Length)
-                        Dim row As Global.System.Data.DataRow = rows(i)
-                        row.AcceptChanges
-                        i = (i + 1)
-                    Loop
-                End If
-            Catch ex As Global.System.Exception
-                workTransaction.Rollback
-                '---- Restore the dataset -----------
-                If Me.BackupDataSetBeforeUpdate Then
-                    Global.System.Diagnostics.Debug.Assert((Not (backupDataSet) Is Nothing))
-                    dataSet.Clear
-                    dataSet.Merge(backupDataSet)
-                Else
-                    If (0 < allAddedRows.Count) Then
-                        Dim rows((allAddedRows.Count) - 1) As Global.System.Data.DataRow
-                        allAddedRows.CopyTo(rows)
-                        Dim i As Integer = 0
-                        Do While (i < rows.Length)
-                            Dim row As Global.System.Data.DataRow = rows(i)
-                            row.AcceptChanges
-                            row.SetAdded
-                            i = (i + 1)
-                        Loop
-                    End If
-                End If
-                Throw ex
-            Finally
-                If workConnOpened Then
-                    workConnection.Close
-                End If
-                If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
-                    Me._daftarMejaTableAdapter.Connection = CType(revertConnections(Me._daftarMejaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._daftarMejaTableAdapter.Transaction = Nothing
-                End If
-                If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
-                    Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
-                    adaptersWithAcceptChangesDuringUpdate.CopyTo(adapters)
-                    Dim i As Integer = 0
-                    Do While (i < adapters.Length)
-                        Dim adapter As Global.System.Data.Common.DataAdapter = adapters(i)
-                        adapter.AcceptChangesDuringUpdate = true
-                        i = (i + 1)
-                    Loop
-                End If
-            End Try
-            Return result
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overridable Sub SortSelfReferenceRows(ByVal rows() As Global.System.Data.DataRow, ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
-            Global.System.Array.Sort(Of Global.System.Data.DataRow)(rows, New SelfReferenceComparer(relation, childFirst))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overridable Function MatchTableAdapterConnection(ByVal inputConnection As Global.System.Data.IDbConnection) As Boolean
-            If (Not (Me._connection) Is Nothing) Then
-                Return true
-            End If
-            If ((Me.Connection Is Nothing)  _
-                        OrElse (inputConnection Is Nothing)) Then
-                Return true
-            End If
-            If String.Equals(Me.Connection.ConnectionString, inputConnection.ConnectionString, Global.System.StringComparison.Ordinal) Then
-                Return true
-            End If
-            Return false
-        End Function
-        
-        '''<summary>
-        '''Update Order Option
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Enum UpdateOrderOption
-            
-            InsertUpdateDelete = 0
-            
-            UpdateInsertDelete = 1
-        End Enum
-        
-        '''<summary>
-        '''Used to sort self-referenced table's rows
-        '''</summary>
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Class SelfReferenceComparer
-            Inherits Object
-            Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow)
-            
-            Private _relation As Global.System.Data.DataRelation
-            
-            Private _childFirst As Integer
-            
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-            Friend Sub New(ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
-                MyBase.New
-                Me._relation = relation
-                If childFirst Then
-                    Me._childFirst = -1
-                Else
-                    Me._childFirst = 1
-                End If
-            End Sub
-            
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-            Private Function GetRoot(ByVal row As Global.System.Data.DataRow, ByRef distance As Integer) As Global.System.Data.DataRow
-                Global.System.Diagnostics.Debug.Assert((Not (row) Is Nothing))
-                Dim root As Global.System.Data.DataRow = row
-                distance = 0
+          End If
+        End If
+        Throw ex
+      Finally
+        If workConnOpened Then
+          workConnection.Close()
+        End If
+        If (Not (Me._daftarMejaTableAdapter) Is Nothing) Then
+          Me._daftarMejaTableAdapter.Connection = CType(revertConnections(Me._daftarMejaTableAdapter), Global.System.Data.SqlClient.SqlConnection)
+          Me._daftarMejaTableAdapter.Transaction = Nothing
+        End If
+        If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
+          Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
+          adaptersWithAcceptChangesDuringUpdate.CopyTo(adapters)
+          Dim i As Integer = 0
+          Do While (i < adapters.Length)
+            Dim adapter As Global.System.Data.Common.DataAdapter = adapters(i)
+            adapter.AcceptChangesDuringUpdate = True
+            i = (i + 1)
+          Loop
+        End If
+      End Try
+      Return result
+    End Function
 
-                Dim traversedRows As Global.System.Collections.Generic.IDictionary(Of Global.System.Data.DataRow, Global.System.Data.DataRow) = New Global.System.Collections.Generic.Dictionary(Of Global.System.Data.DataRow, Global.System.Data.DataRow)()
-                traversedRows(row) = row
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overridable Sub SortSelfReferenceRows(ByVal rows() As Global.System.Data.DataRow, ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
+      Global.System.Array.Sort(Of Global.System.Data.DataRow)(rows, New SelfReferenceComparer(relation, childFirst))
+    End Sub
 
-                Dim parent As Global.System.Data.DataRow = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.[Default])
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Protected Overridable Function MatchTableAdapterConnection(ByVal inputConnection As Global.System.Data.IDbConnection) As Boolean
+      If (Not (Me._connection) Is Nothing) Then
+        Return True
+      End If
+      If ((Me.Connection Is Nothing) _
+                  OrElse (inputConnection Is Nothing)) Then
+        Return True
+      End If
+      If String.Equals(Me.Connection.ConnectionString, inputConnection.ConnectionString, Global.System.StringComparison.Ordinal) Then
+        Return True
+      End If
+      Return False
+    End Function
 
-                Do While ((Not (parent) Is Nothing)  _
-                            AndAlso (traversedRows.ContainsKey(parent) = false))
-                    distance = (distance + 1)
-                    root = parent
-                    traversedRows(parent) = parent
-                    parent = parent.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.[Default])
+    '''<summary>
+    '''Update Order Option
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Enum UpdateOrderOption
 
-                Loop
+      InsertUpdateDelete = 0
 
-                If (distance = 0) Then
-                    traversedRows.Clear
-                    traversedRows(row) = row
-                    parent = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.Original)
+      UpdateInsertDelete = 1
+    End Enum
 
-                    Do While ((Not (parent) Is Nothing)  _
-                                AndAlso (traversedRows.ContainsKey(parent) = false))
-                        distance = (distance + 1)
-                        root = parent
-                        traversedRows(parent) = parent
-                        parent = parent.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.Original)
+    '''<summary>
+    '''Used to sort self-referenced table's rows
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Class SelfReferenceComparer
+      Inherits Object
+      Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow)
 
-                    Loop
-                End If
+      Private _relation As Global.System.Data.DataRelation
 
-                Return root
-            End Function
-            
-            <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-             Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-            Public Function Compare(ByVal row1 As Global.System.Data.DataRow, ByVal row2 As Global.System.Data.DataRow) As Integer Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow).Compare
-                If Object.ReferenceEquals(row1, row2) Then
-                    Return 0
-                End If
-                If (row1 Is Nothing) Then
-                    Return -1
-                End If
-                If (row2 Is Nothing) Then
-                    Return 1
-                End If
+      Private _childFirst As Integer
 
-                Dim distance1 As Integer = 0
-                Dim root1 As Global.System.Data.DataRow = Me.GetRoot(row1, distance1)
+      <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+       Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+      Friend Sub New(ByVal relation As Global.System.Data.DataRelation, ByVal childFirst As Boolean)
+        MyBase.New()
+        Me._relation = relation
+        If childFirst Then
+          Me._childFirst = -1
+        Else
+          Me._childFirst = 1
+        End If
+      End Sub
 
-                Dim distance2 As Integer = 0
-                Dim root2 As Global.System.Data.DataRow = Me.GetRoot(row2, distance2)
+      <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+       Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+      Private Function GetRoot(ByVal row As Global.System.Data.DataRow, ByRef distance As Integer) As Global.System.Data.DataRow
+        Global.System.Diagnostics.Debug.Assert((Not (row) Is Nothing))
+        Dim root As Global.System.Data.DataRow = row
+        distance = 0
 
-                If Object.ReferenceEquals(root1, root2) Then
-                    Return (Me._childFirst * distance1.CompareTo(distance2))
-                Else
-                    Global.System.Diagnostics.Debug.Assert(((Not (root1.Table) Is Nothing)  _
-                                    AndAlso (Not (root2.Table) Is Nothing)))
-                    If (root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2)) Then
-                        Return -1
-                    Else
-                        Return 1
-                    End If
-                End If
-            End Function
-        End Class
+        Dim traversedRows As Global.System.Collections.Generic.IDictionary(Of Global.System.Data.DataRow, Global.System.Data.DataRow) = New Global.System.Collections.Generic.Dictionary(Of Global.System.Data.DataRow, Global.System.Data.DataRow)()
+        traversedRows(row) = row
+
+        Dim parent As Global.System.Data.DataRow = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.[Default])
+
+        Do While ((Not (parent) Is Nothing) _
+                    AndAlso (traversedRows.ContainsKey(parent) = False))
+          distance = (distance + 1)
+          root = parent
+          traversedRows(parent) = parent
+          parent = parent.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.[Default])
+
+        Loop
+
+        If (distance = 0) Then
+          traversedRows.Clear()
+          traversedRows(row) = row
+          parent = row.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.Original)
+
+          Do While ((Not (parent) Is Nothing) _
+                      AndAlso (traversedRows.ContainsKey(parent) = False))
+            distance = (distance + 1)
+            root = parent
+            traversedRows(parent) = parent
+            parent = parent.GetParentRow(Me._relation, Global.System.Data.DataRowVersion.Original)
+
+          Loop
+        End If
+
+        Return root
+      End Function
+
+      <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+       Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+      Public Function Compare(ByVal row1 As Global.System.Data.DataRow, ByVal row2 As Global.System.Data.DataRow) As Integer Implements Global.System.Collections.Generic.IComparer(Of Global.System.Data.DataRow).Compare
+        If Object.ReferenceEquals(row1, row2) Then
+          Return 0
+        End If
+        If (row1 Is Nothing) Then
+          Return -1
+        End If
+        If (row2 Is Nothing) Then
+          Return 1
+        End If
+
+        Dim distance1 As Integer = 0
+        Dim root1 As Global.System.Data.DataRow = Me.GetRoot(row1, distance1)
+
+        Dim distance2 As Integer = 0
+        Dim root2 As Global.System.Data.DataRow = Me.GetRoot(row2, distance2)
+
+        If Object.ReferenceEquals(root1, root2) Then
+          Return (Me._childFirst * distance1.CompareTo(distance2))
+        Else
+          Global.System.Diagnostics.Debug.Assert(((Not (root1.Table) Is Nothing) _
+                          AndAlso (Not (root2.Table) Is Nothing)))
+          If (root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2)) Then
+            Return -1
+          Else
+            Return 1
+          End If
+        End If
+      End Function
     End Class
+  End Class
 End Namespace

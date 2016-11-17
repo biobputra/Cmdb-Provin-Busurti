@@ -252,3 +252,6 @@ paket-files/
 *.sln.iml
 *.licx
 Cafe Management/My Project/licenses.licx.bak
+Cafe Management/My Project/licenses.licx
+*.licx
+*.licx
