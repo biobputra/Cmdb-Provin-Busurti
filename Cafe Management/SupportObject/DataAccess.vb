@@ -10,8 +10,7 @@ Public Class DataAccess
 
     Shared Function TestConnection() As Boolean
         If Not File.Exists(Application.StartupPath & "\cfg.txt") Then
-            'MyAlert.Show(LoginForm, "Perhatian", "File konfigurasi tidak ditemukan, harap mengkonfigurasi koneksi database")
-            'form konfig show
+            
             Return False
             Exit Function
         End If

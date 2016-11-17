@@ -56,6 +56,7 @@
     Me.KeuanganLaporanNeracaBtn = New DevExpress.XtraBars.BarButtonItem()
     Me.KeuanganLaporanRugiLabaBtn = New DevExpress.XtraBars.BarButtonItem()
     Me.KeuanganLaporanLedgerBtn = New DevExpress.XtraBars.BarButtonItem()
+    Me.InventoryDaftarStorageBtn = New DevExpress.XtraBars.BarButtonItem()
     Me.TransaksiMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
     Me.TransaksiPenjualanGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
     Me.TransaksiMemberGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -67,7 +68,6 @@
     Me.KeuanganFinanceGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
     Me.KeuanganAccountingGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
     Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
-    Me.InventoryDaftarStorageBtn = New DevExpress.XtraBars.BarButtonItem()
     CType(Me.MainRibbon, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.SuspendLayout()
@@ -303,6 +303,12 @@
     Me.KeuanganLaporanLedgerBtn.Name = "KeuanganLaporanLedgerBtn"
     Me.KeuanganLaporanLedgerBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
     '
+    'InventoryDaftarStorageBtn
+    '
+    Me.InventoryDaftarStorageBtn.Caption = "Daftar Storage"
+    Me.InventoryDaftarStorageBtn.Id = 25
+    Me.InventoryDaftarStorageBtn.Name = "InventoryDaftarStorageBtn"
+    '
     'TransaksiMenuHeader
     '
     Me.TransaksiMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.TransaksiPenjualanGroup, Me.TransaksiMemberGroup})
@@ -394,12 +400,6 @@
     '
     Me.XtraTabbedMdiManager1.MdiParent = Me
     '
-    'InventoryDaftarStorageBtn
-    '
-    Me.InventoryDaftarStorageBtn.Caption = "Daftar Storage"
-    Me.InventoryDaftarStorageBtn.Id = 25
-    Me.InventoryDaftarStorageBtn.Name = "InventoryDaftarStorageBtn"
-    '
     'MainForm
     '
     Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[False]
@@ -407,6 +407,7 @@
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(1038, 360)
     Me.Controls.Add(Me.MainRibbon)
+    Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
     Me.IsMdiContainer = True
     Me.Name = "MainForm"
     Me.Ribbon = Me.MainRibbon

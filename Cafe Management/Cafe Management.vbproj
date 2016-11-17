@@ -43,6 +43,9 @@
   <PropertyGroup>
     <StartupObject>Cafe_Management.My.MyApplication</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.1" />
     <Reference Include="DevExpress.Data.v16.1" />
@@ -55,6 +58,7 @@
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -97,6 +101,11 @@
     <Compile Include="Classes\ReturH.vb" />
     <Compile Include="Classes\TerimaTagihanD.vb" />
     <Compile Include="Classes\TerimaTagihanH.vb" />
+    <Compile Include="Dataset\DataSetAccounting.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAccounting.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,6 +114,9 @@
     <Compile Include="Dataset\DataSetDaftarMeja.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetDaftarMeja.vb">
       <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetJenisBarang.Designer.vb">
@@ -154,6 +166,18 @@
     </Compile>
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormAccountingCOA.Designer.vb">
+      <DependentUpon>FormAccountingCOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormAccountingCOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormAccountingGroupAkun.Designer.vb">
+      <DependentUpon>FormAccountingGroupAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormAccountingGroupAkun.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormBarang.Designer.vb">
       <DependentUpon>FormBarang.vb</DependentUpon>
@@ -250,11 +274,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormAccountingCOA.resx">
+      <DependentUpon>FormAccountingCOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormAccountingGroupAkun.resx">
+      <DependentUpon>FormAccountingGroupAkun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormBarang.resx">
       <DependentUpon>FormBarang.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\FormDaftarMeja.resx">
-      <DependentUpon>FormDaftarMeja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormJenisBarang.resx">
       <DependentUpon>FormJenisBarang.vb</DependentUpon>
@@ -302,6 +329,17 @@
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Dataset\DataSetAccounting.xsc">
+      <DependentUpon>DataSetAccounting.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetAccounting.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAccounting.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dataset\DataSetAccounting.xss">
+      <DependentUpon>DataSetAccounting.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetBarang.xsc">
       <DependentUpon>DataSetBarang.xsd</DependentUpon>
     </None>
@@ -317,9 +355,9 @@
       <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetDaftarMeja.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetDaftarMeja.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="Dataset\DataSetDaftarMeja.xss">
       <DependentUpon>DataSetDaftarMeja.xsd</DependentUpon>
@@ -414,6 +452,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BindingNavigatorDeleteItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

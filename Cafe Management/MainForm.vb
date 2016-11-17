@@ -76,5 +76,14 @@ Partial Public Class MainForm
   Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDataMemberBtn.ItemClick
 
   End Sub
+
+  Private Sub KeuanganCOABtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles KeuanganCOABtn.ItemClick
+    FormAccountingCOA.Show()
+  End Sub
+
+  Private Sub KeuanganGroupAkunBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles KeuanganGroupAkunBtn.ItemClick
+    FormAccountingGroupAkun.Show()
+
+  End Sub
 End Class
 
