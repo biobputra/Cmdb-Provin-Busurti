@@ -17,6 +17,7 @@ Public Class DataAccess
 
         SQLConnectionString = "Server=" & MyArrayString(0) & ";Database=" & MyArrayString(1) & ";User Id=" & MyArrayString(2) & ";Password=" & MyArrayString(3) & ";"
 
+        My.Settings.Item("connString") = SQLConnectionString
         If SQLConnectionString = "" Then
 
             MsgBox("Connection string is not yer defined !")

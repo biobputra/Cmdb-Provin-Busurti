@@ -126,6 +126,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAccounting.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetAnggota.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAnggota.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetBarang.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,15 +147,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetJenisIdentitas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetJenisMeja.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetPembelian.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetProductSupplier.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetProdukDanLayanan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetSatuan.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -237,6 +257,12 @@
     <Compile Include="Accounting\FormAccountingGroupAkun.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterForm\FormAnggota.Designer.vb">
+      <DependentUpon>FormAnggota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormAnggota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterForm\FormBarang.Designer.vb">
       <DependentUpon>FormBarang.vb</DependentUpon>
     </Compile>
@@ -255,6 +281,12 @@
     <Compile Include="MasterForm\FormJenisBarang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterForm\FormJenisIdentitas.Designer.vb">
+      <DependentUpon>FormJenisIdentitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisIdentitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterForm\FormJenisMeja.Designer.vb">
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </Compile>
@@ -265,6 +297,12 @@
       <DependentUpon>FormProductSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormProductSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormProdukLayanan.Designer.vb">
+      <DependentUpon>FormProdukLayanan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormProdukLayanan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormSatuan.Designer.vb">
@@ -303,10 +341,10 @@
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Classes\Pengguna.vb" />
-    <Compile Include="Pembelian\FormPembelian.Designer.vb">
-      <DependentUpon>FormPembelian.vb</DependentUpon>
+    <Compile Include="Pembelian\FormTraPembelian.Designer.vb">
+      <DependentUpon>FormTraPembelian.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pembelian\FormPembelian.vb">
+    <Compile Include="Pembelian\FormTraPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Penerimaan\FormPenerimaan.Designer.vb">
@@ -371,6 +409,9 @@
     <EmbeddedResource Include="Accounting\FormAccountingGroupAkun.resx">
       <DependentUpon>FormAccountingGroupAkun.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormAnggota.resx">
+      <DependentUpon>FormAnggota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormBarang.resx">
       <DependentUpon>FormBarang.vb</DependentUpon>
     </EmbeddedResource>
@@ -380,11 +421,17 @@
     <EmbeddedResource Include="MasterForm\FormJenisBarang.resx">
       <DependentUpon>FormJenisBarang.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormJenisIdentitas.resx">
+      <DependentUpon>FormJenisIdentitas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormJenisMeja.resx">
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormProductSupplier.resx">
       <DependentUpon>FormProductSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormProdukLayanan.resx">
+      <DependentUpon>FormProdukLayanan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSatuan.resx">
       <DependentUpon>FormSatuan.vb</DependentUpon>
@@ -413,8 +460,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Pembelian\FormPembelian.resx">
-      <DependentUpon>FormPembelian.vb</DependentUpon>
+    <EmbeddedResource Include="Pembelian\FormTraPembelian.resx">
+      <DependentUpon>FormTraPembelian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Penerimaan\FormPenerimaan.resx">
       <DependentUpon>FormPenerimaan.vb</DependentUpon>
@@ -451,6 +498,17 @@
     <None Include="Dataset\DataSetAccounting.xss">
       <DependentUpon>DataSetAccounting.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetAnggota.xsc">
+      <DependentUpon>DataSetAnggota.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetAnggota.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAnggota.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetAnggota.xss">
+      <DependentUpon>DataSetAnggota.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetBarang.xsc">
       <DependentUpon>DataSetBarang.xsd</DependentUpon>
     </None>
@@ -484,6 +542,17 @@
     <None Include="Dataset\DataSetJenisBarang.xss">
       <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xsc">
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJenisIdentitas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xss">
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetJenisMeja.xsc">
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
     </None>
@@ -495,6 +564,17 @@
     <None Include="Dataset\DataSetJenisMeja.xss">
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetPembelian.xsc">
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetPembelian.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPembelian.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetPembelian.xss">
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetProductSupplier.xsc">
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
     </None>
@@ -505,6 +585,17 @@
     </None>
     <None Include="Dataset\DataSetProductSupplier.xss">
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xsc">
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProdukDanLayanan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xss">
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetSatuan.xsc">
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>

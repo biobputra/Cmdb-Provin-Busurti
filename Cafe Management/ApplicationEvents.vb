@@ -11,6 +11,7 @@ Namespace My
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
             DataAccess.TestConnection()
 
+            MsgBox(My.Settings.connString)
         End Sub
     End Class
 End Namespace

@@ -25,41 +25,43 @@ Partial Class FormProductSupplier
         Me.ProdukSupplierTableAdapter = New Cafe_Management.DataSetProductSupplierTableAdapters.ProdukSupplierTableAdapter()
         Me.TableAdapterManager = New Cafe_Management.DataSetProductSupplierTableAdapters.TableAdapterManager()
         Me.ProdukSupplierBindingNavigator = New System.Windows.Forms.BindingNavigator()
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ProdukSupplierBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ProdukSupplierGridControl = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.BarangBindingSource = New System.Windows.Forms.BindingSource()
-        Me.BarangTableAdapter = New Cafe_Management.DataSetProductSupplierTableAdapters.BarangTableAdapter()
-        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource()
-        Me.SupplierTableAdapter = New Cafe_Management.DataSetProductSupplierTableAdapters.SupplierTableAdapter()
         Me.colIDProdukSupplier = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIDProduk = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.BarangBindingSource = New System.Windows.Forms.BindingSource()
         Me.colIDSupplier = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource()
         Me.colCreatedBy = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCreatedDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colModifiedBy = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colModifiedDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colisActive = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.BarangTableAdapter = New Cafe_Management.DataSetProductSupplierTableAdapters.BarangTableAdapter()
+        Me.SupplierTableAdapter = New Cafe_Management.DataSetProductSupplierTableAdapters.SupplierTableAdapter()
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
+        Me.RadioGroup1 = New DevExpress.XtraEditors.RadioGroup()
+        Me.IDProdukLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.IDSupplierLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.IDProdukLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.ItemForIDProduk = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.IDSupplierLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.ItemForIDSupplier = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.RadioGroup1 = New DevExpress.XtraEditors.RadioGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.DataSetProductSupplier, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdukSupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,18 +69,20 @@ Partial Class FormProductSupplier
         Me.ProdukSupplierBindingNavigator.SuspendLayout()
         CType(Me.ProdukSupplierGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DataLayoutControl1.SuspendLayout()
+        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IDProdukLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IDSupplierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IDProdukLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForIDProduk, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IDSupplierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForIDSupplier, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,6 +124,22 @@ Partial Class FormProductSupplier
         Me.ProdukSupplierBindingNavigator.TabIndex = 0
         Me.ProdukSupplierBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -152,16 +172,9 @@ Partial Class FormProductSupplier
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -184,17 +197,17 @@ Partial Class FormProductSupplier
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'BindingNavigatorAddNewItem
+        'ToolStripButton1
         '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.Cafe_Management.My.Resources.Resources.BindingNavigatorDeleteItem_Image
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'ProdukSupplierBindingNavigatorSaveItem
         '
@@ -210,6 +223,7 @@ Partial Class FormProductSupplier
         Me.ProdukSupplierGridControl.Location = New System.Drawing.Point(12, 60)
         Me.ProdukSupplierGridControl.MainView = Me.GridView1
         Me.ProdukSupplierGridControl.Name = "ProdukSupplierGridControl"
+        Me.ProdukSupplierGridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit2})
         Me.ProdukSupplierGridControl.Size = New System.Drawing.Size(324, 312)
         Me.ProdukSupplierGridControl.TabIndex = 2
         Me.ProdukSupplierGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -220,24 +234,6 @@ Partial Class FormProductSupplier
         Me.GridView1.GridControl = Me.ProdukSupplierGridControl
         Me.GridView1.Name = "GridView1"
         '
-        'BarangBindingSource
-        '
-        Me.BarangBindingSource.DataMember = "Barang"
-        Me.BarangBindingSource.DataSource = Me.DataSetProductSupplier
-        '
-        'BarangTableAdapter
-        '
-        Me.BarangTableAdapter.ClearBeforeFill = True
-        '
-        'SupplierBindingSource
-        '
-        Me.SupplierBindingSource.DataMember = "Supplier"
-        Me.SupplierBindingSource.DataSource = Me.DataSetProductSupplier
-        '
-        'SupplierTableAdapter
-        '
-        Me.SupplierTableAdapter.ClearBeforeFill = True
-        '
         'colIDProdukSupplier
         '
         Me.colIDProdukSupplier.FieldName = "IDProdukSupplier"
@@ -245,17 +241,49 @@ Partial Class FormProductSupplier
         '
         'colIDProduk
         '
+        Me.colIDProduk.Caption = "Product"
+        Me.colIDProduk.ColumnEdit = Me.RepositoryItemLookUpEdit1
         Me.colIDProduk.FieldName = "IDProduk"
         Me.colIDProduk.Name = "colIDProduk"
         Me.colIDProduk.Visible = True
         Me.colIDProduk.VisibleIndex = 0
         '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.DataSource = Me.BarangBindingSource
+        Me.RepositoryItemLookUpEdit1.DisplayMember = "NamaBarang"
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        Me.RepositoryItemLookUpEdit1.ValueMember = "IDBarang"
+        '
+        'BarangBindingSource
+        '
+        Me.BarangBindingSource.DataMember = "Barang"
+        Me.BarangBindingSource.DataSource = Me.DataSetProductSupplier
+        '
         'colIDSupplier
         '
+        Me.colIDSupplier.Caption = "Supplier"
+        Me.colIDSupplier.ColumnEdit = Me.RepositoryItemLookUpEdit2
         Me.colIDSupplier.FieldName = "IDSupplier"
         Me.colIDSupplier.Name = "colIDSupplier"
         Me.colIDSupplier.Visible = True
         Me.colIDSupplier.VisibleIndex = 1
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit2.DataSource = Me.SupplierBindingSource
+        Me.RepositoryItemLookUpEdit2.DisplayMember = "Company"
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+        Me.RepositoryItemLookUpEdit2.ValueMember = "IDSupplier"
+        '
+        'SupplierBindingSource
+        '
+        Me.SupplierBindingSource.DataMember = "Supplier"
+        Me.SupplierBindingSource.DataSource = Me.DataSetProductSupplier
         '
         'colCreatedBy
         '
@@ -282,6 +310,14 @@ Partial Class FormProductSupplier
         Me.colisActive.FieldName = "isActive"
         Me.colisActive.Name = "colisActive"
         '
+        'BarangTableAdapter
+        '
+        Me.BarangTableAdapter.ClearBeforeFill = True
+        '
+        'SupplierTableAdapter
+        '
+        Me.SupplierTableAdapter.ClearBeforeFill = True
+        '
         'DataLayoutControl1
         '
         Me.DataLayoutControl1.Controls.Add(Me.RadioGroup1)
@@ -296,6 +332,52 @@ Partial Class FormProductSupplier
         Me.DataLayoutControl1.Size = New System.Drawing.Size(348, 413)
         Me.DataLayoutControl1.TabIndex = 3
         Me.DataLayoutControl1.Text = "DataLayoutControl1"
+        '
+        'RadioGroup1
+        '
+        Me.RadioGroup1.Location = New System.Drawing.Point(12, 376)
+        Me.RadioGroup1.Name = "RadioGroup1"
+        Me.RadioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.RadioGroup1.Properties.Appearance.Options.UseBackColor = True
+        Me.RadioGroup1.Properties.Columns = 2
+        Me.RadioGroup1.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(True, "Show Active Data"), New DevExpress.XtraEditors.Controls.RadioGroupItem(False, "Show Inactive Data")})
+        Me.RadioGroup1.Size = New System.Drawing.Size(324, 25)
+        Me.RadioGroup1.StyleController = Me.DataLayoutControl1
+        Me.RadioGroup1.TabIndex = 4
+        '
+        'IDProdukLookUpEdit
+        '
+        Me.IDProdukLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukSupplierBindingSource, "IDProduk", True))
+        Me.IDProdukLookUpEdit.Location = New System.Drawing.Point(53, 12)
+        Me.IDProdukLookUpEdit.Name = "IDProdukLookUpEdit"
+        Me.IDProdukLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
+        Me.IDProdukLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.IDProdukLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IDProdukLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IDBarang", "ID Barang", 71, DevExpress.Utils.FormatType.Numeric, "", False, DevExpress.Utils.HorzAlignment.Far), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("NamaBarang", "Nama Barang", 74, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.IDProdukLookUpEdit.Properties.DataSource = Me.BarangBindingSource
+        Me.IDProdukLookUpEdit.Properties.DisplayMember = "NamaBarang"
+        Me.IDProdukLookUpEdit.Properties.NullText = ""
+        Me.IDProdukLookUpEdit.Properties.ValueMember = "IDBarang"
+        Me.IDProdukLookUpEdit.Size = New System.Drawing.Size(283, 20)
+        Me.IDProdukLookUpEdit.StyleController = Me.DataLayoutControl1
+        Me.IDProdukLookUpEdit.TabIndex = 4
+        '
+        'IDSupplierLookUpEdit
+        '
+        Me.IDSupplierLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukSupplierBindingSource, "IDSupplier", True))
+        Me.IDSupplierLookUpEdit.Location = New System.Drawing.Point(53, 36)
+        Me.IDSupplierLookUpEdit.Name = "IDSupplierLookUpEdit"
+        Me.IDSupplierLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
+        Me.IDSupplierLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.IDSupplierLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IDSupplierLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IDSupplier", "ID Supplier", 125, DevExpress.Utils.FormatType.Numeric, "", False, DevExpress.Utils.HorzAlignment.Far), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Company", "Company", 55, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ContactName", "Contact Name", 78, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.IDSupplierLookUpEdit.Properties.DataSource = Me.SupplierBindingSource
+        Me.IDSupplierLookUpEdit.Properties.DisplayMember = "Company"
+        Me.IDSupplierLookUpEdit.Properties.NullText = ""
+        Me.IDSupplierLookUpEdit.Properties.ValueMember = "IDSupplier"
+        Me.IDSupplierLookUpEdit.Size = New System.Drawing.Size(283, 20)
+        Me.IDSupplierLookUpEdit.StyleController = Me.DataLayoutControl1
+        Me.IDSupplierLookUpEdit.TabIndex = 5
         '
         'LayoutControlGroup1
         '
@@ -316,22 +398,6 @@ Partial Class FormProductSupplier
         Me.LayoutControlGroup2.Name = "autoGeneratedGroup0"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(328, 393)
         '
-        'IDProdukLookUpEdit
-        '
-        Me.IDProdukLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukSupplierBindingSource, "IDProduk", True))
-        Me.IDProdukLookUpEdit.Location = New System.Drawing.Point(54, 12)
-        Me.IDProdukLookUpEdit.Name = "IDProdukLookUpEdit"
-        Me.IDProdukLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
-        Me.IDProdukLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.IDProdukLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IDProdukLookUpEdit.Properties.DataSource = Me.BarangBindingSource
-        Me.IDProdukLookUpEdit.Properties.DisplayMember = "NamaBarang"
-        Me.IDProdukLookUpEdit.Properties.NullText = ""
-        Me.IDProdukLookUpEdit.Properties.ValueMember = "IDBarang"
-        Me.IDProdukLookUpEdit.Size = New System.Drawing.Size(282, 20)
-        Me.IDProdukLookUpEdit.StyleController = Me.DataLayoutControl1
-        Me.IDProdukLookUpEdit.TabIndex = 4
-        '
         'ItemForIDProduk
         '
         Me.ItemForIDProduk.Control = Me.IDProdukLookUpEdit
@@ -340,22 +406,6 @@ Partial Class FormProductSupplier
         Me.ItemForIDProduk.Size = New System.Drawing.Size(328, 24)
         Me.ItemForIDProduk.Text = "Produk"
         Me.ItemForIDProduk.TextSize = New System.Drawing.Size(38, 13)
-        '
-        'IDSupplierLookUpEdit
-        '
-        Me.IDSupplierLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukSupplierBindingSource, "IDSupplier", True))
-        Me.IDSupplierLookUpEdit.Location = New System.Drawing.Point(54, 36)
-        Me.IDSupplierLookUpEdit.Name = "IDSupplierLookUpEdit"
-        Me.IDSupplierLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
-        Me.IDSupplierLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.IDSupplierLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IDSupplierLookUpEdit.Properties.DataSource = Me.SupplierBindingSource
-        Me.IDSupplierLookUpEdit.Properties.DisplayMember = "Company"
-        Me.IDSupplierLookUpEdit.Properties.NullText = ""
-        Me.IDSupplierLookUpEdit.Properties.ValueMember = "IDSupplier"
-        Me.IDSupplierLookUpEdit.Size = New System.Drawing.Size(282, 20)
-        Me.IDSupplierLookUpEdit.StyleController = Me.DataLayoutControl1
-        Me.IDSupplierLookUpEdit.TabIndex = 5
         '
         'ItemForIDSupplier
         '
@@ -374,27 +424,6 @@ Partial Class FormProductSupplier
         Me.LayoutControlItem1.Size = New System.Drawing.Size(328, 316)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.Cafe_Management.My.Resources.Resources.BindingNavigatorDeleteItem_Image
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
-        '
-        'RadioGroup1
-        '
-        Me.RadioGroup1.Location = New System.Drawing.Point(12, 376)
-        Me.RadioGroup1.Name = "RadioGroup1"
-        Me.RadioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.RadioGroup1.Properties.Appearance.Options.UseBackColor = True
-        Me.RadioGroup1.Properties.Columns = 2
-        Me.RadioGroup1.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(True, "Show Active Data"), New DevExpress.XtraEditors.Controls.RadioGroupItem(False, "Show Inactive Data")})
-        Me.RadioGroup1.Size = New System.Drawing.Size(324, 25)
-        Me.RadioGroup1.StyleController = Me.DataLayoutControl1
-        Me.RadioGroup1.TabIndex = 4
         '
         'LayoutControlItem2
         '
@@ -421,18 +450,20 @@ Partial Class FormProductSupplier
         Me.ProdukSupplierBindingNavigator.PerformLayout()
         CType(Me.ProdukSupplierGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DataLayoutControl1.ResumeLayout(False)
+        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IDProdukLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IDSupplierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IDProdukLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForIDProduk, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IDSupplierLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForIDSupplier, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -480,4 +511,6 @@ Partial Class FormProductSupplier
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents RadioGroup1 As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class
