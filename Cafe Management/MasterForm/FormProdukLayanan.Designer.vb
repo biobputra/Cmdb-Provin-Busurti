@@ -65,16 +65,6 @@ Partial Class FormProdukLayanan
         Me.colModifiedDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RadioGroup1 = New DevExpress.XtraEditors.RadioGroup()
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
-        Me.NamaTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.isProductCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.taxedCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.ItemForNama = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.ItemForisProduct = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.ItemFortaxed = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem1 = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem1 = New System.Windows.Forms.ToolStripLabel()
@@ -88,6 +78,16 @@ Partial Class FormProdukLayanan
         Me.BindingNavigatorMoveLastItem1 = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.NamaTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.isProductCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.taxedCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.ItemForNama = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.ItemForisProduct = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.ItemFortaxed = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
@@ -107,6 +107,8 @@ Partial Class FormProdukLayanan
         CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DataLayoutControl1.SuspendLayout()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         CType(Me.NamaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.isProductCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.taxedCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,8 +119,6 @@ Partial Class FormProdukLayanan
         CType(Me.ItemFortaxed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BindingNavigator1.SuspendLayout()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -439,101 +439,6 @@ Partial Class FormProdukLayanan
         Me.DataLayoutControl1.TabIndex = 5
         Me.DataLayoutControl1.Text = "DataLayoutControl1"
         '
-        'NamaTextEdit
-        '
-        Me.NamaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "Nama", True))
-        Me.NamaTextEdit.Location = New System.Drawing.Point(62, 12)
-        Me.NamaTextEdit.Name = "NamaTextEdit"
-        Me.NamaTextEdit.Size = New System.Drawing.Size(284, 20)
-        Me.NamaTextEdit.StyleController = Me.DataLayoutControl1
-        Me.NamaTextEdit.TabIndex = 4
-        '
-        'isProductCheckEdit
-        '
-        Me.isProductCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "isProduct", True))
-        Me.isProductCheckEdit.Location = New System.Drawing.Point(450, 12)
-        Me.isProductCheckEdit.Name = "isProductCheckEdit"
-        Me.isProductCheckEdit.Properties.Caption = "is Product"
-        Me.isProductCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.isProductCheckEdit.Size = New System.Drawing.Size(97, 19)
-        Me.isProductCheckEdit.StyleController = Me.DataLayoutControl1
-        Me.isProductCheckEdit.TabIndex = 5
-        '
-        'taxedCheckEdit
-        '
-        Me.taxedCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "taxed", True))
-        Me.taxedCheckEdit.Location = New System.Drawing.Point(611, 12)
-        Me.taxedCheckEdit.Name = "taxedCheckEdit"
-        Me.taxedCheckEdit.Properties.Caption = "taxed"
-        Me.taxedCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.taxedCheckEdit.Size = New System.Drawing.Size(95, 19)
-        Me.taxedCheckEdit.StyleController = Me.DataLayoutControl1
-        Me.taxedCheckEdit.TabIndex = 6
-        '
-        'LayoutControlGroup1
-        '
-        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup2})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup1.Name = "Root"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(867, 522)
-        Me.LayoutControlGroup1.TextVisible = False
-        '
-        'LayoutControlGroup2
-        '
-        Me.LayoutControlGroup2.AllowDrawBackground = False
-        Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.ItemForNama, Me.ItemForisProduct, Me.ItemFortaxed, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3})
-        Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup2.Name = "autoGeneratedGroup0"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(847, 502)
-        '
-        'ItemForNama
-        '
-        Me.ItemForNama.Control = Me.NamaTextEdit
-        Me.ItemForNama.Location = New System.Drawing.Point(0, 0)
-        Me.ItemForNama.Name = "ItemForNama"
-        Me.ItemForNama.Size = New System.Drawing.Size(338, 24)
-        Me.ItemForNama.Text = "Nama"
-        Me.ItemForNama.TextSize = New System.Drawing.Size(47, 13)
-        '
-        'ItemForisProduct
-        '
-        Me.ItemForisProduct.Control = Me.isProductCheckEdit
-        Me.ItemForisProduct.Location = New System.Drawing.Point(388, 0)
-        Me.ItemForisProduct.Name = "ItemForisProduct"
-        Me.ItemForisProduct.Size = New System.Drawing.Size(151, 24)
-        Me.ItemForisProduct.Text = "is Product"
-        Me.ItemForisProduct.TextSize = New System.Drawing.Size(47, 13)
-        '
-        'ItemFortaxed
-        '
-        Me.ItemFortaxed.Control = Me.taxedCheckEdit
-        Me.ItemFortaxed.Location = New System.Drawing.Point(549, 0)
-        Me.ItemFortaxed.Name = "ItemFortaxed"
-        Me.ItemFortaxed.Size = New System.Drawing.Size(149, 24)
-        Me.ItemFortaxed.Text = "taxed"
-        Me.ItemFortaxed.TextSize = New System.Drawing.Size(47, 13)
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.ProdukLayananHGridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(847, 254)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.RadioGroup1
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 278)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(847, 29)
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextVisible = False
-        '
         'BindingNavigator1
         '
         Me.BindingNavigator1.AddNewItem = Me.BindingNavigatorAddNewItem1
@@ -648,6 +553,101 @@ Partial Class FormProdukLayanan
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 27)
         Me.ToolStripButton2.Text = "ToolStripButton2"
         '
+        'NamaTextEdit
+        '
+        Me.NamaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "Nama", True))
+        Me.NamaTextEdit.Location = New System.Drawing.Point(62, 12)
+        Me.NamaTextEdit.Name = "NamaTextEdit"
+        Me.NamaTextEdit.Size = New System.Drawing.Size(284, 20)
+        Me.NamaTextEdit.StyleController = Me.DataLayoutControl1
+        Me.NamaTextEdit.TabIndex = 4
+        '
+        'isProductCheckEdit
+        '
+        Me.isProductCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "isProduct", True))
+        Me.isProductCheckEdit.Location = New System.Drawing.Point(450, 12)
+        Me.isProductCheckEdit.Name = "isProductCheckEdit"
+        Me.isProductCheckEdit.Properties.Caption = "is Product"
+        Me.isProductCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.isProductCheckEdit.Size = New System.Drawing.Size(97, 19)
+        Me.isProductCheckEdit.StyleController = Me.DataLayoutControl1
+        Me.isProductCheckEdit.TabIndex = 5
+        '
+        'taxedCheckEdit
+        '
+        Me.taxedCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.ProdukLayananHBindingSource, "taxed", True))
+        Me.taxedCheckEdit.Location = New System.Drawing.Point(611, 12)
+        Me.taxedCheckEdit.Name = "taxedCheckEdit"
+        Me.taxedCheckEdit.Properties.Caption = "taxed"
+        Me.taxedCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.taxedCheckEdit.Size = New System.Drawing.Size(95, 19)
+        Me.taxedCheckEdit.StyleController = Me.DataLayoutControl1
+        Me.taxedCheckEdit.TabIndex = 6
+        '
+        'LayoutControlGroup1
+        '
+        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup1.GroupBordersVisible = False
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup2})
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup1.Name = "Root"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(867, 522)
+        Me.LayoutControlGroup1.TextVisible = False
+        '
+        'LayoutControlGroup2
+        '
+        Me.LayoutControlGroup2.AllowDrawBackground = False
+        Me.LayoutControlGroup2.GroupBordersVisible = False
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.ItemForNama, Me.ItemForisProduct, Me.ItemFortaxed, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3})
+        Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup2.Name = "autoGeneratedGroup0"
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(847, 502)
+        '
+        'ItemForNama
+        '
+        Me.ItemForNama.Control = Me.NamaTextEdit
+        Me.ItemForNama.Location = New System.Drawing.Point(0, 0)
+        Me.ItemForNama.Name = "ItemForNama"
+        Me.ItemForNama.Size = New System.Drawing.Size(338, 24)
+        Me.ItemForNama.Text = "Nama"
+        Me.ItemForNama.TextSize = New System.Drawing.Size(47, 13)
+        '
+        'ItemForisProduct
+        '
+        Me.ItemForisProduct.Control = Me.isProductCheckEdit
+        Me.ItemForisProduct.Location = New System.Drawing.Point(388, 0)
+        Me.ItemForisProduct.Name = "ItemForisProduct"
+        Me.ItemForisProduct.Size = New System.Drawing.Size(151, 24)
+        Me.ItemForisProduct.Text = "is Product"
+        Me.ItemForisProduct.TextSize = New System.Drawing.Size(47, 13)
+        '
+        'ItemFortaxed
+        '
+        Me.ItemFortaxed.Control = Me.taxedCheckEdit
+        Me.ItemFortaxed.Location = New System.Drawing.Point(549, 0)
+        Me.ItemFortaxed.Name = "ItemFortaxed"
+        Me.ItemFortaxed.Size = New System.Drawing.Size(149, 24)
+        Me.ItemFortaxed.Text = "taxed"
+        Me.ItemFortaxed.TextSize = New System.Drawing.Size(47, 13)
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.ProdukLayananHGridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(847, 254)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.RadioGroup1
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 278)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(847, 29)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextVisible = False
+        '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.BindingNavigator1
@@ -720,6 +720,9 @@ Partial Class FormProdukLayanan
         CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataLayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DataLayoutControl1.ResumeLayout(False)
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BindingNavigator1.ResumeLayout(False)
+        Me.BindingNavigator1.PerformLayout()
         CType(Me.NamaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.isProductCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.taxedCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -730,9 +733,6 @@ Partial Class FormProdukLayanan
         CType(Me.ItemFortaxed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.BindingNavigator1.ResumeLayout(False)
-        Me.BindingNavigator1.PerformLayout()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()

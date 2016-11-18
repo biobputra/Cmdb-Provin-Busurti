@@ -134,5 +134,14 @@ Partial Public Class MainForm
             FormProdukLayanan.Show()
         End If
     End Sub
+
+    Private Sub TransaksiDataMemberBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDataMemberBtn.ItemClick
+        If Me.MdiChildren.Contains(FormAnggota) Then
+            FormAnggota.Focus()
+        Else
+            FormAnggota.MdiParent = Me
+            FormAnggota.Show()
+        End If
+    End Sub
 End Class
 
