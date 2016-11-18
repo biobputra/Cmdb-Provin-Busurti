@@ -122,10 +122,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetJenisIdentitas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetJenisMeja.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetPembelian.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetProductSupplier.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -205,6 +215,12 @@
     <Compile Include="MasterForm\FormJenisBarang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterForm\FormJenisIdentitas.Designer.vb">
+      <DependentUpon>FormJenisIdentitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormJenisIdentitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterForm\FormJenisMeja.Designer.vb">
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </Compile>
@@ -253,10 +269,10 @@
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Classes\Pengguna.vb" />
-    <Compile Include="Pembelian\FormPembelian.Designer.vb">
-      <DependentUpon>FormPembelian.vb</DependentUpon>
+    <Compile Include="Pembelian\FormTraPembelian.Designer.vb">
+      <DependentUpon>FormTraPembelian.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pembelian\FormPembelian.vb">
+    <Compile Include="Pembelian\FormTraPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Penerimaan\FormPenerimaan.Designer.vb">
@@ -309,6 +325,9 @@
     <EmbeddedResource Include="MasterForm\FormJenisBarang.resx">
       <DependentUpon>FormJenisBarang.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormJenisIdentitas.resx">
+      <DependentUpon>FormJenisIdentitas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormJenisMeja.resx">
       <DependentUpon>FormJenisMeja.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,8 +361,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Pembelian\FormPembelian.resx">
-      <DependentUpon>FormPembelian.vb</DependentUpon>
+    <EmbeddedResource Include="Pembelian\FormTraPembelian.resx">
+      <DependentUpon>FormTraPembelian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Penerimaan\FormPenerimaan.resx">
       <DependentUpon>FormPenerimaan.vb</DependentUpon>
@@ -402,6 +421,17 @@
     <None Include="Dataset\DataSetJenisBarang.xss">
       <DependentUpon>DataSetJenisBarang.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xsc">
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJenisIdentitas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetJenisIdentitas.xss">
+      <DependentUpon>DataSetJenisIdentitas.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetJenisMeja.xsc">
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
     </None>
@@ -412,6 +442,17 @@
     </None>
     <None Include="Dataset\DataSetJenisMeja.xss">
       <DependentUpon>DataSetJenisMeja.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetPembelian.xsc">
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetPembelian.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPembelian.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetPembelian.xss">
+      <DependentUpon>DataSetPembelian.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetProductSupplier.xsc">
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
@@ -507,6 +548,7 @@
   <ItemGroup>
     <Content Include="Icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

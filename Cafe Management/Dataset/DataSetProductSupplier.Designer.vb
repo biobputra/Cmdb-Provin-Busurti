@@ -515,12 +515,6 @@ Partial Public Class DataSetProductSupplier
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByIDProdukSupplier(ByVal IDProdukSupplier As Integer) As ProdukSupplierRow
-            Return CType(Me.Rows.Find(New Object() {IDProdukSupplier}),ProdukSupplierRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As ProdukSupplierDataTable = CType(MyBase.Clone,ProdukSupplierDataTable)
             cln.InitVars
@@ -565,9 +559,6 @@ Partial Public Class DataSetProductSupplier
             MyBase.Columns.Add(Me.columnModifiedDate)
             Me.columnisActive = New Global.System.Data.DataColumn("isActive", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnisActive)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDProdukSupplier}, true))
-            Me.columnIDProdukSupplier.AllowDBNull = false
-            Me.columnIDProdukSupplier.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1280,7 +1271,11 @@ Partial Public Class DataSetProductSupplier
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property IDProdukSupplier() As Integer
             Get
-                Return CType(Me(Me.tableProdukSupplier.IDProdukSupplierColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableProdukSupplier.IDProdukSupplierColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDProdukSupplier' in table 'ProdukSupplier' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableProdukSupplier.IDProdukSupplierColumn) = value
@@ -1391,6 +1386,18 @@ Partial Public Class DataSetProductSupplier
                 Me(Me.tableProdukSupplier.isActiveColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsIDProdukSupplierNull() As Boolean
+            Return Me.IsNull(Me.tableProdukSupplier.IDProdukSupplierColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetIDProdukSupplierNull()
+            Me(Me.tableProdukSupplier.IDProdukSupplierColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1987,8 +1994,12 @@ Namespace DataSetProductSupplierTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDProdukSupplier As Integer, ByVal IDProduk As Global.System.Nullable(Of Long), ByVal IDSupplier As Global.System.Nullable(Of Integer), ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDProdukSupplier,Integer)
+        Public Overloads Overridable Function Insert(ByVal IDProdukSupplier As Global.System.Nullable(Of Integer), ByVal IDProduk As Global.System.Nullable(Of Long), ByVal IDSupplier As Global.System.Nullable(Of Integer), ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+            If (IDProdukSupplier.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDProdukSupplier.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (IDProduk.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDProduk.Value,Long)
             Else
@@ -2044,7 +2055,7 @@ Namespace DataSetProductSupplierTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
-                    ByVal IDProdukSupplier As Integer,  _
+                    ByVal IDProdukSupplier As Global.System.Nullable(Of Integer),  _
                     ByVal IDProduk As Global.System.Nullable(Of Long),  _
                     ByVal IDSupplier As Global.System.Nullable(Of Integer),  _
                     ByVal CreatedBy As Global.System.Nullable(Of Integer),  _
@@ -2052,7 +2063,7 @@ Namespace DataSetProductSupplierTableAdapters
                     ByVal ModifiedBy As Global.System.Nullable(Of Integer),  _
                     ByVal ModifiedDate As Global.System.Nullable(Of Date),  _
                     ByVal isActive As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_IDProdukSupplier As Integer,  _
+                    ByVal Original_IDProdukSupplier As Global.System.Nullable(Of Integer),  _
                     ByVal Original_IDProduk As Global.System.Nullable(Of Long),  _
                     ByVal Original_IDSupplier As Global.System.Nullable(Of Integer),  _
                     ByVal Original_CreatedBy As Global.System.Nullable(Of Integer),  _
@@ -2060,7 +2071,11 @@ Namespace DataSetProductSupplierTableAdapters
                     ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer),  _
                     ByVal Original_ModifiedDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDProdukSupplier,Integer)
+            If (IDProdukSupplier.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDProdukSupplier.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (IDProduk.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDProduk.Value,Long)
             Else
@@ -2096,7 +2111,11 @@ Namespace DataSetProductSupplierTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_IDProdukSupplier,Integer)
+            If (Original_IDProdukSupplier.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_IDProdukSupplier.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
             If (Original_IDProduk.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_IDProduk.Value,Long)
@@ -2159,14 +2178,6 @@ Namespace DataSetProductSupplierTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal IDProduk As Global.System.Nullable(Of Long), ByVal IDSupplier As Global.System.Nullable(Of Integer), ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean), ByVal Original_IDProdukSupplier As Integer, ByVal Original_IDProduk As Global.System.Nullable(Of Long), ByVal Original_IDSupplier As Global.System.Nullable(Of Integer), ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(Original_IDProdukSupplier, IDProduk, IDSupplier, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, Original_IDProdukSupplier, Original_IDProduk, Original_IDSupplier, Original_CreatedBy, Original_CreatedDate, Original_ModifiedBy, Original_ModifiedDate, Original_isActive)
         End Function
     End Class
     

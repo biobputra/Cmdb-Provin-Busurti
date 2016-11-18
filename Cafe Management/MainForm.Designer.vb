@@ -24,6 +24,7 @@
     ''' the contents of this method with the code editor.
     ''' </summary>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.MainRibbon = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.TransaksiJenisMejaBtn = New DevExpress.XtraBars.BarButtonItem()
@@ -57,6 +58,8 @@
         Me.KeuanganLaporanLedgerBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.InventoryDaftarStorageBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.KeuanganMenuTermOfPaymentBtn = New DevExpress.XtraBars.BarButtonItem()
+        Me.SettingsTitleBtn = New DevExpress.XtraBars.BarButtonItem()
+        Me.SettingsJenisIdentitasBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.TransaksiMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.TransaksiPenjualanGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.TransaksiMemberGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -68,7 +71,9 @@
         Me.KeuanganFinanceGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.KeuanganAccountingGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.SettingsMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         CType(Me.MainRibbon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,11 +81,11 @@
         'MainRibbon
         '
         Me.MainRibbon.ExpandCollapseItem.Id = 0
-        Me.MainRibbon.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.MainRibbon.ExpandCollapseItem, Me.TransaksiJenisMejaBtn, Me.TransaksiDaftarMejaBtn, Me.InventorySatuanBtn, Me.InventoryJenisBarangBtn, Me.InventoryDaftarBarangBtn, Me.PurchasingMenuPurchasing, Me.TransaksiPOSBtn, Me.TransaksiDaftarProdukBtn, Me.TransaksiBukaTututpKasirBtn, Me.TransaksiLaporanPenjualanBtn, Me.InventoryStatusStokBtn, Me.InventoryStokOpnameBtn, Me.InventoryBarangkeluarBtn, Me.PembelianPembelianBtn, Me.PembelianSupplierBtn, Me.PembelianTerimaBarangBtn, Me.TransaksiDataMemberBtn, Me.TransaksiDepositMemberBtn, Me.PembelianBarangSupplierBtn, Me.PembeliannReturBtn, Me.AccountingTerimaTagihanBtn, Me.KeuanganTransaksiKasBankBtn, Me.KeuanganGroupAkunBtn, Me.KeuanganCOABtn, Me.KeuanganJurnalBtn, Me.KeuanganBukaTutupPeriode, Me.KeuanganLaporanNeracaBtn, Me.KeuanganLaporanRugiLabaBtn, Me.KeuanganLaporanLedgerBtn, Me.InventoryDaftarStorageBtn, Me.KeuanganMenuTermOfPaymentBtn})
+        Me.MainRibbon.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.MainRibbon.ExpandCollapseItem, Me.TransaksiJenisMejaBtn, Me.TransaksiDaftarMejaBtn, Me.InventorySatuanBtn, Me.InventoryJenisBarangBtn, Me.InventoryDaftarBarangBtn, Me.PurchasingMenuPurchasing, Me.TransaksiPOSBtn, Me.TransaksiDaftarProdukBtn, Me.TransaksiBukaTututpKasirBtn, Me.TransaksiLaporanPenjualanBtn, Me.InventoryStatusStokBtn, Me.InventoryStokOpnameBtn, Me.InventoryBarangkeluarBtn, Me.PembelianPembelianBtn, Me.PembelianSupplierBtn, Me.PembelianTerimaBarangBtn, Me.TransaksiDataMemberBtn, Me.TransaksiDepositMemberBtn, Me.PembelianBarangSupplierBtn, Me.PembeliannReturBtn, Me.AccountingTerimaTagihanBtn, Me.KeuanganTransaksiKasBankBtn, Me.KeuanganGroupAkunBtn, Me.KeuanganCOABtn, Me.KeuanganJurnalBtn, Me.KeuanganBukaTutupPeriode, Me.KeuanganLaporanNeracaBtn, Me.KeuanganLaporanRugiLabaBtn, Me.KeuanganLaporanLedgerBtn, Me.InventoryDaftarStorageBtn, Me.KeuanganMenuTermOfPaymentBtn, Me.SettingsTitleBtn, Me.SettingsJenisIdentitasBtn})
         Me.MainRibbon.Location = New System.Drawing.Point(0, 0)
-        Me.MainRibbon.MaxItemId = 27
+        Me.MainRibbon.MaxItemId = 29
         Me.MainRibbon.Name = "MainRibbon"
-        Me.MainRibbon.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.TransaksiMenuHeader, Me.InventoryMenuHeader, Me.PembelianMenuHeader, Me.AccountingMenuHeader})
+        Me.MainRibbon.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.TransaksiMenuHeader, Me.InventoryMenuHeader, Me.PembelianMenuHeader, Me.AccountingMenuHeader, Me.SettingsMenuHeader})
         Me.MainRibbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
         Me.MainRibbon.Size = New System.Drawing.Size(1038, 162)
         '
@@ -312,9 +317,21 @@
         '
         'KeuanganMenuTermOfPaymentBtn
         '
-        Me.KeuanganMenuTermOfPaymentBtn.Caption = "BarButtonItem1"
+        Me.KeuanganMenuTermOfPaymentBtn.Caption = "Term Of Payment"
         Me.KeuanganMenuTermOfPaymentBtn.Id = 26
         Me.KeuanganMenuTermOfPaymentBtn.Name = "KeuanganMenuTermOfPaymentBtn"
+        '
+        'SettingsTitleBtn
+        '
+        Me.SettingsTitleBtn.Caption = "Title"
+        Me.SettingsTitleBtn.Id = 27
+        Me.SettingsTitleBtn.Name = "SettingsTitleBtn"
+        '
+        'SettingsJenisIdentitasBtn
+        '
+        Me.SettingsJenisIdentitasBtn.Caption = "Jenis Identitas"
+        Me.SettingsJenisIdentitasBtn.Id = 28
+        Me.SettingsJenisIdentitasBtn.Name = "SettingsJenisIdentitasBtn"
         '
         'TransaksiMenuHeader
         '
@@ -409,6 +426,21 @@
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
+        'SettingsMenuHeader
+        '
+        Me.SettingsMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup2})
+        Me.SettingsMenuHeader.Image = CType(resources.GetObject("SettingsMenuHeader.Image"), System.Drawing.Image)
+        Me.SettingsMenuHeader.Name = "SettingsMenuHeader"
+        Me.SettingsMenuHeader.Text = "Settings"
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.AllowTextClipping = False
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.SettingsTitleBtn)
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.SettingsJenisIdentitasBtn)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.Text = "Properti Data Anggota"
+        '
         'XtraTabbedMdiManager1
         '
         Me.XtraTabbedMdiManager1.MdiParent = Me
@@ -478,4 +510,8 @@
   Friend WithEvents InventoryDaftarStorageBtn As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents KeuanganMenuTermOfPaymentBtn As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents SettingsTitleBtn As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SettingsJenisIdentitasBtn As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SettingsMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

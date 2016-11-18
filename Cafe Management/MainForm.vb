@@ -55,14 +55,7 @@ Partial Public Class MainForm
         End If
     End Sub
 
-    Private Sub PurchasingMenuPurchasing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PurchasingMenuPurchasing.ItemClick
-        If Me.MdiChildren.Contains(FormPembelian) Then
-            FormPembelian.Focus()
-        Else
-            FormPembelian.MdiParent = Me
-            FormPembelian.Show()
-        End If
-    End Sub
+
 
     Private Sub PosMenuPenjualan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiPOSBtn.ItemClick
         If Me.MdiChildren.Contains(FormPOS) Then
@@ -103,6 +96,33 @@ Partial Public Class MainForm
         Else
             'FormProductSupplier.MdiParent = Me
             FormProductSupplier.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub SettingsTitleBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsTitleBtn.ItemClick
+        If Me.MdiChildren.Contains(FormTitle) Then
+            FormTitle.Focus()
+        Else
+            'FormTitle.MdiParent = Me
+            FormTitle.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub SettingsJenisIdentitasBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsJenisIdentitasBtn.ItemClick
+        If Me.MdiChildren.Contains(FormJenisIdentitas) Then
+            FormJenisIdentitas.Focus()
+        Else
+            'FormJenisIdentitas.MdiParent = Me
+            FormJenisIdentitas.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub PembelianPembelianBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PembelianPembelianBtn.ItemClick
+        If Me.MdiChildren.Contains(FormTraPembelian) Then
+            FormTraPembelian.Focus()
+        Else
+            FormTraPembelian.MdiParent = Me
+            FormTraPembelian.Show()
         End If
     End Sub
 End Class
