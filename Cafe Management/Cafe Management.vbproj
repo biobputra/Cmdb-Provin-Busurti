@@ -83,6 +83,12 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting\Jurnal.Designer.vb">
+      <DependentUpon>Jurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Jurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Classes\BarangKeluarD.vb" />
     <Compile Include="Classes\BarangKeluarH.vb" />
@@ -101,6 +107,20 @@
     <Compile Include="Classes\ReturH.vb" />
     <Compile Include="Classes\TerimaTagihanD.vb" />
     <Compile Include="Classes\TerimaTagihanH.vb" />
+    <Compile Include="Controls\TableControl.Designer.vb">
+      <DependentUpon>TableControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSetHRD.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetHRD.vb">
+      <DependentUpon>DataSetHRD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetAccounting.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +177,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTitle.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HRD\FormDivisi.Designer.vb">
+      <DependentUpon>FormDivisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\FormDivisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRD\FormJabatan.Designer.vb">
+      <DependentUpon>FormJabatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\FormJabatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRD\FormKaryawan.Designer.vb">
+      <DependentUpon>FormKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\FormKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRD\FormStatusKaryawan.Designer.vb">
+      <DependentUpon>FormStatusKaryawan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\FormStatusKaryawan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRD\FormStatusPernikahan.Designer.vb">
+      <DependentUpon>FormStatusPernikahan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRD\FormStatusPernikahan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inventory\Barang Keluar\FormBarangKeluar.Designer.vb">
       <DependentUpon>FormBarangKeluar.vb</DependentUpon>
     </Compile>
@@ -175,16 +225,16 @@
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\FormAccountingCOA.Designer.vb">
+    <Compile Include="Accounting\FormAccountingCOA.Designer.vb">
       <DependentUpon>FormAccountingCOA.vb</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\FormAccountingCOA.vb">
+    <Compile Include="Accounting\FormAccountingCOA.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterForm\FormAccountingGroupAkun.Designer.vb">
+    <Compile Include="Accounting\FormAccountingGroupAkun.Designer.vb">
       <DependentUpon>FormAccountingGroupAkun.vb</DependentUpon>
     </Compile>
-    <Compile Include="MasterForm\FormAccountingGroupAkun.vb">
+    <Compile Include="Accounting\FormAccountingGroupAkun.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormBarang.Designer.vb">
@@ -285,6 +335,27 @@
     </Compile>
     <Compile Include="SupportObject\DataAccess.vb" />
     <Compile Include="SupportObject\GlobalModule.vb" />
+    <EmbeddedResource Include="Accounting\Jurnal.resx">
+      <DependentUpon>Jurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TableControl.resx">
+      <DependentUpon>TableControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRD\FormDivisi.resx">
+      <DependentUpon>FormDivisi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRD\FormJabatan.resx">
+      <DependentUpon>FormJabatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRD\FormKaryawan.resx">
+      <DependentUpon>FormKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRD\FormStatusKaryawan.resx">
+      <DependentUpon>FormStatusKaryawan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRD\FormStatusPernikahan.resx">
+      <DependentUpon>FormStatusPernikahan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Barang Keluar\FormBarangKeluar.resx">
       <DependentUpon>FormBarangKeluar.vb</DependentUpon>
     </EmbeddedResource>
@@ -294,10 +365,10 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\FormAccountingCOA.resx">
+    <EmbeddedResource Include="Accounting\FormAccountingCOA.resx">
       <DependentUpon>FormAccountingCOA.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterForm\FormAccountingGroupAkun.resx">
+    <EmbeddedResource Include="Accounting\FormAccountingGroupAkun.resx">
       <DependentUpon>FormAccountingGroupAkun.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormBarang.resx">
@@ -358,6 +429,17 @@
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="DataSetHRD.xsc">
+      <DependentUpon>DataSetHRD.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHRD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHRD.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetHRD.xss">
+      <DependentUpon>DataSetHRD.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetAccounting.xsc">
       <DependentUpon>DataSetAccounting.xsd</DependentUpon>
     </None>
@@ -505,8 +587,14 @@
     <None Include="Resources\BindingNavigatorDeleteItem.Image.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Report2_32x32.png" />
+    <None Include="Resources\Time_32x32.png" />
+    <None Include="Resources\CheckBox_32x32.png" />
+    <None Include="Resources\Notes_32x32.png" />
+    <None Include="bin\Debug\Image\PoolTable.jpg" />
     <Content Include="Icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
