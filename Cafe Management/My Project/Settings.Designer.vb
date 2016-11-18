@@ -56,8 +56,8 @@ Partial Friend NotInheritable Class Settings
     <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=IHD;Persist Security Info=True;User ID=sa;Password="& _ 
-        "123")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=""provinbusurti.dlinkddns.com, 3311"";Initial Catalog=CMDB;Persist Secu"& _ 
+        "rity Info=True;User ID=sa;Password=123")>  _
     Public ReadOnly Property connString() As String
         Get
             Return CType(Me("connString"),String)
