@@ -4,9 +4,6 @@ Imports System.Data.SqlClient
 Imports System.IO
 Public Class DataAccess
     Shared SQLConnectionString As String
-    Shared Sub SetConnection(Mystring As String)
-        SQLConnectionString = Mystring
-    End Sub
 
     Shared Function TestConnection() As Boolean
         If Not File.Exists(Application.StartupPath & "\cfg.txt") Then
@@ -31,7 +28,11 @@ Public Class DataAccess
         Dim MySQLConnection As New SqlConnection(SQLConnectionString)
         Try
             MySQLConnection.Open()
-            MySQLConnection.Close()
+      MySQLConnection.Close()
+      Settings.Default("connString") = String.Format(SQLConnectionString)
+
+
+
             Return True
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
