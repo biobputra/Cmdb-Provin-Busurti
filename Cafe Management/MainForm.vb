@@ -125,5 +125,14 @@ Partial Public Class MainForm
             FormTraPembelian.Show()
         End If
     End Sub
+
+    Private Sub TransaksiDaftarProdukBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles TransaksiDaftarProdukBtn.ItemClick
+        If Me.MdiChildren.Contains(FormProdukLayanan) Then
+            FormProdukLayanan.Focus()
+        Else
+            FormProdukLayanan.MdiParent = Me
+            FormProdukLayanan.Show()
+        End If
+    End Sub
 End Class
 

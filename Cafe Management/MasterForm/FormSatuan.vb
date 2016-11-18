@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.XtraGrid.Views.Base
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class FormSatuan
     Dim IsActive As Boolean
@@ -7,7 +8,7 @@ Public Class FormSatuan
 
     Private Sub SatuanBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles SatuanBindingNavigatorSaveItem.Click
 
-        GridView1.SetFocusedRowCellValue(colIDSatuan, 0)
+
         GridView1.SetFocusedRowCellValue(colCreatedBy, MyLoggedInPengguna.IDPengguna)
         GridView1.SetFocusedRowCellValue(colModifiedBy, MyLoggedInPengguna.IDPengguna)
 
@@ -43,5 +44,9 @@ Public Class FormSatuan
         IsActive = True
         LoadData()
 
+    End Sub
+
+    Private Sub GridView1_InitNewRow(sender As Object, e As InitNewRowEventArgs) Handles GridView1.InitNewRow
+        GridView1.SetFocusedRowCellValue(colIDSatuan, 0)
     End Sub
 End Class

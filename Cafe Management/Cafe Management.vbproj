@@ -142,6 +142,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetProdukDanLayanan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetSatuan.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,6 +236,12 @@
       <DependentUpon>FormProductSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="MasterForm\FormProductSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\FormProdukLayanan.Designer.vb">
+      <DependentUpon>FormProdukLayanan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormProdukLayanan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterForm\FormSatuan.Designer.vb">
@@ -333,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormProductSupplier.resx">
       <DependentUpon>FormProductSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormProdukLayanan.resx">
+      <DependentUpon>FormProdukLayanan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSatuan.resx">
       <DependentUpon>FormSatuan.vb</DependentUpon>
@@ -464,6 +478,17 @@
     </None>
     <None Include="Dataset\DataSetProductSupplier.xss">
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xsc">
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProdukDanLayanan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetProdukDanLayanan.xss">
+      <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetSatuan.xsc">
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>
