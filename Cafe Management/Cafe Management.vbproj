@@ -162,6 +162,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPembelian.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSetPenerimaan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPenerimaan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\DataSetProductSupplier.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,6 +176,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetProfile.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProfile.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\DataSetSatuan.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -196,6 +206,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTitle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSetUser.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormPengguna.Designer.vb">
+      <DependentUpon>FormPengguna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormPengguna.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRD\FormDivisi.Designer.vb">
       <DependentUpon>FormDivisi.vb</DependentUpon>
@@ -305,6 +326,12 @@
     <Compile Include="MasterForm\FormProdukLayanan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterForm\FormProfile.Designer.vb">
+      <DependentUpon>FormProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\FormProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterForm\FormSatuan.Designer.vb">
       <DependentUpon>FormSatuan.vb</DependentUpon>
     </Compile>
@@ -371,6 +398,7 @@
     <Compile Include="Support Forms\LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SupportObject\ClassCrypto.vb" />
     <Compile Include="SupportObject\DataAccess.vb" />
     <Compile Include="SupportObject\GlobalModule.vb" />
     <EmbeddedResource Include="Accounting\Jurnal.resx">
@@ -378,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TableControl.resx">
       <DependentUpon>TableControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormPengguna.resx">
+      <DependentUpon>FormPengguna.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRD\FormDivisi.resx">
       <DependentUpon>FormDivisi.vb</DependentUpon>
@@ -432,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormProdukLayanan.resx">
       <DependentUpon>FormProdukLayanan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\FormProfile.resx">
+      <DependentUpon>FormProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm\FormSatuan.resx">
       <DependentUpon>FormSatuan.vb</DependentUpon>
@@ -575,6 +609,17 @@
     <None Include="Dataset\DataSetPembelian.xss">
       <DependentUpon>DataSetPembelian.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\DataSetPenerimaan.xsc">
+      <DependentUpon>DataSetPenerimaan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetPenerimaan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPenerimaan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetPenerimaan.xss">
+      <DependentUpon>DataSetPenerimaan.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\DataSetProductSupplier.xsc">
       <DependentUpon>DataSetProductSupplier.xsd</DependentUpon>
     </None>
@@ -596,6 +641,17 @@
     </None>
     <None Include="Dataset\DataSetProdukDanLayanan.xss">
       <DependentUpon>DataSetProdukDanLayanan.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProfile.xsc">
+      <DependentUpon>DataSetProfile.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetProfile.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProfile.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetProfile.xss">
+      <DependentUpon>DataSetProfile.xsd</DependentUpon>
     </None>
     <None Include="Dataset\DataSetSatuan.xsc">
       <DependentUpon>DataSetSatuan.xsd</DependentUpon>
@@ -651,6 +707,17 @@
     </None>
     <None Include="Dataset\DataSetTitle.xss">
       <DependentUpon>DataSetTitle.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetUser.xsc">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSetUser.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUser.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSetUser.xss">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

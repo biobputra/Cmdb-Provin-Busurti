@@ -19,13 +19,12 @@ Partial Class FormAnggota
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnggota))
         Me.DataSetAnggota = New Cafe_Management.DataSetAnggota()
-        Me.AnggotaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AnggotaBindingSource = New System.Windows.Forms.BindingSource()
         Me.AnggotaTableAdapter = New Cafe_Management.DataSetAnggotaTableAdapters.AnggotaTableAdapter()
         Me.TableAdapterManager = New Cafe_Management.DataSetAnggotaTableAdapters.TableAdapterManager()
-        Me.AnggotaBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.AnggotaBindingNavigator = New System.Windows.Forms.BindingNavigator()
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -44,11 +43,11 @@ Partial Class FormAnggota
         Me.colKode = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colJenisIdentitas = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.JenisIdentitasGridBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JenisIdentitasGridBindingSource = New System.Windows.Forms.BindingSource()
         Me.colNomorIdentitas = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colidTitle = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.TitleGridBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TitleGridBindingSource = New System.Windows.Forms.BindingSource()
         Me.colNama = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colTanggalBergabung = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAlamat = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -63,10 +62,10 @@ Partial Class FormAnggota
         Me.DataLayoutControl1 = New DevExpress.XtraDataLayout.DataLayoutControl()
         Me.KodeTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.JenisIdentitasLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.JenisIdentitasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JenisIdentitasBindingSource = New System.Windows.Forms.BindingSource()
         Me.NomorIdentitasTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.idTitleLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.TitleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TitleBindingSource = New System.Windows.Forms.BindingSource()
         Me.NamaTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TanggalBergabungDateEdit = New DevExpress.XtraEditors.DateEdit()
         Me.AlamatMemoEdit = New DevExpress.XtraEditors.MemoEdit()
@@ -352,28 +351,28 @@ Partial Class FormAnggota
         Me.colNama.FieldName = "Nama"
         Me.colNama.Name = "colNama"
         Me.colNama.Visible = True
-        Me.colNama.VisibleIndex = 4
+        Me.colNama.VisibleIndex = 3
         '
         'colTanggalBergabung
         '
         Me.colTanggalBergabung.FieldName = "TanggalBergabung"
         Me.colTanggalBergabung.Name = "colTanggalBergabung"
         Me.colTanggalBergabung.Visible = True
-        Me.colTanggalBergabung.VisibleIndex = 5
+        Me.colTanggalBergabung.VisibleIndex = 4
         '
         'colAlamat
         '
         Me.colAlamat.FieldName = "Alamat"
         Me.colAlamat.Name = "colAlamat"
         Me.colAlamat.Visible = True
-        Me.colAlamat.VisibleIndex = 6
+        Me.colAlamat.VisibleIndex = 5
         '
         'colNomorHandphone
         '
         Me.colNomorHandphone.FieldName = "NomorHandphone"
         Me.colNomorHandphone.Name = "colNomorHandphone"
         Me.colNomorHandphone.Visible = True
-        Me.colNomorHandphone.VisibleIndex = 7
+        Me.colNomorHandphone.VisibleIndex = 6
         '
         'colPhoto
         '
@@ -458,6 +457,7 @@ Partial Class FormAnggota
         Me.JenisIdentitasLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
         Me.JenisIdentitasLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.JenisIdentitasLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.JenisIdentitasLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IDJenisIdentitas", "ID Jenis Identitas", 107, DevExpress.Utils.FormatType.Numeric, "", False, DevExpress.Utils.HorzAlignment.Far), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("JenisIdentitas", "Jenis Identitas", 80, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Keterangan", "Keterangan", 66, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.JenisIdentitasLookUpEdit.Properties.DataSource = Me.JenisIdentitasBindingSource
         Me.JenisIdentitasLookUpEdit.Properties.DisplayMember = "JenisIdentitas"
         Me.JenisIdentitasLookUpEdit.Properties.NullText = ""
@@ -488,6 +488,7 @@ Partial Class FormAnggota
         Me.idTitleLookUpEdit.Properties.Appearance.Options.UseTextOptions = True
         Me.idTitleLookUpEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.idTitleLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.idTitleLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IDTitle", "ID Title", 57, DevExpress.Utils.FormatType.Numeric, "", False, DevExpress.Utils.HorzAlignment.Far), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Title", "Title", 30, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.idTitleLookUpEdit.Properties.DataSource = Me.TitleBindingSource
         Me.idTitleLookUpEdit.Properties.DisplayMember = "Title"
         Me.idTitleLookUpEdit.Properties.NullText = ""
@@ -614,7 +615,7 @@ Partial Class FormAnggota
         Me.ItemForidTitle.Location = New System.Drawing.Point(0, 72)
         Me.ItemForidTitle.Name = "ItemForidTitle"
         Me.ItemForidTitle.Size = New System.Drawing.Size(479, 24)
-        Me.ItemForidTitle.Text = "id Title"
+        Me.ItemForidTitle.Text = "Title"
         Me.ItemForidTitle.TextSize = New System.Drawing.Size(93, 13)
         '
         'ItemForNama
