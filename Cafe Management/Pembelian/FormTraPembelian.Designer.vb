@@ -83,6 +83,7 @@ Partial Class FormTraPembelian
         Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NoPembelianTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CatatanMemoExEdit = New DevExpress.XtraEditors.MemoEdit()
+        Me.IsCompletedCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.ItemForTanggalPembelian = New DevExpress.XtraLayout.LayoutControlItem()
@@ -92,8 +93,12 @@ Partial Class FormTraPembelian
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.ItemForIsCompleted = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SupplierTableAdapter = New Cafe_Management.DataSetPembelianTableAdapters.SupplierTableAdapter()
         Me.BarangTableAdapter = New Cafe_Management.DataSetPembelianTableAdapters.BarangTableAdapter()
+        Me.RepositoryItemImagePopupContainerEdit1 = New DevExpress.XtraCharts.Designer.Native.RepositoryItemImagePopupContainerEdit()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         CType(Me.DataSetPembelian, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PembelianHBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PembelianHBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,6 +122,7 @@ Partial Class FormTraPembelian
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NoPembelianTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CatatanMemoExEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IsCompletedCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemForTanggalPembelian, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,6 +132,10 @@ Partial Class FormTraPembelian
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemForIsCompleted, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemImagePopupContainerEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataSetPembelian
@@ -270,7 +280,8 @@ Partial Class FormTraPembelian
         Me.PembelianHGridControl.Location = New System.Drawing.Point(330, 12)
         Me.PembelianHGridControl.MainView = Me.GridView1
         Me.PembelianHGridControl.Name = "PembelianHGridControl"
-        Me.PembelianHGridControl.Size = New System.Drawing.Size(714, 313)
+        Me.PembelianHGridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemImagePopupContainerEdit1, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit2})
+        Me.PembelianHGridControl.Size = New System.Drawing.Size(714, 299)
         Me.PembelianHGridControl.TabIndex = 1
         Me.PembelianHGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -294,6 +305,8 @@ Partial Class FormTraPembelian
         '
         'colIDSupplier
         '
+        Me.colIDSupplier.Caption = "Supplier"
+        Me.colIDSupplier.ColumnEdit = Me.RepositoryItemLookUpEdit2
         Me.colIDSupplier.FieldName = "IDSupplier"
         Me.colIDSupplier.Name = "colIDSupplier"
         Me.colIDSupplier.Visible = True
@@ -352,7 +365,7 @@ Partial Class FormTraPembelian
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem1
         Me.BindingNavigator1.Dock = System.Windows.Forms.DockStyle.None
         Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem1, Me.BindingNavigatorMovePreviousItem1, Me.BindingNavigatorSeparator3, Me.BindingNavigatorPositionItem1, Me.BindingNavigatorCountItem1, Me.BindingNavigatorSeparator4, Me.BindingNavigatorMoveNextItem1, Me.BindingNavigatorMoveLastItem1, Me.BindingNavigatorSeparator5, Me.BindingNavigatorAddNewItem1, Me.BindingNavigatorDeleteItem1, Me.ToolStripButton1})
-        Me.BindingNavigator1.Location = New System.Drawing.Point(12, 329)
+        Me.BindingNavigator1.Location = New System.Drawing.Point(12, 315)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem1
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem1
         Me.BindingNavigator1.MoveNextItem = Me.BindingNavigatorMoveNextItem1
@@ -465,11 +478,11 @@ Partial Class FormTraPembelian
         'PembelianDetailSelectGridControl
         '
         Me.PembelianDetailSelectGridControl.DataSource = Me.FKPembelianHPembelianDetailSelectBindingSource
-        Me.PembelianDetailSelectGridControl.Location = New System.Drawing.Point(12, 363)
+        Me.PembelianDetailSelectGridControl.Location = New System.Drawing.Point(12, 349)
         Me.PembelianDetailSelectGridControl.MainView = Me.GridView2
         Me.PembelianDetailSelectGridControl.Name = "PembelianDetailSelectGridControl"
         Me.PembelianDetailSelectGridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.LookUpEditBarangDetail})
-        Me.PembelianDetailSelectGridControl.Size = New System.Drawing.Size(1032, 211)
+        Me.PembelianDetailSelectGridControl.Size = New System.Drawing.Size(1032, 225)
         Me.PembelianDetailSelectGridControl.TabIndex = 3
         Me.PembelianDetailSelectGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -483,15 +496,11 @@ Partial Class FormTraPembelian
         '
         Me.colIDPembelianH.FieldName = "IDPembelianH"
         Me.colIDPembelianH.Name = "colIDPembelianH"
-        Me.colIDPembelianH.Visible = True
-        Me.colIDPembelianH.VisibleIndex = 0
         '
         'colIDPembelianD
         '
         Me.colIDPembelianD.FieldName = "IDPembelianD"
         Me.colIDPembelianD.Name = "colIDPembelianD"
-        Me.colIDPembelianD.Visible = True
-        Me.colIDPembelianD.VisibleIndex = 1
         '
         'colIDBarang
         '
@@ -499,7 +508,7 @@ Partial Class FormTraPembelian
         Me.colIDBarang.FieldName = "IDBarang"
         Me.colIDBarang.Name = "colIDBarang"
         Me.colIDBarang.Visible = True
-        Me.colIDBarang.VisibleIndex = 2
+        Me.colIDBarang.VisibleIndex = 0
         '
         'LookUpEditBarangDetail
         '
@@ -525,21 +534,21 @@ Partial Class FormTraPembelian
         Me.colJumlah.FieldName = "Jumlah"
         Me.colJumlah.Name = "colJumlah"
         Me.colJumlah.Visible = True
-        Me.colJumlah.VisibleIndex = 3
+        Me.colJumlah.VisibleIndex = 1
         '
         'colHargaBeli
         '
         Me.colHargaBeli.FieldName = "HargaBeli"
         Me.colHargaBeli.Name = "colHargaBeli"
         Me.colHargaBeli.Visible = True
-        Me.colHargaBeli.VisibleIndex = 4
+        Me.colHargaBeli.VisibleIndex = 2
         '
         'colDiscountPembelian
         '
         Me.colDiscountPembelian.FieldName = "DiscountPembelian"
         Me.colDiscountPembelian.Name = "colDiscountPembelian"
         Me.colDiscountPembelian.Visible = True
-        Me.colDiscountPembelian.VisibleIndex = 5
+        Me.colDiscountPembelian.VisibleIndex = 3
         '
         'DataLayoutControl1
         '
@@ -550,6 +559,7 @@ Partial Class FormTraPembelian
         Me.DataLayoutControl1.Controls.Add(Me.IDSupplierLookUpEdit)
         Me.DataLayoutControl1.Controls.Add(Me.NoPembelianTextEdit)
         Me.DataLayoutControl1.Controls.Add(Me.CatatanMemoExEdit)
+        Me.DataLayoutControl1.Controls.Add(Me.IsCompletedCheckEdit)
         Me.DataLayoutControl1.DataSource = Me.PembelianHBindingSource
         Me.DataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataLayoutControl1.Location = New System.Drawing.Point(0, 25)
@@ -606,9 +616,20 @@ Partial Class FormTraPembelian
         Me.CatatanMemoExEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.PembelianHBindingSource, "Catatan", True))
         Me.CatatanMemoExEdit.Location = New System.Drawing.Point(104, 84)
         Me.CatatanMemoExEdit.Name = "CatatanMemoExEdit"
-        Me.CatatanMemoExEdit.Size = New System.Drawing.Size(222, 241)
+        Me.CatatanMemoExEdit.Size = New System.Drawing.Size(222, 204)
         Me.CatatanMemoExEdit.StyleController = Me.DataLayoutControl1
         Me.CatatanMemoExEdit.TabIndex = 7
+        '
+        'IsCompletedCheckEdit
+        '
+        Me.IsCompletedCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.PembelianHBindingSource, "IsCompleted", True))
+        Me.IsCompletedCheckEdit.Location = New System.Drawing.Point(104, 292)
+        Me.IsCompletedCheckEdit.Name = "IsCompletedCheckEdit"
+        Me.IsCompletedCheckEdit.Properties.Caption = "Is Completed"
+        Me.IsCompletedCheckEdit.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.IsCompletedCheckEdit.Size = New System.Drawing.Size(222, 19)
+        Me.IsCompletedCheckEdit.StyleController = Me.DataLayoutControl1
+        Me.IsCompletedCheckEdit.TabIndex = 8
         '
         'LayoutControlGroup1
         '
@@ -624,7 +645,7 @@ Partial Class FormTraPembelian
         '
         Me.LayoutControlGroup2.AllowDrawBackground = False
         Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.ItemForTanggalPembelian, Me.ItemForIDSupplier, Me.ItemForNoPembelian, Me.ItemForCatatan, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.ItemForTanggalPembelian, Me.ItemForIDSupplier, Me.ItemForNoPembelian, Me.ItemForCatatan, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.ItemForIsCompleted})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "autoGeneratedGroup0"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(1036, 566)
@@ -644,7 +665,7 @@ Partial Class FormTraPembelian
         Me.ItemForIDSupplier.Location = New System.Drawing.Point(0, 24)
         Me.ItemForIDSupplier.Name = "ItemForIDSupplier"
         Me.ItemForIDSupplier.Size = New System.Drawing.Size(318, 24)
-        Me.ItemForIDSupplier.Text = "ID Supplier"
+        Me.ItemForIDSupplier.Text = "Supplier"
         Me.ItemForIDSupplier.TextSize = New System.Drawing.Size(89, 13)
         '
         'ItemForNoPembelian
@@ -661,7 +682,7 @@ Partial Class FormTraPembelian
         Me.ItemForCatatan.Control = Me.CatatanMemoExEdit
         Me.ItemForCatatan.Location = New System.Drawing.Point(0, 72)
         Me.ItemForCatatan.Name = "ItemForCatatan"
-        Me.ItemForCatatan.Size = New System.Drawing.Size(318, 245)
+        Me.ItemForCatatan.Size = New System.Drawing.Size(318, 208)
         Me.ItemForCatatan.Text = "Catatan"
         Me.ItemForCatatan.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -670,14 +691,14 @@ Partial Class FormTraPembelian
         Me.LayoutControlItem1.Control = Me.PembelianHGridControl
         Me.LayoutControlItem1.Location = New System.Drawing.Point(318, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(718, 317)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(718, 303)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.BindingNavigator1
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 317)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 303)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(1036, 34)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
@@ -686,11 +707,20 @@ Partial Class FormTraPembelian
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.PembelianDetailSelectGridControl
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 351)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 337)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1036, 215)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1036, 229)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
+        '
+        'ItemForIsCompleted
+        '
+        Me.ItemForIsCompleted.Control = Me.IsCompletedCheckEdit
+        Me.ItemForIsCompleted.Location = New System.Drawing.Point(0, 280)
+        Me.ItemForIsCompleted.Name = "ItemForIsCompleted"
+        Me.ItemForIsCompleted.Size = New System.Drawing.Size(318, 23)
+        Me.ItemForIsCompleted.Text = "Is Completed"
+        Me.ItemForIsCompleted.TextSize = New System.Drawing.Size(89, 13)
         '
         'SupplierTableAdapter
         '
@@ -699,6 +729,27 @@ Partial Class FormTraPembelian
         'BarangTableAdapter
         '
         Me.BarangTableAdapter.ClearBeforeFill = True
+        '
+        'RepositoryItemImagePopupContainerEdit1
+        '
+        Me.RepositoryItemImagePopupContainerEdit1.AutoHeight = False
+        Me.RepositoryItemImagePopupContainerEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemImagePopupContainerEdit1.Name = "RepositoryItemImagePopupContainerEdit1"
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit2.DataSource = Me.SupplierBindingSource
+        Me.RepositoryItemLookUpEdit2.DisplayMember = "Company"
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+        Me.RepositoryItemLookUpEdit2.ValueMember = "IDSupplier"
         '
         'FormTraPembelian
         '
@@ -735,6 +786,7 @@ Partial Class FormTraPembelian
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NoPembelianTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CatatanMemoExEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IsCompletedCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemForTanggalPembelian, System.ComponentModel.ISupportInitialize).EndInit()
@@ -744,6 +796,10 @@ Partial Class FormTraPembelian
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ItemForIsCompleted, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemImagePopupContainerEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -822,4 +878,9 @@ Partial Class FormTraPembelian
     Friend WithEvents LookUpEditBarangDetail As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents BarangBindingSource As BindingSource
     Friend WithEvents BarangTableAdapter As DataSetPembelianTableAdapters.BarangTableAdapter
+    Friend WithEvents IsCompletedCheckEdit As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents ItemForIsCompleted As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryItemImagePopupContainerEdit1 As DevExpress.XtraCharts.Designer.Native.RepositoryItemImagePopupContainerEdit
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class

@@ -20,20 +20,20 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSetPembelian"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSetUserProfile"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DataSetPembelian
+Partial Public Class DataSetUserProfile
     Inherits Global.System.Data.DataSet
     
-    Private tablePembelianH As PembelianHDataTable
+    Private tableUserProfile As UserProfileDataTable
     
-    Private tablePembelianDetailSelect As PembelianDetailSelectDataTable
+    Private tablePengguna As PenggunaDataTable
     
-    Private tableBarang As BarangDataTable
+    Private tablePenggunaGrid As PenggunaGridDataTable
     
-    Private tableSupplier As SupplierDataTable
+    Private tableProfile As ProfileDataTable
     
-    Private relationFK_PembelianH_PembelianDetailSelect As Global.System.Data.DataRelation
+    Private tableProfileGrid As ProfileGridDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -64,17 +64,20 @@ Partial Public Class DataSetPembelian
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("PembelianH")) Is Nothing) Then
-                MyBase.Tables.Add(New PembelianHDataTable(ds.Tables("PembelianH")))
+            If (Not (ds.Tables("UserProfile")) Is Nothing) Then
+                MyBase.Tables.Add(New UserProfileDataTable(ds.Tables("UserProfile")))
             End If
-            If (Not (ds.Tables("PembelianDetailSelect")) Is Nothing) Then
-                MyBase.Tables.Add(New PembelianDetailSelectDataTable(ds.Tables("PembelianDetailSelect")))
+            If (Not (ds.Tables("Pengguna")) Is Nothing) Then
+                MyBase.Tables.Add(New PenggunaDataTable(ds.Tables("Pengguna")))
             End If
-            If (Not (ds.Tables("Barang")) Is Nothing) Then
-                MyBase.Tables.Add(New BarangDataTable(ds.Tables("Barang")))
+            If (Not (ds.Tables("PenggunaGrid")) Is Nothing) Then
+                MyBase.Tables.Add(New PenggunaGridDataTable(ds.Tables("PenggunaGrid")))
             End If
-            If (Not (ds.Tables("Supplier")) Is Nothing) Then
-                MyBase.Tables.Add(New SupplierDataTable(ds.Tables("Supplier")))
+            If (Not (ds.Tables("Profile")) Is Nothing) Then
+                MyBase.Tables.Add(New ProfileDataTable(ds.Tables("Profile")))
+            End If
+            If (Not (ds.Tables("ProfileGrid")) Is Nothing) Then
+                MyBase.Tables.Add(New ProfileGridDataTable(ds.Tables("ProfileGrid")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -97,9 +100,9 @@ Partial Public Class DataSetPembelian
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property PembelianH() As PembelianHDataTable
+    Public ReadOnly Property UserProfile() As UserProfileDataTable
         Get
-            Return Me.tablePembelianH
+            Return Me.tableUserProfile
         End Get
     End Property
     
@@ -107,9 +110,9 @@ Partial Public Class DataSetPembelian
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property PembelianDetailSelect() As PembelianDetailSelectDataTable
+    Public ReadOnly Property Pengguna() As PenggunaDataTable
         Get
-            Return Me.tablePembelianDetailSelect
+            Return Me.tablePengguna
         End Get
     End Property
     
@@ -117,9 +120,9 @@ Partial Public Class DataSetPembelian
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Barang() As BarangDataTable
+    Public ReadOnly Property PenggunaGrid() As PenggunaGridDataTable
         Get
-            Return Me.tableBarang
+            Return Me.tablePenggunaGrid
         End Get
     End Property
     
@@ -127,9 +130,19 @@ Partial Public Class DataSetPembelian
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Supplier() As SupplierDataTable
+    Public ReadOnly Property Profile() As ProfileDataTable
         Get
-            Return Me.tableSupplier
+            Return Me.tableProfile
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property ProfileGrid() As ProfileGridDataTable
+        Get
+            Return Me.tableProfileGrid
         End Get
     End Property
     
@@ -175,7 +188,7 @@ Partial Public Class DataSetPembelian
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DataSetPembelian = CType(MyBase.Clone,DataSetPembelian)
+        Dim cln As DataSetUserProfile = CType(MyBase.Clone,DataSetUserProfile)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -200,17 +213,20 @@ Partial Public Class DataSetPembelian
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("PembelianH")) Is Nothing) Then
-                MyBase.Tables.Add(New PembelianHDataTable(ds.Tables("PembelianH")))
+            If (Not (ds.Tables("UserProfile")) Is Nothing) Then
+                MyBase.Tables.Add(New UserProfileDataTable(ds.Tables("UserProfile")))
             End If
-            If (Not (ds.Tables("PembelianDetailSelect")) Is Nothing) Then
-                MyBase.Tables.Add(New PembelianDetailSelectDataTable(ds.Tables("PembelianDetailSelect")))
+            If (Not (ds.Tables("Pengguna")) Is Nothing) Then
+                MyBase.Tables.Add(New PenggunaDataTable(ds.Tables("Pengguna")))
             End If
-            If (Not (ds.Tables("Barang")) Is Nothing) Then
-                MyBase.Tables.Add(New BarangDataTable(ds.Tables("Barang")))
+            If (Not (ds.Tables("PenggunaGrid")) Is Nothing) Then
+                MyBase.Tables.Add(New PenggunaGridDataTable(ds.Tables("PenggunaGrid")))
             End If
-            If (Not (ds.Tables("Supplier")) Is Nothing) Then
-                MyBase.Tables.Add(New SupplierDataTable(ds.Tables("Supplier")))
+            If (Not (ds.Tables("Profile")) Is Nothing) Then
+                MyBase.Tables.Add(New ProfileDataTable(ds.Tables("Profile")))
+            End If
+            If (Not (ds.Tables("ProfileGrid")) Is Nothing) Then
+                MyBase.Tables.Add(New ProfileGridDataTable(ds.Tables("ProfileGrid")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -244,80 +260,85 @@ Partial Public Class DataSetPembelian
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tablePembelianH = CType(MyBase.Tables("PembelianH"),PembelianHDataTable)
+        Me.tableUserProfile = CType(MyBase.Tables("UserProfile"),UserProfileDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablePembelianH) Is Nothing) Then
-                Me.tablePembelianH.InitVars
+            If (Not (Me.tableUserProfile) Is Nothing) Then
+                Me.tableUserProfile.InitVars
             End If
         End If
-        Me.tablePembelianDetailSelect = CType(MyBase.Tables("PembelianDetailSelect"),PembelianDetailSelectDataTable)
+        Me.tablePengguna = CType(MyBase.Tables("Pengguna"),PenggunaDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablePembelianDetailSelect) Is Nothing) Then
-                Me.tablePembelianDetailSelect.InitVars
+            If (Not (Me.tablePengguna) Is Nothing) Then
+                Me.tablePengguna.InitVars
             End If
         End If
-        Me.tableBarang = CType(MyBase.Tables("Barang"),BarangDataTable)
+        Me.tablePenggunaGrid = CType(MyBase.Tables("PenggunaGrid"),PenggunaGridDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableBarang) Is Nothing) Then
-                Me.tableBarang.InitVars
+            If (Not (Me.tablePenggunaGrid) Is Nothing) Then
+                Me.tablePenggunaGrid.InitVars
             End If
         End If
-        Me.tableSupplier = CType(MyBase.Tables("Supplier"),SupplierDataTable)
+        Me.tableProfile = CType(MyBase.Tables("Profile"),ProfileDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSupplier) Is Nothing) Then
-                Me.tableSupplier.InitVars
+            If (Not (Me.tableProfile) Is Nothing) Then
+                Me.tableProfile.InitVars
             End If
         End If
-        Me.relationFK_PembelianH_PembelianDetailSelect = Me.Relations("FK_PembelianH_PembelianDetailSelect")
+        Me.tableProfileGrid = CType(MyBase.Tables("ProfileGrid"),ProfileGridDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableProfileGrid) Is Nothing) Then
+                Me.tableProfileGrid.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DataSetPembelian"
+        Me.DataSetName = "DataSetUserProfile"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DataSetPembelian.xsd"
+        Me.Namespace = "http://tempuri.org/DataSetUserProfile.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tablePembelianH = New PembelianHDataTable()
-        MyBase.Tables.Add(Me.tablePembelianH)
-        Me.tablePembelianDetailSelect = New PembelianDetailSelectDataTable()
-        MyBase.Tables.Add(Me.tablePembelianDetailSelect)
-        Me.tableBarang = New BarangDataTable()
-        MyBase.Tables.Add(Me.tableBarang)
-        Me.tableSupplier = New SupplierDataTable()
-        MyBase.Tables.Add(Me.tableSupplier)
-        Dim fkc As Global.System.Data.ForeignKeyConstraint
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_PembelianH_PembelianDetailSelect", New Global.System.Data.DataColumn() {Me.tablePembelianH.IDPembelianHColumn}, New Global.System.Data.DataColumn() {Me.tablePembelianDetailSelect.IDPembelianHColumn})
-        Me.tablePembelianDetailSelect.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.Cascade
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        Me.relationFK_PembelianH_PembelianDetailSelect = New Global.System.Data.DataRelation("FK_PembelianH_PembelianDetailSelect", New Global.System.Data.DataColumn() {Me.tablePembelianH.IDPembelianHColumn}, New Global.System.Data.DataColumn() {Me.tablePembelianDetailSelect.IDPembelianHColumn}, false)
-        Me.Relations.Add(Me.relationFK_PembelianH_PembelianDetailSelect)
+        Me.tableUserProfile = New UserProfileDataTable()
+        MyBase.Tables.Add(Me.tableUserProfile)
+        Me.tablePengguna = New PenggunaDataTable()
+        MyBase.Tables.Add(Me.tablePengguna)
+        Me.tablePenggunaGrid = New PenggunaGridDataTable()
+        MyBase.Tables.Add(Me.tablePenggunaGrid)
+        Me.tableProfile = New ProfileDataTable()
+        MyBase.Tables.Add(Me.tableProfile)
+        Me.tableProfileGrid = New ProfileGridDataTable()
+        MyBase.Tables.Add(Me.tableProfileGrid)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializePembelianH() As Boolean
+    Private Function ShouldSerializeUserProfile() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializePembelianDetailSelect() As Boolean
+    Private Function ShouldSerializePengguna() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeBarang() As Boolean
+    Private Function ShouldSerializePenggunaGrid() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeSupplier() As Boolean
+    Private Function ShouldSerializeProfile() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeProfileGrid() As Boolean
         Return false
     End Function
     
@@ -332,7 +353,7 @@ Partial Public Class DataSetPembelian
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DataSetPembelian = New DataSetPembelian()
+        Dim ds As DataSetUserProfile = New DataSetUserProfile()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -380,36 +401,31 @@ Partial Public Class DataSetPembelian
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub PembelianHRowChangeEventHandler(ByVal sender As Object, ByVal e As PembelianHRowChangeEvent)
+    Public Delegate Sub UserProfileRowChangeEventHandler(ByVal sender As Object, ByVal e As UserProfileRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub PembelianDetailSelectRowChangeEventHandler(ByVal sender As Object, ByVal e As PembelianDetailSelectRowChangeEvent)
+    Public Delegate Sub PenggunaRowChangeEventHandler(ByVal sender As Object, ByVal e As PenggunaRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub BarangRowChangeEventHandler(ByVal sender As Object, ByVal e As BarangRowChangeEvent)
+    Public Delegate Sub PenggunaGridRowChangeEventHandler(ByVal sender As Object, ByVal e As PenggunaGridRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub SupplierRowChangeEventHandler(ByVal sender As Object, ByVal e As SupplierRowChangeEvent)
+    Public Delegate Sub ProfileRowChangeEventHandler(ByVal sender As Object, ByVal e As ProfileRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub ProfileGridRowChangeEventHandler(ByVal sender As Object, ByVal e As ProfileGridRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class PembelianHDataTable
-        Inherits Global.System.Data.TypedTableBase(Of PembelianHRow)
+    Partial Public Class UserProfileDataTable
+        Inherits Global.System.Data.TypedTableBase(Of UserProfileRow)
         
-        Private columnIDPembelianH As Global.System.Data.DataColumn
+        Private columnIDUser As Global.System.Data.DataColumn
         
-        Private columnTanggalPembelian As Global.System.Data.DataColumn
-        
-        Private columnIDSupplier As Global.System.Data.DataColumn
-        
-        Private columnNoPembelian As Global.System.Data.DataColumn
-        
-        Private columnStatus As Global.System.Data.DataColumn
-        
-        Private columnCatatan As Global.System.Data.DataColumn
+        Private columnIDProfile As Global.System.Data.DataColumn
         
         Private columnCreatedBy As Global.System.Data.DataColumn
         
@@ -419,13 +435,13 @@ Partial Public Class DataSetPembelian
         
         Private columnModifiedDate As Global.System.Data.DataColumn
         
-        Private columnIsCompleted As Global.System.Data.DataColumn
+        Private columnisActive As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "PembelianH"
+            Me.TableName = "UserProfile"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -458,49 +474,17 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDPembelianHColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDUserColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDPembelianH
+                Return Me.columnIDUser
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property TanggalPembelianColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDProfileColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTanggalPembelian
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDSupplierColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnIDSupplier
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoPembelianColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNoPembelian
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnStatus
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property CatatanColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCatatan
+                Return Me.columnIDProfile
             End Get
         End Property
         
@@ -538,9 +522,9 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IsCompletedColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property isActiveColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIsCompleted
+                Return Me.columnisActive
             End Get
         End Property
         
@@ -555,50 +539,50 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As PembelianHRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As UserProfileRow
             Get
-                Return CType(Me.Rows(index),PembelianHRow)
+                Return CType(Me.Rows(index),UserProfileRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianHRowChanging As PembelianHRowChangeEventHandler
+        Public Event UserProfileRowChanging As UserProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianHRowChanged As PembelianHRowChangeEventHandler
+        Public Event UserProfileRowChanged As UserProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianHRowDeleting As PembelianHRowChangeEventHandler
+        Public Event UserProfileRowDeleting As UserProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianHRowDeleted As PembelianHRowChangeEventHandler
+        Public Event UserProfileRowDeleted As UserProfileRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddPembelianHRow(ByVal row As PembelianHRow)
+        Public Overloads Sub AddUserProfileRow(ByVal row As UserProfileRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPembelianHRow(ByVal IDPembelianH As Long, ByVal TanggalPembelian As Date, ByVal IDSupplier As Integer, ByVal NoPembelian As String, ByVal Status As Short, ByVal Catatan As String, ByVal CreatedBy As Integer, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal IsCompleted As Boolean) As PembelianHRow
-            Dim rowPembelianHRow As PembelianHRow = CType(Me.NewRow,PembelianHRow)
-            Dim columnValuesArray() As Object = New Object() {IDPembelianH, TanggalPembelian, IDSupplier, NoPembelian, Status, Catatan, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, IsCompleted}
-            rowPembelianHRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowPembelianHRow)
-            Return rowPembelianHRow
+        Public Overloads Function AddUserProfileRow(ByVal IDUser As Integer, ByVal IDProfile As Integer, ByVal CreatedBy As Integer, ByVal CreatedDate As Date, ByVal ModifiedBy As Integer, ByVal ModifiedDate As Date, ByVal isActive As Boolean) As UserProfileRow
+            Dim rowUserProfileRow As UserProfileRow = CType(Me.NewRow,UserProfileRow)
+            Dim columnValuesArray() As Object = New Object() {IDUser, IDProfile, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive}
+            rowUserProfileRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowUserProfileRow)
+            Return rowUserProfileRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByIDPembelianH(ByVal IDPembelianH As Long) As PembelianHRow
-            Return CType(Me.Rows.Find(New Object() {IDPembelianH}),PembelianHRow)
+        Public Function FindByIDUser(ByVal IDUser As Integer) As UserProfileRow
+            Return CType(Me.Rows.Find(New Object() {IDUser}),UserProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As PembelianHDataTable = CType(MyBase.Clone,PembelianHDataTable)
+            Dim cln As UserProfileDataTable = CType(MyBase.Clone,UserProfileDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -606,40 +590,28 @@ Partial Public Class DataSetPembelian
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New PembelianHDataTable()
+            Return New UserProfileDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDPembelianH = MyBase.Columns("IDPembelianH")
-            Me.columnTanggalPembelian = MyBase.Columns("TanggalPembelian")
-            Me.columnIDSupplier = MyBase.Columns("IDSupplier")
-            Me.columnNoPembelian = MyBase.Columns("NoPembelian")
-            Me.columnStatus = MyBase.Columns("Status")
-            Me.columnCatatan = MyBase.Columns("Catatan")
+            Me.columnIDUser = MyBase.Columns("IDUser")
+            Me.columnIDProfile = MyBase.Columns("IDProfile")
             Me.columnCreatedBy = MyBase.Columns("CreatedBy")
             Me.columnCreatedDate = MyBase.Columns("CreatedDate")
             Me.columnModifiedBy = MyBase.Columns("ModifiedBy")
             Me.columnModifiedDate = MyBase.Columns("ModifiedDate")
-            Me.columnIsCompleted = MyBase.Columns("IsCompleted")
+            Me.columnisActive = MyBase.Columns("isActive")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDPembelianH = New Global.System.Data.DataColumn("IDPembelianH", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDPembelianH)
-            Me.columnTanggalPembelian = New Global.System.Data.DataColumn("TanggalPembelian", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTanggalPembelian)
-            Me.columnIDSupplier = New Global.System.Data.DataColumn("IDSupplier", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDSupplier)
-            Me.columnNoPembelian = New Global.System.Data.DataColumn("NoPembelian", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoPembelian)
-            Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStatus)
-            Me.columnCatatan = New Global.System.Data.DataColumn("Catatan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCatatan)
+            Me.columnIDUser = New Global.System.Data.DataColumn("IDUser", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDUser)
+            Me.columnIDProfile = New Global.System.Data.DataColumn("IDProfile", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDProfile)
             Me.columnCreatedBy = New Global.System.Data.DataColumn("CreatedBy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCreatedBy)
             Me.columnCreatedDate = New Global.System.Data.DataColumn("CreatedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
@@ -648,40 +620,39 @@ Partial Public Class DataSetPembelian
             MyBase.Columns.Add(Me.columnModifiedBy)
             Me.columnModifiedDate = New Global.System.Data.DataColumn("ModifiedDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnModifiedDate)
-            Me.columnIsCompleted = New Global.System.Data.DataColumn("IsCompleted", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIsCompleted)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDPembelianH}, true))
-            Me.columnIDPembelianH.AllowDBNull = false
-            Me.columnIDPembelianH.Unique = true
-            Me.columnIDPembelianH.DefaultValue = CType(0,Long)
-            Me.columnNoPembelian.MaxLength = 25
-            Me.columnCatatan.MaxLength = 255
+            Me.columnisActive = New Global.System.Data.DataColumn("isActive", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnisActive)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDUser}, true))
+            Me.columnIDUser.AllowDBNull = false
+            Me.columnIDUser.Unique = true
+            Me.columnIDUser.DefaultValue = CType(0,Integer)
+            Me.columnIDProfile.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewPembelianHRow() As PembelianHRow
-            Return CType(Me.NewRow,PembelianHRow)
+        Public Function NewUserProfileRow() As UserProfileRow
+            Return CType(Me.NewRow,UserProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New PembelianHRow(builder)
+            Return New UserProfileRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(PembelianHRow)
+            Return GetType(UserProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.PembelianHRowChangedEvent) Is Nothing) Then
-                RaiseEvent PembelianHRowChanged(Me, New PembelianHRowChangeEvent(CType(e.Row,PembelianHRow), e.Action))
+            If (Not (Me.UserProfileRowChangedEvent) Is Nothing) Then
+                RaiseEvent UserProfileRowChanged(Me, New UserProfileRowChangeEvent(CType(e.Row,UserProfileRow), e.Action))
             End If
         End Sub
         
@@ -689,8 +660,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.PembelianHRowChangingEvent) Is Nothing) Then
-                RaiseEvent PembelianHRowChanging(Me, New PembelianHRowChangeEvent(CType(e.Row,PembelianHRow), e.Action))
+            If (Not (Me.UserProfileRowChangingEvent) Is Nothing) Then
+                RaiseEvent UserProfileRowChanging(Me, New UserProfileRowChangeEvent(CType(e.Row,UserProfileRow), e.Action))
             End If
         End Sub
         
@@ -698,8 +669,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.PembelianHRowDeletedEvent) Is Nothing) Then
-                RaiseEvent PembelianHRowDeleted(Me, New PembelianHRowChangeEvent(CType(e.Row,PembelianHRow), e.Action))
+            If (Not (Me.UserProfileRowDeletedEvent) Is Nothing) Then
+                RaiseEvent UserProfileRowDeleted(Me, New UserProfileRowChangeEvent(CType(e.Row,UserProfileRow), e.Action))
             End If
         End Sub
         
@@ -707,14 +678,14 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.PembelianHRowDeletingEvent) Is Nothing) Then
-                RaiseEvent PembelianHRowDeleting(Me, New PembelianHRowChangeEvent(CType(e.Row,PembelianHRow), e.Action))
+            If (Not (Me.UserProfileRowDeletingEvent) Is Nothing) Then
+                RaiseEvent UserProfileRowDeleting(Me, New UserProfileRowChangeEvent(CType(e.Row,UserProfileRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemovePembelianHRow(ByVal row As PembelianHRow)
+        Public Sub RemoveUserProfileRow(ByVal row As UserProfileRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -723,7 +694,7 @@ Partial Public Class DataSetPembelian
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetPembelian = New DataSetPembelian()
+            Dim ds As DataSetUserProfile = New DataSetUserProfile()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -741,7 +712,7 @@ Partial Public Class DataSetPembelian
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "PembelianHDataTable"
+            attribute2.FixedValue = "UserProfileDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -790,26 +761,18 @@ Partial Public Class DataSetPembelian
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class PembelianDetailSelectDataTable
-        Inherits Global.System.Data.TypedTableBase(Of PembelianDetailSelectRow)
+    Partial Public Class PenggunaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PenggunaRow)
         
-        Private columnIDPembelianH As Global.System.Data.DataColumn
+        Private columnIDPengguna As Global.System.Data.DataColumn
         
-        Private columnIDPembelianD As Global.System.Data.DataColumn
-        
-        Private columnIDBarang As Global.System.Data.DataColumn
-        
-        Private columnJumlah As Global.System.Data.DataColumn
-        
-        Private columnHargaBeli As Global.System.Data.DataColumn
-        
-        Private columnDiscountPembelian As Global.System.Data.DataColumn
+        Private columnUserName As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "PembelianDetailSelect"
+            Me.TableName = "Pengguna"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -842,49 +805,17 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDPembelianHColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDPenggunaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDPembelianH
+                Return Me.columnIDPengguna
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDPembelianDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UserNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDPembelianD
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDBarangColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnIDBarang
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property JumlahColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnJumlah
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property HargaBeliColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnHargaBeli
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property DiscountPembelianColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDiscountPembelian
+                Return Me.columnUserName
             End Get
         End Property
         
@@ -899,53 +830,50 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As PembelianDetailSelectRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PenggunaRow
             Get
-                Return CType(Me.Rows(index),PembelianDetailSelectRow)
+                Return CType(Me.Rows(index),PenggunaRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianDetailSelectRowChanging As PembelianDetailSelectRowChangeEventHandler
+        Public Event PenggunaRowChanging As PenggunaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianDetailSelectRowChanged As PembelianDetailSelectRowChangeEventHandler
+        Public Event PenggunaRowChanged As PenggunaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianDetailSelectRowDeleting As PembelianDetailSelectRowChangeEventHandler
+        Public Event PenggunaRowDeleting As PenggunaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event PembelianDetailSelectRowDeleted As PembelianDetailSelectRowChangeEventHandler
+        Public Event PenggunaRowDeleted As PenggunaRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddPembelianDetailSelectRow(ByVal row As PembelianDetailSelectRow)
+        Public Overloads Sub AddPenggunaRow(ByVal row As PenggunaRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddPembelianDetailSelectRow(ByVal parentPembelianHRowByFK_PembelianH_PembelianDetailSelect As PembelianHRow, ByVal IDPembelianD As Long, ByVal IDBarang As Integer, ByVal Jumlah As Decimal, ByVal HargaBeli As Decimal, ByVal DiscountPembelian As Decimal) As PembelianDetailSelectRow
-            Dim rowPembelianDetailSelectRow As PembelianDetailSelectRow = CType(Me.NewRow,PembelianDetailSelectRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, IDPembelianD, IDBarang, Jumlah, HargaBeli, DiscountPembelian}
-            If (Not (parentPembelianHRowByFK_PembelianH_PembelianDetailSelect) Is Nothing) Then
-                columnValuesArray(0) = parentPembelianHRowByFK_PembelianH_PembelianDetailSelect(0)
-            End If
-            rowPembelianDetailSelectRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowPembelianDetailSelectRow)
-            Return rowPembelianDetailSelectRow
+        Public Overloads Function AddPenggunaRow(ByVal IDPengguna As Integer, ByVal UserName As String) As PenggunaRow
+            Dim rowPenggunaRow As PenggunaRow = CType(Me.NewRow,PenggunaRow)
+            Dim columnValuesArray() As Object = New Object() {IDPengguna, UserName}
+            rowPenggunaRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPenggunaRow)
+            Return rowPenggunaRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByIDPembelianD(ByVal IDPembelianD As Long) As PembelianDetailSelectRow
-            Return CType(Me.Rows.Find(New Object() {IDPembelianD}),PembelianDetailSelectRow)
+        Public Function FindByIDPengguna(ByVal IDPengguna As Integer) As PenggunaRow
+            Return CType(Me.Rows.Find(New Object() {IDPengguna}),PenggunaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As PembelianDetailSelectDataTable = CType(MyBase.Clone,PembelianDetailSelectDataTable)
+            Dim cln As PenggunaDataTable = CType(MyBase.Clone,PenggunaDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -953,65 +881,54 @@ Partial Public Class DataSetPembelian
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New PembelianDetailSelectDataTable()
+            Return New PenggunaDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDPembelianH = MyBase.Columns("IDPembelianH")
-            Me.columnIDPembelianD = MyBase.Columns("IDPembelianD")
-            Me.columnIDBarang = MyBase.Columns("IDBarang")
-            Me.columnJumlah = MyBase.Columns("Jumlah")
-            Me.columnHargaBeli = MyBase.Columns("HargaBeli")
-            Me.columnDiscountPembelian = MyBase.Columns("DiscountPembelian")
+            Me.columnIDPengguna = MyBase.Columns("IDPengguna")
+            Me.columnUserName = MyBase.Columns("UserName")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDPembelianH = New Global.System.Data.DataColumn("IDPembelianH", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDPembelianH)
-            Me.columnIDPembelianD = New Global.System.Data.DataColumn("IDPembelianD", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDPembelianD)
-            Me.columnIDBarang = New Global.System.Data.DataColumn("IDBarang", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDBarang)
-            Me.columnJumlah = New Global.System.Data.DataColumn("Jumlah", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnJumlah)
-            Me.columnHargaBeli = New Global.System.Data.DataColumn("HargaBeli", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHargaBeli)
-            Me.columnDiscountPembelian = New Global.System.Data.DataColumn("DiscountPembelian", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDiscountPembelian)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDPembelianD}, true))
-            Me.columnIDPembelianD.AllowDBNull = false
-            Me.columnIDPembelianD.Unique = true
-            Me.columnIDPembelianD.DefaultValue = CType(0,Long)
+            Me.columnIDPengguna = New Global.System.Data.DataColumn("IDPengguna", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDPengguna)
+            Me.columnUserName = New Global.System.Data.DataColumn("UserName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUserName)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDPengguna}, true))
+            Me.columnIDPengguna.AllowDBNull = false
+            Me.columnIDPengguna.Unique = true
+            Me.columnUserName.AllowDBNull = false
+            Me.columnUserName.MaxLength = 15
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewPembelianDetailSelectRow() As PembelianDetailSelectRow
-            Return CType(Me.NewRow,PembelianDetailSelectRow)
+        Public Function NewPenggunaRow() As PenggunaRow
+            Return CType(Me.NewRow,PenggunaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New PembelianDetailSelectRow(builder)
+            Return New PenggunaRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(PembelianDetailSelectRow)
+            Return GetType(PenggunaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.PembelianDetailSelectRowChangedEvent) Is Nothing) Then
-                RaiseEvent PembelianDetailSelectRowChanged(Me, New PembelianDetailSelectRowChangeEvent(CType(e.Row,PembelianDetailSelectRow), e.Action))
+            If (Not (Me.PenggunaRowChangedEvent) Is Nothing) Then
+                RaiseEvent PenggunaRowChanged(Me, New PenggunaRowChangeEvent(CType(e.Row,PenggunaRow), e.Action))
             End If
         End Sub
         
@@ -1019,8 +936,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.PembelianDetailSelectRowChangingEvent) Is Nothing) Then
-                RaiseEvent PembelianDetailSelectRowChanging(Me, New PembelianDetailSelectRowChangeEvent(CType(e.Row,PembelianDetailSelectRow), e.Action))
+            If (Not (Me.PenggunaRowChangingEvent) Is Nothing) Then
+                RaiseEvent PenggunaRowChanging(Me, New PenggunaRowChangeEvent(CType(e.Row,PenggunaRow), e.Action))
             End If
         End Sub
         
@@ -1028,8 +945,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.PembelianDetailSelectRowDeletedEvent) Is Nothing) Then
-                RaiseEvent PembelianDetailSelectRowDeleted(Me, New PembelianDetailSelectRowChangeEvent(CType(e.Row,PembelianDetailSelectRow), e.Action))
+            If (Not (Me.PenggunaRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PenggunaRowDeleted(Me, New PenggunaRowChangeEvent(CType(e.Row,PenggunaRow), e.Action))
             End If
         End Sub
         
@@ -1037,14 +954,14 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.PembelianDetailSelectRowDeletingEvent) Is Nothing) Then
-                RaiseEvent PembelianDetailSelectRowDeleting(Me, New PembelianDetailSelectRowChangeEvent(CType(e.Row,PembelianDetailSelectRow), e.Action))
+            If (Not (Me.PenggunaRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PenggunaRowDeleting(Me, New PenggunaRowChangeEvent(CType(e.Row,PenggunaRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemovePembelianDetailSelectRow(ByVal row As PembelianDetailSelectRow)
+        Public Sub RemovePenggunaRow(ByVal row As PenggunaRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1053,7 +970,7 @@ Partial Public Class DataSetPembelian
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetPembelian = New DataSetPembelian()
+            Dim ds As DataSetUserProfile = New DataSetUserProfile()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1071,7 +988,7 @@ Partial Public Class DataSetPembelian
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "PembelianDetailSelectDataTable"
+            attribute2.FixedValue = "PenggunaDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1120,18 +1037,18 @@ Partial Public Class DataSetPembelian
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class BarangDataTable
-        Inherits Global.System.Data.TypedTableBase(Of BarangRow)
+    Partial Public Class PenggunaGridDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PenggunaGridRow)
         
-        Private columnIDBarang As Global.System.Data.DataColumn
+        Private columnIDPengguna As Global.System.Data.DataColumn
         
-        Private columnNamaBarang As Global.System.Data.DataColumn
+        Private columnUserName As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Barang"
+            Me.TableName = "PenggunaGrid"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1164,17 +1081,17 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDBarangColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDPenggunaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDBarang
+                Return Me.columnIDPengguna
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NamaBarangColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UserNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNamaBarang
+                Return Me.columnUserName
             End Get
         End Property
         
@@ -1189,44 +1106,50 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As BarangRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PenggunaGridRow
             Get
-                Return CType(Me.Rows(index),BarangRow)
+                Return CType(Me.Rows(index),PenggunaGridRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event BarangRowChanging As BarangRowChangeEventHandler
+        Public Event PenggunaGridRowChanging As PenggunaGridRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event BarangRowChanged As BarangRowChangeEventHandler
+        Public Event PenggunaGridRowChanged As PenggunaGridRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event BarangRowDeleting As BarangRowChangeEventHandler
+        Public Event PenggunaGridRowDeleting As PenggunaGridRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event BarangRowDeleted As BarangRowChangeEventHandler
+        Public Event PenggunaGridRowDeleted As PenggunaGridRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddBarangRow(ByVal row As BarangRow)
+        Public Overloads Sub AddPenggunaGridRow(ByVal row As PenggunaGridRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddBarangRow(ByVal IDBarang As Integer, ByVal NamaBarang As String) As BarangRow
-            Dim rowBarangRow As BarangRow = CType(Me.NewRow,BarangRow)
-            Dim columnValuesArray() As Object = New Object() {IDBarang, NamaBarang}
-            rowBarangRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowBarangRow)
-            Return rowBarangRow
+        Public Overloads Function AddPenggunaGridRow(ByVal IDPengguna As Integer, ByVal UserName As String) As PenggunaGridRow
+            Dim rowPenggunaGridRow As PenggunaGridRow = CType(Me.NewRow,PenggunaGridRow)
+            Dim columnValuesArray() As Object = New Object() {IDPengguna, UserName}
+            rowPenggunaGridRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPenggunaGridRow)
+            Return rowPenggunaGridRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByIDPengguna(ByVal IDPengguna As Integer) As PenggunaGridRow
+            Return CType(Me.Rows.Find(New Object() {IDPengguna}),PenggunaGridRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As BarangDataTable = CType(MyBase.Clone,BarangDataTable)
+            Dim cln As PenggunaGridDataTable = CType(MyBase.Clone,PenggunaGridDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1234,51 +1157,54 @@ Partial Public Class DataSetPembelian
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New BarangDataTable()
+            Return New PenggunaGridDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDBarang = MyBase.Columns("IDBarang")
-            Me.columnNamaBarang = MyBase.Columns("NamaBarang")
+            Me.columnIDPengguna = MyBase.Columns("IDPengguna")
+            Me.columnUserName = MyBase.Columns("UserName")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDBarang = New Global.System.Data.DataColumn("IDBarang", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDBarang)
-            Me.columnNamaBarang = New Global.System.Data.DataColumn("NamaBarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNamaBarang)
-            Me.columnIDBarang.AllowDBNull = false
-            Me.columnNamaBarang.MaxLength = 50
+            Me.columnIDPengguna = New Global.System.Data.DataColumn("IDPengguna", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDPengguna)
+            Me.columnUserName = New Global.System.Data.DataColumn("UserName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUserName)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDPengguna}, true))
+            Me.columnIDPengguna.AllowDBNull = false
+            Me.columnIDPengguna.Unique = true
+            Me.columnUserName.AllowDBNull = false
+            Me.columnUserName.MaxLength = 15
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewBarangRow() As BarangRow
-            Return CType(Me.NewRow,BarangRow)
+        Public Function NewPenggunaGridRow() As PenggunaGridRow
+            Return CType(Me.NewRow,PenggunaGridRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New BarangRow(builder)
+            Return New PenggunaGridRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(BarangRow)
+            Return GetType(PenggunaGridRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.BarangRowChangedEvent) Is Nothing) Then
-                RaiseEvent BarangRowChanged(Me, New BarangRowChangeEvent(CType(e.Row,BarangRow), e.Action))
+            If (Not (Me.PenggunaGridRowChangedEvent) Is Nothing) Then
+                RaiseEvent PenggunaGridRowChanged(Me, New PenggunaGridRowChangeEvent(CType(e.Row,PenggunaGridRow), e.Action))
             End If
         End Sub
         
@@ -1286,8 +1212,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.BarangRowChangingEvent) Is Nothing) Then
-                RaiseEvent BarangRowChanging(Me, New BarangRowChangeEvent(CType(e.Row,BarangRow), e.Action))
+            If (Not (Me.PenggunaGridRowChangingEvent) Is Nothing) Then
+                RaiseEvent PenggunaGridRowChanging(Me, New PenggunaGridRowChangeEvent(CType(e.Row,PenggunaGridRow), e.Action))
             End If
         End Sub
         
@@ -1295,8 +1221,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.BarangRowDeletedEvent) Is Nothing) Then
-                RaiseEvent BarangRowDeleted(Me, New BarangRowChangeEvent(CType(e.Row,BarangRow), e.Action))
+            If (Not (Me.PenggunaGridRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PenggunaGridRowDeleted(Me, New PenggunaGridRowChangeEvent(CType(e.Row,PenggunaGridRow), e.Action))
             End If
         End Sub
         
@@ -1304,14 +1230,14 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.BarangRowDeletingEvent) Is Nothing) Then
-                RaiseEvent BarangRowDeleting(Me, New BarangRowChangeEvent(CType(e.Row,BarangRow), e.Action))
+            If (Not (Me.PenggunaGridRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PenggunaGridRowDeleting(Me, New PenggunaGridRowChangeEvent(CType(e.Row,PenggunaGridRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveBarangRow(ByVal row As BarangRow)
+        Public Sub RemovePenggunaGridRow(ByVal row As PenggunaGridRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1320,7 +1246,7 @@ Partial Public Class DataSetPembelian
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetPembelian = New DataSetPembelian()
+            Dim ds As DataSetUserProfile = New DataSetUserProfile()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1338,7 +1264,7 @@ Partial Public Class DataSetPembelian
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "BarangDataTable"
+            attribute2.FixedValue = "PenggunaGridDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1387,20 +1313,18 @@ Partial Public Class DataSetPembelian
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class SupplierDataTable
-        Inherits Global.System.Data.TypedTableBase(Of SupplierRow)
+    Partial Public Class ProfileDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ProfileRow)
         
-        Private columnIDSupplier As Global.System.Data.DataColumn
+        Private columnIDProfile As Global.System.Data.DataColumn
         
-        Private columnCompany As Global.System.Data.DataColumn
-        
-        Private columnContactName As Global.System.Data.DataColumn
+        Private columnProfile As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Supplier"
+            Me.TableName = "Profile"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1433,25 +1357,17 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property IDSupplierColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDProfileColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIDSupplier
+                Return Me.columnIDProfile
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property CompanyColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ProfileColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCompany
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ContactNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnContactName
+                Return Me.columnProfile
             End Get
         End Property
         
@@ -1466,50 +1382,50 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As SupplierRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ProfileRow
             Get
-                Return CType(Me.Rows(index),SupplierRow)
+                Return CType(Me.Rows(index),ProfileRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event SupplierRowChanging As SupplierRowChangeEventHandler
+        Public Event ProfileRowChanging As ProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event SupplierRowChanged As SupplierRowChangeEventHandler
+        Public Event ProfileRowChanged As ProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event SupplierRowDeleting As SupplierRowChangeEventHandler
+        Public Event ProfileRowDeleting As ProfileRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event SupplierRowDeleted As SupplierRowChangeEventHandler
+        Public Event ProfileRowDeleted As ProfileRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddSupplierRow(ByVal row As SupplierRow)
+        Public Overloads Sub AddProfileRow(ByVal row As ProfileRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSupplierRow(ByVal IDSupplier As Integer, ByVal Company As String, ByVal ContactName As String) As SupplierRow
-            Dim rowSupplierRow As SupplierRow = CType(Me.NewRow,SupplierRow)
-            Dim columnValuesArray() As Object = New Object() {IDSupplier, Company, ContactName}
-            rowSupplierRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowSupplierRow)
-            Return rowSupplierRow
+        Public Overloads Function AddProfileRow(ByVal IDProfile As Integer, ByVal Profile As String) As ProfileRow
+            Dim rowProfileRow As ProfileRow = CType(Me.NewRow,ProfileRow)
+            Dim columnValuesArray() As Object = New Object() {IDProfile, Profile}
+            rowProfileRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowProfileRow)
+            Return rowProfileRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByIDSupplier(ByVal IDSupplier As Integer) As SupplierRow
-            Return CType(Me.Rows.Find(New Object() {IDSupplier}),SupplierRow)
+        Public Function FindByIDProfile(ByVal IDProfile As Integer) As ProfileRow
+            Return CType(Me.Rows.Find(New Object() {IDProfile}),ProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As SupplierDataTable = CType(MyBase.Clone,SupplierDataTable)
+            Dim cln As ProfileDataTable = CType(MyBase.Clone,ProfileDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1517,57 +1433,54 @@ Partial Public Class DataSetPembelian
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New SupplierDataTable()
+            Return New ProfileDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnIDSupplier = MyBase.Columns("IDSupplier")
-            Me.columnCompany = MyBase.Columns("Company")
-            Me.columnContactName = MyBase.Columns("ContactName")
+            Me.columnIDProfile = MyBase.Columns("IDProfile")
+            Me.columnProfile = MyBase.Columns("Profile")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnIDSupplier = New Global.System.Data.DataColumn("IDSupplier", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIDSupplier)
-            Me.columnCompany = New Global.System.Data.DataColumn("Company", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCompany)
-            Me.columnContactName = New Global.System.Data.DataColumn("ContactName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnContactName)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDSupplier}, true))
-            Me.columnIDSupplier.AllowDBNull = false
-            Me.columnIDSupplier.Unique = true
-            Me.columnCompany.MaxLength = 50
-            Me.columnContactName.MaxLength = 30
+            Me.columnIDProfile = New Global.System.Data.DataColumn("IDProfile", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDProfile)
+            Me.columnProfile = New Global.System.Data.DataColumn("Profile", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProfile)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDProfile}, true))
+            Me.columnIDProfile.AllowDBNull = false
+            Me.columnIDProfile.Unique = true
+            Me.columnProfile.AllowDBNull = false
+            Me.columnProfile.MaxLength = 20
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewSupplierRow() As SupplierRow
-            Return CType(Me.NewRow,SupplierRow)
+        Public Function NewProfileRow() As ProfileRow
+            Return CType(Me.NewRow,ProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New SupplierRow(builder)
+            Return New ProfileRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(SupplierRow)
+            Return GetType(ProfileRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.SupplierRowChangedEvent) Is Nothing) Then
-                RaiseEvent SupplierRowChanged(Me, New SupplierRowChangeEvent(CType(e.Row,SupplierRow), e.Action))
+            If (Not (Me.ProfileRowChangedEvent) Is Nothing) Then
+                RaiseEvent ProfileRowChanged(Me, New ProfileRowChangeEvent(CType(e.Row,ProfileRow), e.Action))
             End If
         End Sub
         
@@ -1575,8 +1488,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.SupplierRowChangingEvent) Is Nothing) Then
-                RaiseEvent SupplierRowChanging(Me, New SupplierRowChangeEvent(CType(e.Row,SupplierRow), e.Action))
+            If (Not (Me.ProfileRowChangingEvent) Is Nothing) Then
+                RaiseEvent ProfileRowChanging(Me, New ProfileRowChangeEvent(CType(e.Row,ProfileRow), e.Action))
             End If
         End Sub
         
@@ -1584,8 +1497,8 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.SupplierRowDeletedEvent) Is Nothing) Then
-                RaiseEvent SupplierRowDeleted(Me, New SupplierRowChangeEvent(CType(e.Row,SupplierRow), e.Action))
+            If (Not (Me.ProfileRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ProfileRowDeleted(Me, New ProfileRowChangeEvent(CType(e.Row,ProfileRow), e.Action))
             End If
         End Sub
         
@@ -1593,14 +1506,14 @@ Partial Public Class DataSetPembelian
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.SupplierRowDeletingEvent) Is Nothing) Then
-                RaiseEvent SupplierRowDeleting(Me, New SupplierRowChangeEvent(CType(e.Row,SupplierRow), e.Action))
+            If (Not (Me.ProfileRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ProfileRowDeleting(Me, New ProfileRowChangeEvent(CType(e.Row,ProfileRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveSupplierRow(ByVal row As SupplierRow)
+        Public Sub RemoveProfileRow(ByVal row As ProfileRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1609,7 +1522,7 @@ Partial Public Class DataSetPembelian
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetPembelian = New DataSetPembelian()
+            Dim ds As DataSetUserProfile = New DataSetUserProfile()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1627,7 +1540,283 @@ Partial Public Class DataSetPembelian
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "SupplierDataTable"
+            attribute2.FixedValue = "ProfileDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ProfileGridDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ProfileGridRow)
+        
+        Private columnIDProfile As Global.System.Data.DataColumn
+        
+        Private columnProfile As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "ProfileGrid"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDProfileColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIDProfile
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProfileColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProfile
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ProfileGridRow
+            Get
+                Return CType(Me.Rows(index),ProfileGridRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ProfileGridRowChanging As ProfileGridRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ProfileGridRowChanged As ProfileGridRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ProfileGridRowDeleting As ProfileGridRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ProfileGridRowDeleted As ProfileGridRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddProfileGridRow(ByVal row As ProfileGridRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddProfileGridRow(ByVal IDProfile As Integer, ByVal Profile As String) As ProfileGridRow
+            Dim rowProfileGridRow As ProfileGridRow = CType(Me.NewRow,ProfileGridRow)
+            Dim columnValuesArray() As Object = New Object() {IDProfile, Profile}
+            rowProfileGridRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowProfileGridRow)
+            Return rowProfileGridRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByIDProfile(ByVal IDProfile As Integer) As ProfileGridRow
+            Return CType(Me.Rows.Find(New Object() {IDProfile}),ProfileGridRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ProfileGridDataTable = CType(MyBase.Clone,ProfileGridDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ProfileGridDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnIDProfile = MyBase.Columns("IDProfile")
+            Me.columnProfile = MyBase.Columns("Profile")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnIDProfile = New Global.System.Data.DataColumn("IDProfile", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDProfile)
+            Me.columnProfile = New Global.System.Data.DataColumn("Profile", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProfile)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIDProfile}, true))
+            Me.columnIDProfile.AllowDBNull = false
+            Me.columnIDProfile.Unique = true
+            Me.columnProfile.AllowDBNull = false
+            Me.columnProfile.MaxLength = 20
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewProfileGridRow() As ProfileGridRow
+            Return CType(Me.NewRow,ProfileGridRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ProfileGridRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ProfileGridRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ProfileGridRowChangedEvent) Is Nothing) Then
+                RaiseEvent ProfileGridRowChanged(Me, New ProfileGridRowChangeEvent(CType(e.Row,ProfileGridRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ProfileGridRowChangingEvent) Is Nothing) Then
+                RaiseEvent ProfileGridRowChanging(Me, New ProfileGridRowChangeEvent(CType(e.Row,ProfileGridRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ProfileGridRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ProfileGridRowDeleted(Me, New ProfileGridRowChangeEvent(CType(e.Row,ProfileGridRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ProfileGridRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ProfileGridRowDeleting(Me, New ProfileGridRowChangeEvent(CType(e.Row,ProfileGridRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveProfileGridRow(ByVal row As ProfileGridRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSetUserProfile = New DataSetUserProfile()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ProfileGridDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1674,101 +1863,37 @@ Partial Public Class DataSetPembelian
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class PembelianHRow
+    Partial Public Class UserProfileRow
         Inherits Global.System.Data.DataRow
         
-        Private tablePembelianH As PembelianHDataTable
+        Private tableUserProfile As UserProfileDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablePembelianH = CType(Me.Table,PembelianHDataTable)
+            Me.tableUserProfile = CType(Me.Table,UserProfileDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDPembelianH() As Long
+        Public Property IDUser() As Integer
             Get
-                Return CType(Me(Me.tablePembelianH.IDPembelianHColumn),Long)
+                Return CType(Me(Me.tableUserProfile.IDUserColumn),Integer)
             End Get
             Set
-                Me(Me.tablePembelianH.IDPembelianHColumn) = value
+                Me(Me.tableUserProfile.IDUserColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property TanggalPembelian() As Date
+        Public Property IDProfile() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tablePembelianH.TanggalPembelianColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'TanggalPembelian' in table 'PembelianH' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableUserProfile.IDProfileColumn),Integer)
             End Get
             Set
-                Me(Me.tablePembelianH.TanggalPembelianColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDSupplier() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianH.IDSupplierColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDSupplier' in table 'PembelianH' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianH.IDSupplierColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoPembelian() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianH.NoPembelianColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'NoPembelian' in table 'PembelianH' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianH.NoPembelianColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Status() As Short
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianH.StatusColumn),Short)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'PembelianH' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianH.StatusColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Catatan() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianH.CatatanColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Catatan' in table 'PembelianH' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianH.CatatanColumn) = value
+                Me(Me.tableUserProfile.IDProfileColumn) = value
             End Set
         End Property
         
@@ -1777,13 +1902,13 @@ Partial Public Class DataSetPembelian
         Public Property CreatedBy() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePembelianH.CreatedByColumn),Integer)
+                    Return CType(Me(Me.tableUserProfile.CreatedByColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'PembelianH' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedBy' in table 'UserProfile' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePembelianH.CreatedByColumn) = value
+                Me(Me.tableUserProfile.CreatedByColumn) = value
             End Set
         End Property
         
@@ -1792,13 +1917,13 @@ Partial Public Class DataSetPembelian
         Public Property CreatedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablePembelianH.CreatedDateColumn),Date)
+                    Return CType(Me(Me.tableUserProfile.CreatedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'PembelianH' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreatedDate' in table 'UserProfile' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePembelianH.CreatedDateColumn) = value
+                Me(Me.tableUserProfile.CreatedDateColumn) = value
             End Set
         End Property
         
@@ -1807,13 +1932,13 @@ Partial Public Class DataSetPembelian
         Public Property ModifiedBy() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePembelianH.ModifiedByColumn),Integer)
+                    Return CType(Me(Me.tableUserProfile.ModifiedByColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'PembelianH' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedBy' in table 'UserProfile' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePembelianH.ModifiedByColumn) = value
+                Me(Me.tableUserProfile.ModifiedByColumn) = value
             End Set
         End Property
         
@@ -1822,485 +1947,258 @@ Partial Public Class DataSetPembelian
         Public Property ModifiedDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablePembelianH.ModifiedDateColumn),Date)
+                    Return CType(Me(Me.tableUserProfile.ModifiedDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'PembelianH' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ModifiedDate' in table 'UserProfile' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePembelianH.ModifiedDateColumn) = value
+                Me(Me.tableUserProfile.ModifiedDateColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IsCompleted() As Boolean
+        Public Property isActive() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablePembelianH.IsCompletedColumn),Boolean)
+                    Return CType(Me(Me.tableUserProfile.isActiveColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IsCompleted' in table 'PembelianH' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'isActive' in table 'UserProfile' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePembelianH.IsCompletedColumn) = value
+                Me(Me.tableUserProfile.isActiveColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsTanggalPembelianNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.TanggalPembelianColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetTanggalPembelianNull()
-            Me(Me.tablePembelianH.TanggalPembelianColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDSupplierNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.IDSupplierColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDSupplierNull()
-            Me(Me.tablePembelianH.IDSupplierColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNoPembelianNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.NoPembelianColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNoPembelianNull()
-            Me(Me.tablePembelianH.NoPembelianColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsStatusNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.StatusColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetStatusNull()
-            Me(Me.tablePembelianH.StatusColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCatatanNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.CatatanColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCatatanNull()
-            Me(Me.tablePembelianH.CatatanColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCreatedByNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.CreatedByColumn)
+            Return Me.IsNull(Me.tableUserProfile.CreatedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCreatedByNull()
-            Me(Me.tablePembelianH.CreatedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUserProfile.CreatedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCreatedDateNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.CreatedDateColumn)
+            Return Me.IsNull(Me.tableUserProfile.CreatedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCreatedDateNull()
-            Me(Me.tablePembelianH.CreatedDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUserProfile.CreatedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedByNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.ModifiedByColumn)
+            Return Me.IsNull(Me.tableUserProfile.ModifiedByColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedByNull()
-            Me(Me.tablePembelianH.ModifiedByColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUserProfile.ModifiedByColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsModifiedDateNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.ModifiedDateColumn)
+            Return Me.IsNull(Me.tableUserProfile.ModifiedDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetModifiedDateNull()
-            Me(Me.tablePembelianH.ModifiedDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableUserProfile.ModifiedDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIsCompletedNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianH.IsCompletedColumn)
+        Public Function IsisActiveNull() As Boolean
+            Return Me.IsNull(Me.tableUserProfile.isActiveColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIsCompletedNull()
-            Me(Me.tablePembelianH.IsCompletedColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetPembelianDetailSelectRows() As PembelianDetailSelectRow()
-            If (Me.Table.ChildRelations("FK_PembelianH_PembelianDetailSelect") Is Nothing) Then
-                Return New PembelianDetailSelectRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_PembelianH_PembelianDetailSelect")),PembelianDetailSelectRow())
-            End If
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class PembelianDetailSelectRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablePembelianDetailSelect As PembelianDetailSelectDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablePembelianDetailSelect = CType(Me.Table,PembelianDetailSelectDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDPembelianH() As Long
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianDetailSelect.IDPembelianHColumn),Long)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDPembelianH' in table 'PembelianDetailSelect' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.IDPembelianHColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDPembelianD() As Long
-            Get
-                Return CType(Me(Me.tablePembelianDetailSelect.IDPembelianDColumn),Long)
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.IDPembelianDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDBarang() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianDetailSelect.IDBarangColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDBarang' in table 'PembelianDetailSelect' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.IDBarangColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Jumlah() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianDetailSelect.JumlahColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Jumlah' in table 'PembelianDetailSelect' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.JumlahColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property HargaBeli() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianDetailSelect.HargaBeliColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'HargaBeli' in table 'PembelianDetailSelect' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.HargaBeliColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property DiscountPembelian() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tablePembelianDetailSelect.DiscountPembelianColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DiscountPembelian' in table 'PembelianDetailSelect' is DBNu"& _ 
-                            "ll.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePembelianDetailSelect.DiscountPembelianColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property PembelianHRow() As PembelianHRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_PembelianH_PembelianDetailSelect")),PembelianHRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_PembelianH_PembelianDetailSelect"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDPembelianHNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianDetailSelect.IDPembelianHColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDPembelianHNull()
-            Me(Me.tablePembelianDetailSelect.IDPembelianHColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsIDBarangNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianDetailSelect.IDBarangColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetIDBarangNull()
-            Me(Me.tablePembelianDetailSelect.IDBarangColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsJumlahNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianDetailSelect.JumlahColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetJumlahNull()
-            Me(Me.tablePembelianDetailSelect.JumlahColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsHargaBeliNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianDetailSelect.HargaBeliColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetHargaBeliNull()
-            Me(Me.tablePembelianDetailSelect.HargaBeliColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsDiscountPembelianNull() As Boolean
-            Return Me.IsNull(Me.tablePembelianDetailSelect.DiscountPembelianColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetDiscountPembelianNull()
-            Me(Me.tablePembelianDetailSelect.DiscountPembelianColumn) = Global.System.Convert.DBNull
+        Public Sub SetisActiveNull()
+            Me(Me.tableUserProfile.isActiveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class BarangRow
+    Partial Public Class PenggunaRow
         Inherits Global.System.Data.DataRow
         
-        Private tableBarang As BarangDataTable
+        Private tablePengguna As PenggunaDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableBarang = CType(Me.Table,BarangDataTable)
+            Me.tablePengguna = CType(Me.Table,PenggunaDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDBarang() As Integer
+        Public Property IDPengguna() As Integer
             Get
-                Return CType(Me(Me.tableBarang.IDBarangColumn),Integer)
+                Return CType(Me(Me.tablePengguna.IDPenggunaColumn),Integer)
             End Get
             Set
-                Me(Me.tableBarang.IDBarangColumn) = value
+                Me(Me.tablePengguna.IDPenggunaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NamaBarang() As String
+        Public Property UserName() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableBarang.NamaBarangColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'NamaBarang' in table 'Barang' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablePengguna.UserNameColumn),String)
             End Get
             Set
-                Me(Me.tableBarang.NamaBarangColumn) = value
+                Me(Me.tablePengguna.UserNameColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsNamaBarangNull() As Boolean
-            Return Me.IsNull(Me.tableBarang.NamaBarangColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetNamaBarangNull()
-            Me(Me.tableBarang.NamaBarangColumn) = Global.System.Convert.DBNull
-        End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class SupplierRow
+    Partial Public Class PenggunaGridRow
         Inherits Global.System.Data.DataRow
         
-        Private tableSupplier As SupplierDataTable
+        Private tablePenggunaGrid As PenggunaGridDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableSupplier = CType(Me.Table,SupplierDataTable)
+            Me.tablePenggunaGrid = CType(Me.Table,PenggunaGridDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property IDSupplier() As Integer
+        Public Property IDPengguna() As Integer
             Get
-                Return CType(Me(Me.tableSupplier.IDSupplierColumn),Integer)
+                Return CType(Me(Me.tablePenggunaGrid.IDPenggunaColumn),Integer)
             End Get
             Set
-                Me(Me.tableSupplier.IDSupplierColumn) = value
+                Me(Me.tablePenggunaGrid.IDPenggunaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Company() As String
+        Public Property UserName() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableSupplier.CompanyColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Company' in table 'Supplier' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablePenggunaGrid.UserNameColumn),String)
             End Get
             Set
-                Me(Me.tableSupplier.CompanyColumn) = value
+                Me(Me.tablePenggunaGrid.UserNameColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class ProfileRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableProfile As ProfileDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableProfile = CType(Me.Table,ProfileDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IDProfile() As Integer
+            Get
+                Return CType(Me(Me.tableProfile.IDProfileColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableProfile.IDProfileColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ContactName() As String
+        Public Property Profile() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableSupplier.ContactNameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ContactName' in table 'Supplier' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableProfile.ProfileColumn),String)
             End Get
             Set
-                Me(Me.tableSupplier.ContactNameColumn) = value
+                Me(Me.tableProfile.ProfileColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class ProfileGridRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableProfileGrid As ProfileGridDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableProfileGrid = CType(Me.Table,ProfileGridDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IDProfile() As Integer
+            Get
+                Return CType(Me(Me.tableProfileGrid.IDProfileColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableProfileGrid.IDProfileColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCompanyNull() As Boolean
-            Return Me.IsNull(Me.tableSupplier.CompanyColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCompanyNull()
-            Me(Me.tableSupplier.CompanyColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsContactNameNull() As Boolean
-            Return Me.IsNull(Me.tableSupplier.ContactNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetContactNameNull()
-            Me(Me.tableSupplier.ContactNameColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property Profile() As String
+            Get
+                Return CType(Me(Me.tableProfileGrid.ProfileColumn),String)
+            End Get
+            Set
+                Me(Me.tableProfileGrid.ProfileColumn) = value
+            End Set
+        End Property
     End Class
     
     '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class PembelianHRowChangeEvent
+    Public Class UserProfileRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As PembelianHRow
+        Private eventRow As UserProfileRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As PembelianHRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As UserProfileRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2308,7 +2206,7 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As PembelianHRow
+        Public ReadOnly Property Row() As UserProfileRow
             Get
                 Return Me.eventRow
             End Get
@@ -2327,16 +2225,16 @@ Partial Public Class DataSetPembelian
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class PembelianDetailSelectRowChangeEvent
+    Public Class PenggunaRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As PembelianDetailSelectRow
+        Private eventRow As PenggunaRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As PembelianDetailSelectRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As PenggunaRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2344,7 +2242,7 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As PembelianDetailSelectRow
+        Public ReadOnly Property Row() As PenggunaRow
             Get
                 Return Me.eventRow
             End Get
@@ -2363,16 +2261,16 @@ Partial Public Class DataSetPembelian
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class BarangRowChangeEvent
+    Public Class PenggunaGridRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As BarangRow
+        Private eventRow As PenggunaGridRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As BarangRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As PenggunaGridRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2380,7 +2278,7 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As BarangRow
+        Public ReadOnly Property Row() As PenggunaGridRow
             Get
                 Return Me.eventRow
             End Get
@@ -2399,16 +2297,16 @@ Partial Public Class DataSetPembelian
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class SupplierRowChangeEvent
+    Public Class ProfileRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As SupplierRow
+        Private eventRow As ProfileRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As SupplierRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As ProfileRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2416,7 +2314,43 @@ Partial Public Class DataSetPembelian
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As SupplierRow
+        Public ReadOnly Property Row() As ProfileRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class ProfileGridRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ProfileGridRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As ProfileGridRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As ProfileGridRow
             Get
                 Return Me.eventRow
             End Get
@@ -2432,7 +2366,7 @@ Partial Public Class DataSetPembelian
     End Class
 End Class
 
-Namespace DataSetPembelianTableAdapters
+Namespace DataSetUserProfileTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -2443,7 +2377,7 @@ Namespace DataSetPembelianTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class PembelianHTableAdapter
+    Partial Public Class UserProfileTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -2560,96 +2494,51 @@ Namespace DataSetPembelianTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "PembelianH"
-            tableMapping.ColumnMappings.Add("IDPembelianH", "IDPembelianH")
-            tableMapping.ColumnMappings.Add("TanggalPembelian", "TanggalPembelian")
-            tableMapping.ColumnMappings.Add("IDSupplier", "IDSupplier")
-            tableMapping.ColumnMappings.Add("NoPembelian", "NoPembelian")
-            tableMapping.ColumnMappings.Add("Status", "Status")
-            tableMapping.ColumnMappings.Add("Catatan", "Catatan")
+            tableMapping.DataSetTable = "UserProfile"
+            tableMapping.ColumnMappings.Add("IDUser", "IDUser")
+            tableMapping.ColumnMappings.Add("IDProfile", "IDProfile")
             tableMapping.ColumnMappings.Add("CreatedBy", "CreatedBy")
             tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate")
             tableMapping.ColumnMappings.Add("ModifiedBy", "ModifiedBy")
             tableMapping.ColumnMappings.Add("ModifiedDate", "ModifiedDate")
-            tableMapping.ColumnMappings.Add("IsCompleted", "IsCompleted")
+            tableMapping.ColumnMappings.Add("isActive", "isActive")
             Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "dbo.[4]"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TanggalPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TanggalPembelian", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NoPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "NoPembelian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoPembelian", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "NoPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Status", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 5, 0, "Status", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Catatan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Catatan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Catatan", Global.System.Data.SqlDbType.VarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Catatan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "dbo.[2]"
+            Me._adapter.InsertCommand.CommandText = "dbo.Usp_Insert"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TanggalPembelian", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoPembelian", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "NoPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 5, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Catatan", Global.System.Data.SqlDbType.VarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Catatan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsCompleted", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "IsCompleted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDUser", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDUser", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDProfile", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDProfile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "dbo.[3]"
+            Me._adapter.UpdateCommand.CommandText = "dbo.Usp_Update"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TanggalPembelian", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoPembelian", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "NoPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 5, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Catatan", Global.System.Data.SqlDbType.VarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Catatan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsCompleted", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "IsCompleted", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TanggalPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TanggalPembelian", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 10, 0, "TanggalPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDSupplier", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NoPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "NoPembelian", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoPembelian", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "NoPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Status", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 5, 0, "Status", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Catatan", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Catatan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Catatan", Global.System.Data.SqlDbType.VarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "Catatan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IsCompleted", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "IsCompleted", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IsCompleted", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 1, 0, "IsCompleted", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDUser", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDUser", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDProfile", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDProfile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDUser", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDUser", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDProfile", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDProfile", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreatedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreatedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedBy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedBy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ModifiedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ModifiedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ModifiedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_isActive", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_isActive", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2662,25 +2551,26 @@ Namespace DataSetPembelianTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.[1]"
+            Me._commandCollection(0).CommandText = "dbo.Usp_Select"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "dbo.PembelianPerbulan"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@isActive", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "isActive", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetPembelian.PembelianHDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetUserProfile.UserProfileDataTable, ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -2692,33 +2582,14 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetPembelian.PembelianHDataTable
+        Public Overloads Overridable Function GetData(ByVal isActive As Global.System.Nullable(Of Boolean)) As DataSetUserProfile.UserProfileDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetPembelian.PembelianHDataTable = New DataSetPembelian.PembelianHDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByPerbulan(ByVal dataTable As DataSetPembelian.PembelianHDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
+            If (isActive.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(isActive.Value,Boolean)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByPerbulan() As DataSetPembelian.PembelianHDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Dim dataTable As DataSetPembelian.PembelianHDataTable = New DataSetPembelian.PembelianHDataTable()
+            Dim dataTable As DataSetUserProfile.UserProfileDataTable = New DataSetUserProfile.UserProfileDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2726,15 +2597,15 @@ Namespace DataSetPembelianTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetPembelian.PembelianHDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetUserProfile.UserProfileDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetPembelian) As Integer
-            Return Me.Adapter.Update(dataSet, "PembelianH")
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetUserProfile) As Integer
+            Return Me.Adapter.Update(dataSet, "UserProfile")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2754,151 +2625,35 @@ Namespace DataSetPembelianTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IDPembelianH As Global.System.Nullable(Of Long), ByVal Original_TanggalPembelian As Global.System.Nullable(Of Date), ByVal Original_IDSupplier As Global.System.Nullable(Of Integer), ByVal Original_NoPembelian As String, ByVal Original_Status As Global.System.Nullable(Of Short), ByVal Original_Catatan As String, ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date)) As Integer
-            If (Original_IDPembelianH.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Original_TanggalPembelian.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_TanggalPembelian.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDSupplier.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_IDSupplier.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (Original_NoPembelian Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_NoPembelian,String)
-            End If
-            If (Original_Status.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Status.Value,Short)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Catatan Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_Catatan,String)
-            End If
-            If (Original_CreatedBy.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_CreatedBy.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
-            End If
-            If (Original_CreatedDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_CreatedDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ModifiedBy.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(Original_ModifiedBy.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ModifiedDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(Original_ModifiedDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(19).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDPembelianH As Global.System.Nullable(Of Long), ByVal TanggalPembelian As Global.System.Nullable(Of Date), ByVal IDSupplier As Global.System.Nullable(Of Integer), ByVal NoPembelian As String, ByVal Status As Global.System.Nullable(Of Short), ByVal Catatan As String, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal IsCompleted As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDPembelianH.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (TanggalPembelian.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(TanggalPembelian.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (IDSupplier.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(IDSupplier.Value,Integer)
+        Public Overloads Overridable Function Insert(ByVal IDUser As Integer, ByVal IDProfile As Integer, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean)) As Integer
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDUser,Integer)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDProfile,Integer)
+            If (CreatedBy.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(CreatedBy.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (NoPembelian Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (CreatedDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CreatedDate.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(NoPembelian,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Status.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Status.Value,Short)
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (Catatan Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ModifiedDate.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Catatan,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (CreatedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(CreatedBy.Value,Integer)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (CreatedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(CreatedDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(ModifiedBy.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(ModifiedDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (IsCompleted.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(11).Value = CType(IsCompleted.Value,Boolean)
-            Else
-                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2918,156 +2673,70 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal IDPembelianH As Global.System.Nullable(Of Long),  _
-                    ByVal TanggalPembelian As Global.System.Nullable(Of Date),  _
-                    ByVal IDSupplier As Global.System.Nullable(Of Integer),  _
-                    ByVal NoPembelian As String,  _
-                    ByVal Status As Global.System.Nullable(Of Short),  _
-                    ByVal Catatan As String,  _
-                    ByVal CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal IsCompleted As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_IDPembelianH As Global.System.Nullable(Of Long),  _
-                    ByVal Original_TanggalPembelian As Global.System.Nullable(Of Date),  _
-                    ByVal Original_IDSupplier As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_NoPembelian As String,  _
-                    ByVal Original_Status As Global.System.Nullable(Of Short),  _
-                    ByVal Original_Catatan As String,  _
-                    ByVal Original_CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_IsCompleted As Global.System.Nullable(Of Boolean)) As Integer
-            If (IDPembelianH.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (TanggalPembelian.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(TanggalPembelian.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (IDSupplier.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(IDSupplier.Value,Integer)
+        Public Overloads Overridable Function Update(ByVal IDUser As Integer, ByVal IDProfile As Integer, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean), ByVal Original_IDUser As Integer, ByVal Original_IDProfile As Integer, ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDUser,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDProfile,Integer)
+            If (CreatedBy.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CreatedBy.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (NoPembelian Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (CreatedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CreatedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NoPembelian,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Status.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Status.Value,Short)
+            If (ModifiedBy.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(ModifiedBy.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (Catatan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            If (ModifiedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ModifiedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Catatan,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CreatedBy.Value,Integer)
+            If (isActive.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(isActive.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(CreatedDate.Value,Date)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IDUser,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_IDProfile,Integer)
+            If (Original_CreatedBy.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CreatedBy.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ModifiedBy.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(ModifiedDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (IsCompleted.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(IsCompleted.Value,Boolean)
-            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_IDPembelianH.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_TanggalPembelian.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_TanggalPembelian.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDSupplier.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_IDSupplier.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (Original_NoPembelian Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_NoPembelian,String)
-            End If
-            If (Original_Status.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Status.Value,Short)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Catatan Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Catatan,String)
-            End If
-            If (Original_CreatedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_CreatedBy.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
-            End If
             If (Original_CreatedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_CreatedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_CreatedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedBy.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_ModifiedBy.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ModifiedBy.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             If (Original_ModifiedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_ModifiedDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_ModifiedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
-            If (Original_IsCompleted.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_IsCompleted.Value,Boolean)
+            If (Original_isActive.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_isActive.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3088,29 +2757,8 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal TanggalPembelian As Global.System.Nullable(Of Date),  _
-                    ByVal IDSupplier As Global.System.Nullable(Of Integer),  _
-                    ByVal NoPembelian As String,  _
-                    ByVal Status As Global.System.Nullable(Of Short),  _
-                    ByVal Catatan As String,  _
-                    ByVal CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal IsCompleted As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_IDPembelianH As Global.System.Nullable(Of Long),  _
-                    ByVal Original_TanggalPembelian As Global.System.Nullable(Of Date),  _
-                    ByVal Original_IDSupplier As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_NoPembelian As String,  _
-                    ByVal Original_Status As Global.System.Nullable(Of Short),  _
-                    ByVal Original_Catatan As String,  _
-                    ByVal Original_CreatedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_CreatedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ModifiedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_IsCompleted As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(Original_IDPembelianH, TanggalPembelian, IDSupplier, NoPembelian, Status, Catatan, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, IsCompleted, Original_IDPembelianH, Original_TanggalPembelian, Original_IDSupplier, Original_NoPembelian, Original_Status, Original_Catatan, Original_CreatedBy, Original_CreatedDate, Original_ModifiedBy, Original_ModifiedDate, Original_IsCompleted)
+        Public Overloads Overridable Function Update(ByVal IDProfile As Integer, ByVal CreatedBy As Global.System.Nullable(Of Integer), ByVal CreatedDate As Global.System.Nullable(Of Date), ByVal ModifiedBy As Global.System.Nullable(Of Integer), ByVal ModifiedDate As Global.System.Nullable(Of Date), ByVal isActive As Global.System.Nullable(Of Boolean), ByVal Original_IDUser As Integer, ByVal Original_IDProfile As Integer, ByVal Original_CreatedBy As Global.System.Nullable(Of Integer), ByVal Original_CreatedDate As Global.System.Nullable(Of Date), ByVal Original_ModifiedBy As Global.System.Nullable(Of Integer), ByVal Original_ModifiedDate As Global.System.Nullable(Of Date), ByVal Original_isActive As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(Original_IDUser, IDProfile, CreatedBy, CreatedDate, ModifiedBy, ModifiedDate, isActive, Original_IDUser, Original_IDProfile, Original_CreatedBy, Original_CreatedDate, Original_ModifiedBy, Original_ModifiedDate, Original_isActive)
         End Function
     End Class
     
@@ -3123,7 +2771,7 @@ Namespace DataSetPembelianTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class PembelianDetailSelectTableAdapter
+    Partial Public Class PenggunaTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -3240,451 +2888,9 @@ Namespace DataSetPembelianTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "PembelianDetailSelect"
-            tableMapping.ColumnMappings.Add("IDPembelianH", "IDPembelianH")
-            tableMapping.ColumnMappings.Add("IDPembelianD", "IDPembelianD")
-            tableMapping.ColumnMappings.Add("IDBarang", "IDBarang")
-            tableMapping.ColumnMappings.Add("Jumlah", "Jumlah")
-            tableMapping.ColumnMappings.Add("HargaBeli", "HargaBeli")
-            tableMapping.ColumnMappings.Add("DiscountPembelian", "DiscountPembelian")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "dbo.PembelianDetailDelete"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianD", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianD", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Jumlah", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Jumlah", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Jumlah", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "Jumlah", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HargaBeli", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "HargaBeli", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HargaBeli", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "HargaBeli", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DiscountPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "DiscountPembelian", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DiscountPembelian", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "DiscountPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "dbo.PembelianDetailInsert"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianD", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Jumlah", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "Jumlah", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HargaBeli", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "HargaBeli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountPembelian", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "DiscountPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "dbo.PembelianDetailUpdate"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDPembelianD", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Jumlah", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "Jumlah", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@HargaBeli", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "HargaBeli", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountPembelian", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "DiscountPembelian", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianH", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianH", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDPembelianD", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, "IDPembelianD", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDBarang", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "IDBarang", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Jumlah", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "Jumlah", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Jumlah", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "Jumlah", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HargaBeli", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "HargaBeli", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HargaBeli", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "HargaBeli", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DiscountPembelian", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, "DiscountPembelian", Global.System.Data.DataRowVersion.Current, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DiscountPembelian", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "DiscountPembelian", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Cafe_Management.Settings.Default.connString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.PembelianDetailSelect"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetPembelian.PembelianDetailSelectDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetPembelian.PembelianDetailSelectDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetPembelian.PembelianDetailSelectDataTable = New DataSetPembelian.PembelianDetailSelectDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DataSetPembelian.PembelianDetailSelectDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DataSetPembelian) As Integer
-            Return Me.Adapter.Update(dataSet, "PembelianDetailSelect")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IDPembelianH As Global.System.Nullable(Of Long), ByVal Original_IDPembelianD As Global.System.Nullable(Of Long), ByVal Original_IDBarang As Global.System.Nullable(Of Integer), ByVal Original_Jumlah As Global.System.Nullable(Of Decimal), ByVal Original_HargaBeli As Global.System.Nullable(Of Decimal), ByVal Original_DiscountPembelian As Global.System.Nullable(Of Decimal)) As Integer
-            If (Original_IDPembelianH.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDPembelianD.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDPembelianD.Value,Long)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDBarang.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_IDBarang.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Jumlah.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Jumlah.Value,Decimal)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_HargaBeli.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_HargaBeli.Value,Decimal)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DiscountPembelian.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_DiscountPembelian.Value,Decimal)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal IDPembelianH As Global.System.Nullable(Of Long), ByVal IDPembelianD As Global.System.Nullable(Of Long), ByVal IDBarang As Global.System.Nullable(Of Integer), ByVal Jumlah As Global.System.Nullable(Of Decimal), ByVal HargaBeli As Global.System.Nullable(Of Decimal), ByVal DiscountPembelian As Global.System.Nullable(Of Decimal)) As Integer
-            If (IDPembelianH.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (IDPembelianD.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDPembelianD.Value,Long)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (IDBarang.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(IDBarang.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Jumlah.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Jumlah.Value,Decimal)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (HargaBeli.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(HargaBeli.Value,Decimal)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (DiscountPembelian.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(DiscountPembelian.Value,Decimal)
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal IDPembelianH As Global.System.Nullable(Of Long), ByVal IDPembelianD As Global.System.Nullable(Of Long), ByVal IDBarang As Global.System.Nullable(Of Integer), ByVal Jumlah As Global.System.Nullable(Of Decimal), ByVal HargaBeli As Global.System.Nullable(Of Decimal), ByVal DiscountPembelian As Global.System.Nullable(Of Decimal), ByVal Original_IDPembelianH As Global.System.Nullable(Of Long), ByVal Original_IDPembelianD As Global.System.Nullable(Of Long), ByVal Original_IDBarang As Global.System.Nullable(Of Integer), ByVal Original_Jumlah As Global.System.Nullable(Of Decimal), ByVal Original_HargaBeli As Global.System.Nullable(Of Decimal), ByVal Original_DiscountPembelian As Global.System.Nullable(Of Decimal)) As Integer
-            If (IDPembelianH.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (IDPembelianD.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDPembelianD.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (IDBarang.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(IDBarang.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (Jumlah.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Jumlah.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (HargaBeli.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(HargaBeli.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (DiscountPembelian.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(DiscountPembelian.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDPembelianH.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_IDPembelianH.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDPembelianD.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IDPembelianD.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_IDBarang.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_IDBarang.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Jumlah.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Jumlah.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_HargaBeli.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_HargaBeli.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DiscountPembelian.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_DiscountPembelian.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal IDPembelianH As Global.System.Nullable(Of Long), ByVal IDBarang As Global.System.Nullable(Of Integer), ByVal Jumlah As Global.System.Nullable(Of Decimal), ByVal HargaBeli As Global.System.Nullable(Of Decimal), ByVal DiscountPembelian As Global.System.Nullable(Of Decimal), ByVal Original_IDPembelianH As Global.System.Nullable(Of Long), ByVal Original_IDPembelianD As Global.System.Nullable(Of Long), ByVal Original_IDBarang As Global.System.Nullable(Of Integer), ByVal Original_Jumlah As Global.System.Nullable(Of Decimal), ByVal Original_HargaBeli As Global.System.Nullable(Of Decimal), ByVal Original_DiscountPembelian As Global.System.Nullable(Of Decimal)) As Integer
-            Return Me.Update(IDPembelianH, Original_IDPembelianD, IDBarang, Jumlah, HargaBeli, DiscountPembelian, Original_IDPembelianH, Original_IDPembelianD, Original_IDBarang, Original_Jumlah, Original_HargaBeli, Original_DiscountPembelian)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class BarangTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Barang"
-            tableMapping.ColumnMappings.Add("IDBarang", "IDBarang")
-            tableMapping.ColumnMappings.Add("NamaBarang", "NamaBarang")
+            tableMapping.DataSetTable = "Pengguna"
+            tableMapping.ColumnMappings.Add("IDPengguna", "IDPengguna")
+            tableMapping.ColumnMappings.Add("UserName", "UserName")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -3701,23 +2907,17 @@ Namespace DataSetPembelianTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        dbo.Barang.IDBarang, dbo.Barang.NamaBarang"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            dbo.Pro"& _ 
-                "dukSupplier INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         dbo.Barang ON dbo.ProdukSupplie"& _ 
-                "r.IDProduk = dbo.Barang.IDBarang INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         dbo.Suppli"& _ 
-                "er ON dbo.ProdukSupplier.IDSupplier = dbo.Supplier.IDSupplier"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&" WHERE dbo."& _ 
-                "Barang.isActive = 1 AND dbo.Supplier.isActive = 1 AND dbo.ProdukSupplier.isActiv"& _ 
-                "e = 1 and Supplier.IDSupplier = @IDSupplier"
+            Me._commandCollection(0).CommandText = "SELECT        IDPengguna, UserName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Pengguna"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (isAct"& _ 
+                "ive = 1)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDSupplier", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "IDSupplier", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetPembelian.BarangDataTable, ByVal IDSupplier As Integer) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetUserProfile.PenggunaDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(IDSupplier,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -3729,10 +2929,9 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal IDSupplier As Integer) As DataSetPembelian.BarangDataTable
+        Public Overloads Overridable Function GetData() As DataSetUserProfile.PenggunaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(IDSupplier,Integer)
-            Dim dataTable As DataSetPembelian.BarangDataTable = New DataSetPembelian.BarangDataTable()
+            Dim dataTable As DataSetUserProfile.PenggunaDataTable = New DataSetUserProfile.PenggunaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -3747,7 +2946,7 @@ Namespace DataSetPembelianTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class SupplierTableAdapter
+    Partial Public Class PenggunaGridTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -3864,10 +3063,9 @@ Namespace DataSetPembelianTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Supplier"
-            tableMapping.ColumnMappings.Add("IDSupplier", "IDSupplier")
-            tableMapping.ColumnMappings.Add("Company", "Company")
-            tableMapping.ColumnMappings.Add("ContactName", "ContactName")
+            tableMapping.DataSetTable = "PenggunaGrid"
+            tableMapping.ColumnMappings.Add("IDPengguna", "IDPengguna")
+            tableMapping.ColumnMappings.Add("UserName", "UserName")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -3884,8 +3082,7 @@ Namespace DataSetPembelianTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = " SELECT        IDSupplier, Company, ContactName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Supplier"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       (isActive = 1)"
+            Me._commandCollection(0).CommandText = "SELECT        IDPengguna, UserName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Pengguna"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3893,7 +3090,7 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetPembelian.SupplierDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetUserProfile.PenggunaGridDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -3906,9 +3103,358 @@ Namespace DataSetPembelianTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DataSetPembelian.SupplierDataTable
+        Public Overloads Overridable Function GetData() As DataSetUserProfile.PenggunaGridDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetPembelian.SupplierDataTable = New DataSetPembelian.SupplierDataTable()
+            Dim dataTable As DataSetUserProfile.PenggunaGridDataTable = New DataSetUserProfile.PenggunaGridDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class ProfileTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "Profile"
+            tableMapping.ColumnMappings.Add("IDProfile", "IDProfile")
+            tableMapping.ColumnMappings.Add("Profile", "Profile")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.Cafe_Management.Settings.Default.connString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        IDProfile, Profile"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Profile"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (isActive"& _ 
+                " = 1)"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetUserProfile.ProfileDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetUserProfile.ProfileDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetUserProfile.ProfileDataTable = New DataSetUserProfile.ProfileDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class ProfileGridTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "ProfileGrid"
+            tableMapping.ColumnMappings.Add("IDProfile", "IDProfile")
+            tableMapping.ColumnMappings.Add("Profile", "Profile")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.Cafe_Management.Settings.Default.connString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        IDProfile, Profile"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Profile"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetUserProfile.ProfileGridDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetUserProfile.ProfileGridDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetUserProfile.ProfileGridDataTable = New DataSetUserProfile.ProfileGridDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -3927,9 +3473,7 @@ Namespace DataSetPembelianTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _pembelianHTableAdapter As PembelianHTableAdapter
-        
-        Private _pembelianDetailSelectTableAdapter As PembelianDetailSelectTableAdapter
+        Private _userProfileTableAdapter As UserProfileTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -3951,26 +3495,12 @@ Namespace DataSetPembelianTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property PembelianHTableAdapter() As PembelianHTableAdapter
+        Public Property UserProfileTableAdapter() As UserProfileTableAdapter
             Get
-                Return Me._pembelianHTableAdapter
+                Return Me._userProfileTableAdapter
             End Get
             Set
-                Me._pembelianHTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property PembelianDetailSelectTableAdapter() As PembelianDetailSelectTableAdapter
-            Get
-                Return Me._pembelianDetailSelectTableAdapter
-            End Get
-            Set
-                Me._pembelianDetailSelectTableAdapter = value
+                Me._userProfileTableAdapter = value
             End Set
         End Property
         
@@ -3993,13 +3523,9 @@ Namespace DataSetPembelianTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._pembelianHTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._pembelianHTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._pembelianHTableAdapter.Connection
-                End If
-                If ((Not (Me._pembelianDetailSelectTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._pembelianDetailSelectTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._pembelianDetailSelectTableAdapter.Connection
+                If ((Not (Me._userProfileTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._userProfileTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._userProfileTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -4014,10 +3540,7 @@ Namespace DataSetPembelianTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
+                If (Not (Me._userProfileTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -4029,23 +3552,14 @@ Namespace DataSetPembelianTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetPembelian, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetUserProfile, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PembelianH.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._userProfileTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.UserProfile.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._pembelianHTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.PembelianDetailSelect.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._pembelianDetailSelectTableAdapter.Update(updatedRows))
+                    result = (result + Me._userProfileTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -4057,21 +3571,13 @@ Namespace DataSetPembelianTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As DataSetPembelian, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DataSetUserProfile, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PembelianH.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._userProfileTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.UserProfile.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._pembelianHTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.PembelianDetailSelect.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._pembelianDetailSelectTableAdapter.Update(addedRows))
+                    result = (result + Me._userProfileTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -4083,21 +3589,13 @@ Namespace DataSetPembelianTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As DataSetPembelian, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DataSetUserProfile, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PembelianDetailSelect.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._userProfileTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.UserProfile.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._pembelianDetailSelectTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.PembelianH.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._pembelianHTableAdapter.Update(deletedRows))
+                    result = (result + Me._userProfileTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -4135,20 +3633,15 @@ Namespace DataSetPembelianTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As DataSetPembelian) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DataSetUserProfile) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._pembelianHTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._pembelianHTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._pembelianDetailSelectTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._pembelianDetailSelectTableAdapter.Connection) = false)) Then
+            If ((Not (Me._userProfileTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._userProfileTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -4184,22 +3677,13 @@ Namespace DataSetPembelianTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._pembelianHTableAdapter, Me._pembelianHTableAdapter.Connection)
-                    Me._pembelianHTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._pembelianHTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._pembelianHTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._pembelianHTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._pembelianHTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._pembelianDetailSelectTableAdapter, Me._pembelianDetailSelectTableAdapter.Connection)
-                    Me._pembelianDetailSelectTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._pembelianDetailSelectTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._pembelianDetailSelectTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._pembelianDetailSelectTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._pembelianDetailSelectTableAdapter.Adapter)
+                If (Not (Me._userProfileTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._userProfileTableAdapter, Me._userProfileTableAdapter.Connection)
+                    Me._userProfileTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._userProfileTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._userProfileTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._userProfileTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._userProfileTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -4262,13 +3746,9 @@ Namespace DataSetPembelianTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._pembelianHTableAdapter) Is Nothing) Then
-                    Me._pembelianHTableAdapter.Connection = CType(revertConnections(Me._pembelianHTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._pembelianHTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._pembelianDetailSelectTableAdapter) Is Nothing) Then
-                    Me._pembelianDetailSelectTableAdapter.Connection = CType(revertConnections(Me._pembelianDetailSelectTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._pembelianDetailSelectTableAdapter.Transaction = Nothing
+                If (Not (Me._userProfileTableAdapter) Is Nothing) Then
+                    Me._userProfileTableAdapter.Connection = CType(revertConnections(Me._userProfileTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._userProfileTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

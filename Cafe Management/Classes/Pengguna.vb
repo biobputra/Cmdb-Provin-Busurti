@@ -148,8 +148,8 @@
                         If Not IsDBNull(.Item("IDKaryawan")) Then MyPengguna.IDKaryawan = Convert.ToInt64(.Item("IDKaryawan"))
                         If Not IsDBNull(.Item("UserName")) Then MyPengguna.UserName = .Item("UserName").ToString
                         If Not IsDBNull(.Item("Password")) Then MyPengguna.Password = .Item("Password").ToString
-                        If Not IsDBNull(.Item("UserPicture")) Then MyPengguna.UserPicture = .Item("UserPicture")
-                        If Not IsDBNull(.Item("DigitalSignature")) Then MyPengguna.DigitalSignature = .Item("DigitalSignature")
+                        'If Not IsDBNull(.Item("UserPicture")) Then MyPengguna.UserPicture = .Item("UserPicture")
+                        'If Not IsDBNull(.Item("DigitalSignature")) Then MyPengguna.DigitalSignature = .Item("DigitalSignature")
                         If Not IsDBNull(.Item("CreatedBy")) Then MyPengguna.CreatedBy = .Item("CreatedBy")
                         If Not IsDBNull(.Item("CreatedDate")) Then MyPengguna.CreatedDate = .Item("CreatedDate")
                         If Not IsDBNull(.Item("ModifiedBy")) Then MyPengguna.ModifiedBy = .Item("ModifiedBy")
