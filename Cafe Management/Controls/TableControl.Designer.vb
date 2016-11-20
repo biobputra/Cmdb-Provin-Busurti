@@ -23,16 +23,16 @@ Partial Class TableControl
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TableControl))
     Me.CollapseBtn = New DevExpress.XtraEditors.SimpleButton()
     Me.MyImageList = New DevExpress.Utils.ImageCollection(Me.components)
-    Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+    Me.NoMejaLbl = New System.Windows.Forms.Label()
+    Me.Pic = New System.Windows.Forms.PictureBox()
+    Me.ButtonLayout = New System.Windows.Forms.TableLayoutPanel()
     Me.OrderBtn = New System.Windows.Forms.Button()
     Me.Extendbtn = New System.Windows.Forms.Button()
     Me.CheckInBtn = New System.Windows.Forms.Button()
     Me.ReserveBtn = New System.Windows.Forms.Button()
-    Me.Pic = New System.Windows.Forms.PictureBox()
-    Me.NoMejaLbl = New System.Windows.Forms.Label()
     CType(Me.MyImageList, System.ComponentModel.ISupportInitialize).BeginInit()
-    Me.TableLayoutPanel1.SuspendLayout()
     CType(Me.Pic, System.ComponentModel.ISupportInitialize).BeginInit()
+    Me.ButtonLayout.SuspendLayout()
     Me.SuspendLayout()
     '
     'CollapseBtn
@@ -41,9 +41,9 @@ Partial Class TableControl
     Me.CollapseBtn.ImageIndex = 0
     Me.CollapseBtn.ImageList = Me.MyImageList
     Me.CollapseBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-    Me.CollapseBtn.Location = New System.Drawing.Point(130, 3)
+    Me.CollapseBtn.Location = New System.Drawing.Point(313, 3)
     Me.CollapseBtn.Name = "CollapseBtn"
-    Me.CollapseBtn.Size = New System.Drawing.Size(32, 32)
+    Me.CollapseBtn.Size = New System.Drawing.Size(20, 20)
     Me.CollapseBtn.TabIndex = 2
     '
     'MyImageList
@@ -63,87 +63,6 @@ Partial Class TableControl
     Me.MyImageList.InsertGalleryImage("report2_32x32.png", "images/toolbox%20items/report2_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/toolbox%20items/report2_32x32.png"), 5)
     Me.MyImageList.Images.SetKeyName(5, "report2_32x32.png")
     '
-    'TableLayoutPanel1
-    '
-    Me.TableLayoutPanel1.ColumnCount = 2
-    Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-    Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-    Me.TableLayoutPanel1.Controls.Add(Me.OrderBtn, 1, 1)
-    Me.TableLayoutPanel1.Controls.Add(Me.Extendbtn, 0, 1)
-    Me.TableLayoutPanel1.Controls.Add(Me.CheckInBtn, 1, 0)
-    Me.TableLayoutPanel1.Controls.Add(Me.ReserveBtn, 0, 0)
-    Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-    Me.TableLayoutPanel1.Location = New System.Drawing.Point(165, 41)
-    Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-    Me.TableLayoutPanel1.RowCount = 2
-    Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-    Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-    Me.TableLayoutPanel1.Size = New System.Drawing.Size(0, 142)
-    Me.TableLayoutPanel1.TabIndex = 3
-    '
-    'OrderBtn
-    '
-    Me.OrderBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.OrderBtn.Image = Global.Cafe_Management.My.Resources.Resources.Report2_32x32
-    Me.OrderBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.OrderBtn.Location = New System.Drawing.Point(3, 74)
-    Me.OrderBtn.Name = "OrderBtn"
-    Me.OrderBtn.Size = New System.Drawing.Size(1, 65)
-    Me.OrderBtn.TabIndex = 7
-    Me.OrderBtn.Text = "Order"
-    Me.OrderBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.OrderBtn.UseVisualStyleBackColor = True
-    '
-    'Extendbtn
-    '
-    Me.Extendbtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.Extendbtn.Image = Global.Cafe_Management.My.Resources.Resources.Time_32x32
-    Me.Extendbtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.Extendbtn.Location = New System.Drawing.Point(3, 74)
-    Me.Extendbtn.Name = "Extendbtn"
-    Me.Extendbtn.Size = New System.Drawing.Size(1, 65)
-    Me.Extendbtn.TabIndex = 6
-    Me.Extendbtn.Text = "Extend"
-    Me.Extendbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.Extendbtn.UseVisualStyleBackColor = True
-    '
-    'CheckInBtn
-    '
-    Me.CheckInBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.CheckInBtn.Image = Global.Cafe_Management.My.Resources.Resources.CheckBox_32x32
-    Me.CheckInBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.CheckInBtn.Location = New System.Drawing.Point(3, 3)
-    Me.CheckInBtn.Name = "CheckInBtn"
-    Me.CheckInBtn.Size = New System.Drawing.Size(1, 65)
-    Me.CheckInBtn.TabIndex = 5
-    Me.CheckInBtn.Text = "Check In"
-    Me.CheckInBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.CheckInBtn.UseVisualStyleBackColor = True
-    '
-    'ReserveBtn
-    '
-    Me.ReserveBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.ReserveBtn.Image = Global.Cafe_Management.My.Resources.Resources.Notes_32x32
-    Me.ReserveBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.ReserveBtn.Location = New System.Drawing.Point(3, 3)
-    Me.ReserveBtn.Name = "ReserveBtn"
-    Me.ReserveBtn.Size = New System.Drawing.Size(1, 65)
-    Me.ReserveBtn.TabIndex = 4
-    Me.ReserveBtn.Text = "Reserve"
-    Me.ReserveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.ReserveBtn.UseVisualStyleBackColor = True
-    '
-    'Pic
-    '
-    Me.Pic.Dock = System.Windows.Forms.DockStyle.Left
-    Me.Pic.Location = New System.Drawing.Point(0, 0)
-    Me.Pic.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-    Me.Pic.Name = "Pic"
-    Me.Pic.Size = New System.Drawing.Size(165, 183)
-    Me.Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-    Me.Pic.TabIndex = 0
-    Me.Pic.TabStop = False
-    '
     'NoMejaLbl
     '
     Me.NoMejaLbl.AutoSize = True
@@ -156,23 +75,104 @@ Partial Class TableControl
     Me.NoMejaLbl.TabIndex = 4
     Me.NoMejaLbl.Text = "20"
     '
+    'Pic
+    '
+    Me.Pic.Dock = System.Windows.Forms.DockStyle.Left
+    Me.Pic.Location = New System.Drawing.Point(0, 0)
+    Me.Pic.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+    Me.Pic.Name = "Pic"
+    Me.Pic.Size = New System.Drawing.Size(165, 170)
+    Me.Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+    Me.Pic.TabIndex = 0
+    Me.Pic.TabStop = False
+    '
+    'ButtonLayout
+    '
+    Me.ButtonLayout.ColumnCount = 2
+    Me.ButtonLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+    Me.ButtonLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+    Me.ButtonLayout.Controls.Add(Me.OrderBtn, 1, 1)
+    Me.ButtonLayout.Controls.Add(Me.Extendbtn, 0, 1)
+    Me.ButtonLayout.Controls.Add(Me.CheckInBtn, 1, 0)
+    Me.ButtonLayout.Controls.Add(Me.ReserveBtn, 0, 0)
+    Me.ButtonLayout.Dock = System.Windows.Forms.DockStyle.Bottom
+    Me.ButtonLayout.Location = New System.Drawing.Point(165, 29)
+    Me.ButtonLayout.Name = "ButtonLayout"
+    Me.ButtonLayout.RowCount = 2
+    Me.ButtonLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+    Me.ButtonLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+    Me.ButtonLayout.Size = New System.Drawing.Size(170, 141)
+    Me.ButtonLayout.TabIndex = 5
+    '
+    'OrderBtn
+    '
+    Me.OrderBtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.OrderBtn.Image = Global.Cafe_Management.My.Resources.Resources.Report2_32x32
+    Me.OrderBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+    Me.OrderBtn.Location = New System.Drawing.Point(88, 73)
+    Me.OrderBtn.Name = "OrderBtn"
+    Me.OrderBtn.Size = New System.Drawing.Size(79, 65)
+    Me.OrderBtn.TabIndex = 7
+    Me.OrderBtn.Text = "Order"
+    Me.OrderBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+    Me.OrderBtn.UseVisualStyleBackColor = True
+    '
+    'Extendbtn
+    '
+    Me.Extendbtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.Extendbtn.Image = Global.Cafe_Management.My.Resources.Resources.Time_32x32
+    Me.Extendbtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+    Me.Extendbtn.Location = New System.Drawing.Point(3, 73)
+    Me.Extendbtn.Name = "Extendbtn"
+    Me.Extendbtn.Size = New System.Drawing.Size(79, 65)
+    Me.Extendbtn.TabIndex = 6
+    Me.Extendbtn.Text = "Extend"
+    Me.Extendbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+    Me.Extendbtn.UseVisualStyleBackColor = True
+    '
+    'CheckInBtn
+    '
+    Me.CheckInBtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.CheckInBtn.Image = Global.Cafe_Management.My.Resources.Resources.CheckBox_32x32
+    Me.CheckInBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+    Me.CheckInBtn.Location = New System.Drawing.Point(88, 3)
+    Me.CheckInBtn.Name = "CheckInBtn"
+    Me.CheckInBtn.Size = New System.Drawing.Size(79, 64)
+    Me.CheckInBtn.TabIndex = 5
+    Me.CheckInBtn.Text = "Check In"
+    Me.CheckInBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+    Me.CheckInBtn.UseVisualStyleBackColor = True
+    '
+    'ReserveBtn
+    '
+    Me.ReserveBtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.ReserveBtn.Image = Global.Cafe_Management.My.Resources.Resources.Notes_32x32
+    Me.ReserveBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+    Me.ReserveBtn.Location = New System.Drawing.Point(3, 3)
+    Me.ReserveBtn.Name = "ReserveBtn"
+    Me.ReserveBtn.Size = New System.Drawing.Size(79, 64)
+    Me.ReserveBtn.TabIndex = 4
+    Me.ReserveBtn.Text = "Reserve"
+    Me.ReserveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+    Me.ReserveBtn.UseVisualStyleBackColor = True
+    '
     'TableControl
     '
     Me.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
     Me.Appearance.Options.UseFont = True
     Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+    Me.Controls.Add(Me.ButtonLayout)
     Me.Controls.Add(Me.NoMejaLbl)
-    Me.Controls.Add(Me.TableLayoutPanel1)
     Me.Controls.Add(Me.CollapseBtn)
     Me.Controls.Add(Me.Pic)
     Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
     Me.Name = "TableControl"
-    Me.Size = New System.Drawing.Size(165, 183)
-    Me.Tag = "335, 183 165, 183"
+    Me.Size = New System.Drawing.Size(335, 170)
+    Me.Tag = "335, 170 165, 170"
     CType(Me.MyImageList, System.ComponentModel.ISupportInitialize).EndInit()
-    Me.TableLayoutPanel1.ResumeLayout(False)
     CType(Me.Pic, System.ComponentModel.ISupportInitialize).EndInit()
+    Me.ButtonLayout.ResumeLayout(False)
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
@@ -180,11 +180,11 @@ Partial Class TableControl
   Friend WithEvents Pic As System.Windows.Forms.PictureBox
   Friend WithEvents CollapseBtn As DevExpress.XtraEditors.SimpleButton
   Friend WithEvents MyImageList As DevExpress.Utils.ImageCollection
-  Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+  Friend WithEvents NoMejaLbl As System.Windows.Forms.Label
+  Friend WithEvents ButtonLayout As System.Windows.Forms.TableLayoutPanel
   Friend WithEvents OrderBtn As System.Windows.Forms.Button
   Friend WithEvents Extendbtn As System.Windows.Forms.Button
   Friend WithEvents CheckInBtn As System.Windows.Forms.Button
   Friend WithEvents ReserveBtn As System.Windows.Forms.Button
-  Friend WithEvents NoMejaLbl As System.Windows.Forms.Label
 
 End Class

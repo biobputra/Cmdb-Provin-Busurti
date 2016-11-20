@@ -35,7 +35,7 @@
     End Get
     Set(value As Integer)
       xNomorMeja = value
-      NoMejaLbl.Text = value
+      NoMejaLbl.Text = value.ToString
     End Set
   End Property
 
@@ -123,10 +123,7 @@
 
   Public Shared Event MakeOrder(MyNoMeja As Integer)
 
-
-
   Private Sub TableControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
   End Sub
 
   Private Sub CollapseBtn_Click(sender As Object, e As EventArgs) Handles CollapseBtn.Click
@@ -139,19 +136,16 @@
     End If
   End Sub
 
-  Private Sub ReserveBtn_Click(sender As Object, e As EventArgs) Handles ReserveBtn.Click
-    If Me.Status = 0 Then
-      Me.Status = 1
-    Else
-      Me.Status = 0
-    End If
+  Private Sub ReserveBtn_Click(sender As Object, e As EventArgs)
+    
   End Sub
 
-  Private Sub CheckInBtn_Click(sender As Object, e As EventArgs) Handles CheckInBtn.Click
+  Private Sub CheckInBtn_Click(sender As Object, e As EventArgs)
     Me.Status = 2
   End Sub
 
-  Private Sub OrderBtn_Click(sender As Object, e As EventArgs) Handles OrderBtn.Click
+  Private Sub OrderBtn_Click(sender As Object, e As EventArgs)
     RaiseEvent MakeOrder(Me.NomorMeja)
   End Sub
+
 End Class

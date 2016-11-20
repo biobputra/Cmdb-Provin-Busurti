@@ -99,23 +99,23 @@ Partial Public Class MainForm
         End If
     End Sub
 
-    Private Sub SettingsTitleBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsTitleBtn.ItemClick
-        If Me.MdiChildren.Contains(FormTitle) Then
-            FormTitle.Focus()
-        Else
-            'FormTitle.MdiParent = Me
-            FormTitle.ShowDialog()
-        End If
-    End Sub
+  'Private Sub SettingsTitleBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsTitleBtn.ItemClick
+  '    If Me.MdiChildren.Contains(FormTitle) Then
+  '        FormTitle.Focus()
+  '    Else
+  '        'FormTitle.MdiParent = Me
+  '        FormTitle.ShowDialog()
+  '    End If
+  'End Sub
 
-    Private Sub SettingsJenisIdentitasBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsJenisIdentitasBtn.ItemClick
-        If Me.MdiChildren.Contains(FormJenisIdentitas) Then
-            FormJenisIdentitas.Focus()
-        Else
-            'FormJenisIdentitas.MdiParent = Me
-            FormJenisIdentitas.ShowDialog()
-        End If
-    End Sub
+  'Private Sub SettingsJenisIdentitasBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SettingsJenisIdentitasBtn.ItemClick
+  '    If Me.MdiChildren.Contains(FormJenisIdentitas) Then
+  '        FormJenisIdentitas.Focus()
+  '    Else
+  '        'FormJenisIdentitas.MdiParent = Me
+  '        FormJenisIdentitas.ShowDialog()
+  '    End If
+  'End Sub
 
     Private Sub PembelianPembelianBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles PembelianPembelianBtn.ItemClick
         If Me.MdiChildren.Contains(FormTraPembelian) Then

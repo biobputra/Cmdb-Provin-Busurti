@@ -8,31 +8,63 @@
     AddHandler TableControl.MakeOrder, AddressOf MakeOrders
   End Sub
 
-  Dim MyMejaBillyardDataTable As DataTable
+  Dim MyListMejaBilyard As New List(Of DaftarMeja)
+  Dim MyListMejaResto As New List(Of DaftarMeja)
+  Dim MyListMejaBar As New List(Of DaftarMeja)
 
-  Sub LoadPanelContent()
-    
-    For Each MyRow As DataRow In MyMejaBillyardDataTable.Rows
+  Private Sub LoadPanelContent()
+    MyListMejaBilyard = DaftarMeja.GetListMejaByIDJenisMeja(1)
+    MyListMejaResto = DaftarMeja.GetListMejaByIDJenisMeja(2)
+    MyListMejaBar = DaftarMeja.GetListMejaByIDJenisMeja(3)
+
+    For Each Meja As DaftarMeja In MyListMejaBilyard
       Dim MyTable As New TableControl
       With MyTable
-        .IDDaftarMeja = Convert.ToInt32(MyRow.Item(0))
-        .IDJenisMeja = Convert.ToInt32(MyRow(1))
-        .NomorMeja = Convert.ToInt32(MyRow.Item(2))
+        .IDDaftarMeja = Meja.IDDaftarMeja
+        .IDJenisMeja = Meja.IDJenisMeja
+        .NomorMeja = Meja.NomorMeja
         .Status = 0
       End With
       BillyardFlowPanel.Controls.Add(MyTable)
       MyTable.Show()
     Next
+
+    For Each Meja As DaftarMeja In MyListMejaResto
+      Dim MyTable As New TableControl
+      With MyTable
+        .IDDaftarMeja = Meja.IDDaftarMeja
+        .IDJenisMeja = Meja.IDJenisMeja
+        .NomorMeja = Meja.NomorMeja
+        .Status = 0
+      End With
+      RestoFlowPanel.Controls.Add(MyTable)
+      MyTable.Show()
+    Next
+
+    For Each Meja As DaftarMeja In MyListMejaBar
+      Dim MyTable As New TableControl
+      With MyTable
+        .IDDaftarMeja = Meja.IDDaftarMeja
+        .IDJenisMeja = Meja.IDJenisMeja
+        .NomorMeja = Meja.NomorMeja
+        .Status = 0
+      End With
+      BarFlowPanel.Controls.Add(MyTable)
+      MyTable.Show()
+    Next
+
   End Sub
 
   Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    'TODO: This line of code loads data into the 'DataSetDaftarMeja1.DaftarMeja' table. You can move, or remove it, as needed.
+
     MainSplit.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2
     MainSplit.Collapsed = True
 
-    MyMejaBillyardDataTable = DataAccess.ExecuteQueryTable("Exec Dtm_SelectByJenisMeja 1")
-    LoadPanelContent()
 
+  End Sub
+
+  Private Sub FormPOS_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    LoadPanelContent()
   End Sub
 
   Private Sub MakeOrders(MyNoMeja As Integer)
@@ -40,5 +72,7 @@
     MainTab.SelectedTabPage = MenuPage
   End Sub
 
-
+  Private Sub DaftarReservasiBtn_Click(sender As Object, e As EventArgs) Handles DaftarReservasiBtn.Click
+    FormReservasi.ShowDialog()
+  End Sub
 End Class

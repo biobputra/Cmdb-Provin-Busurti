@@ -191,6 +191,12 @@
     End Function
 
 
+  Public Sub delete()
+    Dim myid = Me.IDPenerimaanH
+    MsgBox(myid)
+
+  End Sub
+
 #End Region
 
 

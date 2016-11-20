@@ -120,29 +120,29 @@ Public Class JurnalH
         Return MyJurnalH
     End Function
 
-    Shared Function GetListJurnalHPerbulanAktif(MyBulan As Integer, MyTahun As Integer) As List(Of JurnalH)
-        Dim MyListJurnalH As New List(Of JurnalH)
+  Shared Function GetListJurnalHPerbulanAktif(MyBulan As Integer, MyTahun As Integer) As List(Of JurnalH)
+    Dim MyListJurnalH As New List(Of JurnalH)
+    Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC Acc_GetListJurnalHPerbulanAktif " & MyBulan & ", " & MyTahun)
+      If MyDataTable IsNot Nothing AndAlso MyDataTable.Rows.Count > 0 Then
+        For Each MyRow As DataRow In MyDataTable.Rows
+          Dim MyJurnalH = New JurnalH()
+          With MyRow
+            If Not IsDBNull(.Item("IDJurnalH")) Then MyJurnalH.IDJurnalH = Convert.ToInt64(.Item("IDJurnalH"))
+            If Not IsDBNull(.Item("Tanggal")) Then MyJurnalH.Tanggal = Convert.ToDateTime(.Item("Tanggal"))
+            If Not IsDBNull(.Item("Sumber")) Then MyJurnalH.Sumber = .Item("Sumber").ToString
+            If Not IsDBNull(.Item("IDTransaksi")) Then MyJurnalH.IDTransaksi = Convert.ToInt64(.Item("IDTransaksi"))
+            If Not IsDBNull(.Item("Keterangan")) Then MyJurnalH.Keterangan = .Item("Keterangan").ToString
+            If Not IsDBNull(.Item("StatusAktif")) Then MyJurnalH.StatusAktif = Convert.ToBoolean(.Item("StatusAktif"))
+            If Not IsDBNull(.Item("IsCredited")) Then MyJurnalH.IsCredited = Convert.ToBoolean(.Item("IsCredited"))
+            If Not IsDBNull(.Item("IDJurnalKredit")) Then MyJurnalH.IDJurnalKredit = Convert.ToInt64(.Item("IDJurnalKredit"))
+            MyListJurnalH.Add(MyJurnalH)
+          End With
+        Next
+      End If
+    End Using
 
-        Using MyDataTable As DataTable = DataAccess.ExecuteQueryTable("EXEC Acc_GetListJurnalHPerbulanAktif " & MyBulan & ", " & MyTahun)
-            If MyDataTable IsNot Nothing AndAlso MyDataTable.Rows.Count > 0 Then
-                For Each MyRow As DataRow In MyDataTable.Rows
-                    Dim MyJurnalH = New JurnalH()
-                    With MyRow
-                        If Not IsDBNull(.Item("IDJurnalH")) Then MyJurnalH.IDJurnalH = Convert.ToInt64(.Item("IDJurnalH"))
-                        If Not IsDBNull(.Item("Tanggal")) Then MyJurnalH.Tanggal = Convert.ToDateTime(.Item("Tanggal"))
-                        If Not IsDBNull(.Item("Sumber")) Then MyJurnalH.Sumber = .Item("Sumber").ToString
-                        If Not IsDBNull(.Item("IDTransaksi")) Then MyJurnalH.IDTransaksi = Convert.ToInt64(.Item("IDTransaksi"))
-                        If Not IsDBNull(.Item("Keterangan")) Then MyJurnalH.Keterangan = .Item("Keterangan").ToString
-                        If Not IsDBNull(.Item("StatusAktif")) Then MyJurnalH.StatusAktif = Convert.ToBoolean(.Item("StatusAktif"))
-                        If Not IsDBNull(.Item("IsCredited")) Then MyJurnalH.IsCredited = Convert.ToBoolean(.Item("IsCredited"))
-                        If Not IsDBNull(.Item("IDJurnalKredit")) Then MyJurnalH.IDJurnalKredit = Convert.ToInt64(.Item("IDJurnalKredit"))
-                    End With
-                Next
-            End If
-        End Using
-
-        Return MyListJurnalH
-    End Function
+    Return MyListJurnalH
+  End Function
 
 #End Region
 

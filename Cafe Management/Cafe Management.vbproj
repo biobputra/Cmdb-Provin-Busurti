@@ -90,9 +90,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\Anggota.vb" />
     <Compile Include="Classes\BarangKeluarD.vb" />
     <Compile Include="Classes\BarangKeluarH.vb" />
     <Compile Include="Classes\ClassDelete.vb" />
+    <Compile Include="Classes\DaftarMeja.vb" />
     <Compile Include="Classes\JurnalD.vb" />
     <Compile Include="Classes\JurnalH.vb" />
     <Compile Include="Classes\MasterShiftD.vb" />
@@ -100,9 +102,11 @@
     <Compile Include="Classes\PembelianD.vb" />
     <Compile Include="Classes\PembelianH.vb" />
     <Compile Include="Classes\PenerimaanD.vb" />
+    <Compile Include="Classes\PenerimaanDExtended.vb" />
     <Compile Include="Classes\PenerimaanH.vb" />
     <Compile Include="Classes\PenjualanD.vb" />
     <Compile Include="Classes\PenjualanH.vb" />
+    <Compile Include="Classes\ReservasiH.vb" />
     <Compile Include="Classes\ReturD.vb" />
     <Compile Include="Classes\ReturH.vb" />
     <Compile Include="Classes\TerimaTagihanD.vb" />
@@ -359,6 +363,12 @@
     <Compile Include="Penjualan\FormPOS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Penjualan\FormReservasi.Designer.vb">
+      <DependentUpon>FormReservasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Penjualan\FormReservasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Retur\FormRetur.Designer.vb">
       <DependentUpon>FormRetur.vb</DependentUpon>
     </Compile>
@@ -468,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Penjualan\FormPOS.resx">
       <DependentUpon>FormPOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penjualan\FormReservasi.resx">
+      <DependentUpon>FormReservasi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retur\FormRetur.resx">
       <DependentUpon>FormRetur.vb</DependentUpon>
@@ -652,6 +665,7 @@
     <None Include="Dataset\DataSetTitle.xss">
       <DependentUpon>DataSetTitle.xsd</DependentUpon>
     </None>
+    <None Include="My Project\DataSources\DaftarMeja.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
