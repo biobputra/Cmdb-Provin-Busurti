@@ -15,20 +15,17 @@ Public Class FormProfile
     End Sub
 
     Private Sub LoadData()
-
         Try
             Me.ProfileTableAdapter.Fill(Me.DataSetProfile.Profile, New System.Nullable(Of Boolean)(CType(IsActive, Boolean)))
         Catch ex As System.Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
     Private Sub RadioGroup1_EditValueChanged(sender As Object, e As EventArgs) Handles RadioGroup1.EditValueChanged
         IsActive = CBool(RadioGroup1.EditValue)
         LoadData()
     End Sub
-
     Private Sub FormProfile_Load(sender As Object, e As EventArgs) Handles Me.Load
         RadioGroup1.SelectedIndex = 0
         IsActive = True

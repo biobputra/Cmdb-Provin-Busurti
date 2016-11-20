@@ -170,5 +170,14 @@ Partial Public Class MainForm
             FormProfile.ShowDialog()
         End If
     End Sub
+
+    Private Sub SetiingsMenuUserProfileBtn_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles SetiingsMenuUserProfileBtn.ItemClick
+        If Me.MdiChildren.Contains(FormUserProfile) Then
+            FormUserProfile.Focus()
+        Else
+            '  FormProfile.MdiParent = Me
+            FormUserProfile.ShowDialog()
+        End If
+    End Sub
 End Class
 

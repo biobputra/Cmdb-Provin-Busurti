@@ -58,6 +58,7 @@
         Me.InventoryDaftarStorageBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.KeuanganMenuTermOfPaymentBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.SettingMenuUserBtn = New DevExpress.XtraBars.BarButtonItem()
+        Me.SettingMenuProfileBtn = New DevExpress.XtraBars.BarButtonItem()
         Me.TransaksiMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.TransaksiPenjualanGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.TransaksiMemberGroup = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -72,7 +73,7 @@
         Me.SettingsMenuHeader = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.SettingMenuUser = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
-        Me.SettingMenuProfileBtn = New DevExpress.XtraBars.BarButtonItem()
+        Me.SetiingsMenuUserProfileBtn = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.MainRibbon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,9 +81,9 @@
         'MainRibbon
         '
         Me.MainRibbon.ExpandCollapseItem.Id = 0
-        Me.MainRibbon.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.MainRibbon.ExpandCollapseItem, Me.TransaksiJenisMejaBtn, Me.TransaksiDaftarMejaBtn, Me.InventorySatuanBtn, Me.InventoryJenisBarangBtn, Me.InventoryDaftarBarangBtn, Me.PurchasingMenuPurchasing, Me.TransaksiPOSBtn, Me.TransaksiDaftarProdukBtn, Me.TransaksiBukaTututpKasirBtn, Me.TransaksiLaporanPenjualanBtn, Me.InventoryStatusStokBtn, Me.InventoryStokOpnameBtn, Me.InventoryBarangkeluarBtn, Me.PembelianPembelianBtn, Me.PembelianSupplierBtn, Me.PembelianTerimaBarangBtn, Me.TransaksiDataMemberBtn, Me.TransaksiDepositMemberBtn, Me.PembelianBarangSupplierBtn, Me.PembeliannReturBtn, Me.AccountingTerimaTagihanBtn, Me.KeuanganTransaksiKasBankBtn, Me.KeuanganGroupAkunBtn, Me.KeuanganCOABtn, Me.KeuanganJurnalBtn, Me.KeuanganBukaTutupPeriode, Me.KeuanganLaporanNeracaBtn, Me.KeuanganLaporanRugiLabaBtn, Me.KeuanganLaporanLedgerBtn, Me.InventoryDaftarStorageBtn, Me.KeuanganMenuTermOfPaymentBtn, Me.SettingMenuUserBtn, Me.SettingMenuProfileBtn})
+        Me.MainRibbon.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.MainRibbon.ExpandCollapseItem, Me.TransaksiJenisMejaBtn, Me.TransaksiDaftarMejaBtn, Me.InventorySatuanBtn, Me.InventoryJenisBarangBtn, Me.InventoryDaftarBarangBtn, Me.PurchasingMenuPurchasing, Me.TransaksiPOSBtn, Me.TransaksiDaftarProdukBtn, Me.TransaksiBukaTututpKasirBtn, Me.TransaksiLaporanPenjualanBtn, Me.InventoryStatusStokBtn, Me.InventoryStokOpnameBtn, Me.InventoryBarangkeluarBtn, Me.PembelianPembelianBtn, Me.PembelianSupplierBtn, Me.PembelianTerimaBarangBtn, Me.TransaksiDataMemberBtn, Me.TransaksiDepositMemberBtn, Me.PembelianBarangSupplierBtn, Me.PembeliannReturBtn, Me.AccountingTerimaTagihanBtn, Me.KeuanganTransaksiKasBankBtn, Me.KeuanganGroupAkunBtn, Me.KeuanganCOABtn, Me.KeuanganJurnalBtn, Me.KeuanganBukaTutupPeriode, Me.KeuanganLaporanNeracaBtn, Me.KeuanganLaporanRugiLabaBtn, Me.KeuanganLaporanLedgerBtn, Me.InventoryDaftarStorageBtn, Me.KeuanganMenuTermOfPaymentBtn, Me.SettingMenuUserBtn, Me.SettingMenuProfileBtn, Me.SetiingsMenuUserProfileBtn})
         Me.MainRibbon.Location = New System.Drawing.Point(0, 0)
-        Me.MainRibbon.MaxItemId = 29
+        Me.MainRibbon.MaxItemId = 30
         Me.MainRibbon.Name = "MainRibbon"
         Me.MainRibbon.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.TransaksiMenuHeader, Me.InventoryMenuHeader, Me.PembelianMenuHeader, Me.AccountingMenuHeader, Me.SettingsMenuHeader})
         Me.MainRibbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
@@ -326,6 +327,12 @@
         Me.SettingMenuUserBtn.Id = 27
         Me.SettingMenuUserBtn.Name = "SettingMenuUserBtn"
         '
+        'SettingMenuProfileBtn
+        '
+        Me.SettingMenuProfileBtn.Caption = "Profile"
+        Me.SettingMenuProfileBtn.Id = 28
+        Me.SettingMenuProfileBtn.Name = "SettingMenuProfileBtn"
+        '
         'TransaksiMenuHeader
         '
         Me.TransaksiMenuHeader.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.TransaksiPenjualanGroup, Me.TransaksiMemberGroup})
@@ -429,6 +436,7 @@
         '
         Me.SettingMenuUser.ItemLinks.Add(Me.SettingMenuUserBtn)
         Me.SettingMenuUser.ItemLinks.Add(Me.SettingMenuProfileBtn)
+        Me.SettingMenuUser.ItemLinks.Add(Me.SetiingsMenuUserProfileBtn)
         Me.SettingMenuUser.Name = "SettingMenuUser"
         Me.SettingMenuUser.Text = "User"
         '
@@ -436,11 +444,11 @@
         '
         Me.XtraTabbedMdiManager1.MdiParent = Me
         '
-        'SettingMenuProfileBtn
+        'SetiingsMenuUserProfileBtn
         '
-        Me.SettingMenuProfileBtn.Caption = "Profile"
-        Me.SettingMenuProfileBtn.Id = 28
-        Me.SettingMenuProfileBtn.Name = "SettingMenuProfileBtn"
+        Me.SetiingsMenuUserProfileBtn.Caption = "User Profile"
+        Me.SetiingsMenuUserProfileBtn.Id = 29
+        Me.SetiingsMenuUserProfileBtn.Name = "SetiingsMenuUserProfileBtn"
         '
         'MainForm
         '
@@ -511,4 +519,5 @@
     Friend WithEvents SettingsMenuHeader As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents SettingMenuUser As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents SettingMenuProfileBtn As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SetiingsMenuUserProfileBtn As DevExpress.XtraBars.BarButtonItem
 End Class
