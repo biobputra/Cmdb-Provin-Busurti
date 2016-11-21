@@ -3,15 +3,15 @@
 #Region "Properties"
 
 
-    Private xIDPengguna As String
-    Public Property IDPengguna() As String
-        Get
-            Return xIDPengguna
-        End Get
-        Set(ByVal value As String)
-            xIDPengguna = value
-        End Set
-    End Property
+  Private xIDPengguna As Integer
+  Public Property IDPengguna() As Integer
+    Get
+      Return xIDPengguna
+    End Get
+    Set(ByVal value As Integer)
+      xIDPengguna = value
+    End Set
+  End Property
 
 
     Private xIDKaryawan As Long

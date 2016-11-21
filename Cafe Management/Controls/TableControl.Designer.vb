@@ -26,10 +26,10 @@ Partial Class TableControl
     Me.NoMejaLbl = New System.Windows.Forms.Label()
     Me.Pic = New System.Windows.Forms.PictureBox()
     Me.ButtonLayout = New System.Windows.Forms.TableLayoutPanel()
-    Me.OrderBtn = New System.Windows.Forms.Button()
-    Me.Extendbtn = New System.Windows.Forms.Button()
-    Me.CheckInBtn = New System.Windows.Forms.Button()
-    Me.ReserveBtn = New System.Windows.Forms.Button()
+    Me.UnReserveBtn = New DevExpress.XtraEditors.SimpleButton()
+    Me.ExtendBtn = New DevExpress.XtraEditors.SimpleButton()
+    Me.OrderBtn = New DevExpress.XtraEditors.SimpleButton()
+    Me.TableCheckTmr = New System.Windows.Forms.Timer(Me.components)
     CType(Me.MyImageList, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.Pic, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.ButtonLayout.SuspendLayout()
@@ -92,9 +92,8 @@ Partial Class TableControl
     Me.ButtonLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
     Me.ButtonLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
     Me.ButtonLayout.Controls.Add(Me.OrderBtn, 1, 1)
-    Me.ButtonLayout.Controls.Add(Me.Extendbtn, 0, 1)
-    Me.ButtonLayout.Controls.Add(Me.CheckInBtn, 1, 0)
-    Me.ButtonLayout.Controls.Add(Me.ReserveBtn, 0, 0)
+    Me.ButtonLayout.Controls.Add(Me.ExtendBtn, 1, 0)
+    Me.ButtonLayout.Controls.Add(Me.UnReserveBtn, 0, 0)
     Me.ButtonLayout.Dock = System.Windows.Forms.DockStyle.Bottom
     Me.ButtonLayout.Location = New System.Drawing.Point(165, 29)
     Me.ButtonLayout.Name = "ButtonLayout"
@@ -104,57 +103,54 @@ Partial Class TableControl
     Me.ButtonLayout.Size = New System.Drawing.Size(170, 141)
     Me.ButtonLayout.TabIndex = 5
     '
+    'UnReserveBtn
+    '
+    Me.UnReserveBtn.Appearance.Options.UseTextOptions = True
+    Me.UnReserveBtn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+    Me.UnReserveBtn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom
+    Me.UnReserveBtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.UnReserveBtn.Image = CType(resources.GetObject("UnReserveBtn.Image"), System.Drawing.Image)
+    Me.UnReserveBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
+    Me.UnReserveBtn.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
+    Me.UnReserveBtn.Location = New System.Drawing.Point(3, 3)
+    Me.UnReserveBtn.Name = "UnReserveBtn"
+    Me.UnReserveBtn.Size = New System.Drawing.Size(79, 64)
+    Me.UnReserveBtn.TabIndex = 0
+    Me.UnReserveBtn.Text = "Un Reserve"
+    '
+    'ExtendBtn
+    '
+    Me.ExtendBtn.Appearance.Options.UseTextOptions = True
+    Me.ExtendBtn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+    Me.ExtendBtn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom
+    Me.ExtendBtn.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.ExtendBtn.Image = CType(resources.GetObject("ExtendBtn.Image"), System.Drawing.Image)
+    Me.ExtendBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
+    Me.ExtendBtn.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
+    Me.ExtendBtn.Location = New System.Drawing.Point(88, 3)
+    Me.ExtendBtn.Name = "ExtendBtn"
+    Me.ExtendBtn.Size = New System.Drawing.Size(79, 64)
+    Me.ExtendBtn.TabIndex = 1
+    Me.ExtendBtn.Text = "Extend"
+    '
     'OrderBtn
     '
+    Me.OrderBtn.Appearance.Options.UseTextOptions = True
+    Me.OrderBtn.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+    Me.OrderBtn.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom
     Me.OrderBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.OrderBtn.Image = Global.Cafe_Management.My.Resources.Resources.Report2_32x32
-    Me.OrderBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+    Me.OrderBtn.Image = CType(resources.GetObject("OrderBtn.Image"), System.Drawing.Image)
+    Me.OrderBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
+    Me.OrderBtn.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
     Me.OrderBtn.Location = New System.Drawing.Point(88, 73)
     Me.OrderBtn.Name = "OrderBtn"
     Me.OrderBtn.Size = New System.Drawing.Size(79, 65)
-    Me.OrderBtn.TabIndex = 7
+    Me.OrderBtn.TabIndex = 3
     Me.OrderBtn.Text = "Order"
-    Me.OrderBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.OrderBtn.UseVisualStyleBackColor = True
     '
-    'Extendbtn
+    'TableCheckTmr
     '
-    Me.Extendbtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.Extendbtn.Image = Global.Cafe_Management.My.Resources.Resources.Time_32x32
-    Me.Extendbtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.Extendbtn.Location = New System.Drawing.Point(3, 73)
-    Me.Extendbtn.Name = "Extendbtn"
-    Me.Extendbtn.Size = New System.Drawing.Size(79, 65)
-    Me.Extendbtn.TabIndex = 6
-    Me.Extendbtn.Text = "Extend"
-    Me.Extendbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.Extendbtn.UseVisualStyleBackColor = True
-    '
-    'CheckInBtn
-    '
-    Me.CheckInBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.CheckInBtn.Image = Global.Cafe_Management.My.Resources.Resources.CheckBox_32x32
-    Me.CheckInBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.CheckInBtn.Location = New System.Drawing.Point(88, 3)
-    Me.CheckInBtn.Name = "CheckInBtn"
-    Me.CheckInBtn.Size = New System.Drawing.Size(79, 64)
-    Me.CheckInBtn.TabIndex = 5
-    Me.CheckInBtn.Text = "Check In"
-    Me.CheckInBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.CheckInBtn.UseVisualStyleBackColor = True
-    '
-    'ReserveBtn
-    '
-    Me.ReserveBtn.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.ReserveBtn.Image = Global.Cafe_Management.My.Resources.Resources.Notes_32x32
-    Me.ReserveBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-    Me.ReserveBtn.Location = New System.Drawing.Point(3, 3)
-    Me.ReserveBtn.Name = "ReserveBtn"
-    Me.ReserveBtn.Size = New System.Drawing.Size(79, 64)
-    Me.ReserveBtn.TabIndex = 4
-    Me.ReserveBtn.Text = "Reserve"
-    Me.ReserveBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-    Me.ReserveBtn.UseVisualStyleBackColor = True
+    Me.TableCheckTmr.Interval = 60000
     '
     'TableControl
     '
@@ -182,9 +178,9 @@ Partial Class TableControl
   Friend WithEvents MyImageList As DevExpress.Utils.ImageCollection
   Friend WithEvents NoMejaLbl As System.Windows.Forms.Label
   Friend WithEvents ButtonLayout As System.Windows.Forms.TableLayoutPanel
-  Friend WithEvents OrderBtn As System.Windows.Forms.Button
-  Friend WithEvents Extendbtn As System.Windows.Forms.Button
-  Friend WithEvents CheckInBtn As System.Windows.Forms.Button
-  Friend WithEvents ReserveBtn As System.Windows.Forms.Button
+  Friend WithEvents UnReserveBtn As DevExpress.XtraEditors.SimpleButton
+  Friend WithEvents OrderBtn As DevExpress.XtraEditors.SimpleButton
+  Friend WithEvents ExtendBtn As DevExpress.XtraEditors.SimpleButton
+  Friend WithEvents TableCheckTmr As System.Windows.Forms.Timer
 
 End Class

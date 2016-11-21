@@ -50,10 +50,12 @@
     <Reference Include="DevExpress.BonusSkins.v16.1" />
     <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
     <Reference Include="DevExpress.Utils.v16.1" />
     <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
     <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -67,6 +69,7 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -113,11 +116,18 @@
     <Compile Include="Classes\PenerimaanH.vb" />
     <Compile Include="Classes\PenjualanD.vb" />
     <Compile Include="Classes\PenjualanH.vb" />
+    <Compile Include="Classes\ReservasiD.vb" />
     <Compile Include="Classes\ReservasiH.vb" />
     <Compile Include="Classes\ReturD.vb" />
     <Compile Include="Classes\ReturH.vb" />
     <Compile Include="Classes\TerimaTagihanD.vb" />
     <Compile Include="Classes\TerimaTagihanH.vb" />
+    <Compile Include="Controls\ReservasiMejaControl.Designer.vb">
+      <DependentUpon>ReservasiMejaControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReservasiMejaControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\TableControl.Designer.vb">
       <DependentUpon>TableControl.vb</DependentUpon>
     </Compile>
@@ -414,6 +424,11 @@
     <Compile Include="Penjualan\FormReservasi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReservasiDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservasiDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Retur\FormRetur.Designer.vb">
       <DependentUpon>FormRetur.vb</DependentUpon>
     </Compile>
@@ -431,6 +446,9 @@
     <Compile Include="SupportObject\GlobalModule.vb" />
     <EmbeddedResource Include="Accounting\Jurnal.resx">
       <DependentUpon>Jurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReservasiMejaControl.resx">
+      <DependentUpon>ReservasiMejaControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TableControl.resx">
       <DependentUpon>TableControl.vb</DependentUpon>
@@ -781,6 +799,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReservasiDataset.xsc">
+      <DependentUpon>ReservasiDataset.xsd</DependentUpon>
+    </None>
+    <None Include="ReservasiDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservasiDataset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReservasiDataset.xss">
+      <DependentUpon>ReservasiDataset.xsd</DependentUpon>
+    </None>
     <None Include="Resources\BOSale_32x32.png" />
   </ItemGroup>
   <ItemGroup>

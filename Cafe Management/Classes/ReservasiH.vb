@@ -97,13 +97,38 @@
     Return MyListReservasiH
   End Function
 
-  Public Sub AddNew()
+  Shared Function GetIDReservasiHByNama(MyNama As String) As Long
+    Return Convert.ToInt64(DataAccess.GetSingleValue("Rsv_GetIDReservasiHByNama " & "'" & MyNama & "'"))
+
+    
+  End Function
+
+  Public Sub AddNew(MyListReservasiD As List(Of ReservasiD))
+    Dim MyQuery As New List(Of String)
+    Dim MyIDHeader As Long = Convert.ToInt64(DataAccess.GetSingleValue("DECLARE @ID INT;EXEC dbo.App_GetNewID @NamaTabel = 'ReservasiH', @MyOutput = @ID OUTPUT;SELECT @ID"))
     With Me
-      DataAccess.SQLNonQuery("Exec Rsv_ReservasiHInsert " & _
+
+      MyQuery.Add("Exec Rsv_ReservasiHInsert " & _
                              .IDAnggota & ", " & _
                              "'" & .Nama & "', " & _
                              "'" & .UntukTanggal & "'")
+
+      For Each MyReservasiD As ReservasiD In MyListReservasiD
+        MyQuery.Add("Exec Rsv_ReservasiDInsert " & _
+                    MyIDHeader & ", " & _
+                    MyReservasiD.IDDaftarMeja & ", " & _
+                    "'" & MyReservasiD.JamMulai & "', " & _
+                    "'" & MyReservasiD.JamSelesai & "'")
+      Next
+
+      DataAccess.SQLNonQuery(MyQuery)
     End With
+  End Sub
+
+  Shared Sub CheckIn(ByVal MyIDReservasiH As Long, ByVal MyIDUser As Integer)
+    DataAccess.SQLNonQuery("exec Rsv_CheckIn " & MyIDReservasiH & ", " & MyIDUser)
+
+
   End Sub
 
 #End Region
