@@ -5,6 +5,8 @@ Namespace My
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
             DataAccess.TestConnection()
 
-        End Sub
-    End Class
+
+    End Sub
+  End Class
+
 End Namespace

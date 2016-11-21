@@ -23,7 +23,7 @@
         .IDDaftarMeja = Meja.IDDaftarMeja
         .IDJenisMeja = Meja.IDJenisMeja
         .NomorMeja = Meja.NomorMeja
-        .Status = 0
+        .Status = Meja.Status
       End With
       BillyardFlowPanel.Controls.Add(MyTable)
       MyTable.Show()
@@ -35,7 +35,7 @@
         .IDDaftarMeja = Meja.IDDaftarMeja
         .IDJenisMeja = Meja.IDJenisMeja
         .NomorMeja = Meja.NomorMeja
-        .Status = 0
+        .Status = Meja.Status
       End With
       RestoFlowPanel.Controls.Add(MyTable)
       MyTable.Show()
@@ -47,7 +47,7 @@
         .IDDaftarMeja = Meja.IDDaftarMeja
         .IDJenisMeja = Meja.IDJenisMeja
         .NomorMeja = Meja.NomorMeja
-        .Status = 0
+        .Status = Meja.Status
       End With
       BarFlowPanel.Controls.Add(MyTable)
       MyTable.Show()

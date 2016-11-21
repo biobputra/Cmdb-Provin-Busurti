@@ -1,5 +1,16 @@
 ﻿Public Class TableControl
 
+  Sub New()
+
+    ' This call is required by the designer.
+    InitializeComponent()
+    Me.Width = 165
+
+    ' Add any initialization after the InitializeComponent() call.
+
+  End Sub
+
+
 #Region "Properties"
 
   Private xIDDaftarMeja As Integer
@@ -58,28 +69,27 @@
       xStatus = value
       Select Case value
         Case 0
+          'free
           NoMejaLbl.BackColor = Color.LightGreen
-          ReserveBtn.Enabled = True
-          CheckInBtn.Enabled = False
+          
           Extendbtn.Enabled = False
           OrderBtn.Enabled = False
         Case 1
+          'reserved
           NoMejaLbl.BackColor = Color.LightBlue
-          ReserveBtn.Enabled = True
-          CheckInBtn.Enabled = True
+          UnReserveBtn.Enabled = True
           Extendbtn.Enabled = False
           OrderBtn.Enabled = False
         Case 2
+          'Checkedin
           NoMejaLbl.BackColor = Color.Gold
-          ReserveBtn.Enabled = False
-          CheckInBtn.Enabled = False
+          
           Extendbtn.Enabled = True
           OrderBtn.Enabled = True
         Case 3
+          'time out
           NoMejaLbl.BackColor = Color.Tomato
-          NoMejaLbl.BackColor = Color.Gold
-          ReserveBtn.Enabled = False
-          CheckInBtn.Enabled = False
+          
           Extendbtn.Enabled = True
           OrderBtn.Enabled = True
           OrderBtn.Text = "Check Out"
@@ -136,16 +146,28 @@
     End If
   End Sub
 
-  Private Sub ReserveBtn_Click(sender As Object, e As EventArgs)
-    
+
+  Private Sub UnReserveBtn_Click(sender As Object, e As EventArgs) Handles UnReserveBtn.Click
+
   End Sub
 
-  Private Sub CheckInBtn_Click(sender As Object, e As EventArgs)
-    Me.Status = 2
+  Private Sub ExtendBtn_Click(sender As Object, e As EventArgs) Handles ExtendBtn.Click
+
   End Sub
 
-  Private Sub OrderBtn_Click(sender As Object, e As EventArgs)
-    RaiseEvent MakeOrder(Me.NomorMeja)
+  Private Sub OrderBtn_Click(sender As Object, e As EventArgs) Handles OrderBtn.Click
+    RaiseEvent MakeOrder(NomorMeja)
   End Sub
 
+  Private Sub TableCheckTmr_Tick(sender As Object, e As EventArgs) Handles TableCheckTmr.Tick
+    Select Case Status
+      Case 0
+        'periksa waktu reservasi
+      Case 1
+        'periksa checkin
+      Case 2
+        'periksa time out
+    End Select
+
+  End Sub
 End Class

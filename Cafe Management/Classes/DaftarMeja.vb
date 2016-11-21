@@ -62,22 +62,22 @@
     End Set
   End Property
 
-  Private xJamMulai As DateTime
-  Public Property JamMulai() As DateTime
+  Private xJamMulai As TimeSpan
+  Public Property JamMulai() As TimeSpan
     Get
       Return xJamMulai
     End Get
-    Set(value As DateTime)
+    Set(value As TimeSpan)
       xJamMulai = value
     End Set
   End Property
 
-  Private xJamSelesai As DateTime
-  Public Property JamSelesai() As DateTime
+  Private xJamSelesai As TimeSpan
+  Public Property JamSelesai() As TimeSpan
     Get
       Return xJamSelesai
     End Get
-    Set(value As DateTime)
+    Set(value As TimeSpan)
       xJamSelesai = value
     End Set
   End Property
@@ -140,7 +140,7 @@
   Public Sub New()
   End Sub
 
-  Public Sub New(ByVal MyIDDaftarMeja As Integer, ByVal MyIDJenisMeja As Integer, ByVal MyNomorMeja As Integer, ByVal MyKeterangan As String, ByVal MyStatus As Int32, ByVal MyTanggalbook As Date, ByVal MyJamMulai As DateTime, ByVal MyJamSelesai As DateTime, ByVal MyCreatedBy As Integer, ByVal MyCreatedDate As DateTime, ByVal MyModifiedBy As Integer, ByVal MyModifiedDate As DateTime, ByVal MyisActive As Boolean)
+  Public Sub New(ByVal MyIDDaftarMeja As Integer, ByVal MyIDJenisMeja As Integer, ByVal MyNomorMeja As Integer, ByVal MyKeterangan As String, ByVal MyStatus As Int32, ByVal MyTanggalbook As Date, ByVal MyJamMulai As TimeSpan, ByVal MyJamSelesai As TimeSpan, ByVal MyCreatedBy As Integer, ByVal MyCreatedDate As DateTime, ByVal MyModifiedBy As Integer, ByVal MyModifiedDate As DateTime, ByVal MyisActive As Boolean)
     IDDaftarMeja = MyIDDaftarMeja : IDJenisMeja = MyIDJenisMeja : NomorMeja = MyNomorMeja : Keterangan = MyKeterangan : Status = MyStatus : Tanggalbook = MyTanggalbook : JamMulai = MyJamMulai : JamSelesai = MyJamSelesai : CreatedBy = MyCreatedBy : CreatedDate = MyCreatedDate : ModifiedBy = MyModifiedBy : ModifiedDate = MyModifiedDate : isActive = MyisActive
   End Sub
 
@@ -159,8 +159,8 @@
             If Not IsDBNull(.Item("Keterangan")) Then MyDaftarMeja.Keterangan = .Item("Keterangan").ToString
             If Not IsDBNull(.Item("Status")) Then MyDaftarMeja.Status = Convert.ToInt16(.Item("Status"))
             If Not IsDBNull(.Item("Tanggalbook")) Then MyDaftarMeja.Tanggalbook = Convert.ToDateTime(.Item("Tanggalbook"))
-            If Not IsDBNull(.Item("JamMulai")) Then MyDaftarMeja.JamMulai = Convert.ToDateTime(.Item("JamMulai"))
-            If Not IsDBNull(.Item("JamSelesai")) Then MyDaftarMeja.JamSelesai = Convert.ToDateTime(.Item("JamSelesai"))
+            If Not IsDBNull(.Item("JamMulai")) Then MyDaftarMeja.JamMulai = TimeSpan.Parse(.Item("JamMulai").ToString)
+            If Not IsDBNull(.Item("JamSelesai")) Then MyDaftarMeja.JamSelesai = TimeSpan.Parse(.Item("JamSelesai").ToString)
             If Not IsDBNull(.Item("CreatedBy")) Then MyDaftarMeja.CreatedBy = Convert.ToInt32(.Item("CreatedBy"))
             If Not IsDBNull(.Item("CreatedDate")) Then MyDaftarMeja.CreatedDate = Convert.ToDateTime(.Item("CreatedDate"))
             If Not IsDBNull(.Item("ModifiedBy")) Then MyDaftarMeja.ModifiedBy = Convert.ToInt32(.Item("ModifiedBy"))

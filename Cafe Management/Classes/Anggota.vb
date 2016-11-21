@@ -173,6 +173,7 @@
           Dim MyAnggota = New Anggota()
           With MyRow
             If Not IsDBNull(.Item("IDAnggota")) Then MyAnggota.IDAnggota = Convert.ToInt32(.Item("IDAnggota"))
+            If Not IsDBNull(.Item("Kode")) Then MyAnggota.Kode = .Item("Kode").ToString()
             If Not IsDBNull(.Item("Nama")) Then MyAnggota.Nama = .Item("Nama").ToString()
             MyListAnggota.Add(MyAnggota)
           End With
